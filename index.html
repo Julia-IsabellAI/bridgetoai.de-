@@ -161,6 +161,16 @@ section{padding:7rem 5%;position:relative;}
 .exp-item{display:flex;align-items:center;gap:.85rem;font-size:.94rem;color:rgba(255,255,255,0.62);}
 .exp-item .d{width:6px;height:6px;border-radius:50%;background:var(--primary);box-shadow:0 0 8px var(--glow);flex-shrink:0;}
 
+/* bridge statement */
+#manifest{background:var(--dark);text-align:center;padding:8rem 5%;position:relative;overflow:hidden;}
+#manifest::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(0,217,192,0.08),transparent 65%);pointer-events:none;}
+.manifest-inner{position:relative;z-index:1;max-width:880px;margin:0 auto;}
+.manifest-eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.74rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--primary);margin-bottom:2rem;justify-content:center;}
+.manifest-eyebrow::before,.manifest-eyebrow::after{content:'';width:28px;height:1px;background:var(--primary);}
+.manifest-text{font-family:'Fraunces',serif;font-size:clamp(1.6rem,3vw,2.5rem);font-weight:400;line-height:1.4;letter-spacing:-0.01em;color:rgba(255,255,255,0.92);}
+.manifest-text .hl{font-style:italic;background:linear-gradient(100deg,#1B8B9E,#00D9C0);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.manifest-result{margin-top:2.5rem;font-family:'Outfit',sans-serif;font-size:1.05rem;font-weight:300;color:rgba(255,255,255,0.55);max-width:560px;margin-left:auto;margin-right:auto;line-height:1.7;}
+
 /* contact */
 #kontakt{background:var(--dark2);display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start;}
 .contact-info{display:flex;flex-direction:column;gap:1.2rem;margin-top:2rem;}
@@ -179,6 +189,14 @@ section{padding:7rem 5%;position:relative;}
 textarea.inp{resize:vertical;min-height:130px;}
 .btn-submit{background:var(--primary);color:var(--navy);padding:1rem;border-radius:100px;font-family:'Outfit',sans-serif;font-size:1rem;font-weight:700;border:none;cursor:pointer;transition:transform .25s,box-shadow .25s;}
 .btn-submit:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(0,217,192,0.35);}
+
+/* calendly block */
+.cal-block{grid-column:1 / -1;margin-top:1rem;}
+.cal-divider{display:flex;align-items:center;gap:1.5rem;margin:1rem 0 2.5rem;}
+.cal-divider::before,.cal-divider::after{content:'';flex:1;height:1px;background:rgba(255,255,255,0.1);}
+.cal-divider span{font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,0.4);white-space:nowrap;}
+.cal-wrap{background:var(--navy);border:1px solid rgba(0,217,192,0.15);border-radius:20px;padding:.5rem;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,0.35);}
+.calendly-inline-widget{border-radius:16px;overflow:hidden;}
 
 /* footer */
 footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.05);padding:2.5rem 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
@@ -319,6 +337,14 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.05);padding
   </div>
 </div>
 
+<section id="manifest">
+  <div class="manifest-inner reveal">
+    <span class="manifest-eyebrow">Mein Name ist Programm</span>
+    <p class="manifest-text">Ich baue die <span class="hl">Brücke</span> zwischen komplexer KI und Ihrem Geschäftsalltag – damit aus „KI klingt wichtig" ein <span class="hl">messbarer Vorsprung</span> wird.</p>
+    <p class="manifest-result">Konkret heißt das: weniger Zeit für Routine, schnellere Entscheidungen und Prozesse, die endlich für Sie arbeiten – nicht umgekehrt.</p>
+  </div>
+</section>
+
 <section id="leistungen">
   <div class="svc-header reveal">
     <div>
@@ -353,13 +379,12 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.05);padding
   <div class="reveal">
     <span class="s-eyebrow">Über mich</span>
     <h2 class="s-title">Warum <span class="it">Julia Pakravan</span>?</h2>
-    <p class="s-sub" style="margin-top:1rem;">Mit über 15 Jahren Erfahrung in Sales Operations und digitaler Transformation bringe ich KI-Kompetenz aus der echten Unternehmenswelt. Kein Tech-Jargon – sondern Lösungen, die sofort wirken.</p>
+    <p class="s-sub" style="margin-top:1rem;">15 Jahre in führenden Positionen in Operations, Produktentwicklung, Sales, Mitarbeiterverantwortung und Marketingstrategie. Ich bringe KI-Kompetenz aus der echten Unternehmenswelt – kein Tech-Jargon, sondern Lösungen, die sofort wirken.</p>
     <div class="exp">
       <div class="exp-item"><span class="d"></span>KI-Strategie & Implementierung für den Mittelstand</div>
       <div class="exp-item"><span class="d"></span>Change Management & agile Führung</div>
       <div class="exp-item"><span class="d"></span>CRM-Systeme (Salesforce) & LLM-Workflows</div>
       <div class="exp-item"><span class="d"></span>MS Copilot & führende KI-Tools</div>
-      <div class="exp-item"><span class="d"></span>Director Kids & Teens bei Berlitz Deutschland</div>
     </div>
   </div>
   <div class="about-panel reveal">
@@ -398,6 +423,16 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.05);padding
     <textarea class="inp" name="message" placeholder="Wie kann ich Ihnen helfen?" required></textarea>
     <button class="btn-submit" type="submit">Nachricht senden →</button>
   </form>
+
+  <div class="cal-block reveal">
+    <div class="cal-divider"><span>Oder direkt einen Termin buchen</span></div>
+    <div class="cal-wrap">
+      <!-- Calendly inline widget begin -->
+      <div class="calendly-inline-widget" data-url="https://calendly.com/julia-pakravan/30min?hide_gdpr_banner=1&background_color=0a2540&text_color=ffffff&primary_color=00d9c0" style="min-width:320px;height:700px;"></div>
+      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+      <!-- Calendly inline widget end -->
+    </div>
+  </div>
 </section>
 
 <footer>
