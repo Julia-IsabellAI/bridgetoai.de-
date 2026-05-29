@@ -1,170 +1,426 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BridgeToKI – KI-Transformation Beratung</title>
-  <meta name="description" content="BridgeToKI berät Unternehmen bei der KI-Transformation und digitalen Strategie für messbare Geschäftserfolge.">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>bridge to ai – KI-Beratung & Bildung</title>
+<meta name="description" content="bridge to ai begleitet kleine Unternehmen und Einzelpersonen bei der KI-Transformation – persönlich, praxisnah, auf Deutsch."/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgICA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMEEyNTQwIi8+CiAgICA8ZGVmcz4KICAgICAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjAlIj4KICAgICAgICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzBBMjU0MCIvPgogICAgICAgICAgICA8c3RvcCBvZmZzZXQ9IjU1JSIgc3RvcC1jb2xvcj0iIzFCOEI5RSIvPgogICAgICAgICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMEQ5QzAiLz4KICAgICAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPC9kZWZzPgogICAgCiAgICAgICAgPHBhdGggZD0iTTEyMCAzMjAgUTI1NiAxNjAgMzkyIDMyMCBMMzkyIDM3MCBMMTIwIDM3MCBaIiBmaWxsPSJ1cmwoI2dyYWQpIi8+CiAgICAgICAgPGNpcmNsZSBjeD0iMjU2IiBjeT0iMTQ1IiByPSIzNCIgZmlsbD0iIzAwRDlDMCIvPgogICAgICAgIDwvc3ZnPg=="/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --primary:#00D9C0; --secondary:#1B8B9E; --navy:#0A2540;
+  --dark:#040c16; --dark2:#061523; --ink:#030a12;
+  --glow:rgba(0,217,192,0.5);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--dark);color:#fff;overflow-x:hidden;}
 
-  <!-- Fonts: Preconnect und Google Fonts (Inter) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- verbessert Ladezeit【37†L43-L52】 -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+/* grain overlay */
+body::after{
+  content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:0.035;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
 
-  <!-- Tailwind CSS (Play CDN) - für Produktion wäre ein Build-Schritt nötig【28†L293-L302】 -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    // Tailwind-Konfig: eigene Akzentfarbe definieren
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            emerald: { 400: '#00A878' }  // Akzent-Farbe
-          }
-        }
-      }
-    }
-  </script>
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:0 5%;height:76px;
+  background:rgba(4,12,22,0);backdrop-filter:blur(0px);
+  transition:background .4s,backdrop-filter .4s,border-color .4s;
+  border-bottom:1px solid transparent;
+}
+nav.scrolled{background:rgba(4,12,22,0.8);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.06);}
+.nav-logo{display:flex;align-items:center;text-decoration:none;}
+.nav-logo svg{height:30px;width:auto;}
+.nav-links{display:flex;gap:2.5rem;list-style:none;}
+.nav-links a{position:relative;text-decoration:none;color:rgba(255,255,255,0.6);font-size:.9rem;font-weight:500;transition:color .25s;}
+.nav-links a::after{content:'';position:absolute;left:0;bottom:-6px;width:0;height:1px;background:var(--primary);transition:width .3s;}
+.nav-links a:hover{color:#fff;}
+.nav-links a:hover::after{width:100%;}
+.btn-cta{display:inline-flex;align-items:center;gap:.4rem;background:var(--primary);color:var(--navy);padding:.6rem 1.5rem;border-radius:100px;font-size:.9rem;font-weight:700;text-decoration:none;transition:transform .25s,box-shadow .25s;}
+.btn-cta:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,217,192,0.35);}
 
-  <!-- Fallback-Font falls Google ausfällt -->
-  <style>
-    body { font-family: 'Inter', system-ui, sans-serif; }
-  </style>
+/* ── HERO ── */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;padding:76px 5% 0;}
+.hero-atmos{position:absolute;inset:0;z-index:0;
+  background:
+    radial-gradient(ellipse 70% 80% at 75% 45%,rgba(27,139,158,0.22) 0%,transparent 55%),
+    radial-gradient(circle 50% at 88% 25%,rgba(0,217,192,0.14) 0%,transparent 55%),
+    radial-gradient(ellipse 60% 50% at 20% 80%,rgba(10,37,64,0.6) 0%,transparent 60%),
+    linear-gradient(160deg,#030a12 0%,#061523 45%,#0a2540 100%);
+}
+.hero-glow{position:absolute;top:30%;right:18%;width:480px;height:480px;z-index:0;
+  background:radial-gradient(circle,rgba(0,217,192,0.25) 0%,transparent 65%);
+  filter:blur(40px);animation:breathe 7s ease-in-out infinite;}
+@keyframes breathe{0%,100%{opacity:.7;transform:scale(1);}50%{opacity:1;transform:scale(1.08);}}
+.hero-gridlines{position:absolute;inset:0;z-index:0;
+  background-image:linear-gradient(rgba(0,217,192,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(0,217,192,0.025) 1px,transparent 1px);
+  background-size:64px 64px;
+  mask-image:radial-gradient(ellipse 100% 100% at 70% 50%,#000 30%,transparent 75%);
+  -webkit-mask-image:radial-gradient(ellipse 100% 100% at 70% 50%,#000 30%,transparent 75%);}
+
+/* The signature bridge — echoes the logo exactly */
+.hero-bridge{position:absolute;z-index:1;right:-2%;top:50%;transform:translateY(-50%);width:60%;max-width:900px;pointer-events:none;}
+
+.bridge-arch{fill:none;stroke:url(#archGrad);stroke-width:7;stroke-linecap:round;
+  stroke-dasharray:2600;stroke-dashoffset:2600;animation:draw 2.4s 0.4s cubic-bezier(.7,0,.3,1) forwards;}
+.bridge-arch-2{fill:none;stroke:url(#archGrad);stroke-width:2.5;opacity:.4;stroke-linecap:round;
+  stroke-dasharray:2600;stroke-dashoffset:2600;animation:draw 2.4s 0.7s cubic-bezier(.7,0,.3,1) forwards;}
+.bridge-deck{fill:none;stroke:rgba(0,217,192,0.12);stroke-width:1.5;
+  stroke-dasharray:1200;stroke-dashoffset:1200;animation:draw 2s 1s ease forwards;}
+.cable{stroke:rgba(0,217,192,0.14);stroke-width:1;opacity:0;animation:fadeIn .6s 1.6s ease forwards;}
+@keyframes draw{to{stroke-dashoffset:0;}}
+@keyframes fadeIn{to{opacity:1;}}
+
+/* the 3 logo nodes — glowing & pulsing */
+.node{opacity:0;animation:nodePop .6s ease forwards;}
+.node-1{animation-delay:1.7s;}
+.node-2{animation-delay:1.95s;}
+.node-3{animation-delay:2.2s;}
+@keyframes nodePop{0%{opacity:0;transform:scale(0);}60%{transform:scale(1.3);}100%{opacity:1;transform:scale(1);}}
+.node-core{transform-box:fill-box;transform-origin:center;animation:pulse 3s ease-in-out infinite;}
+@keyframes pulse{0%,100%{opacity:.5;}50%{opacity:1;}}
+
+.hero-content{position:relative;z-index:3;max-width:600px;padding:4rem 0;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:.7rem;font-size:.76rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--primary);margin-bottom:1.8rem;opacity:0;animation:up .9s .2s ease forwards;}
+.hero-eyebrow::before{content:'';width:34px;height:1px;background:linear-gradient(90deg,transparent,var(--primary));}
+.hero-title{font-family:'Fraunces',serif;font-size:clamp(3rem,5.5vw,5rem);font-weight:500;line-height:1.02;letter-spacing:-0.02em;margin-bottom:1.6rem;opacity:0;animation:up .9s .35s ease forwards;}
+.hero-title .it{font-style:italic;font-weight:400;background:linear-gradient(100deg,#1B8B9E,#00D9C0);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.hero-sub{font-size:1.1rem;font-weight:300;color:rgba(255,255,255,0.62);max-width:440px;margin-bottom:2.6rem;line-height:1.7;opacity:0;animation:up .9s .5s ease forwards;}
+@keyframes up{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:none;}}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3.5rem;opacity:0;animation:up .9s .65s ease forwards;}
+.btn-primary{display:inline-flex;align-items:center;gap:.6rem;background:var(--primary);color:var(--navy);padding:.95rem 2.1rem;border-radius:100px;font-size:.95rem;font-weight:700;text-decoration:none;transition:transform .25s,box-shadow .25s;box-shadow:0 0 0 0 var(--glow);}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 36px rgba(0,217,192,0.4);}
+.btn-primary .arr{transition:transform .25s;}
+.btn-primary:hover .arr{transform:translateX(4px);}
+.btn-outline{display:inline-flex;align-items:center;gap:.5rem;border:1.5px solid rgba(255,255,255,0.18);color:#fff;padding:.95rem 2.1rem;border-radius:100px;font-size:.95rem;font-weight:500;text-decoration:none;transition:border-color .25s,background .25s;}
+.btn-outline:hover{border-color:var(--primary);background:rgba(0,217,192,0.06);}
+.hero-pills{display:flex;gap:1.6rem;flex-wrap:wrap;opacity:0;animation:up .9s .8s ease forwards;}
+.pill{display:flex;align-items:center;gap:.6rem;font-size:.84rem;color:rgba(255,255,255,0.55);}
+.pill-dot{width:7px;height:7px;border-radius:50%;background:var(--primary);box-shadow:0 0 10px var(--glow);}
+
+/* stats card */
+.stats-card{position:absolute;bottom:9%;right:5%;z-index:4;background:rgba(6,21,35,0.6);border:1px solid rgba(0,217,192,0.18);backdrop-filter:blur(24px);border-radius:18px;padding:1.8rem 2.6rem;display:flex;gap:2.8rem;opacity:0;animation:up .9s 1s ease forwards;box-shadow:0 24px 60px rgba(0,0,0,0.4);}
+.stat{text-align:center;position:relative;}
+.stat:not(:last-child)::after{content:'';position:absolute;right:-1.4rem;top:10%;height:80%;width:1px;background:rgba(255,255,255,0.1);}
+.stat-val{font-family:'Fraunces',serif;font-size:2.3rem;font-weight:500;color:var(--primary);line-height:1;}
+.stat-label{font-size:.74rem;color:rgba(255,255,255,0.45);margin-top:.4rem;}
+
+/* scroll cue */
+.scroll-cue{position:absolute;bottom:2rem;left:5%;z-index:4;display:flex;align-items:center;gap:.6rem;font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,0.3);opacity:0;animation:up .9s 1.3s ease forwards;}
+.scroll-cue .line{width:40px;height:1px;background:rgba(255,255,255,0.2);position:relative;overflow:hidden;}
+.scroll-cue .line::after{content:'';position:absolute;left:-40px;top:0;width:40px;height:1px;background:var(--primary);animation:slide 2s ease-in-out infinite;}
+@keyframes slide{0%{left:-40px;}100%{left:40px;}}
+
+/* ── EXPERTISE STRIP ── */
+.strip{background:rgba(255,255,255,0.015);border-top:1px solid rgba(255,255,255,0.05);border-bottom:1px solid rgba(255,255,255,0.05);padding:1.8rem 5%;display:flex;align-items:center;gap:3rem;flex-wrap:wrap;}
+.strip-label{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,0.25);white-space:nowrap;}
+.strip-items{display:flex;gap:2.8rem;align-items:center;flex-wrap:wrap;flex:1;}
+.strip-item{font-size:.88rem;font-weight:600;color:rgba(255,255,255,0.3);letter-spacing:.03em;transition:color .25s;}
+.strip-item:hover{color:var(--primary);}
+
+/* ── SECTIONS ── */
+section{padding:7rem 5%;position:relative;}
+.s-eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.74rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--primary);margin-bottom:1.2rem;}
+.s-eyebrow::before{content:'';width:28px;height:1px;background:var(--primary);}
+.s-title{font-family:'Fraunces',serif;font-size:clamp(2.2rem,3.4vw,3.2rem);font-weight:500;letter-spacing:-0.02em;line-height:1.1;margin-bottom:1rem;}
+.s-title .it{font-style:italic;color:var(--primary);}
+.s-sub{color:rgba(255,255,255,0.5);font-size:1.02rem;max-width:520px;line-height:1.7;}
+
+/* services */
+#leistungen{background:var(--dark2);}
+.svc-header{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:end;margin-bottom:4rem;}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.05);border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,0.05);}
+.svc{background:var(--dark2);padding:3rem 2.5rem;position:relative;overflow:hidden;transition:background .35s;}
+.svc::before{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:radial-gradient(circle at 50% 0%,rgba(0,217,192,0.06),transparent 70%);opacity:0;transition:opacity .35s;}
+.svc:hover{background:rgba(0,217,192,0.03);}
+.svc:hover::before{opacity:1;}
+.svc-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.8rem;}
+.svc-num{font-family:'Fraunces',serif;font-size:1.1rem;color:var(--primary);font-style:italic;}
+.svc-icon{width:54px;height:54px;border-radius:14px;background:linear-gradient(135deg,var(--secondary),var(--primary));display:flex;align-items:center;justify-content:center;font-size:1.5rem;box-shadow:0 8px 24px rgba(0,217,192,0.2);}
+.svc h3{font-size:1.3rem;font-weight:700;margin-bottom:.8rem;}
+.svc p{color:rgba(255,255,255,0.46);font-size:.92rem;line-height:1.65;margin-bottom:1.6rem;}
+.svc-price{font-size:.82rem;font-weight:600;color:var(--primary);padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.07);}
+
+/* about */
+#ueber-mich{background:var(--dark);display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;}
+.about-panel{position:relative;background:linear-gradient(160deg,rgba(27,139,158,0.08),rgba(255,255,255,0.02));border:1px solid rgba(255,255,255,0.08);border-radius:24px;padding:3.5rem;overflow:hidden;}
+.about-panel::before{content:'';position:absolute;top:-50px;right:-50px;width:200px;height:200px;background:radial-gradient(circle,rgba(0,217,192,0.15),transparent 70%);}
+.about-avatar{width:68px;height:68px;border-radius:50%;background:linear-gradient(135deg,var(--secondary),var(--primary));display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-size:1.7rem;font-weight:600;color:var(--navy);margin-bottom:1.6rem;box-shadow:0 10px 30px rgba(0,217,192,0.25);}
+.cert-pill{display:inline-flex;align-items:center;gap:.5rem;background:rgba(0,217,192,0.08);border:1px solid rgba(0,217,192,0.2);color:var(--primary);font-size:.8rem;font-weight:600;padding:.5rem 1rem;border-radius:100px;margin-bottom:1.8rem;}
+.about-quote{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:400;font-style:italic;line-height:1.4;color:#fff;margin-bottom:2rem;position:relative;z-index:1;}
+.about-quote .hl{color:var(--primary);}
+.tags{display:flex;flex-wrap:wrap;gap:.5rem;}
+.tag{font-size:.74rem;background:rgba(27,139,158,0.14);color:rgba(255,255,255,0.55);padding:.35rem .8rem;border-radius:100px;border:1px solid rgba(255,255,255,0.05);}
+.exp{display:flex;flex-direction:column;gap:.9rem;margin-top:2rem;}
+.exp-item{display:flex;align-items:center;gap:.85rem;font-size:.94rem;color:rgba(255,255,255,0.62);}
+.exp-item .d{width:6px;height:6px;border-radius:50%;background:var(--primary);box-shadow:0 0 8px var(--glow);flex-shrink:0;}
+
+/* contact */
+#kontakt{background:var(--dark2);display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start;}
+.contact-info{display:flex;flex-direction:column;gap:1.2rem;margin-top:2rem;}
+.contact-item{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:1.5rem 1.8rem;transition:border-color .25s;}
+.contact-item:hover{border-color:rgba(0,217,192,0.25);}
+.ci-label{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:.4rem;}
+.contact-item a{color:var(--primary);text-decoration:none;font-weight:600;font-size:1.05rem;}
+.contact-item a:hover{text-decoration:underline;}
+.perks{display:flex;flex-direction:column;gap:.8rem;margin-top:.6rem;}
+.perk{display:flex;align-items:center;gap:.7rem;font-size:.9rem;color:rgba(255,255,255,0.5);}
+.perk::before{content:'✓';color:var(--primary);font-weight:700;}
+.form{display:flex;flex-direction:column;gap:1rem;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:20px;padding:2.5rem;}
+.inp{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:.95rem 1.2rem;font-family:'Outfit',sans-serif;font-size:.95rem;color:#fff;outline:none;transition:border-color .25s,background .25s;width:100%;}
+.inp::placeholder{color:rgba(255,255,255,0.3);}
+.inp:focus{border-color:var(--primary);background:rgba(0,217,192,0.04);}
+textarea.inp{resize:vertical;min-height:130px;}
+.btn-submit{background:var(--primary);color:var(--navy);padding:1rem;border-radius:100px;font-family:'Outfit',sans-serif;font-size:1rem;font-weight:700;border:none;cursor:pointer;transition:transform .25s,box-shadow .25s;}
+.btn-submit:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(0,217,192,0.35);}
+
+/* footer */
+footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.05);padding:2.5rem 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.footer-copy{font-size:.8rem;color:rgba(255,255,255,0.25);}
+.footer-links{display:flex;gap:2rem;}
+.footer-links a{font-size:.8rem;color:rgba(255,255,255,0.3);text-decoration:none;transition:color .25s;}
+.footer-links a:hover{color:var(--primary);}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.visible{opacity:1;transform:none;}
+
+@media(max-width:900px){
+  nav{padding:0 1.5rem;}
+  .nav-links{display:none;}
+  .hero-bridge{display:none;}
+  .stats-card{position:static;margin:2rem 0 3rem;flex-wrap:wrap;gap:2rem 2.8rem;}
+  .scroll-cue{display:none;}
+  .hero-content{padding:3rem 0 0;}
+  section{padding:4.5rem 1.5rem;}
+  .svc-header{grid-template-columns:1fr;}
+  .svc-grid{grid-template-columns:1fr;}
+  #ueber-mich,#kontakt{grid-template-columns:1fr;gap:3rem;}
+  .about-panel{padding:2.5rem;}
+  footer{flex-direction:column;text-align:center;}
+  .strip{flex-direction:column;gap:1.2rem;align-items:flex-start;}
+}
+</style>
 </head>
+<body>
 
-<body class="bg-[#071A21] text-white">
+<nav id="nav">
+  <a href="#" class="nav-logo">
+    <svg viewBox="0 0 2200 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M140 430 Q420 180 700 430 L700 520 L140 520 Z" fill="white"/>
+      <circle cx="200" cy="250" r="34" fill="white"/><circle cx="420" cy="170" r="38" fill="white"/><circle cx="640" cy="250" r="34" fill="white"/>
+      <text x="820" y="475" font-family="Outfit,Arial,sans-serif" font-size="180" font-weight="700" letter-spacing="-4" fill="white">bridge </text>
+      <text x="1560" y="475" font-family="Outfit,Arial,sans-serif" font-size="180" font-style="italic" font-weight="700" letter-spacing="-4" fill="#00D9C0">to</text>
+      <text x="1770" y="475" font-family="Outfit,Arial,sans-serif" font-size="180" font-weight="700" letter-spacing="-4" fill="white"> ai</text>
+    </svg>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#leistungen">Leistungen</a></li>
+    <li><a href="#ueber-mich">Über mich</a></li>
+    <li><a href="#kontakt">Kontakt</a></li>
+  </ul>
+  <a href="#kontakt" class="btn-cta">Erstgespräch →</a>
+</nav>
 
-  <!-- Skip-Link für Barrierefreiheit【7†L248-L252】 -->
-  <a href="#maincontent" class="sr-only focus:not-sr-only">Zum Inhalt springen</a>
+<section class="hero">
+  <div class="hero-atmos"></div>
+  <div class="hero-gridlines"></div>
+  <div class="hero-glow"></div>
 
-  <!-- Header mit Navigation -->
-  <header class="fixed top-0 w-full z-50 px-6 py-4 flex justify-between items-center bg-[#071A21]/80 backdrop-blur">
-    <!-- Logo / Brand -->
-    <div class="flex items-center gap-3">
-      <!-- Platzhalter-Logo (kann durch ein echtes SVG ersetzt werden) -->
-      <div class="w-8 h-8 bg-gradient-to-r from-gray-400 to-emerald-400 rounded-full"></div>
-      <span class="font-semibold">BridgeToKI</span>
+  <!-- Signature bridge: same arch + 3 nodes as the logo, scaled across the hero -->
+  <svg class="hero-bridge" viewBox="0 0 1000 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="archGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#0A2540"/>
+        <stop offset="45%" stop-color="#1B8B9E"/>
+        <stop offset="100%" stop-color="#00D9C0"/>
+      </linearGradient>
+      <radialGradient id="nodeGlow" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#00D9C0" stop-opacity="0.6"/>
+        <stop offset="100%" stop-color="#00D9C0" stop-opacity="0"/>
+      </radialGradient>
+      <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur stdDeviation="6" result="b"/>
+        <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+    </defs>
+
+    <!-- main arch — identical curve language to the logo (quadratic) -->
+    <path class="bridge-arch" filter="url(#soft)" d="M60 560 Q500 80 940 560"/>
+    <path class="bridge-arch-2" d="M60 600 Q500 160 940 600"/>
+
+    <!-- bridge deck -->
+    <path class="bridge-deck" d="M40 600 L960 600"/>
+
+    <!-- suspension cables from arch down to deck -->
+    <line class="cable" x1="240" y1="320" x2="240" y2="600"/>
+    <line class="cable" x1="350" y1="225" x2="350" y2="600"/>
+    <line class="cable" x1="500" y1="178" x2="500" y2="600"/>
+    <line class="cable" x1="650" y1="225" x2="650" y2="600"/>
+    <line class="cable" x1="760" y1="320" x2="760" y2="600"/>
+
+    <!-- the three logo nodes, glowing -->
+    <g class="node node-1">
+      <circle cx="240" cy="320" r="40" fill="url(#nodeGlow)"/>
+      <circle cx="240" cy="320" r="13" fill="#0A2540"/>
+      <circle class="node-core" cx="240" cy="320" r="6" fill="#00D9C0"/>
+    </g>
+    <g class="node node-2">
+      <circle cx="500" cy="178" r="48" fill="url(#nodeGlow)"/>
+      <circle cx="500" cy="178" r="15" fill="#1B8B9E"/>
+      <circle class="node-core" cx="500" cy="178" r="7" fill="#00D9C0"/>
+    </g>
+    <g class="node node-3">
+      <circle cx="760" cy="320" r="40" fill="url(#nodeGlow)"/>
+      <circle cx="760" cy="320" r="13" fill="#00D9C0"/>
+      <circle class="node-core" cx="760" cy="320" r="6" fill="#fff"/>
+    </g>
+  </svg>
+
+  <div class="hero-content">
+    <span class="hero-eyebrow">KI-Transformation · Echter Impact</span>
+    <h1 class="hero-title">Technologie verbinden.<br/><span class="it">Transformation</span> gestalten.</h1>
+    <p class="hero-sub">Ich begleite Unternehmen und Einzelpersonen dabei, KI praktisch und gewinnbringend einzusetzen – persönlich, praxisnah, auf Deutsch.</p>
+    <div class="hero-btns">
+      <a href="#kontakt" class="btn-primary">Erstgespräch <span class="arr">→</span></a>
+      <a href="#leistungen" class="btn-outline">Leistungen ansehen</a>
     </div>
-    <!-- Navigation (einzelnes <nav>, Label optional【47†L48-L57】) -->
-    <nav aria-label="Hauptnavigation" class="hidden md:flex gap-8 text-gray-300">
-      <a href="#services" class="hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-400">
-        Leistungen
-      </a>
-      <a href="#about" class="hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-400">
-        Über mich
-      </a>
-      <a href="#contact" class="hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-400">
-        Kontakt
-      </a>
-    </nav>
-    <!-- Call-to-Action Button -->
-    <a href="#contact" class="bg-emerald-400 text-black px-4 py-2 rounded-lg hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-400">
-      Kontakt aufnehmen
-    </a>
-  </header>
+    <div class="hero-pills">
+      <div class="pill"><span class="pill-dot"></span>1:1 Beratung</div>
+      <div class="pill"><span class="pill-dot"></span>Workshops</div>
+      <div class="pill"><span class="pill-dot"></span>Online-Kurse</div>
+    </div>
+  </div>
 
-  <main id="maincontent" class="mt-16">
-    <!-- HERO -->
-    <section class="relative h-screen flex items-center px-6 lg:px-20">
-      <!-- Hintergrundbild -->
-      <img src="bridge.jpg" alt="" class="absolute inset-0 w-full h-full object-cover opacity-50" loading="eager">
-      <!-- Gradient-Overlay -->
-      <div class="absolute inset-0 bg-gradient-to-r from-[#071A21] via-[#071A21]/90 to-transparent"></div>
-      <!-- Hero-Text -->
-      <div class="relative z-10 max-w-2xl">
-        <p class="text-sm text-emerald-400 mb-2">KI-TRANSFORMATION</p>
-        <h1 class="text-4xl lg:text-6xl font-bold mb-4 leading-tight">
-          Technologie verbinden.<br>
-          Transformation gestalten.
-        </h1>
-        <p class="text-gray-300 mb-6">
-          Wir unterstützen Unternehmen, aus Daten, Systemen und KI messbare Geschäftserfolge zu erzielen.
-        </p>
-        <div class="flex gap-4">
-          <a href="#contact" class="bg-emerald-400 text-black px-6 py-3 rounded-lg font-medium hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-400">
-            Loslegen
-          </a>
-          <a href="#services" class="border border-gray-600 px-6 py-3 rounded-lg font-medium hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400">
-            Mehr erfahren
-          </a>
-        </div>
+  <div class="stats-card">
+    <div class="stat"><div class="stat-val">85%</div><div class="stat-label">Mittelstand ohne KI</div></div>
+    <div class="stat"><div class="stat-val">+34%</div><div class="stat-label">Markt p.a.</div></div>
+    <div class="stat"><div class="stat-val">3,5M</div><div class="stat-label">Betriebe in DE</div></div>
+  </div>
+
+  <div class="scroll-cue"><span class="line"></span>Scrollen</div>
+</section>
+
+<div class="strip">
+  <span class="strip-label">Expertise in</span>
+  <div class="strip-items">
+    <span class="strip-item">Salesforce</span>
+    <span class="strip-item">MS Copilot</span>
+    <span class="strip-item">ChatGPT</span>
+    <span class="strip-item">TÜV Rheinland</span>
+    <span class="strip-item">LLM-Workflows</span>
+    <span class="strip-item">Change Management</span>
+  </div>
+</div>
+
+<section id="leistungen">
+  <div class="svc-header reveal">
+    <div>
+      <span class="s-eyebrow">Leistungen</span>
+      <h2 class="s-title">Was ich <span class="it">für Sie</span> tue</h2>
+    </div>
+    <p class="s-sub">Vom schnellen Einstieg bis zur strategischen KI-Transformation – drei Säulen, ein Ziel.</p>
+  </div>
+  <div class="svc-grid">
+    <div class="svc reveal">
+      <div class="svc-top"><div class="svc-icon">🎯</div><span class="svc-num">01</span></div>
+      <h3>1:1 Beratung</h3>
+      <p>Strategische KI-Beratung, Unternehmensaudits und monatliche Retainer – direkt und persönlich auf Ihre Situation zugeschnitten.</p>
+      <div class="svc-price">Ab 250 EUR · Erstgespräch kostenlos</div>
+    </div>
+    <div class="svc reveal">
+      <div class="svc-top"><div class="svc-icon">🧠</div><span class="svc-num">02</span></div>
+      <h3>Workshops & Trainings</h3>
+      <p>KI-Basics, ChatGPT für Unternehmen, KI-Strategie Intensiv – als Halbtags-, Ganztagesworkshop oder Inhouse-Training für Ihr Team.</p>
+      <div class="svc-price">Ab 199 EUR p.P. · Inhouse ab 2.500 EUR</div>
+    </div>
+    <div class="svc reveal">
+      <div class="svc-top"><div class="svc-icon">🎓</div><span class="svc-num">03</span></div>
+      <h3>Online-Kurse</h3>
+      <p>Lernen Sie in Ihrem Tempo – vom KI-Starter-Kurs bis zum 8-Wochen-Mastery-Programm mit exklusiver Community.</p>
+      <div class="svc-price">Ab 197 EUR · Community 97 EUR/Mo.</div>
+    </div>
+  </div>
+</section>
+
+<section id="ueber-mich">
+  <div class="reveal">
+    <span class="s-eyebrow">Über mich</span>
+    <h2 class="s-title">Warum <span class="it">Julia Pakravan</span>?</h2>
+    <p class="s-sub" style="margin-top:1rem;">Mit über 15 Jahren Erfahrung in Sales Operations und digitaler Transformation bringe ich KI-Kompetenz aus der echten Unternehmenswelt. Kein Tech-Jargon – sondern Lösungen, die sofort wirken.</p>
+    <div class="exp">
+      <div class="exp-item"><span class="d"></span>KI-Strategie & Implementierung für den Mittelstand</div>
+      <div class="exp-item"><span class="d"></span>Change Management & agile Führung</div>
+      <div class="exp-item"><span class="d"></span>CRM-Systeme (Salesforce) & LLM-Workflows</div>
+      <div class="exp-item"><span class="d"></span>MS Copilot & führende KI-Tools</div>
+      <div class="exp-item"><span class="d"></span>Director Kids & Teens bei Berlitz Deutschland</div>
+    </div>
+  </div>
+  <div class="about-panel reveal">
+    <div class="about-avatar">JP</div>
+    <span class="cert-pill">✓ AI Manager Zertifizierung · TÜV Rheinland 2026</span>
+    <p class="about-quote">„KI entmystifizieren und praxisnah anwendbar machen – <span class="hl">für jeden.</span>"</p>
+    <div class="tags">
+      <span class="tag">KI-Strategie</span><span class="tag">Salesforce</span><span class="tag">LLM-Workflows</span>
+      <span class="tag">Change Management</span><span class="tag">MS Copilot</span><span class="tag">15+ Jahre Erfahrung</span>
+    </div>
+  </div>
+</section>
+
+<section id="kontakt">
+  <div class="reveal">
+    <span class="s-eyebrow">Jetzt starten</span>
+    <h2 class="s-title">Kostenloses <span class="it">Erstgespräch</span></h2>
+    <p class="s-sub" style="margin-top:1rem;">30 Minuten. Kein Druck. Wir schauen gemeinsam, wie KI in Ihrem Alltag echten Mehrwert schafft.</p>
+    <div class="contact-info">
+      <div class="contact-item">
+        <div class="ci-label">E-Mail</div>
+        <a href="mailto:julia@bridgetoai.de">julia@bridgetoai.de</a>
       </div>
-    </section>
-
-    <!-- GLASSMORPHISM-Statistikkarte -->
-    <section id="stats" class="py-20 px-6 lg:px-20">
-      <div class="mx-auto max-w-md bg-white/10 backdrop-blur-lg rounded-xl p-6 text-center">
-        <div class="text-4xl font-bold text-emerald-400">150+</div>
-        <div class="mt-1 text-gray-400">Projekte</div>
-        <div class="mt-4 text-4xl font-bold text-emerald-400">25+</div>
-        <div class="mt-1 text-gray-400">Branchen</div>
-        <div class="mt-4 text-4xl font-bold text-emerald-400">98%</div>
-        <div class="mt-1 text-gray-400">Kundenzufriedenheit</div>
+      <div class="perks">
+        <div class="perk">Kostenlos & unverbindlich</div>
+        <div class="perk">Persönlich mit Julia Pakravan</div>
+        <div class="perk">Rückmeldung innerhalb 48h</div>
+        <div class="perk">Auf Deutsch</div>
       </div>
-    </section>
+    </div>
+  </div>
+  <form class="form reveal" action="https://formspree.io/f/IHRE-FORM-ID" method="POST">
+    <input class="inp" type="text" name="name" placeholder="Ihr Name" required/>
+    <input class="inp" type="email" name="email" placeholder="Ihre E-Mail-Adresse" required/>
+    <input class="inp" type="text" name="company" placeholder="Unternehmen (optional)"/>
+    <textarea class="inp" name="message" placeholder="Wie kann ich Ihnen helfen?" required></textarea>
+    <button class="btn-submit" type="submit">Nachricht senden →</button>
+  </form>
+</section>
 
-    <!-- LEISTUNGEN -->
-    <section id="services" class="py-20 px-6 lg:px-20">
-      <h2 class="text-3xl mb-8">Leistungen</h2>
-      <div class="grid gap-8 md:grid-cols-3">
-        <div class="bg-white/5 p-6 rounded-xl">
-          <h3 class="text-xl mb-2 text-emerald-400">Strategie &amp; Beratung</h3>
-          <p class="text-gray-400">Definition Ihrer KI-Roadmap und Transformationsstrategie.</p>
-        </div>
-        <div class="bg-white/5 p-6 rounded-xl">
-          <h3 class="text-xl mb-2 text-emerald-400">Daten- &amp; KI-Lösungen</h3>
-          <p class="text-gray-400">Entwicklung skalierbarer Daten- und KI-Systeme.</p>
-        </div>
-        <div class="bg-white/5 p-6 rounded-xl">
-          <h3 class="text-xl mb-2 text-emerald-400">Umsetzung &amp; Coaching</h3>
-          <p class="text-gray-400">Implementierung und Begleitung bis zum messbaren Erfolg.</p>
-        </div>
-      </div>
-    </section>
+<footer>
+  <svg viewBox="0 0 2200 700" style="height:26px;width:auto;" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M140 430 Q420 180 700 430 L700 520 L140 520 Z" fill="white"/>
+    <circle cx="200" cy="250" r="34" fill="white"/><circle cx="420" cy="170" r="38" fill="white"/><circle cx="640" cy="250" r="34" fill="white"/>
+    <text x="820" y="475" font-family="Outfit,Arial,sans-serif" font-size="180" font-weight="700" letter-spacing="-4" fill="white">bridge </text>
+    <text x="1560" y="475" font-family="Outfit,Arial,sans-serif" font-size="180" font-style="italic" font-weight="700" letter-spacing="-4" fill="#00D9C0">to</text>
+    <text x="1770" y="475" font-family="Outfit,Arial,sans-serif" font-size="180" font-weight="700" letter-spacing="-4" fill="white"> ai</text>
+  </svg>
+  <span class="footer-copy">© 2025 Julia Pakravan · bridgetoai.de</span>
+  <div class="footer-links">
+    <a href="mailto:julia@bridgetoai.de">Kontakt</a>
+    <a href="#">Impressum</a>
+    <a href="#">Datenschutz</a>
+  </div>
+</footer>
 
-    <!-- ÜBER MICH -->
-    <section id="about" class="py-20 px-6 lg:px-20">
-      <div class="grid md:grid-cols-2 gap-12 items-center">
-        <img src="julia.jpeg" alt="Portrait von Julia Schmitt, Gründerin von BridgeToKI" class="rounded-xl w-full max-w-sm mx-auto">
-        <div>
-          <h2 class="text-3xl mb-6">Über mich</h2>
-          <p class="text-gray-300 mb-4">
-            Ich helfe Unternehmen dabei, die Lücke zwischen Technologie und Geschäft zu schließen.
-            Mein Fokus liegt auf echter Transformation durch konkrete Ergebnisse statt nur Ideen.
-          </p>
-          <p class="text-gray-400">
-            Ich arbeite deutschlandweit mit Unternehmen verschiedenster Branchen zusammen.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- KONTAKT -->
-    <section id="contact" class="py-20 px-6 lg:px-20 bg-[#0B2530]">
-      <h2 class="text-3xl mb-6">Kontakt</h2>
-      <p class="text-gray-300 mb-6">Lassen Sie uns über Ihr Vorhaben sprechen.</p>
-      <div class="max-w-lg">
-        <div class="bg-white/5 p-4 rounded-xl mb-6">
-          <p class="text-gray-400 mb-1">E-Mail</p>
-          <a href="mailto:julia@bridgetoki.de" class="text-emerald-400 underline">
-            julia@bridgetoki.de
-          </a>
-        </div>
-        <form action="#" method="POST" class="flex flex-col gap-4">
-          <input type="text" name="name" placeholder="Ihr Name" required class="bg-white/10 rounded-lg px-4 py-2 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-400">
-          <input type="email" name="email" placeholder="Ihre E-Mail" required class="bg-white/10 rounded-lg px-4 py-2 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-400">
-          <textarea name="message" rows="4" placeholder="Ihre Nachricht" required class="bg-white/10 rounded-lg px-4 py-2 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-400"></textarea>
-          <button type="submit" class="bg-emerald-400 text-black py-2 rounded-lg font-medium hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-emerald-400">
-            Absenden
-          </button>
-        </form>
-      </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="py-8 text-center text-gray-500">
-      &copy; 2026 BridgeToKI. Alle Rechte vorbehalten.
-    </footer>
-  </main>
+<script>
+  const nav=document.getElementById('nav');
+  window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>40);});
+  const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.12});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
 </body>
 </html>
