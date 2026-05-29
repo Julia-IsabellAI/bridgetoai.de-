@@ -1,748 +1,108 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>bridge to ai – KI-Beratung & Bildung für KMUs</title>
-  <meta name="description" content="KI-Beratung, Workshops & Online-Kurse für KMUs und Einzelpersonen. Julia Pakravan hilft Ihnen, KI praktisch und gewinnbringend einzusetzen."/>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgICA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMEEyNTQwIi8+CiAgICA8ZGVmcz4KICAgICAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjAlIj4KICAgICAgICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzBBMjU0MCIvPgogICAgICAgICAgICA8c3RvcCBvZmZzZXQ9IjU1JSIgc3RvcC1jb2xvcj0iIzFCOEI5RSIvPgogICAgICAgICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMEQ5QzAiLz4KICAgICAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPC9kZWZzPgogICAgCiAgICAgICAgPHBhdGggZD0iTTEyMCAzMjAgUTI1NiAxNjAgMzkyIDMyMCBMMzkyIDM3MCBMMTIwIDM3MCBaIiBmaWxsPSJ1cmwoI2dyYWQpIi8+CiAgICAgICAgPGNpcmNsZSBjeD0iMjU2IiBjeT0iMTQ1IiByPSIzNCIgZmlsbD0iIzAwRDlDMCIvPgogICAgICAgIDwvc3ZnPg=="/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Julia Pakravan • Bridge to AI</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <style>
-    :root {
-      --primary:    #00D9C0;
-      --secondary:  #1B8B9E;
-      --navy:       #0A2540;
-      --dark-gray:  #1F2A44;
-      --light-gray: #F8F9FB;
-      --white:      #FFFFFF;
-      --soft-bg:    #F4F5F7;
-      --text-muted: #6B7A99;
-    }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Space Grotesk', sans-serif;
-      background: var(--light-gray);
-      color: var(--navy);
-      font-size: 16px;
-      line-height: 1.65;
-      overflow-x: hidden;
-    }
-
-    /* ── NAV ── */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 0 5%;
-      height: 72px;
-      background: rgba(10,37,64,0.96);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(0,217,192,0.12);
-    }
-
-    .nav-logo { display: flex; align-items: center; text-decoration: none; }
-    .nav-logo svg { height: 32px; width: auto; }
-
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a {
-      text-decoration: none; color: rgba(255,255,255,0.65);
-      font-size: 0.875rem; font-weight: 500; letter-spacing: 0.02em;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--primary); }
-
-    .btn-nav {
-      background: var(--primary); color: var(--navy) !important;
-      padding: 0.5rem 1.4rem; border-radius: 6px;
-      font-weight: 600 !important; font-size: 0.875rem !important;
-      transition: opacity 0.2s, transform 0.2s !important;
-    }
-    .btn-nav:hover { opacity: 0.88; transform: translateY(-1px); }
-
-    /* ── HERO ── */
-    .hero {
-      background: var(--navy);
-      min-height: 100vh;
-      padding: 72px 5% 0;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* grid lines background */
-    .hero::before {
-      content: '';
-      position: absolute; inset: 0;
-      background-image:
-        linear-gradient(rgba(0,217,192,0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0,217,192,0.04) 1px, transparent 1px);
-      background-size: 60px 60px;
-      pointer-events: none;
-    }
-
-    .hero::after {
-      content: '';
-      position: absolute;
-      top: -200px; right: -200px;
-      width: 700px; height: 700px;
-      background: radial-gradient(circle, rgba(0,217,192,0.12) 0%, transparent 65%);
-      pointer-events: none;
-    }
-
-    .hero-content { position: relative; z-index: 1; padding: 5rem 0; }
-
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      background: rgba(0,217,192,0.1);
-      border: 1px solid rgba(0,217,192,0.25);
-      color: var(--primary);
-      font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 0.4rem 1rem; border-radius: 100px;
-      margin-bottom: 2rem;
-    }
-    .hero-badge::before { content: '●'; font-size: 0.5rem; animation: pulse 2s infinite; }
-    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
-
-    .hero-title {
-      font-family: 'Syne', sans-serif;
-      font-size: clamp(2.6rem, 4.5vw, 4rem);
-      font-weight: 800;
-      line-height: 1.08;
-      letter-spacing: -0.03em;
-      color: var(--white);
-      margin-bottom: 1.5rem;
-    }
-
-    .hero-title .accent { color: var(--primary); }
-    .hero-title .accent2 {
-      background: linear-gradient(90deg, #1B8B9E, #00D9C0);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .hero-sub {
-      font-size: 1.05rem; color: rgba(255,255,255,0.6);
-      max-width: 480px; margin-bottom: 2.5rem; font-weight: 300;
-    }
-
-    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3.5rem; }
-
-    .btn-primary {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      background: var(--primary); color: var(--navy);
-      padding: 0.85rem 2rem; border-radius: 8px;
-      font-size: 0.95rem; font-weight: 600;
-      text-decoration: none;
-      transition: transform 0.2s, box-shadow 0.2s;
-      box-shadow: 0 0 0 0 rgba(0,217,192,0.4);
-    }
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(0,217,192,0.35);
-    }
-
-    .btn-ghost {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      border: 1.5px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.8);
-      padding: 0.85rem 2rem; border-radius: 8px;
-      font-size: 0.95rem; font-weight: 500;
-      text-decoration: none;
-      transition: border-color 0.2s, color 0.2s;
-    }
-    .btn-ghost:hover { border-color: var(--primary); color: var(--primary); }
-
-    .hero-stats {
-      display: flex; gap: 2.5rem;
-      padding-top: 2rem;
-      border-top: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .stat-val {
-      font-family: 'Syne', sans-serif;
-      font-size: 1.75rem; font-weight: 800;
-      color: var(--primary); line-height: 1;
-    }
-    .stat-txt { font-size: 0.75rem; color: rgba(255,255,255,0.4); margin-top: 0.2rem; letter-spacing: 0.04em; }
-
-    /* hero right – visual panel */
-    .hero-visual {
-      position: relative; z-index: 1;
-      display: flex; flex-direction: column; gap: 1rem;
-      padding: 5rem 0;
-    }
-
-    .glass-card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 12px;
-      padding: 1.5rem 2rem;
-      transition: border-color 0.3s;
-    }
-    .glass-card:hover { border-color: rgba(0,217,192,0.25); }
-
-    .glass-card-header {
-      display: flex; align-items: center; gap: 0.75rem;
-      margin-bottom: 0.75rem;
-    }
-    .card-dot {
-      width: 8px; height: 8px; border-radius: 50%;
-    }
-    .dot-green { background: var(--primary); }
-    .dot-blue  { background: var(--secondary); }
-    .dot-navy  { background: rgba(255,255,255,0.3); }
-
-    .glass-card h4 { font-size: 0.85rem; font-weight: 600; color: var(--white); }
-    .glass-card p  { font-size: 0.8rem; color: rgba(255,255,255,0.45); }
-
-    .card-price {
-      font-size: 1.3rem; font-weight: 700; color: var(--primary);
-      font-family: 'Syne', sans-serif;
-    }
-
-    .card-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.6rem; }
-    .ctag {
-      font-size: 0.72rem; font-weight: 500;
-      background: rgba(0,217,192,0.1); color: var(--primary);
-      padding: 0.2rem 0.6rem; border-radius: 4px;
-    }
-
-    /* ── SECTION SHARED ── */
-    section { padding: 6rem 5%; }
-
-    .s-eyebrow {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em;
-      text-transform: uppercase; color: var(--secondary);
-      margin-bottom: 1rem;
-    }
-
-    .s-title {
-      font-family: 'Syne', sans-serif;
-      font-size: clamp(1.9rem, 3vw, 2.8rem);
-      font-weight: 800; letter-spacing: -0.03em;
-      color: var(--navy); line-height: 1.12;
-    }
-
-    /* ── SERVICES ── */
-    #angebote { background: var(--white); }
-
-    .angebote-intro {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 2rem; align-items: end; margin-bottom: 4rem;
-    }
-    .angebote-intro p { color: var(--text-muted); font-size: 1rem; }
-
-    .services-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
-    }
-
-    .service-card {
-      background: var(--light-gray);
-      border: 1px solid transparent;
-      border-radius: 12px;
-      padding: 2.5rem 2rem;
-      position: relative; overflow: hidden;
-      transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
-    }
-    .service-card::before {
-      content: '';
-      position: absolute; top: 0; left: 0; right: 0; height: 3px;
-      background: linear-gradient(90deg, var(--secondary), var(--primary));
-      opacity: 0; transition: opacity 0.3s;
-    }
-    .service-card:hover {
-      border-color: rgba(0,217,192,0.25);
-      transform: translateY(-4px);
-      box-shadow: 0 16px 40px rgba(10,37,64,0.1);
-    }
-    .service-card:hover::before { opacity: 1; }
-
-    .service-num {
-      font-family: 'Syne', sans-serif;
-      font-size: 3.5rem; font-weight: 800;
-      color: rgba(10,37,64,0.06);
-      line-height: 1; margin-bottom: 1.5rem;
-      letter-spacing: -0.04em;
-    }
-
-    .service-icon {
-      width: 48px; height: 48px;
-      background: linear-gradient(135deg, var(--secondary), var(--primary));
-      border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.3rem;
-      margin-bottom: 1.2rem;
-    }
-
-    .service-card h3 {
-      font-family: 'Syne', sans-serif;
-      font-size: 1.2rem; font-weight: 700;
-      color: var(--navy); margin-bottom: 0.7rem;
-    }
-    .service-card p { color: var(--text-muted); font-size: 0.88rem; margin-bottom: 1.5rem; }
-
-    .service-price {
-      font-size: 0.82rem; font-weight: 600;
-      color: var(--secondary);
-      padding-top: 1.2rem;
-      border-top: 1px solid rgba(10,37,64,0.08);
-    }
-
-    /* ── ABOUT ── */
-    #ueber-mich {
-      background: var(--navy);
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 6rem; align-items: center;
-    }
-
-    #ueber-mich .s-title { color: var(--white); }
-    #ueber-mich .s-eyebrow { color: var(--primary); }
-
-    .about-body { color: rgba(255,255,255,0.55); font-size: 0.95rem; margin: 1.5rem 0 2rem; }
-
-    .expertise-list { display: flex; flex-direction: column; gap: 0.75rem; }
-    .expertise-item {
-      display: flex; align-items: center; gap: 0.85rem;
-      font-size: 0.9rem; color: rgba(255,255,255,0.7);
-    }
-    .expertise-item::before {
-      content: '';
-      width: 6px; height: 6px; border-radius: 50%;
-      background: var(--primary); flex-shrink: 0;
-    }
-
-    .about-visual-panel {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.07);
-      border-radius: 16px; padding: 3rem;
-    }
-
-    .profile-header {
-      display: flex; align-items: center; gap: 1.2rem;
-      margin-bottom: 2rem; padding-bottom: 2rem;
-      border-bottom: 1px solid rgba(255,255,255,0.07);
-    }
-
-    .profile-avatar {
-      width: 56px; height: 56px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--secondary), var(--primary));
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.4rem; font-weight: 700; color: var(--navy);
-      font-family: 'Syne', sans-serif; flex-shrink: 0;
-    }
-
-    .profile-name { font-weight: 700; color: var(--white); font-size: 1rem; }
-    .profile-role { font-size: 0.8rem; color: rgba(255,255,255,0.4); }
-
-    .cert-badge {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      background: rgba(0,217,192,0.1);
-      border: 1px solid rgba(0,217,192,0.2);
-      color: var(--primary); font-size: 0.78rem; font-weight: 600;
-      padding: 0.4rem 0.9rem; border-radius: 6px; margin-top: 0.6rem;
-    }
-
-    .about-quote {
-      font-family: 'Syne', sans-serif;
-      font-size: 1.15rem; font-weight: 700;
-      color: var(--white); line-height: 1.45;
-      margin-bottom: 1.5rem;
-    }
-    .about-quote span { color: var(--primary); }
-
-    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-    .skill-tag {
-      font-size: 0.75rem; font-weight: 500;
-      background: rgba(27,139,158,0.15);
-      color: rgba(255,255,255,0.6);
-      padding: 0.3rem 0.75rem; border-radius: 4px;
-    }
-
-    /* ── ZIELGRUPPEN ── */
-    #zielgruppen { background: var(--soft-bg); }
-
-    .ziel-header { margin-bottom: 3.5rem; }
-    .ziel-header p { color: var(--text-muted); margin-top: 1rem; max-width: 520px; }
-
-    .ziel-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
-
-    .ziel-card {
-      background: var(--white);
-      border-radius: 12px; padding: 2.5rem 2rem;
-      border: 1px solid transparent;
-      transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
-    }
-    .ziel-card:hover {
-      border-color: var(--primary);
-      box-shadow: 0 8px 32px rgba(0,217,192,0.1);
-      transform: translateY(-3px);
-    }
-
-    .ziel-icon-wrap {
-      width: 52px; height: 52px;
-      background: var(--light-gray); border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.4rem; margin-bottom: 1.3rem;
-    }
-
-    .ziel-card h3 {
-      font-family: 'Syne', sans-serif;
-      font-size: 1.1rem; font-weight: 700;
-      color: var(--navy); margin-bottom: 0.6rem;
-    }
-    .ziel-card p { color: var(--text-muted); font-size: 0.88rem; margin-bottom: 1.2rem; }
-
-    .ziel-budget {
-      display: inline-block;
-      background: rgba(0,217,192,0.08);
-      color: var(--secondary);
-      font-size: 0.78rem; font-weight: 600;
-      padding: 0.3rem 0.75rem; border-radius: 5px;
-      letter-spacing: 0.02em;
-    }
-
-    /* ── CTA ── */
-    #erstgespraech {
-      background: linear-gradient(135deg, var(--navy) 0%, #0d3460 100%);
-      position: relative; overflow: hidden; text-align: center;
-    }
-    #erstgespraech::before {
-      content: '';
-      position: absolute; top: -150px; left: 50%; transform: translateX(-50%);
-      width: 600px; height: 600px;
-      background: radial-gradient(circle, rgba(0,217,192,0.12) 0%, transparent 65%);
-      pointer-events: none;
-    }
-    #erstgespraech::after {
-      content: '';
-      position: absolute; inset: 0;
-      background-image:
-        linear-gradient(rgba(0,217,192,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0,217,192,0.03) 1px, transparent 1px);
-      background-size: 60px 60px;
-    }
-
-    .cta-inner { position: relative; z-index: 1; }
-
-    #erstgespraech .s-eyebrow { color: var(--primary); justify-content: center; }
-    #erstgespraech .s-title { color: var(--white); margin-bottom: 1rem; }
-    #erstgespraech p { color: rgba(255,255,255,0.55); max-width: 520px; margin: 0 auto 2.5rem; }
-
-    .cta-perks {
-      display: flex; justify-content: center; gap: 2rem;
-      flex-wrap: wrap; margin-top: 2rem;
-    }
-    .cta-perk {
-      display: flex; align-items: center; gap: 0.5rem;
-      font-size: 0.82rem; color: rgba(255,255,255,0.5);
-    }
-    .cta-perk-dot {
-      width: 6px; height: 6px; border-radius: 50%; background: var(--primary);
-    }
-
-    /* ── FOOTER ── */
-    footer {
-      background: #060f1c; padding: 2.5rem 5%;
-      display: flex; justify-content: space-between; align-items: center;
-      flex-wrap: wrap; gap: 1rem;
-    }
-    .footer-links { display: flex; gap: 1.8rem; }
-    .footer-links a {
-      color: rgba(255,255,255,0.3); text-decoration: none;
-      font-size: 0.8rem; transition: color 0.2s;
-    }
-    .footer-links a:hover { color: var(--primary); }
-    .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.25); }
-
-    /* ── FADE ANIMATIONS ── */
-    .fade-up {
-      opacity: 0; transform: translateY(24px);
-      transition: opacity 0.55s ease, transform 0.55s ease;
-    }
-    .fade-up.visible { opacity: 1; transform: none; }
-    .fade-up:nth-child(2) { transition-delay: 0.1s; }
-    .fade-up:nth-child(3) { transition-delay: 0.2s; }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 900px) {
-      nav { padding: 0 1.5rem; }
-      .nav-links { display: none; }
-      .hero { grid-template-columns: 1fr; min-height: auto; }
-      .hero-visual { display: none; }
-      .hero-content { padding: 4rem 0; }
-      section { padding: 4rem 1.5rem; }
-      .angebote-intro { grid-template-columns: 1fr; }
-      .services-grid { grid-template-columns: 1fr; }
-      #ueber-mich { grid-template-columns: 1fr; }
-      .ziel-grid { grid-template-columns: 1fr; }
-      footer { flex-direction: column; text-align: center; }
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    .hero-bg { background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%); }
+    .portrait {
+      border-radius: 9999px;
+      box-shadow: 0 25px 50px -12px rgb(37 99 235 / 0.25);
     }
   </style>
 </head>
-<body>
+<body class="bg-white text-slate-800">
 
-<!-- NAV -->
-<nav>
-  <a href="#" class="nav-logo">
-    <svg viewBox="0 0 2200 700" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="gNav" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stop-color="#0A2540"/>
-          <stop offset="55%" stop-color="#1B8B9E"/>
-          <stop offset="100%" stop-color="#00D9C0"/>
-        </linearGradient>
-      </defs>
-      <path d="M140 430 Q420 180 700 430 L700 520 L140 520 Z" fill="white"/>
-      <circle cx="200" cy="250" r="34" fill="white"/>
-      <circle cx="420" cy="170" r="38" fill="white"/>
-      <circle cx="640" cy="250" r="34" fill="white"/>
-      <text x="820" y="475" font-family="Arial, sans-serif" font-size="180" font-weight="500" letter-spacing="-4" fill="white">bridge </text>
-      <text x="1560" y="475" font-family="Arial, sans-serif" font-size="180" font-style="italic" font-weight="500" letter-spacing="-4" fill="#00D9C0">to</text>
-      <text x="1770" y="475" font-family="Arial, sans-serif" font-size="180" font-weight="500" letter-spacing="-4" fill="white"> ai</text>
-    </svg>
-  </a>
-  <ul class="nav-links">
-    <li><a href="#angebote">Angebote</a></li>
-    <li><a href="#ueber-mich">Über mich</a></li>
-    <li><a href="#zielgruppen">Für wen?</a></li>
-    <li><a href="#erstgespraech" class="btn-nav">Erstgespräch →</a></li>
-  </ul>
-</nav>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-content">
-    <span class="hero-badge">KI-Beratung & Bildung</span>
-    <h1 class="hero-title">
-      KI, die <span class="accent">wirklich</span><br/>
-      für Sie<br/>
-      <span class="accent2">funktioniert.</span>
-    </h1>
-    <p class="hero-sub">
-      Ich brücke die Lücke zwischen komplexer KI-Technologie
-      und dem Alltag Ihres Unternehmens – persönlich, praxisnah, auf Deutsch.
-    </p>
-    <div class="hero-actions">
-      <a href="#erstgespraech" class="btn-primary">Kostenloses Erstgespräch →</a>
-      <a href="#angebote" class="btn-ghost">Alle Angebote</a>
+  <!-- Navigation -->
+  <nav class="border-b">
+    <div class="max-w-5xl mx-auto px-6 py-5 flex justify-between items-center">
+      <h1 class="text-2xl font-semibold text-blue-600">Bridge to AI</h1>
+      <a href="#kontakt" class="bg-blue-600 text-white px-6 py-2.5 rounded-full hover:bg-blue-700 transition">Lass uns sprechen</a>
     </div>
-    <div class="hero-stats">
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero-bg py-20">
+    <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
       <div>
-        <div class="stat-val">85%</div>
-        <div class="stat-txt">KMUs noch ohne KI</div>
+        <h2 class="text-5xl font-bold leading-tight">
+          Hallo, ich bin Julia Pakravan.
+        </h2>
+        <p class="text-2xl text-slate-600 mt-4">
+          Ich helfe dir, KI wirklich zu verstehen und angstfrei für dein Leben und deine Arbeit zu nutzen.
+        </p>
+        <p class="mt-6 text-lg text-slate-600">
+          Mit 15 Jahren Führungserfahrung und als TÜV-zertifizierte AI-Managerin baue ich die Brücke zwischen Mensch und Künstlicher Intelligenz.
+        </p>
+        <div class="mt-8">
+          <a href="#kontakt" class="inline-block bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-blue-700 transition">
+            Schreib mir gerne →
+          </a>
+        </div>
       </div>
-      <div>
-        <div class="stat-val">+34%</div>
-        <div class="stat-txt">Marktwachstum p.a.</div>
-      </div>
-      <div>
-        <div class="stat-val">3,5M</div>
-        <div class="stat-txt">KMUs in Deutschland</div>
+      <div class="flex justify-center">
+        <img src="julia.jpg" 
+             alt="Julia Pakravan - Bridge to AI"
+             class="portrait w-full max-w-[340px] md:max-w-[420px]">
       </div>
     </div>
-  </div>
+  </section>
 
-  <div class="hero-visual">
-    <div class="glass-card">
-      <div class="glass-card-header">
-        <span class="card-dot dot-green"></span>
-        <h4>KI-Strategieberatung</h4>
-      </div>
-      <p class="card-price">250 EUR</p>
-      <p>60-min. Session · ~95% Marge</p>
-      <div class="card-tags">
-        <span class="ctag">Sofort starten</span>
-        <span class="ctag">1:1 persönlich</span>
+  <!-- Über mich -->
+  <section class="py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-semibold text-center mb-12">Meine Geschichte</h2>
+      <div class="prose prose-lg max-w-none text-slate-600 leading-relaxed">
+        <p>Nach vielen Jahren in Führungspositionen (zuletzt als Director bei Berlitz) habe ich hautnah erlebt, wie rasant sich unsere Arbeitswelt durch Künstliche Intelligenz verändert.</p>
+        <p>Ich habe gemerkt: Die meisten Menschen stehen KI entweder ängstlich oder übertrieben euphorisch gegenüber. Beides hilft nicht weiter.</p>
+        <p>Deshalb habe ich <strong>Bridge to AI</strong> gegründet. Mein Anliegen ist es, ganz normale Menschen und Unternehmen praxisnah, verständlich und mit Freude in diese neue Ära zu begleiten.</p>
       </div>
     </div>
-    <div class="glass-card">
-      <div class="glass-card-header">
-        <span class="card-dot dot-blue"></span>
-        <h4>Inhouse-Training</h4>
-      </div>
-      <p class="card-price">ab 2.500 EUR</p>
-      <p>Bis 20 Teilnehmer · Ihr Team</p>
-      <div class="card-tags">
-        <span class="ctag">Workshops</span>
-        <span class="ctag">Maßgeschneidert</span>
-      </div>
-    </div>
-    <div class="glass-card">
-      <div class="glass-card-header">
-        <span class="card-dot dot-navy"></span>
-        <h4>KI-Mastery Programm</h4>
-      </div>
-      <p class="card-price">497 EUR</p>
-      <p>8-Wochen-Kurs · Unbegrenzt skalierbar</p>
-      <div class="card-tags">
-        <span class="ctag">Online-Kurs</span>
-        <span class="ctag">Passives Einkommen</span>
+  </section>
+
+  <!-- Expertise -->
+  <section class="bg-slate-50 py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-semibold text-center mb-10">Was mich auszeichnet</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-2xl shadow-sm">
+          <h3 class="font-semibold text-xl">15+ Jahre Führungserfahrung</h3>
+          <p class="mt-3 text-slate-600">In Vertrieb, Teamführung und Unternehmensentwicklung – von Hotellerie über Events bis zur Bildungsbranche.</p>
+        </div>
+        <div class="bg-white p-8 rounded-2xl shadow-sm">
+          <h3 class="font-semibold text-xl">TÜV-zertifizierte AI Managerin</h3>
+          <p class="mt-3 text-slate-600">Tiefes technisches Verständnis kombiniert mit langjähriger Menschen- und Führungserfahrung.</p>
+        </div>
+        <div class="bg-white p-8 rounded-2xl shadow-sm">
+          <h3 class="font-semibold text-xl">Praxisnah &amp; verständlich</h3>
+          <p class="mt-3 text-slate-600">Ich übersetze komplexe KI-Themen so, dass du sie sofort verstehen und anwenden kannst – ohne Fachchinesisch.</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ANGEBOTE -->
-<section id="angebote">
-  <div class="angebote-intro fade-up">
-    <div>
-      <span class="s-eyebrow">— Leistungen</span>
-      <h2 class="s-title">Vier Wege,<br>wie ich helfe</h2>
-    </div>
-    <p>Vom schnellen 1:1-Gespräch bis zum skalierbaren Online-Kurs – mein 4-Säulen-Modell passt sich Ihrem Bedarf an.</p>
-  </div>
-  <div class="services-grid">
-    <div class="service-card fade-up">
-      <div class="service-num">01</div>
-      <div class="service-icon">🎯</div>
-      <h3>1:1 Beratung</h3>
-      <p>KI-Strategieberatung, Unternehmensaudits und monatliche Retainer – direkt und persönlich zugeschnitten auf Ihre Herausforderungen.</p>
-      <div class="service-price">Ab 250 EUR · Erstgespräch kostenlos</div>
-    </div>
-    <div class="service-card fade-up">
-      <div class="service-num">02</div>
-      <div class="service-icon">🧠</div>
-      <h3>Workshops & Trainings</h3>
-      <p>KI-Basics, ChatGPT für Unternehmen, KI-Strategie Intensiv – als Halbtagskurs, Ganztagesworkshop oder Inhouse-Training.</p>
-      <div class="service-price">Ab 199 EUR p.P. · Inhouse ab 2.500 EUR</div>
-    </div>
-    <div class="service-card fade-up">
-      <div class="service-num">03</div>
-      <div class="service-icon">🎓</div>
-      <h3>Online-Kurse</h3>
-      <p>Lernen in Ihrem Tempo: vom KI-Starter-Kurs bis zum 8-Wochen-Mastery-Programm und einer exklusiven Community.</p>
-      <div class="service-price">Ab 197 EUR · Community 97 EUR/Mo.</div>
-    </div>
-  </div>
-</section>
-
-<!-- ÜBER MICH -->
-<section id="ueber-mich">
-  <div class="fade-up">
-    <span class="s-eyebrow">— Über mich</span>
-    <h2 class="s-title">Warum Julia<br>Pakravan?</h2>
-    <p class="about-body">
-      Ich bin KI-Beraterin, Trainerin und zertifizierte AI Managerin (TÜV Rheinland).
-      Mit über 15 Jahren Erfahrung in Sales Operations und digitaler Transformation
-      bringe ich KI-Kompetenz aus der realen Unternehmenswelt – nicht aus dem Lehrbuch.
-      <br/><br/>
-      Mein Ansatz: kein Tech-Jargon, keine Theorie-Bleiwüste –
-      sondern echte Lösungen, die sofort wirken.
-    </p>
-    <div class="expertise-list">
-      <div class="expertise-item">KI-Strategie & Implementierung für KMUs</div>
-      <div class="expertise-item">Change Management & agile Führung</div>
-      <div class="expertise-item">CRM-Systeme (Salesforce) & LLM-Workflows</div>
-      <div class="expertise-item">KI Manager Zertifizierung TÜV Rheinland 2026</div>
-      <div class="expertise-item">MS Copilot & führende KI-Tools</div>
-    </div>
-  </div>
-
-  <div class="about-visual-panel fade-up">
-    <div class="profile-header">
-      <div class="profile-avatar">JP</div>
-      <div>
-        <div class="profile-name">Julia Pakravan</div>
-        <div class="profile-role">KI-Beraterin & Trainerin · bridgetoai.de</div>
-        <span class="cert-badge">✓ AI Manager TÜV Rheinland</span>
+  <!-- Kontakt -->
+  <section id="kontakt" class="bg-blue-600 text-white py-20">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-semibold">Möchtest du mich kennenlernen?</h2>
+      <p class="text-xl mt-4">Ich freue mich immer über ein offenes und ehrliches Gespräch.</p>
+      <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="mailto:julia@bridgetoai.de" 
+           class="inline-block bg-white text-blue-600 px-10 py-4 rounded-full text-lg font-medium hover:bg-slate-100 transition">
+          ✉️ julia@bridgetoai.de
+        </a>
       </div>
+      <p class="text-sm mt-8 opacity-75">Du kannst mir auch gerne auf LinkedIn schreiben – ich antworte immer persönlich.</p>
     </div>
-    <p class="about-quote">
-      „KI entmystifizieren und praxisnah anwendbar machen –
-      <span>für jeden.</span>"
-    </p>
-    <div class="skill-tags">
-      <span class="skill-tag">KI-Strategie</span>
-      <span class="skill-tag">Salesforce</span>
-      <span class="skill-tag">LLM-Workflows</span>
-      <span class="skill-tag">Change Management</span>
-      <span class="skill-tag">MS Copilot</span>
-      <span class="skill-tag">KMU-Spezialisierung</span>
-      <span class="skill-tag">Agile Leadership</span>
-      <span class="skill-tag">15+ Jahre Erfahrung</span>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- ZIELGRUPPEN -->
-<section id="zielgruppen">
-  <div class="ziel-header fade-up">
-    <span class="s-eyebrow">— Für wen?</span>
-    <h2 class="s-title">Meine Zielgruppen</h2>
-    <p>Egal ob Unternehmen, Freelancer oder Karrierewechsler – für jeden gibt es den richtigen Einstieg.</p>
-  </div>
-  <div class="ziel-grid">
-    <div class="ziel-card fade-up">
-      <div class="ziel-icon-wrap">🏢</div>
-      <h3>KMU-Inhaber & Führungskräfte</h3>
-      <p>Unternehmen mit 5–100 Mitarbeitern, die KI einsetzen wollen – aber nicht wissen, wo anfangen.</p>
-      <span class="ziel-budget">Budget: 500–5.000 EUR / Projekt</span>
-    </div>
-    <div class="ziel-card fade-up">
-      <div class="ziel-icon-wrap">💼</div>
-      <h3>Selbstständige & Freelancer</h3>
-      <p>Digital affine Einzelpersonen, 25–45 Jahre, die KI für ihre tägliche Arbeit nutzen wollen.</p>
-      <span class="ziel-budget">Budget: 100–500 EUR</span>
-    </div>
-    <div class="ziel-card fade-up">
-      <div class="ziel-icon-wrap">🚀</div>
-      <h3>Angestellte & Karrierewechsler</h3>
-      <p>Menschen, die KI-Skills für den Arbeitsmarkt aufbauen und sich zukunftssicher positionieren wollen.</p>
-      <span class="ziel-budget">Budget: 50–300 EUR</span>
-    </div>
-  </div>
-</section>
+  <footer class="py-10 text-center text-slate-500 text-sm">
+    © 2026 Julia Pakravan • Bridge to AI
+  </footer>
 
-<!-- CTA -->
-<section id="erstgespraech">
-  <div class="cta-inner">
-    <span class="s-eyebrow">— Jetzt starten</span>
-    <h2 class="s-title" style="color:white; margin-bottom:1rem;">Kostenloses Erstgespräch</h2>
-    <p>30 Minuten. Kein Druck. Wir schauen gemeinsam, wie KI in Ihrem Alltag echten Mehrwert schafft.</p>
-    <a href="mailto:julia@bridgetoai.de" class="btn-primary" style="font-size:1rem; padding:1rem 2.5rem;">
-      Jetzt Termin anfragen →
-    </a>
-    <div class="cta-perks">
-      <span class="cta-perk"><span class="cta-perk-dot"></span> Kostenlos & unverbindlich</span>
-      <span class="cta-perk"><span class="cta-perk-dot"></span> Auf Deutsch</span>
-      <span class="cta-perk"><span class="cta-perk-dot"></span> Persönlich mit Julia</span>
-      <span class="cta-perk"><span class="cta-perk-dot"></span> Rückmeldung in 48h</span>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <svg viewBox="0 0 2200 700" style="height:28px;width:auto;" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M140 430 Q420 180 700 430 L700 520 L140 520 Z" fill="white"/>
-    <circle cx="200" cy="250" r="34" fill="white"/>
-    <circle cx="420" cy="170" r="38" fill="white"/>
-    <circle cx="640" cy="250" r="34" fill="white"/>
-    <text x="820" y="475" font-family="Arial,sans-serif" font-size="180" font-weight="500" letter-spacing="-4" fill="white">bridge </text>
-    <text x="1560" y="475" font-family="Arial,sans-serif" font-size="180" font-style="italic" font-weight="500" letter-spacing="-4" fill="#00D9C0">to</text>
-    <text x="1770" y="475" font-family="Arial,sans-serif" font-size="180" font-weight="500" letter-spacing="-4" fill="white"> ai</text>
-  </svg>
-  <span class="footer-copy">© 2025 Julia Pakravan · bridgetoai.de</span>
-  <div class="footer-links">
-    <a href="mailto:julia@bridgetoai.de">julia@bridgetoai.de</a>
-    <a href="#">Impressum</a>
-    <a href="#">Datenschutz</a>
-  </div>
-</footer>
-
-<script>
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
-</script>
 </body>
 </html>
