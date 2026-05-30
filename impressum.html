@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Impressum – bridge to ai</title>
+<meta name="robots" content="noindex"/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgICA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMEEyNTQwIi8+CiAgICA8ZGVmcz4KICAgICAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjAlIj4KICAgICAgICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzBBMjU0MCIvPgogICAgICAgICAgICA8c3RvcCBvZmZzZXQ9IjU1JSIgc3RvcC1jb2xvcj0iIzFCOEI5RSIvPgogICAgICAgICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMEQ5QzAiLz4KICAgICAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPC9kZWZzPgogICAgCiAgICAgICAgPHBhdGggZD0iTTEyMCAzMjAgUTI1NiAxNjAgMzkyIDMyMCBMMzkyIDM3MCBMMTIwIDM3MCBaIiBmaWxsPSJ1cmwoI2dyYWQpIi8+CiAgICAgICAgPGNpcmNsZSBjeD0iMjU2IiBjeT0iMTQ1IiByPSIzNCIgZmlsbD0iIzAwRDlDMCIvPgogICAgICAgIDwvc3ZnPg=="/>
+<style>
+/* ── Lokal gehostete Schriften (DSGVO-konform, keine Google-Fonts-Server) ── */
+@font-face{font-family:'Outfit';src:url('fonts/Outfit.woff2') format('woff2');font-weight:100 900;font-style:normal;font-display:swap;}
+@font-face{font-family:'Fraunces';src:url('fonts/Fraunces.woff2') format('woff2');font-weight:100 900;font-style:normal;font-display:swap;}
+@font-face{font-family:'Fraunces';src:url('fonts/Fraunces-Italic.woff2') format('woff2');font-weight:100 900;font-style:italic;font-display:swap;}
+:root{--primary:#00D9C0;--secondary:#1B8B9E;--navy:#0A2540;--dark:#040c16;--dark2:#061523;--ink:#030a12;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;scroll-padding-top:90px;}
+body{font-family:'Outfit',sans-serif;background:var(--dark);color:#fff;overflow-x:hidden;}
+body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:0.035;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:0 5%;height:76px;background:rgba(4,12,22,0.85);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.06);}
+.nav-logo{display:flex;align-items:center;text-decoration:none;}
+.nav-logo svg{height:30px;width:auto;}
+.nav-links{display:flex;gap:2.5rem;list-style:none;}
+.nav-links a{position:relative;text-decoration:none;color:rgba(255,255,255,0.6);font-size:.9rem;font-weight:500;transition:color .25s;}
+.nav-links a::after{content:'';position:absolute;left:0;bottom:-6px;width:0;height:1px;background:var(--primary);transition:width .3s;}
+.nav-links a:hover{color:#fff;}.nav-links a:hover::after{width:100%;}
+.btn-cta{display:inline-flex;align-items:center;gap:.4rem;background:var(--primary);color:var(--navy);padding:.6rem 1.5rem;border-radius:100px;font-size:.9rem;font-weight:700;text-decoration:none;transition:transform .25s,box-shadow .25s;}
+.btn-cta:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,217,192,0.35);}
+.burger{display:none;flex-direction:column;justify-content:center;gap:6px;width:44px;height:44px;background:none;border:0;cursor:pointer;padding:9px;z-index:101;}
+.burger span{display:block;width:26px;height:2px;background:#fff;border-radius:2px;transition:transform .3s ease,opacity .3s ease;}
+.burger.open span:nth-child(1){transform:translateY(8px) rotate(45deg);}
+.burger.open span:nth-child(2){opacity:0;}
+.burger.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg);}
+.mobile-menu{position:fixed;top:76px;left:0;right:0;z-index:99;display:flex;flex-direction:column;background:rgba(4,12,22,0.97);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.08);padding:1rem 5% 2.2rem;transform:translateY(-130%);transition:transform .4s cubic-bezier(.4,0,.2,1);}
+.mobile-menu.open{transform:translateY(0);}
+.mobile-menu a{color:rgba(255,255,255,0.78);text-decoration:none;font-size:1.15rem;font-weight:500;padding:1.05rem .2rem;border-bottom:1px solid rgba(255,255,255,0.07);}
+.mobile-menu a:hover{color:var(--primary);}
+.mobile-menu .btn-cta{align-self:flex-start;margin-top:1.5rem;color:var(--navy);background:var(--primary);padding:.85rem 1.8rem;border-bottom:0;}
+
+/* legal layout */
+.legal-hero{padding:9rem 5% 1rem;}
+.legal-hero .eyebrow{display:inline-flex;align-items:center;gap:.7rem;font-size:.76rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--primary);margin-bottom:1.2rem;}
+.legal-hero .eyebrow::before{content:'';width:34px;height:1px;background:linear-gradient(90deg,transparent,var(--primary));}
+.legal-hero h1{font-family:'Fraunces',serif;font-size:clamp(2.4rem,5vw,3.6rem);font-weight:500;letter-spacing:-0.02em;}
+.legal{max-width:760px;margin:0 auto;padding:2rem 5% 5rem;}
+.legal h2{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:500;color:#fff;margin:2.6rem 0 .8rem;}
+.legal h3{font-size:1.05rem;font-weight:700;color:var(--primary);margin:1.8rem 0 .5rem;}
+.legal p{color:rgba(255,255,255,0.66);line-height:1.75;margin-bottom:.9rem;font-weight:300;}
+.legal a{color:var(--primary);text-decoration:none;}
+.legal a:hover{text-decoration:underline;}
+.legal strong{color:#fff;font-weight:600;}
+.ph{color:#ffcf9e;background:rgba(224,150,80,0.12);padding:.05rem .4rem;border-radius:5px;font-weight:500;}
+.callout{background:rgba(0,217,192,0.07);border:1px dashed rgba(0,217,192,0.4);border-radius:14px;padding:1.2rem 1.4rem;margin:1.5rem 0 2rem;}
+.callout p{color:rgba(255,255,255,0.78);margin:0;font-size:.92rem;}
+.callout strong{color:var(--primary);}
+
+footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.05);padding:2.5rem 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.footer-copy{font-size:.8rem;color:rgba(255,255,255,0.25);}
+.footer-links{display:flex;gap:2rem;}
+.footer-links a{font-size:.8rem;color:rgba(255,255,255,0.3);text-decoration:none;}
+.footer-links a:hover{color:var(--primary);}
+
+@media(max-width:900px){nav{padding:0 1.5rem;}.nav-links{display:none;}nav>.btn-cta{display:none;}.burger{display:flex;}.legal-hero{padding:7.5rem 1.5rem 1rem;}.legal{padding:2rem 1.5rem 4rem;}footer{flex-direction:column;text-align:center;}}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="index.html" class="nav-logo">
+    <svg viewBox="0 0 2200 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M140 430 Q420 180 700 430 L700 520 L140 520 Z" fill="white"/>
+      <circle cx="200" cy="250" r="34" fill="white"/><circle cx="420" cy="170" r="38" fill="white"/><circle cx="640" cy="250" r="34" fill="white"/>
+      <text x="820" y="475" font-family="Outfit,Arial,sans-serif" font-size="180" font-weight="700" letter-spacing="-4" fill="white">bridge </text>
+      <text x="1560" y="475" font-family="Outfit,Arial,sans-serif" font-size="180" font-style="italic" font-weight="700" letter-spacing="-4" fill="#00D9C0">to</text>
+      <text x="1770" y="475" font-family="Outfit,Arial,sans-serif" font-size="180" font-weight="700" letter-spacing="-4" fill="white"> ai</text>
+    </svg>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#leistungen">Leistungen</a></li>
+    <li><a href="projekte.html">Projekte</a></li>
+    <li><a href="index.html#ueber-mich">Über mich</a></li>
+    <li><a href="index.html#kontakt">Kontakt</a></li>
+  </ul>
+  <a href="index.html#kontakt" class="btn-cta">Erstgespräch →</a>
+  <button class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html#leistungen">Leistungen</a>
+    <a href="projekte.html">Projekte</a>
+    <a href="index.html#ueber-mich">Über mich</a>
+    <a href="index.html#kontakt">Kontakt</a>
+    <a href="index.html#kontakt" class="btn-cta">Erstgespräch →</a>
+  </div>
+</nav>
+
+<section class="legal-hero">
+  <span class="eyebrow">Rechtliches</span>
+  <h1>Impressum</h1>
+</section>
+
+<main class="legal">
+
+  <div class="callout">
+    <p><strong>Hinweis zum Ausfüllen:</strong> Die <span class="ph">gelb markierten</span> Felder durch deine echten Angaben ersetzen und diesen Hinweis-Kasten anschließend löschen. Dies ist ein Gerüst, keine Rechtsberatung – im Zweifel kurz anwaltlich prüfen lassen.</p>
+  </div>
+
+  <h2>Angaben gemäß § 5 DDG</h2>
+  <p>
+    <strong><span class="ph">Julia Pakravan</span></strong><br/>
+    <span class="ph">[Straße und Hausnummer]</span><br/>
+    <span class="ph">[PLZ Ort]</span><br/>
+    Deutschland
+  </p>
+
+  <h3>Kontakt</h3>
+  <p>
+    Telefon: <span class="ph">[Telefonnummer]</span><br/>
+    E-Mail: <a href="mailto:julia@bridgetoai.de">julia@bridgetoai.de</a>
+  </p>
+
+  <h3>Umsatzsteuer-Identifikationsnummer</h3>
+  <p>
+    Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br/>
+    <span class="ph">[DE… – nur falls vorhanden; sonst diesen Abschnitt löschen]</span>
+  </p>
+
+  <h3>Verantwortlich für den Inhalt</h3>
+  <p>
+    <span class="ph">Julia Pakravan</span> (Anschrift wie oben)
+  </p>
+
+  <h2>Streitschlichtung</h2>
+  <p>
+    Ich bin nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer
+    Verbraucherschlichtungsstelle teilzunehmen.
+  </p>
+
+  <h2>Haftung für Inhalte</h2>
+  <p>
+    Die Inhalte dieser Seiten wurden mit größtmöglicher Sorgfalt erstellt. Für die Richtigkeit,
+    Vollständigkeit und Aktualität der Inhalte kann jedoch keine Gewähr übernommen werden. Als
+    Diensteanbieterin bin ich für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen
+    verantwortlich, jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu
+    überwachen.
+  </p>
+
+  <h2>Haftung für Links</h2>
+  <p>
+    Dieses Angebot enthält gegebenenfalls Links zu externen Websites Dritter, auf deren Inhalte ich
+    keinen Einfluss habe. Für diese fremden Inhalte ist stets der jeweilige Anbieter der Seiten
+    verantwortlich. Bei Bekanntwerden von Rechtsverletzungen werden entsprechende Links umgehend
+    entfernt.
+  </p>
+
+  <h2>Urheberrecht</h2>
+  <p>
+    Die auf diesen Seiten erstellten Inhalte und Werke unterliegen dem deutschen Urheberrecht. Eine
+    Vervielfältigung, Bearbeitung oder Verbreitung außerhalb der Grenzen des Urheberrechts bedarf der
+    vorherigen schriftlichen Zustimmung.
+  </p>
+
+</main>
+
+<footer>
+  <svg viewBox="0 0 2200 700" style="height:26px;width:auto;" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M140 430 Q420 180 700 430 L700 520 L140 520 Z" fill="white"/>
+    <circle cx="200" cy="250" r="34" fill="white"/><circle cx="420" cy="170" r="38" fill="white"/><circle cx="640" cy="250" r="34" fill="white"/>
+    <text x="820" y="475" font-family="Outfit,Arial,sans-serif" font-size="180" font-weight="700" letter-spacing="-4" fill="white">bridge </text>
+    <text x="1560" y="475" font-family="Outfit,Arial,sans-serif" font-size="180" font-style="italic" font-weight="700" letter-spacing="-4" fill="#00D9C0">to</text>
+    <text x="1770" y="475" font-family="Outfit,Arial,sans-serif" font-size="180" font-weight="700" letter-spacing="-4" fill="white"> ai</text>
+  </svg>
+  <span class="footer-copy">© 2025 Julia Pakravan · bridgetoai.de</span>
+  <div class="footer-links">
+    <a href="index.html#kontakt">Kontakt</a>
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+  </div>
+</footer>
+
+<script>
+  const burger=document.getElementById('burger');const mobileMenu=document.getElementById('mobileMenu');
+  burger.addEventListener('click',()=>{const o=burger.classList.toggle('open');mobileMenu.classList.toggle('open',o);burger.setAttribute('aria-expanded',o);});
+  mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{burger.classList.remove('open');mobileMenu.classList.remove('open');}));
+</script>
+</body>
+</html>
