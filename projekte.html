@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Projekte – bridge to ai</title>
+<meta name="description" content="Ausgewählte KI-Projekte von bridge to ai – Chatbots, Automatisierung, Dashboards und Governance. Erst der Prozess, dann die Technologie."/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgICA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMEEyNTQwIi8+CiAgICA8ZGVmcz4KICAgICAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjAlIj4KICAgICAgICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzBBMjU0MCIvPgogICAgICAgICAgICA8c3RvcCBvZmZzZXQ9IjU1JSIgc3RvcC1jb2xvcj0iIzFCOEI5RSIvPgogICAgICAgICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMEQ5QzAiLz4KICAgICAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPC9kZWZzPgogICAgCiAgICAgICAgPHBhdGggZD0iTTEyMCAzMjAgUTI1NiAxNjAgMzkyIDMyMCBMMzkyIDM3MCBMMTIwIDM3MCBaIiBmaWxsPSJ1cmwoI2dyYWQpIi8+CiAgICAgICAgPGNpcmNsZSBjeD0iMjU2IiBjeT0iMTQ1IiByPSIzNCIgZmlsbD0iIzAwRDlDMCIvPgogICAgICAgIDwvc3ZnPg=="/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --primary:#00D9C0; --secondary:#1B8B9E; --navy:#0A2540;
+  --dark:#040c16; --dark2:#061523; --ink:#030a12;
+  --glow:rgba(0,217,192,0.5);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;scroll-padding-top:90px;}
+body{font-family:'Outfit',sans-serif;background:var(--dark);color:#fff;overflow-x:hidden;}
+
+body::after{
+  content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:0.035;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:0 5%;height:76px;background:rgba(4,12,22,0.8);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.06);transition:background .4s;}
+.nav-logo{display:flex;align-items:center;text-decoration:none;}
+.nav-logo svg{height:30px;width:auto;}
+.nav-links{display:flex;gap:2.5rem;list-style:none;}
+.nav-links a{position:relative;text-decoration:none;color:rgba(255,255,255,0.6);font-size:.9rem;font-weight:500;transition:color .25s;}
+.nav-links a::after{content:'';position:absolute;left:0;bottom:-6px;width:0;height:1px;background:var(--primary);transition:width .3s;}
+.nav-links a:hover,.nav-links a.active{color:#fff;}
+.nav-links a.active::after,.nav-links a:hover::after{width:100%;}
+.btn-cta{display:inline-flex;align-items:center;gap:.4rem;background:var(--primary);color:var(--navy);padding:.6rem 1.5rem;border-radius:100px;font-size:.9rem;font-weight:700;text-decoration:none;transition:transform .25s,box-shadow .25s;}
+.btn-cta:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,217,192,0.35);}
+
+.burger{display:none;flex-direction:column;justify-content:center;gap:6px;width:44px;height:44px;background:none;border:0;cursor:pointer;padding:9px;z-index:101;}
+.burger span{display:block;width:26px;height:2px;background:#fff;border-radius:2px;transition:transform .3s ease,opacity .3s ease;}
+.burger.open span:nth-child(1){transform:translateY(8px) rotate(45deg);}
+.burger.open span:nth-child(2){opacity:0;}
+.burger.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg);}
+.mobile-menu{position:fixed;top:76px;left:0;right:0;z-index:99;display:flex;flex-direction:column;background:rgba(4,12,22,0.97);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.08);padding:1rem 5% 2.2rem;transform:translateY(-130%);transition:transform .4s cubic-bezier(.4,0,.2,1);box-shadow:0 30px 50px -30px rgba(0,0,0,.6);}
+.mobile-menu.open{transform:translateY(0);}
+.mobile-menu a{color:rgba(255,255,255,0.78);text-decoration:none;font-size:1.15rem;font-weight:500;padding:1.05rem .2rem;border-bottom:1px solid rgba(255,255,255,0.07);transition:color .2s;}
+.mobile-menu a:hover{color:var(--primary);}
+.mobile-menu .btn-cta{align-self:flex-start;margin-top:1.5rem;color:var(--navy);background:var(--primary);padding:.85rem 1.8rem;border-bottom:0;font-weight:700;}
+
+/* ── HERO ── */
+.p-hero{position:relative;padding:10rem 5% 3rem;overflow:hidden;}
+.p-hero-atmos{position:absolute;inset:0;z-index:0;background:
+  radial-gradient(ellipse 60% 70% at 80% 20%,rgba(27,139,158,0.18) 0%,transparent 55%),
+  radial-gradient(circle 40% at 15% 30%,rgba(0,217,192,0.10) 0%,transparent 55%),
+  linear-gradient(160deg,#030a12 0%,#061523 60%,#0a2540 120%);}
+.p-hero-grid{position:absolute;inset:0;z-index:0;background-image:linear-gradient(rgba(0,217,192,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,217,192,0.03) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse 90% 90% at 60% 0%,#000 30%,transparent 75%);-webkit-mask-image:radial-gradient(ellipse 90% 90% at 60% 0%,#000 30%,transparent 75%);}
+.p-hero-inner{position:relative;z-index:2;max-width:1280px;margin:0 auto;}
+.p-eyebrow{display:inline-flex;align-items:center;gap:.7rem;font-size:.76rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--primary);margin-bottom:1.6rem;}
+.p-eyebrow::before{content:'';width:34px;height:1px;background:linear-gradient(90deg,transparent,var(--primary));}
+.p-title{font-family:'Fraunces',serif;font-size:clamp(2.6rem,5vw,4.4rem);font-weight:500;line-height:1.04;letter-spacing:-0.02em;}
+.p-title .it{font-style:italic;font-weight:400;background:linear-gradient(100deg,#1B8B9E,#00D9C0);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.p-sub{margin-top:1.5rem;font-size:1.1rem;font-weight:300;color:rgba(255,255,255,0.62);max-width:56ch;line-height:1.7;}
+
+/* ── FILTER ── */
+.p-body{max-width:1280px;margin:0 auto;padding:0 5% 2rem;position:relative;z-index:2;}
+.filters{display:flex;flex-wrap:wrap;gap:.7rem;margin:2.5rem 0 1rem;}
+.chip{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.6);padding:.6rem 1.2rem;border-radius:100px;font-family:'Outfit',sans-serif;font-size:.85rem;font-weight:600;cursor:pointer;transition:all .25s;}
+.chip:hover{border-color:var(--primary);color:#fff;}
+.chip.active{background:var(--primary);color:var(--navy);border-color:var(--primary);}
+
+.note{margin:.6rem 0 0;font-size:.82rem;color:rgba(255,255,255,0.55);background:rgba(0,217,192,0.06);border:1px dashed rgba(0,217,192,0.35);border-radius:12px;padding:.85rem 1.1rem;}
+
+/* ── PROJECT CARDS ── */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;padding:1.6rem 0 1rem;}
+.card{position:relative;display:flex;flex-direction:column;background:var(--dark2);border:1px solid rgba(255,255,255,0.07);border-radius:20px;padding:2.4rem 2.1rem;overflow:hidden;transition:transform .35s,border-color .35s,box-shadow .35s;opacity:0;transform:translateY(26px);}
+.card.in{opacity:1;transform:none;}
+.card::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(0,217,192,0.07),transparent 70%);opacity:0;transition:opacity .35s;}
+.card:hover{transform:translateY(-5px);border-color:rgba(0,217,192,0.35);box-shadow:0 28px 60px -34px rgba(0,217,192,0.6);}
+.card:hover::before{opacity:1;}
+.tag{align-self:flex-start;position:relative;z-index:1;font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--primary);background:rgba(0,217,192,0.09);border:1px solid rgba(0,217,192,0.2);padding:.4rem .8rem;border-radius:100px;margin-bottom:1.6rem;}
+.card h3{position:relative;z-index:1;font-family:'Fraunces',serif;font-size:1.45rem;font-weight:500;line-height:1.2;margin-bottom:1.5rem;}
+.block{position:relative;z-index:1;margin-bottom:1.1rem;}
+.block .lbl{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,0.32);margin-bottom:.25rem;}
+.block p{font-size:.92rem;color:rgba(255,255,255,0.55);line-height:1.6;}
+.kpi{position:relative;z-index:1;margin-top:auto;padding-top:1.4rem;border-top:1px solid rgba(255,255,255,0.08);display:flex;align-items:baseline;gap:.7rem;}
+.kpi .num{font-family:'Fraunces',serif;font-size:2rem;font-weight:500;color:var(--primary);line-height:1;}
+.kpi .desc{font-size:.85rem;color:rgba(255,255,255,0.5);line-height:1.4;}
+.kpi .desc a{color:var(--primary);font-weight:600;text-decoration:none;}
+.kpi .desc a:hover{text-decoration:underline;}
+
+/* ── CTA ── */
+.p-cta{position:relative;max-width:1280px;margin:3rem auto 5rem;padding:0 5%;}
+.cta-box{position:relative;overflow:hidden;background:linear-gradient(160deg,rgba(27,139,158,0.12),rgba(255,255,255,0.02));border:1px solid rgba(0,217,192,0.18);border-radius:26px;padding:4rem 3rem;text-align:center;}
+.cta-box::before{content:'';position:absolute;top:-80px;right:-60px;width:300px;height:300px;background:radial-gradient(circle,rgba(0,217,192,0.18),transparent 70%);}
+.cta-box h2{position:relative;font-family:'Fraunces',serif;font-size:clamp(1.8rem,3.4vw,2.6rem);font-weight:500;letter-spacing:-0.01em;}
+.cta-box h2 .it{font-style:italic;color:var(--primary);}
+.cta-box p{position:relative;margin:1.1rem auto 2rem;max-width:48ch;color:rgba(255,255,255,0.6);font-weight:300;line-height:1.7;}
+.cta-box .btn-primary{position:relative;display:inline-flex;align-items:center;gap:.6rem;background:var(--primary);color:var(--navy);padding:1rem 2.3rem;border-radius:100px;font-size:.98rem;font-weight:700;text-decoration:none;transition:transform .25s,box-shadow .25s;}
+.cta-box .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 38px rgba(0,217,192,0.4);}
+
+/* footer */
+footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.05);padding:2.5rem 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.footer-copy{font-size:.8rem;color:rgba(255,255,255,0.25);}
+.footer-links{display:flex;gap:2rem;}
+.footer-links a{font-size:.8rem;color:rgba(255,255,255,0.3);text-decoration:none;transition:color .25s;}
+.footer-links a:hover{color:var(--primary);}
+
+@media(max-width:900px){
+  nav{padding:0 1.5rem;}
+  .nav-links{display:none;}
+  nav > .btn-cta{display:none;}
+  .burger{display:flex;}
+  .p-hero{padding:8rem 1.5rem 2rem;}
+  .p-body{padding:0 1.5rem 2rem;}
+  .grid{grid-template-columns:1fr;}
+  .p-cta{padding:0 1.5rem;}
+  .cta-box{padding:3rem 1.8rem;}
+  footer{flex-direction:column;text-align:center;}
+}
+@media(min-width:901px) and (max-width:1100px){.grid{grid-template-columns:repeat(2,1fr);}}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="index.html" class="nav-logo">
+    <svg viewBox="0 0 2200 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M140 430 Q420 180 700 430 L700 520 L140 520 Z" fill="white"/>
+      <circle cx="200" cy="250" r="34" fill="white"/><circle cx="420" cy="170" r="38" fill="white"/><circle cx="640" cy="250" r="34" fill="white"/>
+      <text x="820" y="475" font-family="Outfit,Arial,sans-serif" font-size="180" font-weight="700" letter-spacing="-4" fill="white">bridge </text>
+      <text x="1560" y="475" font-family="Outfit,Arial,sans-serif" font-size="180" font-style="italic" font-weight="700" letter-spacing="-4" fill="#00D9C0">to</text>
+      <text x="1770" y="475" font-family="Outfit,Arial,sans-serif" font-size="180" font-weight="700" letter-spacing="-4" fill="white"> ai</text>
+    </svg>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#leistungen">Leistungen</a></li>
+    <li><a href="projekte.html" class="active">Projekte</a></li>
+    <li><a href="index.html#ueber-mich">Über mich</a></li>
+    <li><a href="index.html#kontakt">Kontakt</a></li>
+  </ul>
+  <a href="index.html#kontakt" class="btn-cta">Erstgespräch →</a>
+  <button class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html#leistungen">Leistungen</a>
+    <a href="projekte.html">Projekte</a>
+    <a href="index.html#ueber-mich">Über mich</a>
+    <a href="index.html#kontakt">Kontakt</a>
+    <a href="index.html#kontakt" class="btn-cta">Erstgespräch →</a>
+  </div>
+</nav>
+
+<section class="p-hero">
+  <div class="p-hero-atmos"></div>
+  <div class="p-hero-grid"></div>
+  <div class="p-hero-inner">
+    <span class="p-eyebrow">Referenzen</span>
+    <h1 class="p-title">Projekte, die für sich <span class="it">sprechen</span>.</h1>
+    <p class="p-sub">Echte Lösungen aus dem Unternehmensalltag – jedes Projekt beginnt mit dem Prozess und endet mit einem messbaren Ergebnis. Eine Auswahl meiner Arbeit.</p>
+  </div>
+</section>
+
+<div class="p-body">
+  <div class="filters" id="filters">
+    <button class="chip active" data-f="all">Alle</button>
+    <button class="chip" data-f="chatbot">Chatbots</button>
+    <button class="chip" data-f="automation">Automatisierung</button>
+    <button class="chip" data-f="data">Daten &amp; Dashboards</button>
+    <button class="chip" data-f="copilot">Copilot</button>
+    <button class="chip" data-f="governance">Governance</button>
+  </div>
+  <p class="note">💡 Platzhalter-Projekte – ersetze Titel, Texte und Kennzahlen durch deine echten Referenzen. Die Struktur (Ausgangslage → Lösung → Ergebnis) bleibt gleich.</p>
+
+  <div class="grid" id="grid">
+
+    <article class="card" data-cat="chatbot">
+      <span class="tag">Chatbot &amp; KI-Assistent</span>
+      <h3>Service-Bot für ein Bildungsunternehmen</h3>
+      <div class="block"><div class="lbl">Ausgangslage</div><p>Wiederkehrende Elternfragen banden täglich Stunden im Kundenservice-Team.</p></div>
+      <div class="block"><div class="lbl">Lösung</div><p>Prozess der häufigsten Anfragen kartiert, Wissensquellen strukturiert, darauf ein KI-Assistent aufgesetzt.</p></div>
+      <div class="kpi"><span class="num">−60%</span><span class="desc">Routineanfragen im First-Level-Support</span></div>
+    </article>
+
+    <article class="card" data-cat="automation">
+      <span class="tag">Prozessautomatisierung</span>
+      <h3>Automatisierter Angebots-Workflow</h3>
+      <div class="block"><div class="lbl">Ausgangslage</div><p>Angebotsfreigaben liefen manuell per E-Mail, mit Medienbrüchen und Verzögerungen.</p></div>
+      <div class="block"><div class="lbl">Lösung</div><p>Soll-Prozess definiert und mit Power Automate als durchgängiger Freigabe-Flow umgesetzt.</p></div>
+      <div class="kpi"><span class="num">3 Tage</span><span class="desc">weniger Durchlaufzeit pro Angebot</span></div>
+    </article>
+
+    <article class="card" data-cat="data">
+      <span class="tag">Daten &amp; Dashboards</span>
+      <h3>Vertriebs-Dashboard mit Power BI</h3>
+      <div class="block"><div class="lbl">Ausgangslage</div><p>KPIs lagen verstreut in Excel – das Monatsreporting kostete einen ganzen Arbeitstag.</p></div>
+      <div class="block"><div class="lbl">Lösung</div><p>KPI-Logik sauber definiert, Datenquellen verknüpft, automatisiertes Live-Dashboard gebaut.</p></div>
+      <div class="kpi"><span class="num">8 Std.</span><span class="desc">gesparte Reporting-Zeit pro Monat</span></div>
+    </article>
+
+    <article class="card" data-cat="copilot">
+      <span class="tag">Microsoft 365 Copilot</span>
+      <h3>Copilot-Einführung im Team</h3>
+      <div class="block"><div class="lbl">Ausgangslage</div><p>Lizenzen vorhanden, aber kaum genutzt – Unsicherheit statt Mehrwert.</p></div>
+      <div class="block"><div class="lbl">Lösung</div><p>Konkrete Use-Cases identifiziert, Prompt-Bibliothek erstellt, Team praxisnah begleitet.</p></div>
+      <div class="kpi"><span class="num">90%</span><span class="desc">aktive Nutzung nach 6 Wochen</span></div>
+    </article>
+
+    <article class="card" data-cat="governance">
+      <span class="tag">KI-Governance · EU AI Act</span>
+      <h3>AI-Act-Readiness für ein KMU</h3>
+      <div class="block"><div class="lbl">Ausgangslage</div><p>Unklarheit über Pflichten aus dem EU AI Act und den Einsatz vorhandener KI-Tools.</p></div>
+      <div class="block"><div class="lbl">Lösung</div><p>Tools risikobasiert eingeordnet, Richtlinie erstellt, Team in KI-Kompetenz nach Art. 4 geschult.</p></div>
+      <div class="kpi"><span class="num">100%</span><span class="desc">Tools klassifiziert &amp; dokumentiert</span></div>
+    </article>
+
+    <article class="card" data-cat="data">
+      <span class="tag">Ihr Projekt</span>
+      <h3>Wird hier Ihre Erfolgsgeschichte stehen?</h3>
+      <div class="block"><div class="lbl">Ausgangslage</div><p>Sie haben einen Prozess, der besser laufen könnte.</p></div>
+      <div class="block"><div class="lbl">Lösung</div><p>Lassen Sie uns im kostenlosen Erstgespräch über Ihren Anwendungsfall sprechen.</p></div>
+      <div class="kpi"><span class="num">→</span><span class="desc"><a href="index.html#kontakt">Erstgespräch vereinbaren</a></span></div>
+    </article>
+
+  </div>
+</div>
+
+<div class="p-cta">
+  <div class="cta-box">
+    <h2>Lassen Sie uns Ihr <span class="it">Projekt</span> besprechen.</h2>
+    <p>30 Minuten, kostenlos und unverbindlich. Wir schauen gemeinsam, wo KI in Ihrem Alltag echten Mehrwert schafft.</p>
+    <a href="index.html#kontakt" class="btn-primary">Erstgespräch vereinbaren →</a>
+  </div>
+</div>
+
+<footer>
+  <svg viewBox="0 0 2200 700" style="height:26px;width:auto;" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M140 430 Q420 180 700 430 L700 520 L140 520 Z" fill="white"/>
+    <circle cx="200" cy="250" r="34" fill="white"/><circle cx="420" cy="170" r="38" fill="white"/><circle cx="640" cy="250" r="34" fill="white"/>
+    <text x="820" y="475" font-family="Outfit,Arial,sans-serif" font-size="180" font-weight="700" letter-spacing="-4" fill="white">bridge </text>
+    <text x="1560" y="475" font-family="Outfit,Arial,sans-serif" font-size="180" font-style="italic" font-weight="700" letter-spacing="-4" fill="#00D9C0">to</text>
+    <text x="1770" y="475" font-family="Outfit,Arial,sans-serif" font-size="180" font-weight="700" letter-spacing="-4" fill="white"> ai</text>
+  </svg>
+  <span class="footer-copy">© 2025 Julia Pakravan · bridgetoai.de</span>
+  <div class="footer-links">
+    <a href="mailto:julia@bridgetoai.de">Kontakt</a>
+    <a href="index.html">Impressum</a>
+    <a href="index.html">Datenschutz</a>
+  </div>
+</footer>
+
+<!-- ElevenLabs Chatbot Widget -->
+<elevenlabs-convai agent-id="agent_5701kssfe108e2z8n5fqv5qn8yh3"></elevenlabs-convai>
+<script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+
+<script>
+  // ── Mobile-Navigation ──
+  const burger=document.getElementById('burger');
+  const mobileMenu=document.getElementById('mobileMenu');
+  burger.addEventListener('click',()=>{
+    const open=burger.classList.toggle('open');
+    mobileMenu.classList.toggle('open',open);
+    burger.setAttribute('aria-expanded',open);
+  });
+  mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+    burger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+    burger.setAttribute('aria-expanded','false');
+  }));
+
+  // ── Filter ──
+  const chips=document.querySelectorAll('.chip');
+  const cards=document.querySelectorAll('.card');
+  chips.forEach(chip=>chip.addEventListener('click',()=>{
+    chips.forEach(c=>c.classList.remove('active'));
+    chip.classList.add('active');
+    const f=chip.dataset.f;
+    cards.forEach(card=>{card.style.display=(f==='all'||card.dataset.cat===f)?'flex':'none';});
+  }));
+
+  // ── Reveal beim Scrollen ──
+  const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');});},{threshold:0.12});
+  cards.forEach((c,i)=>{c.style.transitionDelay=(i%3*0.08)+'s';io.observe(c);});
+</script>
+</body>
+</html>
