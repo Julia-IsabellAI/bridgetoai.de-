@@ -1,0 +1,9 @@
+<svg viewBox="60 0 1740 700" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="bridge to ai">
+  <path d="M140 430 Q420 180 700 430 L700 520 L140 520 Z" fill="#FFFFFF"/>
+  <circle cx="200" cy="250" r="34" fill="#FFFFFF"/>
+  <circle cx="420" cy="170" r="38" fill="#FFFFFF"/>
+  <circle cx="640" cy="250" r="34" fill="#FFFFFF"/>
+  <text x="820" y="475" font-family="Outfit, Arial, sans-serif" font-size="180" font-weight="700" letter-spacing="-4" fill="#FFFFFF">bridge</text>
+  <text x="1365" y="475" transform="matrix(1,0,-0.2126,1,101.0,0)" font-family="Outfit, Arial, sans-serif" font-size="180" font-style="italic" font-weight="700" letter-spacing="-4" fill="#00D9C0">to</text>
+  <text x="1570" y="475" font-family="Outfit, Arial, sans-serif" font-size="180" font-weight="700" letter-spacing="-4" fill="#FFFFFF">ai</text>
+</svg>

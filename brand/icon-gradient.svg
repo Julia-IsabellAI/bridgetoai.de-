@@ -1,0 +1,13 @@
+<svg viewBox="100 6 640 640" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="bridge to ai icon">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0A2540"/>
+      <stop offset="45%" stop-color="#1B8B9E"/>
+      <stop offset="100%" stop-color="#00D9C0"/>
+    </linearGradient>
+  </defs>
+  <path d="M140 430 Q420 180 700 430 L700 520 L140 520 Z" fill="url(#g)"/>
+  <circle cx="200" cy="250" r="34" fill="#1B8B9E"/>
+  <circle cx="420" cy="170" r="38" fill="#00D9C0"/>
+  <circle cx="640" cy="250" r="34" fill="#1B8B9E"/>
+</svg>
