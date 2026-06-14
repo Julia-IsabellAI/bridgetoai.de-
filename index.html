@@ -161,6 +161,32 @@ section{padding:7rem 5%;position:relative;}
 .faq-a-inner a{color:var(--primary);text-decoration:none;}
 .faq-a-inner a:hover{text-decoration:underline;}
 
+/* ── LEAD MAGNET ── */
+#checkliste{background:var(--dark);}
+.lead-wrap{max-width:900px;margin:2.6rem auto 0;display:grid;grid-template-columns:1.05fr .95fr;gap:2.4rem;align-items:center;border:1px solid rgba(255,255,255,0.08);border-radius:22px;padding:2.6rem;background:linear-gradient(135deg,rgba(0,217,192,0.05),rgba(27,139,158,0.03));}
+.lead-cover{display:flex;justify-content:center;}
+.lead-cover img{width:100%;max-width:300px;border-radius:10px;box-shadow:0 24px 60px rgba(0,0,0,0.45);border:1px solid rgba(255,255,255,0.08);}
+.lead-badge{display:inline-flex;align-items:center;gap:.5rem;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--primary);margin-bottom:1rem;}
+.lead-h{font-family:'Fraunces',serif;font-size:clamp(1.5rem,2.4vw,2rem);font-weight:500;line-height:1.15;letter-spacing:-.01em;margin-bottom:.9rem;}
+.lead-h .it{font-style:italic;background:linear-gradient(100deg,#1B8B9E,#00D9C0);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.lead-p{color:rgba(255,255,255,0.55);font-size:.98rem;line-height:1.65;margin-bottom:1.4rem;}
+.lead-form{display:flex;flex-direction:column;gap:.8rem;}
+.lead-form .inp{width:100%;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:.85rem 1rem;color:#fff;font-family:'Outfit',sans-serif;font-size:.95rem;transition:border-color .25s;}
+.lead-form .inp:focus{outline:none;border-color:var(--primary);}
+.lead-form .inp::placeholder{color:rgba(255,255,255,0.35);}
+.lead-btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;background:var(--primary);color:var(--navy);border:none;padding:.9rem 1.6rem;border-radius:100px;font-family:'Outfit',sans-serif;font-size:.95rem;font-weight:700;cursor:pointer;transition:transform .25s,box-shadow .25s;}
+.lead-btn:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(0,217,192,0.35);}
+.lead-consent{font-size:.74rem;color:rgba(255,255,255,0.4);line-height:1.5;}
+.lead-consent a{color:rgba(255,255,255,0.6);}
+.lead-success{display:none;flex-direction:column;gap:1rem;align-items:flex-start;}
+.lead-success.show{display:flex;}
+.lead-success p{color:rgba(255,255,255,0.7);font-size:.98rem;line-height:1.6;}
+.lead-dl{display:inline-flex;align-items:center;gap:.6rem;background:var(--primary);color:var(--navy);padding:.9rem 1.7rem;border-radius:100px;font-size:.95rem;font-weight:700;text-decoration:none;transition:transform .25s,box-shadow .25s;}
+.lead-dl:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(0,217,192,0.35);}
+.lead-err{display:none;color:#ff9b9b;font-size:.85rem;}
+.lead-err.show{display:block;}
+@media(max-width:760px){.lead-wrap{grid-template-columns:1fr;padding:1.8rem;}.lead-cover{order:-1;}}
+
 /* services */
 #leistungen{background:var(--dark2);}
 .svc-header{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:end;margin-bottom:4rem;}
@@ -277,6 +303,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.05);padding
     <li><a href="projekte.html">Projekte</a></li>
     <li><a href="#ueber-mich">Über mich</a></li>
     <li><a href="#faq">FAQ</a></li>
+    <li><a href="#checkliste">Checkliste</a></li>
     <li><a href="#kontakt">Kontakt</a></li>
   </ul>
   <a href="#kontakt" class="btn-cta">Erstgespräch →</a>
@@ -468,6 +495,37 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.05);padding
   </div>
 </section>
 
+<section id="checkliste">
+  <div class="reveal">
+    <span class="s-eyebrow">Kostenloser Download</span>
+    <h2 class="s-title">Ihre <span class="it">KI-Starter-Checkliste</span></h2>
+    <p class="s-sub" style="margin-top:1rem;">KI sicher &amp; DSGVO-konform einführen – die wichtigsten Prüfpunkte kompakt auf 2 Seiten. Tragen Sie Ihre E-Mail ein und laden Sie die Checkliste direkt herunter.</p>
+  </div>
+  <div class="lead-wrap reveal">
+    <div class="lead-text">
+      <span class="lead-badge">PDF · 7 Bereiche · Praxisnah</span>
+      <h3 class="lead-h">KI <span class="it">sicher</span> &amp; DSGVO-konform einsetzen</h3>
+      <p class="lead-p">Von Rechtsgrundlage über Auftragsverarbeitung bis EU AI Act: die Checkliste, mit der Sie KI im Unternehmen einführen, ohne rechtliche Risiken einzugehen.</p>
+      <form id="lead-form" class="lead-form" action="https://formspree.io/f/mqeoanaz" method="POST">
+        <input type="hidden" name="_subject" value="Neuer Download: KI-Starter-Checkliste"/>
+        <input type="hidden" name="quelle" value="KI-Starter-Checkliste (Lead-Magnet)"/>
+        <input class="inp" type="text" name="name" placeholder="Ihr Name (optional)"/>
+        <input class="inp" type="email" name="email" placeholder="Ihre E-Mail-Adresse" required/>
+        <button class="lead-btn" type="submit">Checkliste herunterladen →</button>
+        <span id="lead-err" class="lead-err"></span>
+        <span class="lead-consent">Mit dem Absenden erhalten Sie die Checkliste und gelegentlich KI-Impulse von bridge to ai. Abmeldung jederzeit möglich. Mehr in der <a href="datenschutz.html">Datenschutzerklärung</a>.</span>
+      </form>
+      <div id="lead-success" class="lead-success">
+        <p><strong>Geschafft!</strong> Vielen Dank – hier ist Ihre Checkliste:</p>
+        <a class="lead-dl" href="downloads/KI-Starter-Checkliste-DSGVO.pdf" download>Checkliste herunterladen ↓</a>
+      </div>
+    </div>
+    <div class="lead-cover">
+      <img src="brand/checkliste-cover.png" alt="Vorschau der KI-Starter-Checkliste"/>
+    </div>
+  </div>
+</section>
+
 <section id="kontakt">
   <div class="reveal">
     <span class="s-eyebrow">Jetzt starten</span>
@@ -517,6 +575,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.05);padding
   <span class="footer-copy">© 2025 Julia Pakravan · bridgetoai.de</span>
   <div class="footer-links">
     <a href="https://www.linkedin.com/in/julia-pakravan/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="#checkliste">Checkliste</a>
     <a href="mailto:julia@bridgetoai.de">Kontakt</a>
     <a href="projekte.html">Projekte</a>
     <a href="impressum.html">Impressum</a>
@@ -544,6 +603,40 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.05);padding
       if(!isOpen){item.classList.add('open');ans.style.maxHeight=ans.scrollHeight+'px';}
     });
   });
+
+  // Lead magnet form – reveal download on success
+  const leadForm=document.getElementById('lead-form');
+  if(leadForm){
+    const leadSuccess=document.getElementById('lead-success');
+    const leadErr=document.getElementById('lead-err');
+    const leadBtn=leadForm.querySelector('.lead-btn');
+    leadForm.addEventListener('submit',async(e)=>{
+      e.preventDefault();
+      leadBtn.disabled=true;
+      leadBtn.textContent='Wird gesendet …';
+      leadErr.classList.remove('show');
+      try{
+        const res=await fetch(leadForm.action,{method:'POST',body:new FormData(leadForm),headers:{'Accept':'application/json'}});
+        if(res.ok){
+          leadForm.style.display='none';
+          leadSuccess.classList.add('show');
+          // Download automatisch anstoßen
+          const a=document.createElement('a');
+          a.href='downloads/KI-Starter-Checkliste-DSGVO.pdf';
+          a.download='';
+          document.body.appendChild(a);a.click();a.remove();
+        }else{
+          leadErr.textContent='Etwas ist schiefgelaufen. Bitte erneut versuchen oder an julia@bridgetoai.de schreiben.';
+          leadErr.classList.add('show');
+          leadBtn.disabled=false;leadBtn.textContent='Checkliste herunterladen →';
+        }
+      }catch(err){
+        leadErr.textContent='Verbindungsfehler. Bitte erneut versuchen oder an julia@bridgetoai.de schreiben.';
+        leadErr.classList.add('show');
+        leadBtn.disabled=false;leadBtn.textContent='Checkliste herunterladen →';
+      }
+    });
+  }
 
   // Contact form – AJAX submit (visitor stays on page)
   const form=document.getElementById('contact-form');
