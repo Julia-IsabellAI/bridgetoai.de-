@@ -145,6 +145,22 @@ section{padding:7rem 5%;position:relative;}
 .s-title .it{font-style:italic;color:var(--primary);}
 .s-sub{color:rgba(255,255,255,0.5);font-size:1.02rem;max-width:520px;line-height:1.7;}
 
+/* ── FAQ ── */
+#faq{background:var(--dark2);}
+.faq-list{max-width:780px;margin:3rem auto 0;display:flex;flex-direction:column;gap:1rem;}
+.faq-item{border:1px solid rgba(255,255,255,0.08);border-radius:16px;background:rgba(255,255,255,0.02);overflow:hidden;transition:border-color .3s,background .3s;}
+.faq-item.open{border-color:rgba(0,217,192,0.35);background:rgba(0,217,192,0.04);}
+.faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:1.2rem;padding:1.4rem 1.6rem;background:none;border:none;color:#fff;font-family:'Outfit',sans-serif;font-size:1.04rem;font-weight:600;text-align:left;cursor:pointer;transition:color .25s;}
+.faq-q:hover{color:var(--primary);}
+.faq-icon{flex-shrink:0;width:26px;height:26px;position:relative;transition:transform .3s;}
+.faq-icon::before,.faq-icon::after{content:'';position:absolute;top:50%;left:50%;width:13px;height:2px;border-radius:2px;background:var(--primary);transform:translate(-50%,-50%);transition:transform .3s;}
+.faq-icon::after{transform:translate(-50%,-50%) rotate(90deg);}
+.faq-item.open .faq-icon::after{transform:translate(-50%,-50%) rotate(0deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease;}
+.faq-a-inner{padding:0 1.6rem 1.5rem;color:rgba(255,255,255,0.6);font-size:.98rem;line-height:1.75;}
+.faq-a-inner a{color:var(--primary);text-decoration:none;}
+.faq-a-inner a:hover{text-decoration:underline;}
+
 /* services */
 #leistungen{background:var(--dark2);}
 .svc-header{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:end;margin-bottom:4rem;}
@@ -260,6 +276,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.05);padding
     <li><a href="#leistungen">Leistungen</a></li>
     <li><a href="projekte.html">Projekte</a></li>
     <li><a href="#ueber-mich">Über mich</a></li>
+    <li><a href="#faq">FAQ</a></li>
     <li><a href="#kontakt">Kontakt</a></li>
   </ul>
   <a href="#kontakt" class="btn-cta">Erstgespräch →</a>
@@ -417,6 +434,40 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.05);padding
   </div>
 </section>
 
+<section id="faq">
+  <div class="reveal">
+    <span class="s-eyebrow">Häufige Fragen</span>
+    <h2 class="s-title">Gut zu <span class="it">wissen</span></h2>
+    <p class="s-sub" style="margin-top:1rem;">Die Fragen, die mir am häufigsten gestellt werden – ehrlich und ohne Tech-Jargon beantwortet.</p>
+  </div>
+  <div class="faq-list reveal">
+    <div class="faq-item">
+      <button class="faq-q" type="button">Lohnt sich KI überhaupt für mein kleines Unternehmen?<span class="faq-icon"></span></button>
+      <div class="faq-a"><div class="faq-a-inner">Ja – gerade dann. Bei kleinen Teams macht KI oft den größten Unterschied, weil sie zeitfressende Routine (E-Mails, Angebote, Recherche, Dokumentation) übernimmt und so Kapazität für das Wesentliche freisetzt. Wir starten bewusst klein, mit ein bis zwei konkreten Anwendungsfällen, die sich schnell rechnen – statt mit einem teuren Großprojekt.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" type="button">Ich habe keinerlei technisches Vorwissen. Ist das ein Problem?<span class="faq-icon"></span></button>
+      <div class="faq-a"><div class="faq-a-inner">Überhaupt nicht. Mein Ansatz ist es, KI zu entmystifizieren und in verständlicher Sprache erklärbar zu machen. Sie brauchen kein IT-Studium – nur die Offenheit, neue Wege auszuprobieren. Ich hole Sie genau dort ab, wo Sie heute stehen.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" type="button">Wie steht es um Datenschutz und DSGVO?<span class="faq-icon"></span></button>
+      <div class="faq-a"><div class="faq-a-inner">Datenschutz hat bei jedem Projekt Priorität. Wir wählen Tools und Workflows so aus, dass sie DSGVO-konform einsetzbar sind, klären, welche Daten verarbeitet werden dürfen, und richten klare interne Spielregeln ein. So nutzen Sie KI souverän, ohne rechtliche Risiken einzugehen.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" type="button">Was kostet eine Zusammenarbeit?<span class="faq-icon"></span></button>
+      <div class="faq-a"><div class="faq-a-inner">Das hängt vom Umfang ab. Die 1:1-Beratung startet ab 250 EUR, Workshops ab 199 EUR pro Person (Inhouse ab 2.500 EUR) und Online-Kurse ab 197 EUR. Das Erstgespräch ist immer kostenlos und unverbindlich – darin schauen wir gemeinsam, was sich für Sie wirklich lohnt.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" type="button">Wie schnell sehe ich erste Ergebnisse?<span class="faq-icon"></span></button>
+      <div class="faq-a"><div class="faq-a-inner">Oft schneller als gedacht. Schon nach einem ersten Workshop oder einer Beratungssession nehmen die meisten konkrete Tools und Abläufe mit, die sich sofort im Alltag anwenden lassen. Größere Transformationsprojekte bauen darauf Schritt für Schritt auf.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" type="button">Arbeiten Sie auch remote / deutschlandweit?<span class="faq-icon"></span></button>
+      <div class="faq-a"><div class="faq-a-inner">Ja. Beratung, Workshops und Kurse biete ich sowohl online als auch als Inhouse-Termin vor Ort an. So lässt sich die Zusammenarbeit flexibel an Ihren Arbeitsalltag anpassen – egal, wo Sie sitzen.</div></div>
+    </div>
+  </div>
+</section>
+
 <section id="kontakt">
   <div class="reveal">
     <span class="s-eyebrow">Jetzt starten</span>
@@ -465,6 +516,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.05);padding
   </svg>
   <span class="footer-copy">© 2025 Julia Pakravan · bridgetoai.de</span>
   <div class="footer-links">
+    <a href="https://www.linkedin.com/in/julia-pakravan/" target="_blank" rel="noopener">LinkedIn</a>
     <a href="mailto:julia@bridgetoai.de">Kontakt</a>
     <a href="projekte.html">Projekte</a>
     <a href="impressum.html">Impressum</a>
@@ -481,6 +533,17 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.05);padding
   window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>40);});
   const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.12});
   document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(q=>{
+    q.addEventListener('click',()=>{
+      const item=q.parentElement;
+      const ans=q.nextElementSibling;
+      const isOpen=item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(o=>{o.classList.remove('open');o.querySelector('.faq-a').style.maxHeight=null;});
+      if(!isOpen){item.classList.add('open');ans.style.maxHeight=ans.scrollHeight+'px';}
+    });
+  });
 
   // Contact form – AJAX submit (visitor stays on page)
   const form=document.getElementById('contact-form');
