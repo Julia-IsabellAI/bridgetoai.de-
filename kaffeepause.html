@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>KI & Kaffeepause – AI-Bullshit-Translator | bridge to ai</title>
+<meta name="description" content="Der AI-Bullshit-Translator von bridge to ai: KI-Buzzwords und Corporate-Jargon in echte, menschliche Sprache übersetzt – fachlich fundiert, mit einem Augenzwinkern."/>
+<link rel="icon" type="image/svg+xml" href="brand/icon-tile.svg"/>
+<link rel="icon" type="image/png" sizes="256x256" href="brand/favicon-256.png"/>
+<link rel="apple-touch-icon" sizes="512x512" href="brand/icon-tile-512.png"/>
+<meta name="theme-color" content="#040c16"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="bridge to ai"/>
+<meta property="og:title" content="KI & Kaffeepause – AI-Bullshit-Translator"/>
+<meta property="og:description" content="KI-Buzzwords in echte, menschliche Sprache übersetzt – mit einem Augenzwinkern."/>
+<meta property="og:url" content="https://bridgetoai.de/kaffeepause.html"/>
+<meta property="og:image" content="https://bridgetoai.de/brand/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="KI & Kaffeepause – AI-Bullshit-Translator"/>
+<meta name="twitter:description" content="KI-Buzzwords in echte, menschliche Sprache übersetzt – mit einem Augenzwinkern."/>
+<meta name="twitter:image" content="https://bridgetoai.de/brand/og-image.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --primary:#00D9C0; --secondary:#1B8B9E; --navy:#0A2540;
+  --dark:#040c16; --dark2:#061523; --ink:#030a12;
+  --glow:rgba(0,217,192,0.5);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--dark);color:#fff;overflow-x:hidden;}
+body::after{
+  content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:0.035;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:0 5%;height:76px;
+  background:rgba(4,12,22,0);backdrop-filter:blur(0px);
+  transition:background .4s,backdrop-filter .4s,border-color .4s;
+  border-bottom:1px solid transparent;
+}
+nav.scrolled{background:rgba(4,12,22,0.8);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.06);}
+.nav-logo{display:flex;align-items:center;text-decoration:none;}
+.nav-logo svg{height:30px;width:auto;}
+.nav-links{display:flex;gap:2.4rem;list-style:none;}
+.nav-links a{position:relative;text-decoration:none;color:rgba(255,255,255,0.6);font-size:.9rem;font-weight:500;transition:color .25s;}
+.nav-links a::after{content:'';position:absolute;left:0;bottom:-6px;width:0;height:1px;background:var(--primary);transition:width .3s;}
+.nav-links a:hover{color:#fff;}
+.nav-links a:hover::after{width:100%;}
+.btn-cta{display:inline-flex;align-items:center;gap:.4rem;background:var(--primary);color:var(--navy);padding:.6rem 1.5rem;border-radius:100px;font-size:.9rem;font-weight:700;text-decoration:none;transition:transform .25s,box-shadow .25s;}
+.btn-cta:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,217,192,0.35);}
+
+/* ── PAGE HERO ── */
+.page-hero{position:relative;padding:9rem 5% 3rem;overflow:hidden;}
+.page-hero-atmos{position:absolute;inset:0;z-index:0;
+  background:
+    radial-gradient(ellipse 60% 70% at 80% 10%,rgba(0,217,192,0.14) 0%,transparent 55%),
+    radial-gradient(ellipse 70% 60% at 15% 60%,rgba(27,139,158,0.16) 0%,transparent 60%),
+    linear-gradient(160deg,#030a12 0%,#061523 60%,#0a2540 130%);}
+.page-hero-inner{position:relative;z-index:2;max-width:820px;}
+.s-eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--primary);margin-bottom:1.2rem;}
+.s-eyebrow::before{content:'';width:30px;height:1px;background:linear-gradient(90deg,transparent,var(--primary));}
+.page-title{font-family:'Fraunces',serif;font-size:clamp(2.4rem,5vw,4rem);font-weight:500;line-height:1.04;letter-spacing:-0.02em;margin-bottom:1.3rem;}
+.page-title .it{font-style:italic;font-weight:400;background:linear-gradient(100deg,#1B8B9E,#00D9C0);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.page-sub{font-size:1.12rem;font-weight:300;color:rgba(255,255,255,0.66);max-width:580px;line-height:1.7;}
+
+/* ── TOOL ── */
+.tool{position:relative;padding:1rem 5% 5rem;}
+.tool-wrap{max-width:820px;margin:0 auto;}
+.tool-card{
+  background:linear-gradient(160deg,rgba(10,37,64,0.55),rgba(6,21,35,0.55));
+  border:1px solid rgba(255,255,255,0.08);border-radius:22px;
+  padding:2rem;backdrop-filter:blur(8px);
+  box-shadow:0 24px 60px rgba(0,0,0,0.35);
+}
+.tool-label{display:block;font-size:.82rem;font-weight:600;letter-spacing:.04em;color:rgba(255,255,255,0.65);margin-bottom:.7rem;}
+.tool-input{
+  width:100%;min-height:130px;resize:vertical;
+  background:rgba(3,10,18,0.6);color:#fff;
+  border:1px solid rgba(255,255,255,0.12);border-radius:14px;
+  padding:1rem 1.1rem;font-family:'Outfit',sans-serif;font-size:1rem;line-height:1.6;
+  transition:border-color .25s,box-shadow .25s;
+}
+.tool-input::placeholder{color:rgba(255,255,255,0.32);}
+.tool-input:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(0,217,192,0.14);}
+
+.chips{display:flex;flex-wrap:wrap;gap:.55rem;margin:1.1rem 0 .4rem;}
+.chip-hint{width:100%;font-size:.76rem;color:rgba(255,255,255,0.4);margin-bottom:.1rem;}
+.chip{
+  background:rgba(0,217,192,0.08);border:1px solid rgba(0,217,192,0.22);color:rgba(255,255,255,0.85);
+  padding:.42rem .9rem;border-radius:100px;font-size:.82rem;cursor:pointer;
+  transition:background .2s,transform .2s,border-color .2s;font-family:inherit;
+}
+.chip:hover{background:rgba(0,217,192,0.18);border-color:var(--primary);transform:translateY(-1px);}
+
+.tool-actions{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.4rem;}
+.btn-primary{display:inline-flex;align-items:center;gap:.55rem;background:var(--primary);color:var(--navy);border:none;cursor:pointer;
+  padding:.9rem 1.9rem;border-radius:100px;font-family:inherit;font-size:.95rem;font-weight:700;transition:transform .25s,box-shadow .25s;}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 36px rgba(0,217,192,0.4);}
+.btn-ghost{display:inline-flex;align-items:center;gap:.5rem;background:transparent;border:1.5px solid rgba(255,255,255,0.18);color:#fff;cursor:pointer;
+  padding:.9rem 1.6rem;border-radius:100px;font-family:inherit;font-size:.95rem;font-weight:500;transition:border-color .25s,background .25s;}
+.btn-ghost:hover{border-color:var(--primary);background:rgba(0,217,192,0.06);}
+
+/* ── RESULT ── */
+.result{margin-top:1.6rem;display:none;}
+.result.show{display:block;animation:up .5s ease;}
+@keyframes up{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:none;}}
+
+.meter{display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;flex-wrap:wrap;}
+.meter-track{flex:1;min-width:180px;height:10px;border-radius:100px;background:rgba(255,255,255,0.08);overflow:hidden;}
+.meter-fill{height:100%;width:0;border-radius:100px;background:linear-gradient(90deg,#00D9C0,#1B8B9E);transition:width .8s cubic-bezier(.7,0,.3,1);}
+.meter-score{font-family:'Fraunces',serif;font-size:1.6rem;font-weight:600;white-space:nowrap;}
+.meter-verdict{width:100%;font-size:.95rem;color:rgba(255,255,255,0.72);font-style:italic;}
+
+.block-title{font-size:.76rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--primary);margin:0 0 .7rem;}
+.klartext{
+  background:rgba(3,10,18,0.5);border-left:3px solid var(--primary);border-radius:0 12px 12px 0;
+  padding:1.1rem 1.3rem;font-size:1.05rem;line-height:1.7;color:rgba(255,255,255,0.92);margin-bottom:1.8rem;
+}
+.klartext mark{background:rgba(0,217,192,0.18);color:#fff;padding:.05em .3em;border-radius:5px;font-weight:500;}
+
+.detect-list{display:grid;gap:.7rem;}
+.detect{
+  background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:1rem 1.1rem;
+}
+.detect-term{font-weight:700;color:#fff;font-size:1rem;}
+.detect-term .arrow{color:var(--primary);margin:0 .5rem;}
+.detect-term .plain{font-weight:400;color:rgba(255,255,255,0.85);}
+.detect-twist{margin-top:.45rem;font-size:.92rem;color:rgba(255,255,255,0.6);line-height:1.55;}
+.detect-twist b{color:var(--primary);font-weight:600;}
+
+.empty-note{font-size:.95rem;color:rgba(255,255,255,0.6);line-height:1.6;background:rgba(255,255,255,0.03);border:1px dashed rgba(255,255,255,0.12);border-radius:14px;padding:1.1rem 1.3rem;}
+
+.share-row{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.6rem;}
+
+/* ── BRIDGE TEASER ── */
+.teaser{padding:1rem 5% 5rem;}
+.teaser-card{max-width:820px;margin:0 auto;text-align:center;
+  background:linear-gradient(160deg,rgba(0,217,192,0.08),rgba(27,139,158,0.05));
+  border:1px solid rgba(0,217,192,0.18);border-radius:22px;padding:2.6rem 2rem;}
+.teaser-card h2{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(1.5rem,3vw,2.1rem);margin-bottom:.9rem;line-height:1.2;}
+.teaser-card .it{font-style:italic;background:linear-gradient(100deg,#1B8B9E,#00D9C0);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.teaser-card p{color:rgba(255,255,255,0.66);font-weight:300;max-width:520px;margin:0 auto 1.6rem;line-height:1.7;}
+.coming{display:inline-flex;gap:.5rem;flex-wrap:wrap;justify-content:center;margin-top:1.6rem;}
+.coming span{font-size:.78rem;color:rgba(255,255,255,0.45);border:1px solid rgba(255,255,255,0.1);border-radius:100px;padding:.35rem .9rem;}
+
+/* ── FOOTER ── */
+footer{padding:3rem 5%;border-top:1px solid rgba(255,255,255,0.06);display:flex;flex-direction:column;align-items:center;gap:1.1rem;text-align:center;}
+.footer-copy{font-size:.82rem;color:rgba(255,255,255,0.4);}
+.footer-links{display:flex;gap:1.4rem;flex-wrap:wrap;justify-content:center;}
+.footer-links a{font-size:.84rem;color:rgba(255,255,255,0.55);text-decoration:none;transition:color .2s;}
+.footer-links a:hover{color:var(--primary);}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease;}
+.reveal.visible{opacity:1;transform:none;}
+
+@media(max-width:680px){
+  .nav-links{display:none;}
+  .tool-card{padding:1.4rem;}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="index.html" class="nav-logo" aria-label="bridge to ai – Startseite">
+    <svg viewBox="60 0 1740 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M140 430 Q420 180 700 430 L700 520 L140 520 Z" fill="white"/>
+      <circle cx="200" cy="250" r="34" fill="white"/><circle cx="420" cy="170" r="38" fill="white"/><circle cx="640" cy="250" r="34" fill="white"/>
+      <text x="820" y="475" font-family="Outfit,Arial,sans-serif" font-size="180" font-weight="700" letter-spacing="-4" fill="white">bridge</text>
+      <text x="1365" y="475" font-family="Outfit,Arial,sans-serif" font-size="180" font-style="italic" font-weight="700" letter-spacing="-4" fill="#00D9C0">to</text>
+      <text x="1570" y="475" font-family="Outfit,Arial,sans-serif" font-size="180" font-weight="700" letter-spacing="-4" fill="white">ai</text>
+    </svg>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#leistungen">Leistungen</a></li>
+    <li><a href="handwerk.html">Für Handwerker</a></li>
+    <li><a href="projekte.html">Projekte</a></li>
+    <li><a href="kaffeepause.html">KI & Kaffeepause</a></li>
+    <li><a href="index.html#kontakt">Kontakt</a></li>
+  </ul>
+  <a href="index.html#kontakt" class="btn-cta">Erstgespräch →</a>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-atmos"></div>
+  <div class="page-hero-inner reveal">
+    <span class="s-eyebrow">KI &amp; Kaffeepause</span>
+    <h1 class="page-title">Der AI-<span class="it">Bullshit-Translator</span></h1>
+    <p class="page-sub">Fügen Sie Ihren liebsten KI-Buzzword-Satz ein – aus dem Meeting, dem LinkedIn-Feed oder der nächsten Strategie-Folie. Ich übersetze ihn in Klartext, so wie ich ihn auch am Küchentisch erklären würde. Fachlich fundiert, mit einem Augenzwinkern.</p>
+  </div>
+</section>
+
+<section class="tool">
+  <div class="tool-wrap reveal">
+    <div class="tool-card">
+      <label class="tool-label" for="jargon">Ihr Corporate-/KI-Jargon</label>
+      <textarea id="jargon" class="tool-input" placeholder="z. B. „Wir leveragen eine KI-First-Strategie, um durch disruptive Synergien end-to-end Mehrwert zu generieren.“"></textarea>
+
+      <div class="chips">
+        <span class="chip-hint">Keine Idee? Klicken Sie ein Beispiel an:</span>
+        <button class="chip" type="button">Wir müssen die KI ganzheitlich end-to-end ausrollen, um echten Mehrwert zu generieren.</button>
+        <button class="chip" type="button">Lass uns das mal leveragen und einen datengetriebenen Deep Dive machen.</button>
+        <button class="chip" type="button">Unsere KI-First-Strategie schafft disruptive Synergien im Ökosystem.</button>
+        <button class="chip" type="button">Wir empowern den Kunden mit einem skalierbaren, agilen Mindset.</button>
+      </div>
+
+      <div class="tool-actions">
+        <button id="translate" class="btn-primary" type="button">Übersetzen <span>☕</span></button>
+        <button id="clear" class="btn-ghost" type="button">Leeren</button>
+      </div>
+
+      <div id="result" class="result" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<section class="teaser">
+  <div class="teaser-card reveal">
+    <h2>Hinter dem Spaß steckt <span class="it">Methode</span></h2>
+    <p>Genau dieses Übersetzen – von „klingt wichtig“ zu „so machen wir das konkret“ – ist meine Arbeit als KI-Managerin. Wenn aus dem Schmunzeln Ernst werden soll: Lassen Sie uns reden.</p>
+    <a href="index.html#kontakt" class="btn-primary" style="text-decoration:none;">Kostenloses Erstgespräch →</a>
+    <div class="coming">
+      <span>☕ Bald: Virtual Office Pet</span>
+      <span>🥠 Bald: Fortune Cookie of AI Trends</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <svg viewBox="60 0 1740 700" style="height:26px;width:auto;" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M140 430 Q420 180 700 430 L700 520 L140 520 Z" fill="white"/>
+    <circle cx="200" cy="250" r="34" fill="white"/><circle cx="420" cy="170" r="38" fill="white"/><circle cx="640" cy="250" r="34" fill="white"/>
+    <text x="820" y="475" font-family="Outfit,Arial,sans-serif" font-size="180" font-weight="700" letter-spacing="-4" fill="white">bridge</text>
+    <text x="1365" y="475" font-family="Outfit,Arial,sans-serif" font-size="180" font-style="italic" font-weight="700" letter-spacing="-4" fill="#00D9C0">to</text>
+    <text x="1570" y="475" font-family="Outfit,Arial,sans-serif" font-size="180" font-weight="700" letter-spacing="-4" fill="white">ai</text>
+  </svg>
+  <span class="footer-copy">© 2025 Julia Pakravan · bridgetoai.de</span>
+  <div class="footer-links">
+    <a href="index.html">Start</a>
+    <a href="handwerk.html">Für Handwerker</a>
+    <a href="projekte.html">Projekte</a>
+    <a href="kaffeepause.html">KI &amp; Kaffeepause</a>
+    <a href="index.html#kontakt">Kontakt</a>
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+  </div>
+</footer>
+
+<script>
+/* =====================================================================
+   AI-Bullshit-Translator — bridge to ai · "KI & Kaffeepause"
+   Leichtgewichtig, ohne Abhängigkeiten. Wörterbuch + Klartext-Logik.
+   ===================================================================== */
+
+/** Buzzword-Wörterbuch.
+ *  term   – Anzeigename des Buzzwords
+ *  match  – Liste von Schreibweisen/Varianten (klein geschrieben), Wortgrenzen-Suche
+ *  plain  – nüchterne Klartext-Übersetzung (für Inline-Ersetzung)
+ *  twist  – humorvoll-bodenständiger Kommentar (Brücke Business ↔ Alltag)
+ */
+const DICTIONARY = [
+  { term:"leveragen", match:["leveragen","leverage","gelevered","leveraged"],
+    plain:"benutzen", twist:"Heißt einfach <b>nutzen</b>. Den Kaffee „leveragen“ Sie ja auch nicht – Sie trinken ihn." },
+  { term:"Synergien", match:["synergien","synergie","synergy","synergieeffekte"],
+    plain:"Zusammenarbeit, die wirklich etwas bringt", twist:"Wenn zwei Dinge zusammen mehr schaffen als allein. Wie Kaffee und Sonntagmorgen." },
+  { term:"disruptiv", match:["disruptiv","disruption","disruptive","disrupten","disrupt"],
+    plain:"etwas grundlegend anders machen", twist:"Klingt nach Revolution, meint oft: <b>jemand macht's endlich anders.</b>" },
+  { term:"end-to-end", match:["end-to-end","end to end","ende-zu-ende","e2e","durchgängig"],
+    plain:"vom Anfang bis zum Ende", twist:"Also: komplett. Vom ersten Klick bis zur fertigen Rechnung." },
+  { term:"Mehrwert generieren", match:["mehrwert generieren","mehrwert schaffen","value generieren","added value","mehrwert"],
+    plain:"etwas Nützliches herstellen", twist:"<b>Es bringt etwas.</b> Schön, wenn man das auch ohne Folie merkt." },
+  { term:"ganzheitlich", match:["ganzheitlich","holistisch","holistic","360 grad","360-grad"],
+    plain:"das große Ganze im Blick", twist:"Bedeutet: <b>nichts vergessen.</b> Ein gutes Vorsatz, kein Zauberwort." },
+  { term:"datengetrieben", match:["datengetrieben","data-driven","data driven","datenbasiert"],
+    plain:"Entscheidungen mit Zahlen statt Bauchgefühl", twist:"Vernünftig! Solange die Daten stimmen und nicht nur gut aussehen." },
+  { term:"Deep Dive", match:["deep dive","deepdive","tiefgehende analyse","tief eintauchen"],
+    plain:"sich etwas genauer ansehen", twist:"Genauer hinschauen. Kein Tauchschein nötig." },
+  { term:"KI-First", match:["ki-first","ai-first","ai first","ki first","ki-getrieben"],
+    plain:"KI zuerst einsetzen", twist:"Klingt mutig. Wichtiger als „KI zuerst“ ist meist <b>„Mensch versteht's“.</b>" },
+  { term:"Ökosystem", match:["ökosystem","ecosystem","öko-system","plattform-ökosystem"],
+    plain:"alle Beteiligten und Tools zusammen", twist:"Im Wald sind das Pflanzen und Tiere. Im Meeting: Tools, die miteinander reden sollen." },
+  { term:"skalierbar", match:["skalierbar","skalieren","scalable","scale","skalierung"],
+    plain:"wächst mit, ohne zusammenzubrechen", twist:"Funktioniert für 10 Kunden genauso wie für 10.000. Theoretisch." },
+  { term:"agil", match:["agil","agile","agilität","agiles mindset"],
+    plain:"flexibel in kleinen Schritten arbeiten", twist:"Heißt eigentlich: <b>nicht alles auf einmal planen.</b> Manchmal heißt es nur „wir wissen's noch nicht“." },
+  { term:"Mindset", match:["mindset","denkweise","growth mindset"],
+    plain:"Einstellung", twist:"Die innere Haltung. Lässt sich schlecht im Workshop „installieren“." },
+  { term:"empowern", match:["empowern","empowerment","befähigen","enablen","enablement"],
+    plain:"in die Lage versetzen, es selbst zu können", twist:"<b>Leuten helfen, es selbst zu können.</b> Schönes Ziel, ehrlich." },
+  { term:"Pain Point", match:["pain point","painpoint","schmerzpunkt","pain points"],
+    plain:"das eigentliche Problem", twist:"Der Punkt, der wirklich weh tut. Den löst man, der Rest ist Deko." },
+  { term:"Low-Hanging Fruit", match:["low-hanging fruit","low hanging fruit","tiefhängende früchte","quick win","quick wins"],
+    plain:"der schnelle, einfache Erfolg", twist:"Das, was man ohne Leiter pflücken kann. Erst die, dann der Rest." },
+  { term:"Best Practice", match:["best practice","best practices","bewährte methode"],
+    plain:"bewährter Weg", twist:"Hat schon mal funktioniert. Heißt nicht, dass es bei Ihnen passt." },
+  { term:"Game Changer", match:["game changer","game-changer","gamechanger","spielveränderer"],
+    plain:"verändert die Lage spürbar", twist:"Verändert wirklich etwas – wenn's stimmt. Oft ist's nur ein neues Feature." },
+  { term:"Next Level", match:["next level","next-level","nächstes level","auf ein neues level"],
+    plain:"deutlich besser", twist:"Eine Stufe höher. Kein Videospiel, aber das Gefühl ist ähnlich." },
+  { term:"Roadmap", match:["roadmap","road map","fahrplan"],
+    plain:"Plan mit Zeitachse", twist:"Ein Fahrplan. Mit der charmanten Eigenschaft, sich gern zu verschieben." },
+  { term:"alignen", match:["alignen","alignment","aligned","auf einer linie","abstimmen"],
+    plain:"sich abstimmen", twist:"<b>Alle wollen dasselbe.</b> Oder tun zumindest so. Ein kurzes Telefonat tut's oft auch." },
+  { term:"Stakeholder", match:["stakeholder","stakeholders","beteiligte","anspruchsgruppen"],
+    plain:"alle, die ein Interesse daran haben", twist:"Die Leute, die mitreden – ob sie sollen oder nicht." },
+  { term:"Touchpoint", match:["touchpoint","touchpoints","kontaktpunkt","berührungspunkt"],
+    plain:"Kontaktmoment mit dem Kunden", twist:"Jeder Punkt, an dem der Kunde Sie „berührt“. Ganz ohne Händeschütteln." },
+  { term:"onboarden", match:["onboarden","onboarding","einarbeiten","an bord holen"],
+    plain:"jemanden einarbeiten", twist:"Neue Leute oder Kunden an Bord holen. Schwimmweste optional." },
+  { term:"Deliverable", match:["deliverable","deliverables","liefergegenstand","ergebnis"],
+    plain:"das fertige Ergebnis", twist:"Das, was am Ende rauskommt. Idealerweise mehr als eine Folie." },
+  { term:"proaktiv", match:["proaktiv","proactive","vorausschauend"],
+    plain:"vorher handeln statt hinterher", twist:"Vorher dran denken. Wie Regenschirm einpacken, bevor's gießt." },
+  { term:"Bandbreite", match:["bandbreite","bandwidth","kapazität haben"],
+    plain:"Zeit und Energie", twist:"„Ich hab grad keine Bandbreite“ heißt schlicht: <b>keine Zeit.</b>" },
+  { term:"zirkulieren", match:["zirkulieren","circle back","loop","rückkopplung"],
+    plain:"sich später nochmal melden", twist:"„Ich circle back“ = <b>ich melde mich.</b> Vielleicht." },
+  { term:"Use Case", match:["use case","use-case","anwendungsfall","usecase"],
+    plain:"konkreter Anwendungsfall", twist:"Wofür man's tatsächlich benutzt. Die wichtigste Frage überhaupt." },
+  { term:"Buy-in", match:["buy-in","buy in","zustimmung","mit ins boot"],
+    plain:"Zustimmung der Beteiligten", twist:"Die anderen müssen mitmachen wollen. Kostet kein Geld, aber Überzeugung." },
+  { term:"Bleeding Edge", match:["bleeding edge","cutting edge","cutting-edge","brandneu","neueste technologie"],
+    plain:"allerneueste Technik", twist:"So neu, dass es manchmal noch wehtut. Daher „bleeding“." },
+  { term:"transformieren", match:["transformieren","transformation","wandel einleiten","umkrempeln"],
+    plain:"grundlegend verändern", twist:"Echte Veränderung – nicht nur ein neues Logo. <b>Genau hier fängt meine Arbeit an.</b>" },
+  { term:"Seamless", match:["seamless","nahtlos","reibungslos"],
+    plain:"ohne Brüche, läuft glatt", twist:"Es ruckelt nicht. Der Traum jeder Software und jedes Montagmorgens." }
+];
+
+/* ---------- Verdikte je nach Bullshit-Dichte ---------- */
+const VERDICTS = [
+  { max:0,   text:"Erstaunlich klar! Hier könnte man fast direkt loslegen. ☕" },
+  { max:1,   text:"Ein Buzzword reingerutscht – passiert den Besten. Sonst angenehm verständlich." },
+  { max:2,   text:"Leicht angereichert. Mit einem Schluck Kaffee gut verdaulich." },
+  { max:4,   text:"Solides Meeting-Deutsch. Die Botschaft versteckt sich, aber sie ist noch da." },
+  { max:6,   text:"Hochkonzentriert. Hier wurde mehr verpackt als gesagt – Zeit zum Übersetzen." },
+  { max:999, text:"Bingo-Karte voll! Jenseits dieser Wortwolke steckt vermutlich ein einfacher Satz. 🫠" }
+];
+
+/* ---------- Hilfsfunktionen ---------- */
+function escapeHtml(str){
+  return str.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+function escapeRegExp(str){
+  return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+/** Findet alle Buzzwords im Text. Längere Treffer zuerst, um Überlappung zu vermeiden. */
+function detectBuzzwords(text){
+  const lower = text.toLowerCase();
+  const hits = [];
+  DICTIONARY.forEach(entry => {
+    const found = entry.match.some(variant => {
+      const re = new RegExp('(^|[^a-zäöüß])' + escapeRegExp(variant) + '[a-zäöüß]*($|[^a-zäöüß])', 'i');
+      return re.test(' ' + lower + ' ');
+    });
+    if(found) hits.push(entry);
+  });
+  return hits;
+}
+
+/** Ersetzt erkannte Buzzwords im Originaltext durch <mark>Klartext</mark>. */
+function buildKlartext(text, hits){
+  let html = escapeHtml(text);
+  // alle Varianten sammeln, längste zuerst ersetzen
+  const replacements = [];
+  hits.forEach(entry => entry.match.forEach(v => replacements.push({variant:v, plain:entry.plain})));
+  replacements.sort((a,b) => b.variant.length - a.variant.length);
+  replacements.forEach(r => {
+    const re = new RegExp('(^|[^a-zA-Zäöüß])(' + escapeRegExp(escapeHtml(r.variant)) + '[a-zA-ZäöüßÄÖÜ]*)', 'gi');
+    html = html.replace(re, (m, pre) => pre + '<mark>' + r.plain + '</mark>');
+  });
+  return html;
+}
+
+function verdictFor(count){
+  return VERDICTS.find(v => count <= v.max).text;
+}
+
+/* ---------- Haupt-Render ---------- */
+const input    = document.getElementById('jargon');
+const resultBox = document.getElementById('result');
+
+function translate(){
+  const text = input.value.trim();
+  if(!text){
+    resultBox.innerHTML = '<div class="empty-note">Erst füttern, dann übersetzen ☕ – fügen Sie oben einen Satz ein oder klicken Sie ein Beispiel an.</div>';
+    resultBox.classList.add('show');
+    return;
+  }
+
+  const hits = detectBuzzwords(text);
+  const wordCount = Math.max(text.split(/\s+/).length, 1);
+  // Score: Buzzword-Dichte, gedeckelt auf 100
+  const score = Math.min(100, Math.round((hits.length / wordCount) * 100 * 2.2) + (hits.length ? 12 : 0));
+
+  let html = '';
+
+  // Meter
+  html += '<div class="meter">'
+        + '<div class="meter-track"><div class="meter-fill" id="meterFill"></div></div>'
+        + '<div class="meter-score">' + score + '<span style="font-size:.9rem;color:rgba(255,255,255,0.5);"> / 100</span></div>'
+        + '<div class="meter-verdict">' + verdictFor(hits.length) + '</div>'
+        + '</div>';
+
+  if(hits.length === 0){
+    html += '<div class="empty-note">Kein klassisches Buzzword erkannt – Respekt, das war fast schon ehrliche Sprache! '
+          + 'Wenn doch eins fehlt, schreiben Sie mir gern, dann wandert es ins Wörterbuch.</div>';
+  } else {
+    // Klartext
+    html += '<p class="block-title">Klartext</p>';
+    html += '<div class="klartext">' + buildKlartext(text, hits) + '</div>';
+
+    // Detected list
+    html += '<p class="block-title">Was da wirklich gesagt wurde</p>';
+    html += '<div class="detect-list">';
+    hits.forEach(h => {
+      html += '<div class="detect">'
+            + '<div class="detect-term">' + escapeHtml(h.term)
+            + '<span class="arrow">→</span><span class="plain">' + escapeHtml(h.plain) + '</span></div>'
+            + '<div class="detect-twist">' + h.twist + '</div>'
+            + '</div>';
+    });
+    html += '</div>';
+  }
+
+  resultBox.innerHTML = html;
+  resultBox.classList.add('show');
+
+  // Meter-Animation nach dem Einfügen
+  const fill = document.getElementById('meterFill');
+  if(fill){ requestAnimationFrame(() => { fill.style.width = score + '%'; }); }
+}
+
+document.getElementById('translate').addEventListener('click', translate);
+document.getElementById('clear').addEventListener('click', () => {
+  input.value = '';
+  resultBox.classList.remove('show');
+  resultBox.innerHTML = '';
+  input.focus();
+});
+
+// Beispiel-Chips
+document.querySelectorAll('.chip').forEach(chip => {
+  chip.addEventListener('click', () => {
+    input.value = chip.textContent;
+    translate();
+    resultBox.scrollIntoView({behavior:'smooth', block:'nearest'});
+  });
+});
+
+// Strg/Cmd + Enter zum Übersetzen
+input.addEventListener('keydown', e => {
+  if((e.metaKey || e.ctrlKey) && e.key === 'Enter'){ translate(); }
+});
+
+/* Nav + reveal (analog zur restlichen Website) */
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40));
+const obs = new IntersectionObserver(es => {
+  es.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, {threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
