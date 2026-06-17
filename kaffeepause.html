@@ -160,6 +160,61 @@ nav.scrolled{background:rgba(4,12,22,0.8);backdrop-filter:blur(20px);border-bott
 .coming{display:inline-flex;gap:.5rem;flex-wrap:wrap;justify-content:center;margin-top:1.6rem;}
 .coming span{font-size:.78rem;color:rgba(255,255,255,0.45);border:1px solid rgba(255,255,255,0.1);border-radius:100px;padding:.35rem .9rem;}
 
+/* ── VIRTUAL OFFICE PET ── */
+.office{position:relative;padding:1rem 5% 4rem;}
+.office-wrap{max-width:900px;margin:0 auto;}
+.office-title{font-family:'Fraunces',serif;font-size:clamp(1.8rem,3.6vw,2.6rem);font-weight:500;line-height:1.1;letter-spacing:-0.01em;margin-bottom:1rem;}
+.office-title .it{font-style:italic;font-weight:400;background:linear-gradient(100deg,#1B8B9E,#00D9C0);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.office-sub{font-size:1.05rem;font-weight:300;color:rgba(255,255,255,0.64);max-width:620px;line-height:1.7;margin-bottom:1.8rem;}
+
+.office-now{display:flex;align-items:center;gap:.9rem;
+  background:linear-gradient(160deg,rgba(0,217,192,0.1),rgba(27,139,158,0.05));
+  border:1px solid rgba(0,217,192,0.22);border-radius:16px;padding:1rem 1.2rem;margin-bottom:2rem;}
+.office-now-dot{flex:none;width:11px;height:11px;border-radius:50%;background:var(--primary);box-shadow:0 0 0 0 var(--glow);animation:livePulse 2.4s ease-in-out infinite;}
+@keyframes livePulse{0%{box-shadow:0 0 0 0 rgba(0,217,192,0.5);}70%{box-shadow:0 0 0 9px rgba(0,217,192,0);}100%{box-shadow:0 0 0 0 rgba(0,217,192,0);}}
+.office-greeting{display:block;font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--primary);}
+.office-task{display:block;font-size:1.02rem;color:rgba(255,255,255,0.9);margin-top:.2rem;transition:opacity .4s;}
+
+.pets-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;}
+.pet-card{background:linear-gradient(160deg,rgba(10,37,64,0.5),rgba(6,21,35,0.5));
+  border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:1.6rem 1.2rem;text-align:center;
+  backdrop-filter:blur(6px);transition:transform .3s,border-color .3s;}
+.pet-card:hover{transform:translateY(-4px);border-color:rgba(0,217,192,0.3);}
+.pet-illu{width:118px;height:118px;margin:0 auto .9rem;}
+.pet-svg{width:100%;height:100%;animation:petBreathe 5s ease-in-out infinite;transform-origin:center bottom;}
+@keyframes petBreathe{0%,100%{transform:translateY(0) scale(1);}50%{transform:translateY(-3px) scale(1.02);}}
+.pet-name{font-family:'Fraunces',serif;font-weight:600;font-size:1.3rem;margin-bottom:.15rem;}
+.pet-role{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--primary);margin-bottom:.8rem;}
+.pet-status{display:flex;align-items:center;justify-content:center;gap:.5rem;min-height:2.8em;font-size:.95rem;color:rgba(255,255,255,0.78);line-height:1.45;transition:opacity .4s;}
+.pet-emoji{font-size:1.15rem;}
+
+/* Fell-Farben je Tier */
+.pet-svg .fur{fill:#2a5f6b;}
+.pet-svg .ear-inner{fill:#0a2540;}
+.pet-svg .eye{fill:#00D9C0;filter:drop-shadow(0 0 3px rgba(0,217,192,0.8));transform-origin:center;animation:petBlink 5.5s infinite;}
+.pet-svg .nose{fill:#00D9C0;}
+.pet-svg .mouth{stroke:rgba(255,255,255,0.5);stroke-width:2;fill:none;stroke-linecap:round;}
+.pet-svg .whiskers path{stroke:rgba(255,255,255,0.3);stroke-width:1.4;stroke-linecap:round;}
+.pet--cat2 .pet-svg .fur{fill:#3a4a5a;}
+.pet--cat2 .pet-svg .ear-inner{fill:#1c2a38;}
+.pet--cat2 .pet-svg .mask{fill:rgba(3,10,18,0.55);}
+.pet--dog .pet-svg .fur{fill:#c9a86a;}
+.pet--dog .pet-svg .ear{fill:#b08f54;}
+.pet--dog .pet-svg .snout{fill:#e0c690;}
+.pet--dog .pet-svg .nose{fill:#0a2540;}
+.pet--dog .pet-svg .tongue{fill:#ff8a9b;}
+@keyframes petBlink{0%,92%,100%{transform:scaleY(1);}96%{transform:scaleY(0.1);}}
+/* schlafender Zustand */
+.pet-card.is-sleeping .pet-svg .eye{animation:none;transform:scaleY(0.14);}
+.pet-card.is-sleeping .pet-svg{animation:petBreathe 6.5s ease-in-out infinite;}
+
+.office-foot{margin-top:1.8rem;font-size:.9rem;color:rgba(255,255,255,0.5);line-height:1.6;}
+.office-foot .it{font-style:italic;color:rgba(255,255,255,0.66);}
+
+@media(max-width:720px){
+  .pets-grid{grid-template-columns:1fr;max-width:340px;margin:0 auto;}
+}
+
 /* ── FOOTER ── */
 footer{padding:3rem 5%;border-top:1px solid rgba(255,255,255,0.06);display:flex;flex-direction:column;align-items:center;gap:1.1rem;text-align:center;}
 .footer-copy{font-size:.82rem;color:rgba(255,255,255,0.4);}
@@ -232,13 +287,88 @@ footer{padding:3rem 5%;border-top:1px solid rgba(255,255,255,0.06);display:flex;
   </div>
 </section>
 
+<!-- ════════ VIRTUAL OFFICE PET ════════ -->
+<section class="office" id="office-pet">
+  <div class="office-wrap reveal">
+    <span class="s-eyebrow">Virtual Office Pet</span>
+    <h2 class="office-title">Meine <span class="it">Kolleg:innen</span> auf vier Pfoten</h2>
+    <p class="office-sub">KI-Transformation klingt nach Hochglanz und Serverräumen. In Wahrheit läuft hier auch ein Trainingsjob im Hintergrund, während drei Fellnasen den Laden „beaufsichtigen“. Ein ehrlicher Blick in meine KI-Werkstatt – live.</p>
+
+    <div class="office-now">
+      <div class="office-now-dot"></div>
+      <div>
+        <span class="office-greeting" id="officeGreeting">Willkommen in der KI-Werkstatt</span>
+        <span class="office-task" id="officeTask">Gerade in Arbeit: …</span>
+      </div>
+    </div>
+
+    <div class="pets-grid">
+
+      <!-- Katze 1 -->
+      <div class="pet-card pet--cat1">
+        <div class="pet-illu">
+          <svg class="pet-svg" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path class="fur" d="M30 40 L41 13 L57 33 Z"/><path class="fur" d="M90 40 L79 13 L63 33 Z"/>
+            <path class="ear-inner" d="M37 35 L42 21 L50 32 Z"/><path class="ear-inner" d="M83 35 L78 21 L70 32 Z"/>
+            <ellipse class="fur" cx="60" cy="66" rx="40" ry="36"/>
+            <g class="eyes"><ellipse class="eye" cx="46" cy="62" rx="6" ry="8"/><ellipse class="eye" cx="74" cy="62" rx="6" ry="8"/></g>
+            <path class="nose" d="M56 76 L64 76 L60 82 Z"/>
+            <path class="mouth" d="M60 82 Q54 88 49 84 M60 82 Q66 88 71 84"/>
+            <g class="whiskers"><path d="M20 66 L40 68 M20 74 L40 73"/><path d="M100 66 L80 68 M100 74 L80 73"/></g>
+          </svg>
+        </div>
+        <h3 class="pet-name" data-name="cat1">Gitta</h3>
+        <span class="pet-role">Chief Elegance Officer · Ragdoll</span>
+        <p class="pet-status" data-pet="cat1"><span class="pet-emoji">👑</span><span class="pet-text">…</span></p>
+      </div>
+
+      <!-- Katze 2 -->
+      <div class="pet-card pet--cat2">
+        <div class="pet-illu">
+          <svg class="pet-svg" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path class="fur" d="M30 40 L41 13 L57 33 Z"/><path class="fur" d="M90 40 L79 13 L63 33 Z"/>
+            <path class="ear-inner" d="M37 35 L42 21 L50 32 Z"/><path class="ear-inner" d="M83 35 L78 21 L70 32 Z"/>
+            <ellipse class="fur" cx="60" cy="66" rx="40" ry="36"/>
+            <ellipse class="mask" cx="46" cy="62" rx="14" ry="12"/><ellipse class="mask" cx="74" cy="62" rx="14" ry="12"/>
+            <g class="eyes"><ellipse class="eye" cx="46" cy="62" rx="6" ry="8"/><ellipse class="eye" cx="74" cy="62" rx="6" ry="8"/></g>
+            <path class="nose" d="M56 76 L64 76 L60 82 Z"/>
+            <path class="mouth" d="M60 82 Q54 88 49 84 M60 82 Q66 88 71 84"/>
+            <g class="whiskers"><path d="M20 66 L40 68 M20 74 L40 73"/><path d="M100 66 L80 68 M100 74 L80 73"/></g>
+          </svg>
+        </div>
+        <h3 class="pet-name" data-name="cat2">Hanni</h3>
+        <span class="pet-role">Head of Chaos &amp; Kabel-Management · Ragdoll</span>
+        <p class="pet-status" data-pet="cat2"><span class="pet-emoji">🦝</span><span class="pet-text">…</span></p>
+      </div>
+
+      <!-- Hund -->
+      <div class="pet-card pet--dog">
+        <div class="pet-illu">
+          <svg class="pet-svg" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <ellipse class="ear" cx="24" cy="60" rx="13" ry="26"/><ellipse class="ear" cx="96" cy="60" rx="13" ry="26"/>
+            <ellipse class="fur" cx="60" cy="60" rx="38" ry="34"/>
+            <ellipse class="snout" cx="60" cy="78" rx="21" ry="16"/>
+            <g class="eyes"><circle class="eye" cx="48" cy="54" r="5.5"/><circle class="eye" cx="72" cy="54" r="5.5"/></g>
+            <ellipse class="nose" cx="60" cy="72" rx="6.5" ry="5"/>
+            <path class="tongue" d="M55 84 Q60 98 65 84 Z"/>
+          </svg>
+        </div>
+        <h3 class="pet-name" data-name="dog">Peppa</h3>
+        <span class="pet-role">Good Girl of Deployments · Golden Retriever</span>
+        <p class="pet-status" data-pet="dog"><span class="pet-emoji">🚀</span><span class="pet-text">…</span></p>
+      </div>
+
+    </div>
+    <p class="office-foot">Der Status wechselt von allein – so wie ein echter Arbeitstag. <span class="it">Kein Tier wurde beim Programmieren gestört.</span></p>
+  </div>
+</section>
+
 <section class="teaser">
   <div class="teaser-card reveal">
     <h2>Hinter dem Spaß steckt <span class="it">Methode</span></h2>
     <p>Genau dieses Übersetzen – von „klingt wichtig“ zu „so machen wir das konkret“ – ist meine Arbeit als KI-Managerin. Wenn aus dem Schmunzeln Ernst werden soll: Lassen Sie uns reden.</p>
     <a href="index.html#kontakt" class="btn-primary" style="text-decoration:none;">Kostenloses Erstgespräch →</a>
     <div class="coming">
-      <span>☕ Bald: Virtual Office Pet</span>
       <span>🥠 Bald: Fortune Cookie of AI Trends</span>
     </div>
   </div>
@@ -997,6 +1127,98 @@ document.querySelectorAll('.chip').forEach(chip => {
 input.addEventListener('keydown', e => {
   if((e.metaKey || e.ctrlKey) && e.key === 'Enter'){ translate(); }
 });
+
+/* =====================================================================
+   VIRTUAL OFFICE PET — lebendiger Status der KI-Werkstatt + Tiere
+   Frontend-only: Tageszeit bestimmt die Begrüßung, Stati wechseln von selbst.
+   ===================================================================== */
+const OFFICE_TASKS = [
+  "Ein Modell trainiert im Hintergrund.",
+  "Prompts werden gerade verfeinert.",
+  "Ein Datensatz wird aufgeräumt.",
+  "Ein Workshop für nächste Woche entsteht.",
+  "Ein Edge-AI-Prototyp wird getüftelt.",
+  "Der nächste Blogpost will geschrieben werden.",
+  "Ein Kundengespräch wird vorbereitet.",
+  "Die Trainingskurve wird kritisch beäugt."
+];
+
+/* Pro Tier ein Pool an Stati. „sleep:true“ = Augen zu (Nacht-/Pausenmodus). */
+const PET_MOODS = {
+  // Gitta – die elegante Prinzessin
+  cat1: [
+    { e:"👑", t:"residiert hoheitsvoll auf dem warmen Laptop" },
+    { e:"💅", t:"begutachtet den Code – findet ihn nicht ganz standesgemäß" },
+    { e:"✨", t:"posiert schon mal fürs nächste LinkedIn-Foto" },
+    { e:"🛋️", t:"delegiert die Arbeit elegant ans Sofa" },
+    { e:"😴", t:"hält Schönheitsschlaf auf der warmen GPU", sleep:true }
+  ],
+  // Hanni – Ragdoll im Waschbär-Kostüm, zuständig fürs Chaos
+  cat2: [
+    { e:"🦝", t:"durchwühlt die Datenmülltonne nach Schätzen" },
+    { e:"🧶", t:"entwirrt einen Prompt – oder doch das Ladekabel" },
+    { e:"📦", t:"sortiert Datenpakete (= schubst sie vom Tisch)" },
+    { e:"🍴", t:"stibitzt heimlich vom Mittagessen, ganz Waschbär" },
+    { e:"🌙", t:"pennt zwischen den Logs, Chaos vertagt", sleep:true }
+  ],
+  // Peppa – Golden Retriever, gute Seele des Teams
+  dog: [
+    { e:"🚀", t:"wartet sehnsüchtig auf den nächsten Deploy" },
+    { e:"✅", t:"freut sich – alle Tests sind grün" },
+    { e:"🎾", t:"bringt die Daten zurück (na ja, den Ball)" },
+    { e:"💛", t:"strahlt einfach, weil der Tag schön ist" },
+    { e:"🦴", t:"feiert das fertige Modell mit Extra-Leckerli" },
+    { e:"💤", t:"schnarcht unterm Schreibtisch, Wache beendet", sleep:true }
+  ]
+};
+
+function pick(arr){ return arr[Math.floor(Math.random()*arr.length)]; }
+
+function greetingForHour(h){
+  if(h>=5 && h<11)  return "Guten Morgen aus der KI-Werkstatt";
+  if(h>=11 && h<14) return "Mittagszeit – die KI macht keine Pause";
+  if(h>=14 && h<18) return "Nachmittags-Sprint läuft";
+  if(h>=18 && h<23) return "Feierabend naht – fast";
+  return "Nachtschicht: nur die KI ist noch wach";
+}
+// Nachts/abends dösen die Tiere eher
+function sleepBias(h){ return (h>=22 || h<6) ? 0.65 : 0.12; }
+
+function renderOfficePet(){
+  const hour = new Date().getHours();
+  const greetEl = document.getElementById('officeGreeting');
+  const taskEl  = document.getElementById('officeTask');
+  if(!greetEl || !taskEl) return;
+
+  greetEl.textContent = greetingForHour(hour);
+  taskEl.style.opacity = 0;
+  setTimeout(() => {
+    taskEl.textContent = "Gerade in Arbeit: " + pick(OFFICE_TASKS);
+    taskEl.style.opacity = 1;
+  }, 200);
+
+  const bias = sleepBias(hour);
+  Object.keys(PET_MOODS).forEach(key => {
+    const card = document.querySelector('.pet-card .pet-status[data-pet="' + key + '"]');
+    if(!card) return;
+    const wrap = card.closest('.pet-card');
+    const pool = PET_MOODS[key];
+    // nachts mit höherer Wahrscheinlichkeit den Schlaf-Status wählen
+    const sleepers = pool.filter(m => m.sleep);
+    const mood = (sleepers.length && Math.random() < bias) ? pick(sleepers) : pick(pool);
+
+    card.style.opacity = 0;
+    setTimeout(() => {
+      card.querySelector('.pet-emoji').textContent = mood.e;
+      card.querySelector('.pet-text').textContent  = mood.t;
+      wrap.classList.toggle('is-sleeping', !!mood.sleep);
+      card.style.opacity = 1;
+    }, 200);
+  });
+}
+
+renderOfficePet();
+setInterval(renderOfficePet, 6500);
 
 /* Nav + reveal (analog zur restlichen Website) */
 const nav = document.getElementById('nav');
