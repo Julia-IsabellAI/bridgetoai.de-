@@ -3,20 +3,20 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>KI & Kaffeepause – AI-Bullshit-Translator | bridge to ai</title>
-<meta name="description" content="Der AI-Bullshit-Translator von bridge to ai: KI-Buzzwords und Corporate-Jargon in echte, menschliche Sprache übersetzt – fachlich fundiert, mit einem Augenzwinkern."/>
+<title>KI & Kaffeepause – KI-Sprachbrücke | bridge to ai</title>
+<meta name="description" content="Die KI-Sprachbrücke von bridge to ai: KI-Buzzwords und Corporate-Jargon in echte, menschliche Sprache übersetzt – fachlich fundiert, mit einem Augenzwinkern."/>
 <link rel="icon" type="image/svg+xml" href="brand/icon-tile.svg"/>
 <link rel="icon" type="image/png" sizes="256x256" href="brand/favicon-256.png"/>
 <link rel="apple-touch-icon" sizes="512x512" href="brand/icon-tile-512.png"/>
 <meta name="theme-color" content="#040c16"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="bridge to ai"/>
-<meta property="og:title" content="KI & Kaffeepause – AI-Bullshit-Translator"/>
+<meta property="og:title" content="KI & Kaffeepause – KI-Sprachbrücke"/>
 <meta property="og:description" content="KI-Buzzwords in echte, menschliche Sprache übersetzt – mit einem Augenzwinkern."/>
 <meta property="og:url" content="https://bridgetoai.de/kaffeepause.html"/>
 <meta property="og:image" content="https://bridgetoai.de/brand/og-image.png"/>
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="KI & Kaffeepause – AI-Bullshit-Translator"/>
+<meta name="twitter:title" content="KI & Kaffeepause – KI-Sprachbrücke"/>
 <meta name="twitter:description" content="KI-Buzzwords in echte, menschliche Sprache übersetzt – mit einem Augenzwinkern."/>
 <meta name="twitter:image" content="https://bridgetoai.de/brand/og-image.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -55,6 +55,14 @@ nav.scrolled{background:rgba(4,12,22,0.8);backdrop-filter:blur(20px);border-bott
 .nav-links a:hover::after{width:100%;}
 .btn-cta{display:inline-flex;align-items:center;gap:.4rem;background:var(--primary);color:var(--navy);padding:.6rem 1.5rem;border-radius:100px;font-size:.9rem;font-weight:700;text-decoration:none;transition:transform .25s,box-shadow .25s;}
 .btn-cta:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,217,192,0.35);}
+.nav-now{color:#fff!important;}
+.nav-now::after{width:100%!important;}
+/* Hamburger (nur mobil sichtbar) */
+.nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:42px;height:42px;background:none;border:0;cursor:pointer;padding:0;}
+.nav-toggle span{display:block;width:24px;height:2px;margin:0 auto;background:#fff;border-radius:2px;transition:transform .3s,opacity .3s;}
+#nav.open .nav-toggle span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+#nav.open .nav-toggle span:nth-child(2){opacity:0;}
+#nav.open .nav-toggle span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
 
 /* ── PAGE HERO ── */
 .page-hero{position:relative;padding:9rem 5% 3rem;overflow:hidden;}
@@ -215,6 +223,42 @@ nav.scrolled{background:rgba(4,12,22,0.8);backdrop-filter:blur(20px);border-bott
   .pets-grid{grid-template-columns:1fr;max-width:340px;margin:0 auto;}
 }
 
+/* ── RUBRIK-TABS & PANELS ── */
+.rubrik-tabs-wrap{position:sticky;top:76px;z-index:50;padding:.9rem 5%;
+  background:rgba(4,12,22,0.82);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,0.07);}
+.rubrik-tabs{max-width:900px;margin:0 auto;display:flex;gap:.6rem;flex-wrap:wrap;}
+.rtab{display:inline-flex;align-items:center;gap:.5rem;cursor:pointer;font-family:inherit;font-size:.92rem;font-weight:600;
+  color:rgba(255,255,255,0.62);background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);
+  padding:.6rem 1.15rem;border-radius:100px;transition:color .25s,background .25s,border-color .25s,box-shadow .25s,transform .25s;}
+.rtab:hover{color:#fff;border-color:rgba(0,217,192,0.4);transform:translateY(-1px);}
+.rtab.is-active{color:var(--navy);background:var(--primary);border-color:var(--primary);font-weight:700;box-shadow:0 6px 20px rgba(0,217,192,0.3);}
+.rtab-emoji{font-size:1.05rem;}
+.rtab-badge{font-size:.6rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:rgba(255,255,255,0.18);color:#fff;padding:.12rem .45rem;border-radius:100px;}
+.rtab.is-active .rtab-badge{background:rgba(10,37,64,0.22);color:var(--navy);}
+
+.panel{display:none;padding:2.6rem 5% 4rem;animation:panelIn .45s ease;}
+.panel.is-active{display:block;}
+@keyframes panelIn{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:none;}}
+.panel-head{max-width:820px;margin:0 auto 1.8rem;}
+.panel-title{font-family:'Fraunces',serif;font-size:clamp(1.9rem,4vw,2.8rem);font-weight:500;line-height:1.06;letter-spacing:-0.02em;margin-bottom:.9rem;}
+.panel-title .it{font-style:italic;font-weight:400;background:linear-gradient(100deg,#1B8B9E,#00D9C0);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.panel-intro{font-size:1.06rem;font-weight:300;color:rgba(255,255,255,0.66);max-width:620px;line-height:1.7;}
+/* Office-Pet als Panel: Doppel-Padding vermeiden */
+.panel.office{padding:2.6rem 5% 4rem;}
+
+/* Fortune Cookie – „bald“ */
+.fortune-soon{max-width:560px;margin:0 auto;text-align:center;
+  background:linear-gradient(160deg,rgba(0,217,192,0.08),rgba(27,139,158,0.05));
+  border:1px solid rgba(0,217,192,0.2);border-radius:22px;padding:2.8rem 2rem;}
+.fortune-cookie{font-size:3.4rem;margin-bottom:1rem;display:inline-block;animation:petBreathe 4s ease-in-out infinite;}
+.fortune-msg{font-family:'Fraunces',serif;font-size:1.25rem;line-height:1.5;color:#fff;margin-bottom:1.4rem;}
+.fortune-tag{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--primary);border:1px solid rgba(0,217,192,0.3);border-radius:100px;padding:.4rem 1rem;}
+
+@media(max-width:680px){
+  .rubrik-tabs-wrap{top:76px;}
+  .rtab{font-size:.85rem;padding:.5rem .9rem;}
+}
+
 /* ── FOOTER ── */
 footer{padding:3rem 5%;border-top:1px solid rgba(255,255,255,0.06);display:flex;flex-direction:column;align-items:center;gap:1.1rem;text-align:center;}
 .footer-copy{font-size:.82rem;color:rgba(255,255,255,0.4);}
@@ -227,7 +271,18 @@ footer{padding:3rem 5%;border-top:1px solid rgba(255,255,255,0.06);display:flex;
 .reveal.visible{opacity:1;transform:none;}
 
 @media(max-width:680px){
-  .nav-links{display:none;}
+  .nav-toggle{display:flex;}
+  .btn-cta{display:none;}
+  .nav-links{
+    position:fixed;top:76px;left:0;right:0;z-index:90;
+    flex-direction:column;gap:0;display:none;
+    background:rgba(4,12,22,0.97);backdrop-filter:blur(20px);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+    padding:.4rem 5% 1rem;
+  }
+  #nav.open .nav-links{display:flex;}
+  .nav-links a{display:block;padding:.95rem 0;font-size:1.05rem;color:rgba(255,255,255,0.85);border-bottom:1px solid rgba(255,255,255,0.06);}
+  .nav-links a::after{display:none;}
   .tool-card{padding:1.4rem;}
 }
 </style>
@@ -248,22 +303,39 @@ footer{padding:3rem 5%;border-top:1px solid rgba(255,255,255,0.06);display:flex;
     <li><a href="index.html#leistungen">Leistungen</a></li>
     <li><a href="handwerk.html">Für Handwerker</a></li>
     <li><a href="projekte.html">Projekte</a></li>
-    <li><a href="kaffeepause.html">KI & Kaffeepause</a></li>
+    <li><a href="kaffeepause.html" class="nav-now" aria-current="page">KI & Kaffeepause</a></li>
     <li><a href="index.html#kontakt">Kontakt</a></li>
   </ul>
   <a href="index.html#kontakt" class="btn-cta">Erstgespräch →</a>
+  <button class="nav-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
 
 <section class="page-hero">
   <div class="page-hero-atmos"></div>
   <div class="page-hero-inner reveal">
     <span class="s-eyebrow">KI &amp; Kaffeepause</span>
-    <h1 class="page-title">Der AI-<span class="it">Bullshit-Translator</span></h1>
-    <p class="page-sub">Fügen Sie Ihren liebsten KI-Buzzword-Satz ein – aus dem Meeting, dem LinkedIn-Feed oder der nächsten Strategie-Folie. Ich übersetze ihn in Klartext, so wie ich ihn auch am Küchentisch erklären würde. Fachlich fundiert, mit einem Augenzwinkern.</p>
+    <h1 class="page-title">KI &amp; <span class="it">Kaffeepause</span></h1>
+    <p class="page-sub">Eine kleine Spielwiese, auf der komplexe KI menschlich wird – erst schmunzeln, dann verstehen. Drei Mini-Tools, ein Gedanke. Such dir aus, was dich neugierig macht.</p>
   </div>
 </section>
 
-<section class="tool">
+<!-- Tab-Navigation der Rubrik -->
+<div class="rubrik-tabs-wrap">
+  <div class="rubrik-tabs" role="tablist" aria-label="Module der Rubrik KI &amp; Kaffeepause">
+    <button class="rtab is-active" type="button" role="tab" aria-selected="true" data-panel="panel-translator"><span class="rtab-emoji">🌉</span> KI-Sprachbrücke</button>
+    <button class="rtab" type="button" role="tab" aria-selected="false" data-panel="panel-pet"><span class="rtab-emoji">🐾</span> Office Pet</button>
+    <button class="rtab" type="button" role="tab" aria-selected="false" data-panel="panel-fortune"><span class="rtab-emoji">🥠</span> Fortune Cookie <span class="rtab-badge">bald</span></button>
+  </div>
+</div>
+
+<div class="panels">
+
+<!-- PANEL 1: KI-Sprachbrücke (Buzzword-Übersetzer) -->
+<section class="panel is-active" id="panel-translator" role="tabpanel">
+  <div class="panel-head reveal">
+    <h2 class="panel-title">Die <span class="it">KI-Sprachbrücke</span></h2>
+    <p class="panel-intro">Füg deinen liebsten KI-Buzzword-Satz ein – aus dem Meeting, dem LinkedIn-Feed oder der Strategie-Folie. Ich baue die Brücke zum Klartext, so wie ich ihn am Küchentisch erklären würde. Fachlich fundiert, mit Augenzwinkern.</p>
+  </div>
   <div class="tool-wrap reveal">
     <div class="tool-card">
       <label class="tool-label" for="jargon">Ihr Corporate-/KI-Jargon</label>
@@ -287,8 +359,8 @@ footer{padding:3rem 5%;border-top:1px solid rgba(255,255,255,0.06);display:flex;
   </div>
 </section>
 
-<!-- ════════ VIRTUAL OFFICE PET ════════ -->
-<section class="office" id="office-pet">
+<!-- PANEL 2: Virtual Office Pet -->
+<section class="panel office" id="panel-pet" role="tabpanel">
   <div class="office-wrap reveal">
     <span class="s-eyebrow">Virtual Office Pet</span>
     <h2 class="office-title">Meine <span class="it">Kolleg:innen</span> auf vier Pfoten</h2>
@@ -363,14 +435,26 @@ footer{padding:3rem 5%;border-top:1px solid rgba(255,255,255,0.06);display:flex;
   </div>
 </section>
 
+<!-- PANEL 3: Fortune Cookie (bald) -->
+<section class="panel" id="panel-fortune" role="tabpanel">
+  <div class="panel-head reveal">
+    <h2 class="panel-title">Fortune Cookie <span class="it">of AI Trends</span></h2>
+    <p class="panel-intro">Bald hier: ein Glückskeks für die Arbeitswelt von morgen – kurze, freche KI-Prognosen zum Schmunzeln und Teilen.</p>
+  </div>
+  <div class="fortune-soon reveal">
+    <div class="fortune-cookie">🥠</div>
+    <p class="fortune-msg">„Deine nächste Kaffeepause wird dir von einer KI vorgeschlagen – und sie wird richtig liegen.“</p>
+    <span class="fortune-tag">In Arbeit · kommt bald</span>
+  </div>
+</section>
+
+</div><!-- /panels -->
+
 <section class="teaser">
   <div class="teaser-card reveal">
     <h2>Hinter dem Spaß steckt <span class="it">Methode</span></h2>
     <p>Genau dieses Übersetzen – von „klingt wichtig“ zu „so machen wir das konkret“ – ist meine Arbeit als KI-Managerin. Wenn aus dem Schmunzeln Ernst werden soll: Lassen Sie uns reden.</p>
     <a href="index.html#kontakt" class="btn-primary" style="text-decoration:none;">Kostenloses Erstgespräch →</a>
-    <div class="coming">
-      <span>🥠 Bald: Fortune Cookie of AI Trends</span>
-    </div>
   </div>
 </section>
 
@@ -396,7 +480,7 @@ footer{padding:3rem 5%;border-top:1px solid rgba(255,255,255,0.06);display:flex;
 
 <script>
 /* =====================================================================
-   AI-Bullshit-Translator — bridge to ai · "KI & Kaffeepause"
+   KI-Sprachbrücke (Buzzword-Übersetzer) — bridge to ai · "KI & Kaffeepause"
    Leichtgewichtig, ohne Abhängigkeiten. Wörterbuch + Klartext-Logik.
    ===================================================================== */
 
@@ -1219,6 +1303,51 @@ function renderOfficePet(){
 
 renderOfficePet();
 setInterval(renderOfficePet, 6500);
+
+/* =====================================================================
+   RUBRIK-TABS — immer nur ein Modul sichtbar, statt langem Scrollen
+   ===================================================================== */
+const rtabs = document.querySelectorAll('.rtab');
+function showPanel(id){
+  const panel = document.getElementById(id);
+  if(!panel || !panel.classList.contains('panel')) return;
+  document.querySelectorAll('.panel').forEach(p => p.classList.toggle('is-active', p.id === id));
+  rtabs.forEach(t => {
+    const on = t.dataset.panel === id;
+    t.classList.toggle('is-active', on);
+    t.setAttribute('aria-selected', on ? 'true' : 'false');
+  });
+  // reveal-Elemente im aktiven Panel sofort einblenden (waren ggf. ausgeblendet)
+  panel.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+}
+rtabs.forEach(t => t.addEventListener('click', () => {
+  showPanel(t.dataset.panel);
+  try { history.replaceState(null, '', '#' + t.dataset.panel); } catch(e) { /* in manchen Umgebungen nicht erlaubt – egal */ }
+  const wrap = document.querySelector('.rubrik-tabs-wrap');
+  if(wrap){ const y = wrap.getBoundingClientRect().top + window.scrollY - 70; window.scrollTo({top:y, behavior:'smooth'}); }
+}));
+// Deep-Link: direkt ein Modul öffnen (#panel-pet, #panel-fortune …)
+if(location.hash){
+  const id = location.hash.slice(1);
+  const target = document.getElementById(id);
+  if(target && target.classList.contains('panel')) showPanel(id);
+}
+
+/* Mobiles Menü (Hamburger) */
+const navToggle = document.querySelector('.nav-toggle');
+if(navToggle){
+  navToggle.addEventListener('click', () => {
+    const navEl = document.getElementById('nav');
+    const open = navEl.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    navToggle.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+  });
+  // Beim Klick auf einen Link das Menü schließen
+  document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => {
+    document.getElementById('nav').classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  }));
+}
 
 /* Nav + reveal (analog zur restlichen Website) */
 const nav = document.getElementById('nav');
