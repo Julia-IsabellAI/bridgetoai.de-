@@ -425,6 +425,8 @@ const DICTIONARY = [
     plain:"KI Schritt für Schritt einführen und unterwegs anpassen", twist:"Wir probieren es einfach aus, und wenn es kaputtgeht, nennen wir es „Learning“." },
   { term:"Edge-Computing", match:["edge-computing","edge computing","edge-rechnen"],
     plain:"die KI rechnet direkt auf dem Gerät statt in der Cloud", twist:"Die KI rechnet direkt bei dir im Gerät, damit sie nicht bei jedem Klick in die Cloud-Wolken fliegen muss." },
+  { term:"Edge AI", match:["edge ai","edge ki","edge-intelligenz","edge künstliche intelligenz"],
+    plain:"KI, die direkt auf dem Gerät rechnet statt in der Cloud", twist:"KI direkt im Gerät – sie denkt vor Ort, statt erst in die Cloud und wieder zurück zu reisen. (Mein Lieblingsthema.)" },
   { term:"On-Device-Processing", match:["on-device-processing","on-device","on device","auf dem gerät","lokale verarbeitung"],
     plain:"Verarbeitung direkt auf dem Gerät, ohne Cloud", twist:"Datenschutz-Modus für Fortgeschrittene – die Daten verlassen den Raum nicht." },
   { term:"Real-time Nudging", match:["real-time nudging","realtime nudging","echtzeit-nudging","nudging","nudge"],
@@ -758,13 +760,20 @@ function escapeRegExp(str){
   return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
+/** Macht eine Wortliste separator-tolerant: Bindestrich, Leerzeichen oder
+ *  zusammengeschrieben werden gleich behandelt. „edge ai“ matcht so auch
+ *  „edge-ai“, „edgeai“ usw. Einzelwörter bleiben unverändert. */
+function variantToPattern(str){
+  return str.trim().split(/[\s\-]+/).map(escapeRegExp).join('[-\\s]*');
+}
+
 /** Findet alle Buzzwords im Text. Längere Treffer zuerst, um Überlappung zu vermeiden. */
 function detectBuzzwords(text){
   const lower = text.toLowerCase();
   const hits = [];
   DICTIONARY.forEach(entry => {
     const found = entry.match.some(variant => {
-      const re = new RegExp('(^|[^a-zäöüß])' + escapeRegExp(variant) + '[a-zäöüß]*($|[^a-zäöüß])', 'i');
+      const re = new RegExp('(^|[^a-zäöüß])' + variantToPattern(variant) + '[a-zäöüß]*($|[^a-zäöüß])', 'i');
       return re.test(' ' + lower + ' ');
     });
     if(found) hits.push(entry);
@@ -780,7 +789,7 @@ function buildKlartext(text, hits){
   hits.forEach(entry => entry.match.forEach(v => replacements.push({variant:v, plain:entry.plain})));
   replacements.sort((a,b) => b.variant.length - a.variant.length);
   replacements.forEach(r => {
-    const re = new RegExp('(^|[^a-zA-Zäöüß])(' + escapeRegExp(escapeHtml(r.variant)) + '[a-zA-ZäöüßÄÖÜ]*)', 'gi');
+    const re = new RegExp('(^|[^a-zA-Zäöüß])(' + variantToPattern(escapeHtml(r.variant)) + '[a-zA-ZäöüßÄÖÜ]*)', 'gi');
     html = html.replace(re, (m, pre) => pre + '<mark>' + r.plain + '</mark>');
   });
   return html;
@@ -792,7 +801,7 @@ function verdictFor(count){
 
 /** Prüft, ob eine Phrase (inkl. dt. Beugung) im Text vorkommt. */
 function phrasePresent(lower, variant){
-  const re = new RegExp('(^|[^a-zäöüß])' + escapeRegExp(variant) + '[a-zäöüß]*($|[^a-zäöüß])', 'i');
+  const re = new RegExp('(^|[^a-zäöüß])' + variantToPattern(variant) + '[a-zäöüß]*($|[^a-zäöüß])', 'i');
   return re.test(' ' + lower + ' ');
 }
 
