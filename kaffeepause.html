@@ -109,8 +109,13 @@ nav.scrolled{background:rgba(4,12,22,0.8);backdrop-filter:blur(20px);border-bott
 
 /* ── RESULT ── */
 .result{margin-top:1.6rem;display:none;}
-.result.show{display:block;animation:up .5s ease;}
+.result.show{display:block;opacity:1;animation:up .5s ease both;}
 @keyframes up{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:none;}}
+/* Sichtbarkeit darf nie an Animationen hängen (reduzierte Bewegung, gedrosselte Tabs) */
+@media (prefers-reduced-motion: reduce){
+  .reveal{opacity:1 !important;transform:none !important;}
+  .result.show{animation:none;}
+}
 
 .meter{display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;flex-wrap:wrap;}
 .meter-track{flex:1;min-width:180px;height:10px;border-radius:100px;background:rgba(255,255,255,0.08);overflow:hidden;}
@@ -124,6 +129,11 @@ nav.scrolled{background:rgba(4,12,22,0.8);backdrop-filter:blur(20px);border-bott
   padding:1.1rem 1.3rem;font-size:1.05rem;line-height:1.7;color:rgba(255,255,255,0.92);margin-bottom:1.8rem;
 }
 .klartext mark{background:rgba(0,217,192,0.18);color:#fff;padding:.05em .3em;border-radius:5px;font-weight:500;}
+
+.klartext-full{background:linear-gradient(160deg,rgba(0,217,192,0.12),rgba(27,139,158,0.06));border:1px solid rgba(0,217,192,0.28);border-radius:16px;padding:1.3rem 1.4rem;margin-bottom:1rem;}
+.klartext-full:last-of-type{margin-bottom:1.8rem;}
+.kf-tag{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--navy);background:var(--primary);padding:.25rem .7rem;border-radius:100px;margin-bottom:.8rem;}
+.kf-text{font-family:'Fraunces',serif;font-size:1.22rem;line-height:1.5;color:#fff;font-weight:400;}
 
 .detect-list{display:grid;gap:.7rem;}
 .detect{
@@ -332,7 +342,106 @@ const DICTIONARY = [
   { term:"transformieren", match:["transformieren","transformation","wandel einleiten","umkrempeln"],
     plain:"grundlegend verändern", twist:"Echte Veränderung – nicht nur ein neues Logo. <b>Genau hier fängt meine Arbeit an.</b>" },
   { term:"Seamless", match:["seamless","nahtlos","reibungslos"],
-    plain:"ohne Brüche, läuft glatt", twist:"Es ruckelt nicht. Der Traum jeder Software und jedes Montagmorgens." }
+    plain:"ohne Brüche, läuft glatt", twist:"Es ruckelt nicht. Der Traum jeder Software und jedes Montagmorgens." },
+  { term:"LLM", match:["llm","llms","large language model","sprachmodell","sprachmodelle"],
+    plain:"ein Computer, der Texte liest und schreibt", twist:"Ein <b>Sprachmodell</b>. Liest und schreibt Texte – damit Sie weniger Zeit in Excel-Listen verlieren." },
+  { term:"Prozessoptimierung", match:["prozessoptimierung","prozesse optimieren","prozessverbesserung"],
+    plain:"Abläufe schneller und einfacher machen", twist:"Heißt: <b>weniger Handgriffe für dasselbe Ergebnis.</b> Klingt nur teurer." },
+  { term:"Backend", match:["backend","back-end","im hintergrund"],
+    plain:"der Teil, den der Kunde nie sieht", twist:"Der Maschinenraum. Läuft's hier rund, merkt's vorne keiner – im besten Sinne." },
+  { term:"Multi-Agenten-Architektur", match:["multi-agenten-architektur","multi-agent","multiagenten","mehrere agenten","agentensystem"],
+    plain:"mehrere KI-Helfer, die zusammenarbeiten", twist:"<b>Mehrere Roboter-Teams, die miteinander reden</b> – statt einem, der allein alles falsch macht." },
+  { term:"Unternehmensebenen", match:["unternehmensebenen","alle ebenen","organisationsebenen","unternehmensweit"],
+    plain:"in der ganzen Firma, von oben bis unten", twist:"Vom Chefbüro bis zur Kaffeeküche. Alle sollen mit." }
+];
+
+/* Themen-Ebene: Wenn eine Eingabe einem dieser Muster ähnelt, gibt es zusätzlich
+   eine Komplett-Übersetzung „am Stück“ im Tone of Voice von bridge to ai.
+   Ein Thema greift, sobald mindestens `min` der `signals`-Gruppen vorkommen. */
+const THEMES = [
+  {
+    id:"multi-agent",
+    min:2,
+    signals:[
+      ["multi-agent","multi-agenten","multiagent","multiagenten","agenten-architektur","agentensystem","mehrere agenten","agenten"],
+      ["architektur","umstellen","strategie","aufsetzen"]
+    ],
+    translation:"Wir bauen jetzt mehrere Roboter-Teams, die miteinander reden, statt nur einen, der alles falsch macht."
+  },
+  {
+    id:"llm-prozess",
+    min:2,
+    signals:[
+      ["llm","llms","large language model","sprachmodell","sprachmodelle"],
+      ["prozessoptimierung","prozesse optimieren","backend","effizienz","optimierung","automatisieren","prozesse"]
+    ],
+    translation:"Wir lassen den Computer jetzt Texte lesen und schreiben, damit wir weniger Zeit mit Excel-Listen verschwenden."
+  },
+  {
+    id:"skalieren-agil",
+    min:2,
+    signals:[
+      ["skalieren","skalier","skalierung","ausrollen","rollout","ausrollen"],
+      ["agil","agile"],
+      ["unternehmensebenen","alle ebenen","ebenen","unternehmensweit","organisationsebenen","über alle"]
+    ],
+    translation:"Wir fangen mal vorsichtig an und hoffen, dass nicht gleich das ganze System abstürzt, wenn alle gleichzeitig klicken."
+  },
+  {
+    id:"edge-ai",
+    min:2,
+    signals:[
+      ["edge-ai","edge ai","edge-ki","edge ki","edge"],
+      ["latenz","latenzen","echtzeit","verzögerung","verzögerungen"]
+    ],
+    translation:"Die KI rechnet direkt am Gerät, damit sie nicht auf das Internet warten muss, während du wartest."
+  },
+  {
+    id:"prompt-engineering",
+    min:1,
+    signals:[
+      ["prompt engineering","prompt-engineering","prompting"]
+    ],
+    translation:"Ich bringe der KI ganz genau bei, wie sie reden muss, damit sie mir nicht irgendeinen Quatsch erzählt."
+  },
+  {
+    id:"hybrid-cloud",
+    min:2,
+    signals:[
+      ["hybrid","hybride","hybrider","hybrides"],
+      ["cloud","repository","repositories","repo"],
+      ["hochverfügbar","hochverfügbarkeit","verfügbar"]
+    ],
+    translation:"Deine Daten liegen mal hier, mal da – aber sie sind sicher, versprochen!"
+  },
+  {
+    id:"disruptiv-arbeitswelt",
+    min:2,
+    signals:[
+      ["disruptiv","disruption","disrupten"],
+      ["transformier","transformation","verändern","umkrempeln"],
+      ["arbeitswelt","arbeit","arbeitsplatz","arbeitsplätze","jobs"]
+    ],
+    translation:"KI wird uns alle zwingen, unsere Arbeit mal gründlich aufzuräumen – was eigentlich gar nicht so schlecht ist."
+  },
+  {
+    id:"generative-potential",
+    min:2,
+    signals:[
+      ["unlocking","unlock","potential","potenzial","ausschöpfen","entfesseln","full potential"],
+      ["generative ai","generative ki","genai","generativer ki","generative","generativen"]
+    ],
+    translation:"Wir versuchen endlich mal rauszufinden, was das Ding eigentlich wirklich kann, außer Bilder von Katzen im Weltraum zu malen."
+  },
+  {
+    id:"ki-first-kultur",
+    min:2,
+    signals:[
+      ["ki-first","ai-first","ki first","ai first"],
+      ["mindset","kultur","denkweise","mindset-kultur"]
+    ],
+    translation:"Ich versuche, allen Kollegen die Angst vor dem Roboter-Kollegen zu nehmen."
+  }
 ];
 
 /* ---------- Verdikte je nach Bullshit-Dichte ---------- */
@@ -385,6 +494,27 @@ function verdictFor(count){
   return VERDICTS.find(v => count <= v.max).text;
 }
 
+/** Prüft, ob eine Phrase (inkl. dt. Beugung) im Text vorkommt. */
+function phrasePresent(lower, variant){
+  const re = new RegExp('(^|[^a-zäöüß])' + escapeRegExp(variant) + '[a-zäöüß]*($|[^a-zäöüß])', 'i');
+  return re.test(' ' + lower + ' ');
+}
+
+/** Findet passende Themen. Ein Thema greift, sobald >= min Signal-Gruppen vorkommen. */
+function detectThemes(text){
+  const lower = text.toLowerCase();
+  const matched = [];
+  THEMES.forEach(theme => {
+    let score = 0;
+    theme.signals.forEach(group => {
+      if(group.some(v => phrasePresent(lower, v))) score++;
+    });
+    if(score >= theme.min) matched.push({theme, score});
+  });
+  matched.sort((a, b) => b.score - a.score);
+  return matched.map(m => m.theme);
+}
+
 /* ---------- Haupt-Render ---------- */
 const input    = document.getElementById('jargon');
 const resultBox = document.getElementById('result');
@@ -398,9 +528,12 @@ function translate(){
   }
 
   const hits = detectBuzzwords(text);
+  const themes = detectThemes(text).slice(0, 2); // höchstens zwei Komplett-Übersetzungen
   const wordCount = Math.max(text.split(/\s+/).length, 1);
-  // Score: Buzzword-Dichte, gedeckelt auf 100
-  const score = Math.min(100, Math.round((hits.length / wordCount) * 100 * 2.2) + (hits.length ? 12 : 0));
+  // Score: Buzzword-Dichte, gedeckelt auf 100. Erkanntes Thema = klarer Bullshit-Volltreffer.
+  const themeBonus = themes.length ? 22 : 0;
+  const score = Math.min(100, Math.round((hits.length / wordCount) * 100 * 2.2) + (hits.length ? 12 : 0) + themeBonus);
+  const verdictCount = hits.length + themes.length * 2;
 
   let html = '';
 
@@ -408,15 +541,21 @@ function translate(){
   html += '<div class="meter">'
         + '<div class="meter-track"><div class="meter-fill" id="meterFill"></div></div>'
         + '<div class="meter-score">' + score + '<span style="font-size:.9rem;color:rgba(255,255,255,0.5);"> / 100</span></div>'
-        + '<div class="meter-verdict">' + verdictFor(hits.length) + '</div>'
+        + '<div class="meter-verdict">' + verdictFor(verdictCount) + '</div>'
         + '</div>';
 
-  if(hits.length === 0){
-    html += '<div class="empty-note">Kein klassisches Buzzword erkannt – Respekt, das war fast schon ehrliche Sprache! '
-          + 'Wenn doch eins fehlt, schreiben Sie mir gern, dann wandert es ins Wörterbuch.</div>';
-  } else {
-    // Klartext
-    html += '<p class="block-title">Klartext</p>';
+  // Komplett-Übersetzung „am Stück“ (Themen-Treffer)
+  if(themes.length){
+    html += '<p class="block-title">Klartext am Stück</p>';
+    themes.forEach(t => {
+      html += '<div class="klartext-full"><span class="kf-tag">Übersetzt ☕</span>'
+            + '<p class="kf-text">' + t.translation + '</p></div>';
+    });
+  }
+
+  if(hits.length){
+    // Wortweiser Klartext
+    html += '<p class="block-title">Wort für Wort</p>';
     html += '<div class="klartext">' + buildKlartext(text, hits) + '</div>';
 
     // Detected list
@@ -430,6 +569,9 @@ function translate(){
             + '</div>';
     });
     html += '</div>';
+  } else if(!themes.length){
+    html += '<div class="empty-note">Kein klassisches Buzzword erkannt – Respekt, das war fast schon ehrliche Sprache! '
+          + 'Wenn doch eins fehlt, schreiben Sie mir gern, dann wandert es ins Wörterbuch.</div>';
   }
 
   resultBox.innerHTML = html;
@@ -438,6 +580,9 @@ function translate(){
   // Meter-Animation nach dem Einfügen
   const fill = document.getElementById('meterFill');
   if(fill){ requestAnimationFrame(() => { fill.style.width = score + '%'; }); }
+
+  // Ergebnis in den sichtbaren Bereich holen – sonst wirkt es, als passiere nichts
+  resultBox.scrollIntoView({behavior:'smooth', block:'nearest'});
 }
 
 document.getElementById('translate').addEventListener('click', translate);
