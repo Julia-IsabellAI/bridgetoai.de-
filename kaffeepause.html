@@ -352,7 +352,65 @@ const DICTIONARY = [
   { term:"Multi-Agenten-Architektur", match:["multi-agenten-architektur","multi-agent","multiagenten","mehrere agenten","agentensystem"],
     plain:"mehrere KI-Helfer, die zusammenarbeiten", twist:"<b>Mehrere Roboter-Teams, die miteinander reden</b> – statt einem, der allein alles falsch macht." },
   { term:"Unternehmensebenen", match:["unternehmensebenen","alle ebenen","organisationsebenen","unternehmensweit"],
-    plain:"in der ganzen Firma, von oben bis unten", twist:"Vom Chefbüro bis zur Kaffeeküche. Alle sollen mit." }
+    plain:"in der ganzen Firma, von oben bis unten", twist:"Vom Chefbüro bis zur Kaffeeküche. Alle sollen mit." },
+  { term:"KPI", match:["kpi","kpis","key performance indicator","kennzahl","kennzahlen"],
+    plain:"die Zahl, an der Erfolg gemessen wird", twist:"<b>Eine Messzahl.</b> Verrät, ob's läuft – oder ob man sich's nur schönredet." },
+  { term:"ROI", match:["roi","return on investment"],
+    plain:"was am Ende dabei rauskommt", twist:"Lohnt sich die Ausgabe? Die Frage, die zählt – auch beim Kaffeevollautomaten." },
+  { term:"Meeting", match:["meeting","meetings","jour fixe"],
+    plain:"Besprechung", twist:"Ein Gespräch mit Kalendereintrag. Manche hätten eine Mail sein können." },
+  { term:"Deadline", match:["deadline","deadlines","abgabetermin"],
+    plain:"der Termin, bis zu dem es fertig sein muss", twist:"Der Punkt, ab dem es ernst wird. Wird gern verschoben." },
+  { term:"Benchmark", match:["benchmark","benchmarks","vergleichswert"],
+    plain:"Vergleichswert", twist:"Womit man sich misst. Idealerweise nicht nur mit sich selbst." },
+  { term:"Pipeline", match:["pipeline","pipelines"],
+    plain:"was an Aufträgen in Aussicht ist", twist:"Was in der Warteschlange steckt. Hoffentlich nicht nur Luft." },
+  { term:"Workflow", match:["workflow","workflows","arbeitsablauf"],
+    plain:"Arbeitsablauf", twist:"Wie die Arbeit von A nach B fließt. Im besten Fall ohne Stau." },
+  { term:"Framework", match:["framework","frameworks","rahmenwerk"],
+    plain:"fester Rahmen zum Vorgehen", twist:"Ein Gerüst für die Arbeit. Klingt stabiler, als es manchmal ist." },
+  { term:"Feedback", match:["feedback","rückmeldung"],
+    plain:"Rückmeldung", twist:"Sagen, was gut war und was nicht. Tut manchmal weh, hilft fast immer." },
+  { term:"Insights", match:["insight","insights","erkenntnisse","einblicke"],
+    plain:"nützliche Erkenntnisse", twist:"<b>Aha-Momente aus Daten.</b> Wenn die Zahlen endlich etwas verraten." },
+  { term:"ASAP", match:["asap"],
+    plain:"so schnell wie möglich", twist:"Heißt meist: gestern. Atmen Sie trotzdem einmal durch." },
+  { term:"Call", match:["call","calls","callen"],
+    plain:"Telefon- oder Videogespräch", twist:"Ein Anruf mit Agenda. „Lass uns kurz callen“ dauert selten kurz." },
+  { term:"Briefing", match:["briefing","briefings"],
+    plain:"kurze Einweisung", twist:"Die Ansage, worum's geht. Kürze ist hier ausnahmsweise erwünscht." },
+  { term:"Funnel", match:["funnel","funnels","sales funnel","verkaufstrichter"],
+    plain:"Weg vom Interessenten zum Kunden", twist:"Oben kommen viele rein, unten wenige raus. Wie beim Kaffeefilter." },
+  { term:"Conversion", match:["conversion","conversions","conversion-rate"],
+    plain:"aus Interesse wird Kauf", twist:"Wenn aus „nur gucken“ ein „ich nehm's“ wird." },
+  { term:"Sprint", match:["sprint","sprints"],
+    plain:"kurzer, fokussierter Arbeitsabschnitt", twist:"Zwei Wochen Vollgas. Danach kurz schnaufen, dann der nächste." },
+  { term:"Backlog", match:["backlog","backlogs"],
+    plain:"Liste offener Aufgaben", twist:"Der Stapel „machen wir noch“. Wird selten kürzer." },
+  { term:"Blocker", match:["blocker","blockers"],
+    plain:"etwas, das den Fortschritt aufhält", twist:"Das, was gerade im Weg steht. Meist wartet man auf jemand anderen." },
+  { term:"Meilenstein", match:["meilenstein","meilensteine","milestone","milestones"],
+    plain:"wichtiger Zwischenschritt", twist:"Ein Etappenziel. Kurz feiern, dann weiterlaufen." },
+  { term:"Rollout", match:["rollout","roll-out"],
+    plain:"Einführung für alle", twist:"Wenn's vom Test in den echten Einsatz geht. Spannendster Moment." },
+  { term:"MVP", match:["mvp","minimum viable product"],
+    plain:"die einfachste lauffähige Version", twist:"<b>Das kleinste Ding, das schon funktioniert.</b> Erst testen, dann verschönern." },
+  { term:"Proof of Concept", match:["poc","proof of concept","machbarkeitsnachweis"],
+    plain:"Machbarkeitsnachweis", twist:"Kurz beweisen, dass die Idee überhaupt geht. Vor dem großen Geld." },
+  { term:"Iteration", match:["iteration","iterationen","iterieren","iterativ"],
+    plain:"Runde für Runde verbessern", twist:"Nochmal machen, ein bisschen besser. Und nochmal. Und nochmal." },
+  { term:"Innovation", match:["innovation","innovationen","innovativ"],
+    plain:"echte Neuerung", twist:"Etwas wirklich Neues – nicht nur eine neue Farbe für den alten Knopf." },
+  { term:"Copilot", match:["copilot","co-pilot","ki-assistent","ki-copilot"],
+    plain:"KI, die mitarbeitet", twist:"<b>Ein digitaler Mitfahrer</b>, der Routinekram übernimmt – Sie behalten das Steuer." },
+  { term:"Halluzination", match:["halluzination","halluzinationen","halluzinieren","halluziniert","hallucination"],
+    plain:"die KI erfindet etwas", twist:"<b>Die KI schwindelt mit Überzeugung.</b> Klingt souverän, stimmt aber nicht – immer gegenprüfen." },
+  { term:"Fine-Tuning", match:["fine-tuning","finetuning","feinabstimmung","nachtrainieren"],
+    plain:"ein KI-Modell für den eigenen Zweck nachschärfen", twist:"Der KI Nachhilfe in genau Ihrem Thema geben." },
+  { term:"Token", match:["token","tokens"],
+    plain:"Text-Häppchen, in denen KI rechnet", twist:"Die Wort-Schnipsel, nach denen KI abrechnet. Mehr Tokens, mehr Rechnung." },
+  { term:"Prompt", match:["prompt","prompts"],
+    plain:"die Anweisung an die KI", twist:"<b>Was Sie der KI auftragen.</b> Gute Frage rein, gute Antwort raus." }
 ];
 
 /* Themen-Ebene: Wenn eine Eingabe einem dieser Muster ähnelt, gibt es zusätzlich
@@ -570,8 +628,12 @@ function translate(){
     });
     html += '</div>';
   } else if(!themes.length){
-    html += '<div class="empty-note">Kein klassisches Buzzword erkannt – Respekt, das war fast schon ehrliche Sprache! '
-          + 'Wenn doch eins fehlt, schreiben Sie mir gern, dann wandert es ins Wörterbuch.</div>';
+    const single = wordCount === 1;
+    html += '<div class="empty-note">'
+          + (single
+              ? 'Dieses Wort steht noch nicht in meinem Buzzword-Lexikon. Wenn es dort reingehört, schreiben Sie mir kurz – dann nehme ich es auf. ☕'
+              : 'Kein klassisches Buzzword erkannt – Respekt, das war fast schon ehrliche Sprache! Wenn doch eins fehlt, schreiben Sie mir gern, dann wandert es ins Wörterbuch.')
+          + '</div>';
   }
 
   resultBox.innerHTML = html;
