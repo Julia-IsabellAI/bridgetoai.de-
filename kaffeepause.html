@@ -63,6 +63,23 @@ nav.scrolled{background:rgba(4,12,22,0.8);backdrop-filter:blur(20px);border-bott
 #nav.open .nav-toggle span:nth-child(1){transform:translateY(7px) rotate(45deg);}
 #nav.open .nav-toggle span:nth-child(2){opacity:0;}
 #nav.open .nav-toggle span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+/* Mobiles Menü-Overlay (eigenständig, fährt von oben ein) */
+.mobile-menu{display:none;}
+@media(max-width:680px){
+  .mobile-menu{
+    display:flex;flex-direction:column;
+    position:fixed;top:0;left:0;right:0;z-index:90;
+    padding:88px 6% 28px;
+    background:rgba(4,12,22,0.98);backdrop-filter:blur(20px);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+    box-shadow:0 24px 50px rgba(0,0,0,0.5);
+    transform:translateY(-100%);transition:transform .38s ease;
+  }
+  .mobile-menu.open{transform:translateY(0);}
+  .mobile-menu a{color:rgba(255,255,255,0.88);text-decoration:none;font-size:1.12rem;font-weight:500;padding:1rem 0;border-bottom:1px solid rgba(255,255,255,0.07);}
+  .mm-now{color:var(--primary)!important;}
+  .mm-cta{margin-top:1.1rem;background:var(--primary);color:var(--navy)!important;text-align:center;border:0;border-radius:100px;padding:.95rem 1rem!important;font-weight:700;}
+}
 
 /* ── PAGE HERO ── */
 .page-hero{position:relative;padding:9rem 5% 3rem;overflow:hidden;}
@@ -273,16 +290,7 @@ footer{padding:3rem 5%;border-top:1px solid rgba(255,255,255,0.06);display:flex;
 @media(max-width:680px){
   .nav-toggle{display:flex;}
   .btn-cta{display:none;}
-  .nav-links{
-    position:fixed;top:76px;left:0;right:0;z-index:90;
-    flex-direction:column;gap:0;display:none;
-    background:rgba(4,12,22,0.97);backdrop-filter:blur(20px);
-    border-bottom:1px solid rgba(255,255,255,0.08);
-    padding:.4rem 5% 1rem;
-  }
-  #nav.open .nav-links{display:flex;}
-  .nav-links a{display:block;padding:.95rem 0;font-size:1.05rem;color:rgba(255,255,255,0.85);border-bottom:1px solid rgba(255,255,255,0.06);}
-  .nav-links a::after{display:none;}
+  .nav-links{display:none;}
   .tool-card{padding:1.4rem;}
 }
 </style>
@@ -309,6 +317,16 @@ footer{padding:3rem 5%;border-top:1px solid rgba(255,255,255,0.06);display:flex;
   <a href="index.html#kontakt" class="btn-cta">Erstgespräch →</a>
   <button class="nav-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
+
+<!-- Mobiles Menü-Overlay -->
+<div id="mobileMenu" class="mobile-menu" aria-hidden="true">
+  <a href="index.html#leistungen">Leistungen</a>
+  <a href="handwerk.html">Für Handwerker</a>
+  <a href="projekte.html">Projekte</a>
+  <a href="kaffeepause.html" class="mm-now" aria-current="page">KI &amp; Kaffeepause</a>
+  <a href="index.html#kontakt">Kontakt</a>
+  <a href="index.html#kontakt" class="mm-cta">Erstgespräch →</a>
+</div>
 
 <section class="page-hero">
   <div class="page-hero-atmos"></div>
@@ -1333,20 +1351,19 @@ if(location.hash){
   if(target && target.classList.contains('panel')) showPanel(id);
 }
 
-/* Mobiles Menü (Hamburger) */
+/* Mobiles Menü (Hamburger) – steuert das eigenständige Overlay */
 const navToggle = document.querySelector('.nav-toggle');
-if(navToggle){
-  navToggle.addEventListener('click', () => {
-    const navEl = document.getElementById('nav');
-    const open = navEl.classList.toggle('open');
+const mobileMenu = document.getElementById('mobileMenu');
+if(navToggle && mobileMenu){
+  const setMenu = (open) => {
+    mobileMenu.classList.toggle('open', open);
+    document.getElementById('nav').classList.toggle('open', open);
     navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
     navToggle.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
-  });
-  // Beim Klick auf einen Link das Menü schließen
-  document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => {
-    document.getElementById('nav').classList.remove('open');
-    navToggle.setAttribute('aria-expanded', 'false');
-  }));
+    mobileMenu.setAttribute('aria-hidden', open ? 'false' : 'true');
+  };
+  navToggle.addEventListener('click', () => setMenu(!mobileMenu.classList.contains('open')));
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
 }
 
 /* Nav + reveal (analog zur restlichen Website) */
