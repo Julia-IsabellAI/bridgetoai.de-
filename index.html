@@ -57,6 +57,17 @@ nav.scrolled{background:rgba(4,12,22,0.8);backdrop-filter:blur(20px);border-bott
 .nav-links a:hover::after{width:100%;}
 .btn-cta{display:inline-flex;align-items:center;gap:.4rem;background:var(--primary);color:var(--navy);padding:.6rem 1.5rem;border-radius:100px;font-size:.9rem;font-weight:700;text-decoration:none;transition:transform .25s,box-shadow .25s;}
 .btn-cta:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,217,192,0.35);}
+/* Mobile-Navigation */
+.burger{display:none;flex-direction:column;justify-content:center;gap:6px;width:44px;height:44px;background:none;border:0;cursor:pointer;padding:9px;z-index:101;}
+.burger span{display:block;width:26px;height:2px;background:#fff;border-radius:2px;transition:transform .3s ease,opacity .3s ease;}
+.burger.open span:nth-child(1){transform:translateY(8px) rotate(45deg);}
+.burger.open span:nth-child(2){opacity:0;}
+.burger.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg);}
+.mobile-menu{position:fixed;top:76px;left:0;right:0;z-index:99;display:flex;flex-direction:column;background:rgba(4,12,22,0.97);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.08);padding:1rem 5% 2.2rem;transform:translateY(-130%);transition:transform .4s cubic-bezier(.4,0,.2,1);box-shadow:0 30px 50px -30px rgba(0,0,0,.6);}
+.mobile-menu.open{transform:translateY(0);}
+.mobile-menu a{color:rgba(255,255,255,0.78);text-decoration:none;font-size:1.15rem;font-weight:500;padding:1.05rem .2rem;border-bottom:1px solid rgba(255,255,255,0.07);transition:color .2s;}
+.mobile-menu a:hover{color:var(--primary);}
+.mobile-menu .btn-cta{align-self:flex-start;margin-top:1.5rem;color:var(--navy);background:var(--primary);padding:.85rem 1.8rem;border-bottom:0;font-weight:700;}
 
 /* ── HERO ── */
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;padding:76px 5% 0;}
@@ -272,6 +283,8 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.05);padding
 @media(max-width:900px){
   nav{padding:0 1.5rem;}
   .nav-links{display:none;}
+  nav > .btn-cta{display:none;}
+  .burger{display:flex;}
   .hero-bridge{display:none;}
   .stats-card{position:static;margin:2rem 0 3rem;flex-wrap:wrap;gap:2rem 2.8rem;}
   .scroll-cue{display:none;}
@@ -308,6 +321,19 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.05);padding
     <li><a href="#kontakt">Kontakt</a></li>
   </ul>
   <a href="#kontakt" class="btn-cta">Erstgespräch →</a>
+  <button class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#leistungen">Leistungen</a>
+    <a href="handwerk.html">Für Handwerker</a>
+    <a href="projekte.html">Projekte</a>
+    <a href="kaffeepause.html">KI &amp; Kaffeepause</a>
+    <a href="#faq">FAQ</a>
+    <a href="#checkliste">Checkliste</a>
+    <a href="#kontakt">Kontakt</a>
+    <a href="#kontakt" class="btn-cta">Erstgespräch →</a>
+  </div>
 </nav>
 
 <section class="hero">
@@ -591,6 +617,22 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.05);padding
 <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
 
 <script>
+  // ── Mobile-Navigation ──
+  const burger=document.getElementById('burger');
+  const mobileMenu=document.getElementById('mobileMenu');
+  if(burger&&mobileMenu){
+    burger.addEventListener('click',()=>{
+      const open=burger.classList.toggle('open');
+      mobileMenu.classList.toggle('open',open);
+      burger.setAttribute('aria-expanded',open);
+    });
+    mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+      burger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+      burger.setAttribute('aria-expanded','false');
+    }));
+  }
+
   const nav=document.getElementById('nav');
   window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>40);});
   const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.12});
