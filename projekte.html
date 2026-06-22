@@ -27,17 +27,17 @@
 @font-face{font-family:'Fraunces';src:url('fonts/Fraunces.woff2') format('woff2');font-weight:100 900;font-style:normal;font-display:swap;}
 @font-face{font-family:'Fraunces';src:url('fonts/Fraunces-Italic.woff2') format('woff2');font-weight:100 900;font-style:italic;font-display:swap;}
 :root{
-  --primary:#00D9C0; --secondary:#1B8B9E; --navy:#0A2540;
-  --dark:#040c16; --dark2:#061523; --ink:#030a12;
-  --glow:rgba(0,217,192,0.5);
+--primary:#00D9C0; --secondary:#1B8B9E; --navy:#0A2540;
+--dark:#040c16; --dark2:#061523; --ink:#030a12;
+--glow:rgba(0,217,192,0.5);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;scroll-padding-top:90px;}
 body{font-family:'Outfit',sans-serif;background:var(--dark);color:#fff;overflow-x:hidden;}
 
 body::after{
-  content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:0.035;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:0.035;
+background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 /* ── NAV ── */
@@ -66,9 +66,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 /* ── HERO ── */
 .p-hero{position:relative;padding:10rem 5% 3rem;overflow:hidden;}
 .p-hero-atmos{position:absolute;inset:0;z-index:0;background:
-  radial-gradient(ellipse 60% 70% at 80% 20%,rgba(27,139,158,0.18) 0%,transparent 55%),
-  radial-gradient(circle 40% at 15% 30%,rgba(0,217,192,0.10) 0%,transparent 55%),
-  linear-gradient(160deg,#030a12 0%,#061523 60%,#0a2540 120%);}
+radial-gradient(ellipse 60% 70% at 80% 20%,rgba(27,139,158,0.18) 0%,transparent 55%),
+radial-gradient(circle 40% at 15% 30%,rgba(0,217,192,0.10) 0%,transparent 55%),
+linear-gradient(160deg,#030a12 0%,#061523 60%,#0a2540 120%);}
 .p-hero-grid{position:absolute;inset:0;z-index:0;background-image:linear-gradient(rgba(0,217,192,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,217,192,0.03) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse 90% 90% at 60% 0%,#000 30%,transparent 75%);-webkit-mask-image:radial-gradient(ellipse 90% 90% at 60% 0%,#000 30%,transparent 75%);}
 .p-hero-inner{position:relative;z-index:2;max-width:1280px;margin:0 auto;}
 .p-eyebrow{display:inline-flex;align-items:center;gap:.7rem;font-size:.76rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--primary);margin-bottom:1.6rem;}
@@ -103,6 +103,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 .kpi .desc{font-size:.85rem;color:rgba(255,255,255,0.5);line-height:1.4;}
 .kpi .desc a{color:var(--primary);font-weight:600;text-decoration:none;}
 .kpi .desc a:hover{text-decoration:underline;}
+.card h3 a{color:inherit;text-decoration:none;}
+.card h3 a:hover{color:var(--primary);}
 
 /* ── CTA ── */
 .p-cta{position:relative;max-width:1280px;margin:3rem auto 5rem;padding:0 5%;}
@@ -122,16 +124,16 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.05);padding
 .footer-links a:hover{color:var(--primary);}
 
 @media(max-width:900px){
-  nav{padding:0 1.5rem;}
-  .nav-links{display:none;}
-  nav > .btn-cta{display:none;}
-  .burger{display:flex;}
-  .p-hero{padding:8rem 1.5rem 2rem;}
-  .p-body{padding:0 1.5rem 2rem;}
-  .grid{grid-template-columns:1fr;}
-  .p-cta{padding:0 1.5rem;}
-  .cta-box{padding:3rem 1.8rem;}
-  footer{flex-direction:column;text-align:center;}
+nav{padding:0 1.5rem;}
+.nav-links{display:none;}
+nav > .btn-cta{display:none;}
+.burger{display:flex;}
+.p-hero{padding:8rem 1.5rem 2rem;}
+.p-body{padding:0 1.5rem 2rem;}
+.grid{grid-template-columns:1fr;}
+.p-cta{padding:0 1.5rem;}
+.cta-box{padding:3rem 1.8rem;}
+footer{flex-direction:column;text-align:center;}
 }
 @media(min-width:901px) and (max-width:1100px){.grid{grid-template-columns:repeat(2,1fr);}}
 </style>
@@ -139,132 +141,140 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.05);padding
 <body>
 
 <nav id="nav">
-  <a href="index.html" class="nav-logo">
-    <svg viewBox="60 0 1740 700" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M140 430 Q420 180 700 430 L700 520 L140 520 Z" fill="white"/>
-      <circle cx="200" cy="250" r="34" fill="white"/><circle cx="420" cy="170" r="38" fill="white"/><circle cx="640" cy="250" r="34" fill="white"/>
-      <text x="820" y="475" font-family="Outfit,Arial,sans-serif" font-size="180" font-weight="700" letter-spacing="-4" fill="white">bridge</text>
-      <text x="1365" y="475" font-family="Outfit,Arial,sans-serif" font-size="180" font-style="italic" font-weight="700" letter-spacing="-4" fill="#00D9C0">to</text>
-      <text x="1570" y="475" font-family="Outfit,Arial,sans-serif" font-size="180" font-weight="700" letter-spacing="-4" fill="white">ai</text>
-    </svg>
-  </a>
-  <ul class="nav-links">
-    <li><a href="index.html#leistungen">Leistungen</a></li>
-    <li><a href="handwerk.html">Für Handwerker</a></li>
-    <li><a href="projekte.html" class="active">Projekte</a></li>
-    <li><a href="index.html#kontakt">Kontakt</a></li>
-  </ul>
-  <a href="index.html#kontakt" class="btn-cta">Erstgespräch →</a>
-  <button class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="index.html#leistungen">Leistungen</a>
-    <a href="handwerk.html">Für Handwerker</a>
-    <a href="projekte.html">Projekte</a>
-    <a href="index.html#kontakt">Kontakt</a>
-    <a href="index.html#kontakt" class="btn-cta">Erstgespräch →</a>
-  </div>
+<a href="index.html" class="nav-logo">
+<svg viewBox="60 0 1740 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M140 430 Q420 180 700 430 L700 520 L140 520 Z" fill="white"/>
+<circle cx="200" cy="250" r="34" fill="white"/><circle cx="420" cy="170" r="38" fill="white"/><circle cx="640" cy="250" r="34" fill="white"/>
+<text x="820" y="475" font-family="Outfit,Arial,sans-serif" font-size="180" font-weight="700" letter-spacing="-4" fill="white">bridge</text>
+<text x="1365" y="475" font-family="Outfit,Arial,sans-serif" font-size="180" font-style="italic" font-weight="700" letter-spacing="-4" fill="#00D9C0">to</text>
+<text x="1570" y="475" font-family="Outfit,Arial,sans-serif" font-size="180" font-weight="700" letter-spacing="-4" fill="white">ai</text>
+</svg>
+</a>
+<ul class="nav-links">
+<li><a href="index.html#leistungen">Leistungen</a></li>
+<li><a href="handwerk.html">Für Handwerker</a></li>
+<li><a href="projekte.html" class="active">Projekte</a></li>
+<li><a href="index.html#kontakt">Kontakt</a></li>
+</ul>
+<a href="index.html#kontakt" class="btn-cta">Erstgespräch →</a>
+<button class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false">
+<span></span><span></span><span></span>
+</button>
+<div class="mobile-menu" id="mobileMenu">
+<a href="index.html#leistungen">Leistungen</a>
+<a href="handwerk.html">Für Handwerker</a>
+<a href="projekte.html">Projekte</a>
+<a href="index.html#kontakt">Kontakt</a>
+<a href="index.html#kontakt" class="btn-cta">Erstgespräch →</a>
+</div>
 </nav>
 
 <section class="p-hero">
-  <div class="p-hero-atmos"></div>
-  <div class="p-hero-grid"></div>
-  <div class="p-hero-inner">
-    <span class="p-eyebrow">Referenzen</span>
-    <h1 class="p-title">Projekte, die für sich <span class="it">sprechen</span>.</h1>
-    <p class="p-sub">Echte Lösungen aus dem Unternehmensalltag – jedes Projekt beginnt mit dem Prozess und endet mit einem messbaren Ergebnis. Eine Auswahl meiner Arbeit.</p>
-  </div>
+<div class="p-hero-atmos"></div>
+<div class="p-hero-grid"></div>
+<div class="p-hero-inner">
+<span class="p-eyebrow">Referenzen</span>
+<h1 class="p-title">Projekte, die für sich <span class="it">sprechen</span>.</h1>
+<p class="p-sub">Echte Lösungen aus dem Unternehmensalltag – jedes Projekt beginnt mit dem Prozess und endet mit einem messbaren Ergebnis. Eine Auswahl meiner Arbeit.</p>
+</div>
 </section>
 
 <div class="p-body">
-  <div class="filters" id="filters">
-    <button class="chip active" data-f="all">Alle</button>
-    <button class="chip" data-f="chatbot">Chatbots</button>
-    <button class="chip" data-f="automation">Automatisierung</button>
-    <button class="chip" data-f="data">Daten &amp; Dashboards</button>
-    <button class="chip" data-f="copilot">Copilot</button>
-    <button class="chip" data-f="governance">Governance</button>
-  </div>
-  <p class="note">💡 Platzhalter-Projekte – ersetze Titel, Texte und Kennzahlen durch deine echten Referenzen. Die Struktur (Ausgangslage → Lösung → Ergebnis) bleibt gleich.</p>
+<div class="filters" id="filters">
+<button class="chip active" data-f="all">Alle</button>
+<button class="chip" data-f="governance">Datenschutz &amp; Governance</button>
+<button class="chip" data-f="chatbot">Chatbots</button>
+<button class="chip" data-f="automation">Automatisierung</button>
+<button class="chip" data-f="data">Daten &amp; Dashboards</button>
+<button class="chip" data-f="copilot">Copilot</button>
+</div>
+<p class="note">💡 Die Platzhalter-Projekte sind als Beispielstruktur (Ausgangslage → Lösung → Ergebnis) gedacht. „Safe Frames" ist ein echtes, eigenständiges Projekt unter der Marke Ilumera.</p>
 
-  <div class="grid" id="grid">
+<div class="grid" id="grid">
 
-    <article class="card" data-cat="chatbot">
-      <span class="tag">Chatbot &amp; KI-Assistent</span>
-      <h3>Service-Bot für ein Bildungsunternehmen</h3>
-      <div class="block"><div class="lbl">Ausgangslage</div><p>Wiederkehrende Elternfragen banden täglich Stunden im Kundenservice-Team.</p></div>
-      <div class="block"><div class="lbl">Lösung</div><p>Prozess der häufigsten Anfragen kartiert, Wissensquellen strukturiert, darauf ein KI-Assistent aufgesetzt.</p></div>
-      <div class="kpi"><span class="num">−60%</span><span class="desc">Routineanfragen im First-Level-Support</span></div>
-    </article>
+<article class="card" data-cat="governance">
+<span class="tag">Datenschutz · Bildung · Eigenes Produkt</span>
+<h3><a href="projekte/safe-frames/">Safe Frames – datenschutzkonforme Schulfotos</a></h3>
+<div class="block"><div class="lbl">Ausgangslage</div><p>Schülerfotos für Jahrbücher landen unstrukturiert in Messengern und Clouds – Einwilligungen und Löschfristen bleiben undokumentiert.</p></div>
+<div class="block"><div class="lbl">Lösung</div><p>Prozesskonzept mit 7-Phasen-Ordnerstruktur, 10-Schritte-Workflow und Vier-Augen-Prinzip – bewusst ohne Biometrie, risikoarm unter DSGVO &amp; EU AI Act.</p></div>
+<div class="kpi"><span class="num">~10 Std.</span><span class="desc">gespart pro Projekt · <a href="projekte/safe-frames/">Projekt ansehen →</a></span></div>
+</article>
 
-    <article class="card" data-cat="automation">
-      <span class="tag">Prozessautomatisierung</span>
-      <h3>Automatisierter Angebots-Workflow</h3>
-      <div class="block"><div class="lbl">Ausgangslage</div><p>Angebotsfreigaben liefen manuell per E-Mail, mit Medienbrüchen und Verzögerungen.</p></div>
-      <div class="block"><div class="lbl">Lösung</div><p>Soll-Prozess definiert und mit Power Automate als durchgängiger Freigabe-Flow umgesetzt.</p></div>
-      <div class="kpi"><span class="num">3 Tage</span><span class="desc">weniger Durchlaufzeit pro Angebot</span></div>
-    </article>
+<article class="card" data-cat="chatbot">
+<span class="tag">Chatbot &amp; KI-Assistent</span>
+<h3>Service-Bot für ein Bildungsunternehmen</h3>
+<div class="block"><div class="lbl">Ausgangslage</div><p>Wiederkehrende Elternfragen banden täglich Stunden im Kundenservice-Team.</p></div>
+<div class="block"><div class="lbl">Lösung</div><p>Prozess der häufigsten Anfragen kartiert, Wissensquellen strukturiert, darauf ein KI-Assistent aufgesetzt.</p></div>
+<div class="kpi"><span class="num">−60%</span><span class="desc">Routineanfragen im First-Level-Support</span></div>
+</article>
 
-    <article class="card" data-cat="data">
-      <span class="tag">Daten &amp; Dashboards</span>
-      <h3>Vertriebs-Dashboard mit Power BI</h3>
-      <div class="block"><div class="lbl">Ausgangslage</div><p>KPIs lagen verstreut in Excel – das Monatsreporting kostete einen ganzen Arbeitstag.</p></div>
-      <div class="block"><div class="lbl">Lösung</div><p>KPI-Logik sauber definiert, Datenquellen verknüpft, automatisiertes Live-Dashboard gebaut.</p></div>
-      <div class="kpi"><span class="num">8 Std.</span><span class="desc">gesparte Reporting-Zeit pro Monat</span></div>
-    </article>
+<article class="card" data-cat="automation">
+<span class="tag">Prozessautomatisierung</span>
+<h3>Automatisierter Angebots-Workflow</h3>
+<div class="block"><div class="lbl">Ausgangslage</div><p>Angebotsfreigaben liefen manuell per E-Mail, mit Medienbrüchen und Verzögerungen.</p></div>
+<div class="block"><div class="lbl">Lösung</div><p>Soll-Prozess definiert und mit Power Automate als durchgängiger Freigabe-Flow umgesetzt.</p></div>
+<div class="kpi"><span class="num">3 Tage</span><span class="desc">weniger Durchlaufzeit pro Angebot</span></div>
+</article>
 
-    <article class="card" data-cat="copilot">
-      <span class="tag">Microsoft 365 Copilot</span>
-      <h3>Copilot-Einführung im Team</h3>
-      <div class="block"><div class="lbl">Ausgangslage</div><p>Lizenzen vorhanden, aber kaum genutzt – Unsicherheit statt Mehrwert.</p></div>
-      <div class="block"><div class="lbl">Lösung</div><p>Konkrete Use-Cases identifiziert, Prompt-Bibliothek erstellt, Team praxisnah begleitet.</p></div>
-      <div class="kpi"><span class="num">90%</span><span class="desc">aktive Nutzung nach 6 Wochen</span></div>
-    </article>
+<article class="card" data-cat="data">
+<span class="tag">Daten &amp; Dashboards</span>
+<h3>Vertriebs-Dashboard mit Power BI</h3>
+<div class="block"><div class="lbl">Ausgangslage</div><p>KPIs lagen verstreut in Excel – das Monatsreporting kostete einen ganzen Arbeitstag.</p></div>
+<div class="block"><div class="lbl">Lösung</div><p>KPI-Logik sauber definiert, Datenquellen verknüpft, automatisiertes Live-Dashboard gebaut.</p></div>
+<div class="kpi"><span class="num">8 Std.</span><span class="desc">gesparte Reporting-Zeit pro Monat</span></div>
+</article>
 
-    <article class="card" data-cat="governance">
-      <span class="tag">KI-Governance · EU AI Act</span>
-      <h3>AI-Act-Readiness für ein KMU</h3>
-      <div class="block"><div class="lbl">Ausgangslage</div><p>Unklarheit über Pflichten aus dem EU AI Act und den Einsatz vorhandener KI-Tools.</p></div>
-      <div class="block"><div class="lbl">Lösung</div><p>Tools risikobasiert eingeordnet, Richtlinie erstellt, Team in KI-Kompetenz nach Art. 4 geschult.</p></div>
-      <div class="kpi"><span class="num">100%</span><span class="desc">Tools klassifiziert &amp; dokumentiert</span></div>
-    </article>
+<article class="card" data-cat="copilot">
+<span class="tag">Microsoft 365 Copilot</span>
+<h3>Copilot-Einführung im Team</h3>
+<div class="block"><div class="lbl">Ausgangslage</div><p>Lizenzen vorhanden, aber kaum genutzt – Unsicherheit statt Mehrwert.</p></div>
+<div class="block"><div class="lbl">Lösung</div><p>Konkrete Use-Cases identifiziert, Prompt-Bibliothek erstellt, Team praxisnah begleitet.</p></div>
+<div class="kpi"><span class="num">90%</span><span class="desc">aktive Nutzung nach 6 Wochen</span></div>
+</article>
 
-    <article class="card" data-cat="data">
-      <span class="tag">Ihr Projekt</span>
-      <h3>Wird hier Ihre Erfolgsgeschichte stehen?</h3>
-      <div class="block"><div class="lbl">Ausgangslage</div><p>Sie haben einen Prozess, der besser laufen könnte.</p></div>
-      <div class="block"><div class="lbl">Lösung</div><p>Lassen Sie uns im kostenlosen Erstgespräch über Ihren Anwendungsfall sprechen.</p></div>
-      <div class="kpi"><span class="num">→</span><span class="desc"><a href="index.html#kontakt">Erstgespräch vereinbaren</a></span></div>
-    </article>
+<article class="card" data-cat="governance">
+<span class="tag">KI-Governance · EU AI Act</span>
+<h3>AI-Act-Readiness für ein KMU</h3>
+<div class="block"><div class="lbl">Ausgangslage</div><p>Unklarheit über Pflichten aus dem EU AI Act und den Einsatz vorhandener KI-Tools.</p></div>
+<div class="block"><div class="lbl">Lösung</div><p>Tools risikobasiert eingeordnet, Richtlinie erstellt, Team in KI-Kompetenz nach Art. 4 geschult.</p></div>
+<div class="kpi"><span class="num">100%</span><span class="desc">Tools klassifiziert &amp; dokumentiert</span></div>
+</article>
 
-  </div>
+<article class="card" data-cat="data">
+<span class="tag">Ihr Projekt</span>
+<h3>Wird hier Ihre Erfolgsgeschichte stehen?</h3>
+<div class="block"><div class="lbl">Ausgangslage</div><p>Sie haben einen Prozess, der besser laufen könnte.</p></div>
+<div class="block"><div class="lbl">Lösung</div><p>Lassen Sie uns im kostenlosen Erstgespräch über Ihren Anwendungsfall sprechen.</p></div>
+<div class="kpi"><span class="num">→</span><span class="desc"><a href="index.html#kontakt">Erstgespräch vereinbaren</a></span></div>
+</article>
+
+</div>
 </div>
 
 <div class="p-cta">
-  <div class="cta-box">
-    <h2>Lassen Sie uns Ihr <span class="it">Projekt</span> besprechen.</h2>
-    <p>30 Minuten, kostenlos und unverbindlich. Wir schauen gemeinsam, wo KI in Ihrem Alltag echten Mehrwert schafft.</p>
-    <a href="index.html#kontakt" class="btn-primary">Erstgespräch vereinbaren →</a>
-  </div>
+<div class="cta-box">
+<h2>Lassen Sie uns Ihr <span class="it">Projekt</span> besprechen.</h2>
+<p>30 Minuten, kostenlos und unverbindlich. Wir schauen gemeinsam, wo KI in Ihrem Alltag echten Mehrwert schafft.</p>
+<a href="index.html#kontakt" class="btn-primary">Erstgespräch vereinbaren →</a>
+</div>
 </div>
 
 <footer>
-  <svg viewBox="60 0 1740 700" style="height:26px;width:auto;" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M140 430 Q420 180 700 430 L700 520 L140 520 Z" fill="white"/>
-    <circle cx="200" cy="250" r="34" fill="white"/><circle cx="420" cy="170" r="38" fill="white"/><circle cx="640" cy="250" r="34" fill="white"/>
-    <text x="820" y="475" font-family="Outfit,Arial,sans-serif" font-size="180" font-weight="700" letter-spacing="-4" fill="white">bridge</text>
-    <text x="1365" y="475" font-family="Outfit,Arial,sans-serif" font-size="180" font-style="italic" font-weight="700" letter-spacing="-4" fill="#00D9C0">to</text>
-    <text x="1570" y="475" font-family="Outfit,Arial,sans-serif" font-size="180" font-weight="700" letter-spacing="-4" fill="white">ai</text>
-  </svg>
-  <span class="footer-copy">© 2025 Julia Pakravan · bridgetoai.de</span>
-  <div class="footer-links">
-    <a href="https://www.linkedin.com/in/julia-pakravan/" target="_blank" rel="noopener">LinkedIn</a>
-    <a href="index.html#checkliste">Checkliste</a>
-    <a href="mailto:julia@bridgetoai.de">Kontakt</a>
-    <a href="impressum.html">Impressum</a>
-    <a href="datenschutz.html">Datenschutz</a>
-  </div>
+<svg viewBox="60 0 1740 700" style="height:26px;width:auto;" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M140 430 Q420 180 700 430 L700 520 L140 520 Z" fill="white"/>
+<circle cx="200" cy="250" r="34" fill="white"/><circle cx="420" cy="170" r="38" fill="white"/><circle cx="640" cy="250" r="34" fill="white"/>
+<text x="820" y="475" font-family="Outfit,Arial,sans-serif" font-size="180" font-weight="700" letter-spacing="-4" fill="white">bridge</text>
+<text x="1365" y="475" font-family="Outfit,Arial,sans-serif" font-size="180" font-style="italic" font-weight="700" letter-spacing="-4" fill="#00D9C0">to</text>
+<text x="1570" y="475" font-family="Outfit,Arial,sans-serif" font-size="180" font-weight="700" letter-spacing="-4" fill="white">ai</text>
+</svg>
+<span class="footer-copy">© 2025 Julia Pakravan · bridgetoai.de</span>
+<div class="footer-links">
+<a href="https://www.linkedin.com/in/julia-pakravan/" target="_blank" rel="noopener">LinkedIn</a>
+<a href="index.html#checkliste">Checkliste</a>
+<a href="mailto:julia@bridgetoai.de">Kontakt</a>
+<a href="impressum.html">Impressum</a>
+<a href="datenschutz.html">Datenschutz</a>
+</div>
 </footer>
 
 <!-- ElevenLabs Chatbot Widget -->
@@ -272,33 +282,33 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.05);padding
 <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
 
 <script>
-  // ── Mobile-Navigation ──
-  const burger=document.getElementById('burger');
-  const mobileMenu=document.getElementById('mobileMenu');
-  burger.addEventListener('click',()=>{
-    const open=burger.classList.toggle('open');
-    mobileMenu.classList.toggle('open',open);
-    burger.setAttribute('aria-expanded',open);
-  });
-  mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
-    burger.classList.remove('open');
-    mobileMenu.classList.remove('open');
-    burger.setAttribute('aria-expanded','false');
-  }));
+// ── Mobile-Navigation ──
+const burger=document.getElementById('burger');
+const mobileMenu=document.getElementById('mobileMenu');
+burger.addEventListener('click',()=>{
+const open=burger.classList.toggle('open');
+mobileMenu.classList.toggle('open',open);
+burger.setAttribute('aria-expanded',open);
+});
+mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+burger.classList.remove('open');
+mobileMenu.classList.remove('open');
+burger.setAttribute('aria-expanded','false');
+}));
 
-  // ── Filter ──
-  const chips=document.querySelectorAll('.chip');
-  const cards=document.querySelectorAll('.card');
-  chips.forEach(chip=>chip.addEventListener('click',()=>{
-    chips.forEach(c=>c.classList.remove('active'));
-    chip.classList.add('active');
-    const f=chip.dataset.f;
-    cards.forEach(card=>{card.style.display=(f==='all'||card.dataset.cat===f)?'flex':'none';});
-  }));
+// ── Filter ──
+const chips=document.querySelectorAll('.chip');
+const cards=document.querySelectorAll('.card');
+chips.forEach(chip=>chip.addEventListener('click',()=>{
+chips.forEach(c=>c.classList.remove('active'));
+chip.classList.add('active');
+const f=chip.dataset.f;
+cards.forEach(card=>{card.style.display=(f==='all'||card.dataset.cat===f)?'flex':'none';});
+}));
 
-  // ── Reveal beim Scrollen ──
-  const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');});},{threshold:0.12});
-  cards.forEach((c,i)=>{c.style.transitionDelay=(i%3*0.08)+'s';io.observe(c);});
+// ── Reveal beim Scrollen ──
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');});},{threshold:0.12});
+cards.forEach((c,i)=>{c.style.transitionDelay=(i%3*0.08)+'s';io.observe(c);});
 </script>
 </body>
 </html>
