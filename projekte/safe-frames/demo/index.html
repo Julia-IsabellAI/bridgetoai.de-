@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#163A5A">
+<title>Safe Frames – KI-Triage-Demo</title>
+<link rel="icon" href="../Logo Safe Frames.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--petrol:#2E7E82;--petrol-dark:#246B6E;--navy:#163A5A;--tint:#EAF3F3;--tint2:#F4F9F9;--line:#DCE8E8;--ink:#1E333F;--muted:#5C6E76;--ok:#1F9D6B;--warn:#C79A22;--bad:#C0494A;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--tint2);line-height:1.6}
+h1,h2,h3{font-family:'Poppins',sans-serif;color:var(--navy)}
+a{color:var(--petrol);text-decoration:none}
+.wrap{max-width:1100px;margin:0 auto;padding:0 22px}
+header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+.brand{display:flex;align-items:center;gap:14px}
+.brand img{height:48px;width:auto}
+.brand .t{font-family:'Poppins';font-weight:600;color:var(--navy);font-size:1.02rem}
+.back{font-weight:500;font-size:.92rem}
+.hero{padding:34px 0 8px}
+.eyebrow{font-family:'Poppins';font-weight:600;letter-spacing:.12em;text-transform:uppercase;font-size:.72rem;color:var(--petrol)}
+.hero h1{font-size:clamp(1.6rem,3.4vw,2.2rem);margin:8px 0 10px}
+.hero p{color:var(--muted);max-width:760px}
+.banner{display:flex;gap:10px;align-items:flex-start;background:#FFF7E6;border:1px solid #F0E2BD;color:#7a5c12;border-radius:12px;padding:12px 16px;margin:18px 0;font-size:.9rem}
+.controls{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin:6px 0 8px}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--petrol);color:#fff;font-family:'Poppins';font-weight:600;font-size:.95rem;padding:12px 22px;border-radius:999px;border:none;cursor:pointer;transition:.2s}
+.btn:hover{background:var(--petrol-dark)}
+.btn.ghost{background:#fff;color:var(--navy);border:1.5px solid var(--line)}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:20px 0 6px}
+.stat{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;text-align:center}
+.stat .n{font-family:'Poppins';font-weight:700;font-size:1.5rem;color:var(--petrol);line-height:1}
+.stat .l{font-size:.78rem;color:var(--muted);margin-top:6px}
+.roi{background:linear-gradient(135deg,var(--navy),#13507a);color:#fff;border-radius:14px;padding:16px 20px;margin:8px 0 4px;font-size:.95rem}
+.roi b{color:#9FE0E0}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:18px 0 6px}
+.tile{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;transition:.2s}
+.tile.done{opacity:.6}
+.thumb{height:120px;display:flex;align-items:center;justify-content:center;font-size:2.4rem;position:relative}
+.thumb.blurry{filter:blur(3px)}
+.thumb.dark{filter:brightness(.45)}
+.tbody{padding:12px 13px;display:flex;flex-direction:column;gap:8px;flex:1}
+.fid{font-family:'Poppins';font-weight:600;font-size:.82rem;color:var(--navy);display:flex;justify-content:space-between;align-items:center}
+.badges{display:flex;flex-wrap:wrap;gap:5px;min-height:4px}
+.badge{font-size:.68rem;font-weight:600;padding:3px 7px;border-radius:999px;border:1px solid}
+.b-tag{background:var(--tint);color:var(--petrol);border-color:#cfe6e6}
+.b-warn{background:#FBF3DD;color:var(--warn);border-color:#F0E2BD}
+.b-bad{background:#FBECEC;color:var(--bad);border-color:#F2CFCF}
+.b-dup{background:#EEF0FB;color:#5a63b0;border-color:#d6dbf3}
+.sugg{font-size:.82rem;color:var(--muted);border-top:1px dashed var(--line);padding-top:8px;margin-top:auto}
+.sugg .ph{font-weight:600}
+.sugg .ph.keep{color:var(--ok)}.sugg .ph.out{color:var(--bad)}.sugg .ph.check{color:var(--warn)}
+.conf{color:var(--muted);font-size:.74rem}
+.act{display:flex;gap:6px;margin-top:8px}
+.mini{flex:1;font-size:.76rem;font-weight:600;padding:7px;border-radius:8px;border:1px solid var(--line);background:#fff;cursor:pointer;font-family:'Poppins'}
+.mini.ok{background:var(--petrol);color:#fff;border-color:var(--petrol)}
+.mini.alt:hover,.mini.ok:hover{filter:brightness(1.05)}
+.hide{display:none}
+footer{margin:26px 0 50px;color:var(--muted);font-size:.84rem;background:#fff;border:1px solid var(--line);border-left:4px solid var(--petrol);border-radius:10px;padding:16px 18px}
+@media(max-width:900px){.stats{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.grid{grid-template-columns:1fr}.brand .t{display:none}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="../"><img src="../Logo Safe Frames.png" alt="Safe Frames"><span class="t">KI-Triage-Demo</span></a>
+    <a class="back" href="../">← Zur Projektseite</a>
+  </div>
+</header>
+
+<div class="wrap">
+  <section class="hero">
+    <span class="eyebrow">Angewandte KI · Assistenz statt Identifikation</span>
+    <h1>KI-Triage für Schulfotos – live ausprobieren</h1>
+    <p>Diese Demo zeigt, wie Safe Frames große Bildmengen vorsortiert: Qualität, Dubletten, Kontext-Tags und Einwilligungs-Abgleich. Jede KI-Ausgabe ist nur ein <strong>Vorschlag</strong> – Sie bestätigen (Vier-Augen-Prinzip). Ganz ohne Gesichtserkennung.</p>
+  </section>
+
+  <div class="banner">
+    <span>ⓘ</span>
+    <span><strong>Demo / Simulation</strong> zur Veranschaulichung – keine echten Schülerfotos, keine Gesichtserkennung, keine biometrische Verarbeitung. Im MVP übernimmt diese Triage <strong>digiKam</strong> (Open-Source, lokal).</span>
+  </div>
+
+  <div class="controls">
+    <button class="btn" id="run">▶ KI-Analyse starten</button>
+    <button class="btn ghost" id="confirmAll" disabled>✓ Alle Vorschläge bestätigen</button>
+    <button class="btn ghost" id="reset">Zurücksetzen</button>
+  </div>
+
+  <div id="statsBox" class="hide">
+    <div class="stats">
+      <div class="stat"><div class="n" id="s-total">0</div><div class="l">Bilder analysiert</div></div>
+      <div class="stat"><div class="n" id="s-quality">0</div><div class="l">Qualitäts-Ausschuss</div></div>
+      <div class="stat"><div class="n" id="s-dupe">0</div><div class="l">Dubletten erkannt</div></div>
+      <div class="stat"><div class="n" id="s-consent">0</div><div class="l">Einwilligung fehlt</div></div>
+      <div class="stat"><div class="n" id="s-auto">0%</div><div class="l">automatisch vorsortiert</div></div>
+    </div>
+    <div class="roi">⏱️ <b id="s-confirmed">0/0</b> Vorschläge bestätigt · Hochgerechnet auf ein reales Projekt (~2.000 Bilder): <b>~6–10 Std. gespart</b> pro Printprojekt.</div>
+  </div>
+
+  <div class="grid" id="grid"></div>
+
+  <footer>
+    <strong>So bleibt es risikoarm:</strong> getaggt wird <em>was</em> zu sehen ist (Einzel/Gruppe, Innen/Außen), nicht <em>wer</em>. Der Einwilligungs-Abgleich erfolgt auf Listen-/Dokumentebene, nicht per Gesichtsabgleich. Keine automatische Freigabe – der Mensch entscheidet. Safe Frames ersetzt keine rechtliche Prüfung.
+  </footer>
+</div>
+
+<script>
+const DATA=[
+ {id:'IMG_0412',scene:'Gruppe',icon:'👥',q:'ok',dup:null,consent:'ok'},
+ {id:'IMG_0413',scene:'Gruppe',icon:'👥',q:'blurry',dup:null,consent:'ok'},
+ {id:'IMG_0414',scene:'Einzel',icon:'🧒',q:'ok',dup:'A',consent:'ok'},
+ {id:'IMG_0415',scene:'Einzel',icon:'🧒',q:'ok',dup:'A',consent:'ok'},
+ {id:'IMG_0416',scene:'Einzel',icon:'🧒',q:'ok',dup:'A',consent:'missing'},
+ {id:'IMG_0417',scene:'Gruppe',icon:'👥',q:'dark',dup:null,consent:'ok'},
+ {id:'IMG_0418',scene:'Außen',icon:'🌳',q:'ok',dup:null,consent:'ok'},
+ {id:'IMG_0419',scene:'Einzel',icon:'🧒',q:'ok',dup:null,consent:'missing'},
+ {id:'IMG_0420',scene:'Gruppe',icon:'👥',q:'ok',dup:'B',consent:'ok'},
+ {id:'IMG_0421',scene:'Gruppe',icon:'👥',q:'ok',dup:'B',consent:'ok'},
+ {id:'IMG_0422',scene:'Einzel',icon:'🧒',q:'blurry',dup:null,consent:'ok'},
+ {id:'IMG_0423',scene:'Außen',icon:'🌳',q:'ok',dup:null,consent:'ok'},
+];
+const GRAD={Gruppe:'linear-gradient(135deg,#cfe6e6,#9fc9cb)',Einzel:'linear-gradient(135deg,#dfeaf3,#b9cfe0)',['Außen']:'linear-gradient(135deg,#d6ead2,#aacfa0)'};
+const grid=document.getElementById('grid');
+let analyzed=false;
+
+function decide(d, firstInDup){
+  // returns {ph, cls, label, conf}
+  if(d.q==='blurry') return {ph:'→ 40 Aussortiert',cls:'out',label:'Qualität: unscharf',conf:0.93};
+  if(d.q==='dark') return {ph:'→ 40 Aussortiert',cls:'out',label:'Qualität: unterbelichtet',conf:0.88};
+  if(d.consent==='missing') return {ph:'→ 40 Aussortiert',cls:'out',label:'keine Einwilligung',conf:0.97};
+  if(d.dup && !firstInDup) return {ph:'→ 40 Aussortiert',cls:'out',label:'Dublette (Serie '+d.dup+')',conf:0.84};
+  return {ph:'→ 20 Freigegeben',cls:'keep',label:'geeignet für Druck',conf:0.90};
+}
+
+function render(){
+  grid.innerHTML='';
+  const seenDup={};
+  DATA.forEach(d=>{
+    const firstInDup = d.dup ? !seenDup[d.dup] : true;
+    if(d.dup) seenDup[d.dup]=true;
+    d._first=firstInDup;
+    const el=document.createElement('div');
+    el.className='tile'; el.id='t-'+d.id;
+    const qcls = analyzed ? (d.q==='blurry'?'blurry':d.q==='dark'?'dark':'') : '';
+    let badges='';
+    if(analyzed){
+      badges+=`<span class="badge b-tag">${d.scene}</span>`;
+      if(d.q==='blurry') badges+='<span class="badge b-warn">⚠ Unscharf</span>';
+      if(d.q==='dark') badges+='<span class="badge b-warn">🌑 Dunkel</span>';
+      if(d.dup) badges+=`<span class="badge b-dup">🧩 Serie ${d.dup}</span>`;
+      if(d.consent==='missing') badges+='<span class="badge b-bad">❗ Einwilligung fehlt</span>';
+    }
+    let sugg='';
+    if(analyzed){
+      const r=decide(d,d._first);
+      sugg=`<div class="sugg">KI-Vorschlag: <span class="ph ${r.cls}">${r.ph}</span> <span class="conf">(${Math.round(r.conf*100)}% · ${r.label})</span>
+        <div class="act">
+          <button class="mini ok" onclick="confirmOne('${d.id}')">✓ Bestätigen</button>
+          <button class="mini alt" onclick="overrideOne('${d.id}')">✎ Ändern</button>
+        </div></div>`;
+    }
+    el.innerHTML=`<div class="thumb ${qcls}" style="background:${GRAD[d.scene]||'#e3edf0'}">${d.icon}</div>
+      <div class="tbody"><div class="fid"><span>${d.id}</span></div>
+      <div class="badges">${badges}</div>${sugg}</div>`;
+    grid.appendChild(el);
+  });
+}
+
+function confirmOne(id){
+  const t=document.getElementById('t-'+id);
+  if(!t||t.classList.contains('done'))return;
+  t.classList.add('done');
+  const act=t.querySelector('.act'); if(act) act.innerHTML='<span style="font-size:.78rem;color:var(--ok);font-weight:600;font-family:Poppins">✓ Bestätigt (Mensch)</span>';
+  updateConfirmed();
+}
+function overrideOne(id){
+  const t=document.getElementById('t-'+id);
+  if(!t||t.classList.contains('done'))return;
+  t.classList.add('done');
+  const act=t.querySelector('.act'); if(act) act.innerHTML='<span style="font-size:.78rem;color:var(--navy);font-weight:600;font-family:Poppins">✎ Manuell geändert</span>';
+  updateConfirmed();
+}
+function updateConfirmed(){
+  const done=document.querySelectorAll('.tile.done').length;
+  document.getElementById('s-confirmed').textContent=done+'/'+DATA.length;
+}
+
+function analyze(){
+  analyzed=true; render();
+  const q=DATA.filter(d=>d.q!=='ok').length;
+  const seen={},dupes=DATA.filter(d=>{if(!d.dup)return false;const f=!seen[d.dup];seen[d.dup]=true;return !f;}).length;
+  const consent=DATA.filter(d=>d.consent==='missing').length;
+  document.getElementById('s-total').textContent=DATA.length;
+  document.getElementById('s-quality').textContent=q;
+  document.getElementById('s-dupe').textContent=dupes;
+  document.getElementById('s-consent').textContent=consent;
+  document.getElementById('s-auto').textContent=Math.round(DATA.length/DATA.length*100)+'%';
+  document.getElementById('statsBox').classList.remove('hide');
+  document.getElementById('confirmAll').disabled=false;
+  document.getElementById('run').disabled=true;
+  updateConfirmed();
+}
+
+document.getElementById('run').addEventListener('click',analyze);
+document.getElementById('confirmAll').addEventListener('click',()=>{DATA.forEach(d=>confirmOne(d.id));});
+document.getElementById('reset').addEventListener('click',()=>{analyzed=false;document.getElementById('statsBox').classList.add('hide');document.getElementById('run').disabled=false;document.getElementById('confirmAll').disabled=true;render();});
+render();
+</script>
+</body>
+</html>
