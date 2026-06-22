@@ -172,6 +172,7 @@ footer a{color:#9FE0E0}
       <a href="#problem">Problem</a>
       <a href="#loesung">Lösung</a>
       <a href="#prozess">Prozess</a>
+      <a href="#technologie">Technologie</a>
       <a href="#markt">Markt</a>
       <a href="#swot">SWOT</a>
       <a href="#roadmap">Roadmap</a>
@@ -198,7 +199,7 @@ footer a{color:#9FE0E0}
 <section>
   <div class="wrap">
     <div class="note">
-      <strong>Projektkontext:</strong> Safe Frames ist das erste Produkt der Marke <strong>ilumera</strong> und entstand im Rahmen der TÜV-Weiterbildung „KI-Manager mit Projekt". Das Projekt befindet sich in der Konzept- bzw. MVP-Definition – es liegt noch keine öffentliche Produktfreigabe vor.
+      <strong>Projektkontext:</strong> Safe Frames ist das erste Produkt der Marke <strong>ilumera</strong> und entstand im Rahmen der TÜV-Weiterbildung „KI-Manager mit Projekt". Das Projekt befindet sich in der Konzept- bzw. MVP-Definition – es liegt noch keine öffentliche Produktfreigabe vor. Präsentiert wird es über die persönliche Domain <strong>bridgetoai.de</strong> (bridge to ai · Julia Pakravan); Produkt- und Markenidentität bleiben „Safe Frames by Ilumera".
     </div>
   </div>
 </section>
@@ -331,8 +332,39 @@ footer a{color:#9FE0E0}
   </div>
 </section>
 
+<!-- Technologie -->
+<section id="technologie" class="alt">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Technologie &amp; KI</span>
+      <h2>Angewandte KI – Assistenz statt Identifikation</h2>
+      <p>Der bewusste Verzicht auf Gesichtserkennung grenzt nicht den KI-Einsatz aus, sondern lenkt ihn auf Aufgaben, die den Datenschutz nicht berühren: KI unterstützt bei Bildqualität und Organisation – nicht beim Erkennen von Personen. Diese Funktionen gehören zur optionalen Software-Ausbaustufe.</p>
+    </div>
+    <div class="grid g2">
+      <div class="card"><div class="ic">🔍</div><h3>KI-Qualitätsprüfung</h3><p>Automatisches Erkennen und Markieren technisch unbrauchbarer Bilder (Unschärfe, Verwacklung, Über-/Unterbelichtung) – als Vorschlag zur Aussortierung, die Entscheidung bleibt beim Menschen.</p></div>
+      <div class="card"><div class="ic">🧩</div><h3>Dubletten- &amp; Serienerkennung</h3><p>Nahezu identische Aufnahmen werden gruppiert, sodass aus einer Serie schnell das beste Bild gewählt werden kann.</p></div>
+      <div class="card"><div class="ic">🏷️</div><h3>Non-biometrisches Tagging</h3><p>Verschlagwortung nach Bildtyp und Kontext (Einzel-/Gruppenaufnahme, Innen/Außen, Format) sowie EXIF-Daten. Getaggt wird <em>was</em> zu sehen ist – nicht <em>wer</em>.</p></div>
+      <div class="card"><div class="ic">⚡</div><h3>Assistierte Vorsortierung</h3><p>Auf Basis dieser Tags schlägt das System eine Zuordnung in die Phasenstruktur vor und reduziert den manuellen Aufwand erheblich.</p></div>
+    </div>
+    <div class="note" style="margin-top:26px"><strong>Wichtig:</strong> Alle KI-Funktionen sind als Assistenz konzipiert – sie bereiten Entscheidungen vor, treffen aber keine automatisierten Freigaben. Die inhaltliche und rechtliche Freigabe verbleibt beim Menschen (Vier-Augen-Prinzip). So bleibt Safe Frames auch mit KI risikoarm unter DSGVO und EU AI Act. Keine Rechtsberatung.</div>
+
+    <div class="section-head" style="margin-top:54px">
+      <span class="eyebrow">Workflow-Automatisierung</span>
+      <h2>Datenflüsse im Hintergrund orchestrieren</h2>
+      <p>In der Software-Ausbaustufe lässt sich die 7-Phasen-Logik durch eine Automatisierungsplattform (z. B. Make) orchestrieren – als „Dirigent" der Dateibewegungen, nicht als zusätzlicher Speicherort.</p>
+    </div>
+    <ul class="check-list">
+      <li><strong>Statusgetriggerte Übergänge:</strong> Jede Phase entspricht einem Status; ein Statuswechsel (z. B. „geprüft &amp; freigegeben") verschiebt die Datei regelbasiert in den korrekten Zielordner.</li>
+      <li><strong>Zentrale Ablage als einzige Quelle:</strong> Die Orchestrierung operiert ausschließlich auf dem schulisch kontrollierten Speicher (Cloud/NAS) über authentifizierte Konnektoren – keine Parallelablage.</li>
+      <li><strong>Datensparsamkeit by Design:</strong> Über die Plattform laufen nur Steuer- und Metadaten (Datei-ID, Status, Zielpfad), nicht die Bildinhalte. Bei EU-Hosting und Verschlüsselung bleibt das Datenschutzniveau gewahrt.</li>
+      <li><strong>Protokollierung &amp; Fristen:</strong> Jeder Schritt wird mitgeschrieben; Lösch-/Archivierungsfristen (Phase 90) lassen sich als Zeit-Trigger hinterlegen.</li>
+    </ul>
+    <div class="note" style="margin-top:24px">Wird eine externe Automatisierungsplattform eingebunden, ist zu prüfen, ob ein Auftragsverarbeitungsvertrag (AVV) erforderlich ist. Safe Frames schafft die technische und organisatorische Grundlage und ersetzt keine rechtliche Prüfung.</div>
+  </div>
+</section>
+
 <!-- Markt -->
-<section id="markt" class="alt">
+<section id="markt">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">Markt &amp; Wettbewerb</span>
@@ -359,7 +391,7 @@ footer a{color:#9FE0E0}
 </section>
 
 <!-- Geschäftsmodell -->
-<section>
+<section class="alt">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">Geschäfts- &amp; Erlösmodell</span>
@@ -381,11 +413,12 @@ footer a{color:#9FE0E0}
         <tr><td>Optimistisch</td><td>1.500 + Partner</td><td>≈ 850.000 €+</td></tr>
       </table>
     </div>
+    <div class="note" style="margin-top:26px"><strong>ROI durch Zeitersparnis:</strong> Die Lizenz ist als Effizienzinvestition zu verstehen. Illustratives Beispiel (Modellannahme): Spart eine Lehrkraft durch den klaren Prozess und (teil-)automatisierte Workflows rund <strong>10 Stunden</strong> Sortieraufwand pro Printprojekt, entspricht das bei ~30 €/Std. etwa <strong>300 € pro Projekt</strong>. Schon <strong>ein</strong> Jahrbuch- oder Abschlussprojekt deckt damit die Schullizenz (290–890 €/Jahr) – hinzu kommen vermiedenes Haftungsrisiko und weniger Fehldrucke.</div>
   </div>
 </section>
 
 <!-- SWOT -->
-<section id="swot" class="alt">
+<section id="swot">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">SWOT-Analyse</span>
@@ -437,7 +470,7 @@ footer a{color:#9FE0E0}
 </section>
 
 <!-- Roadmap -->
-<section id="roadmap">
+<section id="roadmap" class="alt">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">Umsetzungs-Roadmap</span>
@@ -460,7 +493,7 @@ footer a{color:#9FE0E0}
 </section>
 
 <!-- Produktfamilie -->
-<section class="alt">
+<section>
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">Produktarchitektur</span>
@@ -478,7 +511,7 @@ footer a{color:#9FE0E0}
 </section>
 
 <!-- CTA -->
-<section>
+<section class="alt">
   <div class="wrap">
     <div class="cta-band">
       <h2>Safe Frames für Schulen &amp; Eltern erleben</h2>
@@ -496,6 +529,9 @@ footer a{color:#9FE0E0}
         <a href="#problem">Problem</a> · <a href="#loesung">Lösung</a> · <a href="#prozess">Prozess</a> · <a href="#swot">SWOT</a> · <a href="safe-frames-kunden.html">Für Schulen &amp; Eltern</a>
       </div>
     </div>
+    <p class="foot-small">
+      <strong>Marken-Einordnung:</strong> „Safe Frames" ist ein Produkt der Dachmarke <strong>Ilumera</strong>. Präsentiert im Rahmen der TÜV-Weiterbildung „KI-Manager mit Projekt" über die persönliche Domain bridgetoai.de (bridge to ai · Julia Pakravan).
+    </p>
     <p class="foot-small">
       ilumera · Safe Frames — Interner Business Case im Rahmen der TÜV-Weiterbildung „KI-Manager mit Projekt". Marktdimensionierung auf Basis der amtlichen Schulstatistik; SAM/SOM und Erlöszahlen sind Modellannahmen dieses Dokuments.
       <strong>Keine Rechtsberatung, keine öffentliche Produktfreigabe.</strong> Stand: Juni 2026.
