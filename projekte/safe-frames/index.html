@@ -338,15 +338,19 @@ footer a{color:#9FE0E0}
     <div class="section-head">
       <span class="eyebrow">Technologie &amp; KI</span>
       <h2>Angewandte KI – Assistenz statt Identifikation</h2>
-      <p>Der bewusste Verzicht auf Gesichtserkennung grenzt nicht den KI-Einsatz aus, sondern lenkt ihn auf Aufgaben, die den Datenschutz nicht berühren: KI unterstützt bei Bildqualität und Organisation – nicht beim Erkennen von Personen. Diese Funktionen gehören zur optionalen Software-Ausbaustufe.</p>
+      <p>Der eigentliche Engpass ist die Masse: Ein Jahrbuchprojekt erzeugt schnell 1.000–5.000 Rohbilder. Ordnerstruktur und Prozess organisieren diesen Aufwand – senken kann ihn nur eine KI-gestützte Vortriage. Genau hier liefert KI echten Mehrwert: bei Qualität, Dubletten, Kontext und Einwilligungs-Abgleich – nicht beim Erkennen von Personen.</p>
     </div>
+    <div class="note" style="margin-bottom:26px;border-left-color:#163A5A"><strong>USP:</strong> Safe Frames ist die erste KI-gestützte Triage- und Freigabe-Pipeline speziell für Schulfotos – sie sortiert große Bildmengen nach Qualität, Dubletten und Kontext vor, gleicht sie mit dem Einwilligungsstand ab und führt sie über einen prüfbaren Vier-Augen-Prozess ins Druckpaket. Das leistet keine generische Ablage wie Nextcloud oder SharePoint.</div>
     <div class="grid g2">
       <div class="card"><div class="ic">🔍</div><h3>KI-Qualitätsprüfung</h3><p>Automatisches Erkennen und Markieren technisch unbrauchbarer Bilder (Unschärfe, Verwacklung, Über-/Unterbelichtung) – als Vorschlag zur Aussortierung, die Entscheidung bleibt beim Menschen.</p></div>
       <div class="card"><div class="ic">🧩</div><h3>Dubletten- &amp; Serienerkennung</h3><p>Nahezu identische Aufnahmen werden gruppiert, sodass aus einer Serie schnell das beste Bild gewählt werden kann.</p></div>
       <div class="card"><div class="ic">🏷️</div><h3>Non-biometrisches Tagging</h3><p>Verschlagwortung nach Bildtyp und Kontext (Einzel-/Gruppenaufnahme, Innen/Außen, Format) sowie EXIF-Daten. Getaggt wird <em>was</em> zu sehen ist – nicht <em>wer</em>.</p></div>
       <div class="card"><div class="ic">⚡</div><h3>Assistierte Vorsortierung</h3><p>Auf Basis dieser Tags schlägt das System eine Zuordnung in die Phasenstruktur vor und reduziert den manuellen Aufwand erheblich.</p></div>
+      <div class="card"><div class="ic">📋</div><h3>Consent-Reconciliation</h3><p>OCR der Einwilligungsformulare und Abgleich mit der Klassen-/Projektliste – markiert fehlende oder widerrufene Einwilligungen auf Listen-/Dokumentebene. Geprüft werden Dokumente, nicht Gesichter.</p></div>
     </div>
     <div class="note" style="margin-top:26px"><strong>Wichtig:</strong> Alle KI-Funktionen sind als Assistenz konzipiert – sie bereiten Entscheidungen vor, treffen aber keine automatisierten Freigaben. Die inhaltliche und rechtliche Freigabe verbleibt beim Menschen (Vier-Augen-Prinzip). So bleibt Safe Frames auch mit KI risikoarm unter DSGVO und EU AI Act. Keine Rechtsberatung.</div>
+    <div class="note" style="margin-top:18px;border-left-color:#163A5A"><strong>Technologie-Stack (MVP):</strong> Im Pilot setzen wir auf <strong>digiKam</strong> (Open-Source, lokal): ML-/CV-gestützte Bildqualitäts- und Ähnlichkeitserkennung (Image Quality Sorter, Dublettensuche) sowie strukturiertes Tagging und Metadaten. Die enthaltene Gesichtserkennung bleibt bewusst deaktiviert – lokale Verarbeitung statt Cloud stärkt zusätzlich die Datenminimierung.</div>
+    <div style="margin-top:24px"><a class="btn" href="demo/">▶ KI-Triage-Demo ansehen</a></div>
 
     <div class="section-head" style="margin-top:54px">
       <span class="eyebrow">Workflow-Automatisierung</span>
