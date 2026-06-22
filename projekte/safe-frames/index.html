@@ -4,43 +4,34 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#163A5A">
-<title>Safe Frames – Projektpräsentation | ilumera</title>
-<meta name="description" content="Safe Frames by ilumera – der sichere Rahmen für Schulfotos. Datenschutzkonforme Foto-Sortierung für schulische Printprodukte. Projektpräsentation im Rahmen der TÜV-Weiterbildung „KI-Manager mit Projekt".">
+<title>Safe Frames – der sichere Rahmen für Schulfotos | ilumera</title>
+<meta name="description" content="Safe Frames by ilumera – datenschutzkonforme, KI-gestützte Sortierung von Schulfotos für Printprodukte. Einleitung, Team und Überblick zum Projekt.">
 <link rel="icon" href="Logo Safe Frames.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{
-  --petrol:#2E7E82; --petrol-dark:#246B6E; --navy:#163A5A; --navy-soft:#1E4A6E;
-  --tint:#EAF3F3; --tint-2:#F4F9F9; --line:#DCE8E8;
-  --ink:#1E333F; --muted:#5C6E76; --white:#fff;
-  --shadow:0 10px 30px rgba(22,58,90,.08); --shadow-lg:0 20px 50px rgba(22,58,90,.14);
-  --radius:18px;
-}
+:root{--petrol:#2E7E82;--petrol-dark:#246B6E;--navy:#163A5A;--tint:#EAF3F3;--tint2:#F4F9F9;--line:#DCE8E8;--ink:#1E333F;--muted:#5C6E76;--shadow:0 10px 30px rgba(22,58,90,.08);--shadow-lg:0 20px 50px rgba(22,58,90,.14);--radius:18px;}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--white);line-height:1.65;-webkit-font-smoothing:antialiased}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:#fff;line-height:1.65;-webkit-font-smoothing:antialiased}
 h1,h2,h3,h4{font-family:'Poppins',sans-serif;color:var(--navy);line-height:1.2;font-weight:600}
 a{color:var(--petrol);text-decoration:none}
 .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
 .eyebrow{font-family:'Poppins';font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:.74rem;color:var(--petrol)}
-
-/* Header */
 header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:88px}
 .brand{display:flex;align-items:center}
 .brand img{height:64px;width:auto;display:block}
-.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links{display:flex;gap:24px;align-items:center}
 .nav-links a{color:var(--navy);font-weight:500;font-size:.95rem}
 .nav-links a:hover{color:var(--petrol)}
-.btn{display:inline-flex;align-items:center;gap:8px;background:var(--petrol);color:#fff;font-family:'Poppins';font-weight:600;font-size:.95rem;padding:12px 22px;border-radius:999px;transition:.2s;border:none;cursor:pointer}
-.btn:hover{background:var(--petrol-dark);color:#fff;transform:translateY(-1px)}
-.btn.ghost{background:transparent;color:var(--navy);border:1.5px solid var(--line)}
-.btn.ghost:hover{border-color:var(--petrol);color:var(--petrol);background:#fff}
 .menu-toggle{display:none;background:none;border:1.5px solid var(--line);border-radius:10px;width:46px;height:42px;font-size:1.3rem;color:var(--navy);cursor:pointer;line-height:1}
-
-/* Hero */
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--petrol);color:#fff;font-family:'Poppins';font-weight:600;font-size:.95rem;padding:13px 24px;border-radius:999px;transition:.2s;border:none;cursor:pointer}
+.btn:hover{background:var(--petrol-dark);color:#fff;transform:translateY(-1px)}
+.btn.ghost{background:#fff;color:var(--navy);border:1.5px solid var(--line)}
+.btn.ghost:hover{border-color:var(--petrol);color:var(--petrol)}
+.btn.lg{padding:16px 30px;font-size:1.02rem}
 .hero{background:linear-gradient(160deg,#F4F9F9 0%,#E5F1F1 100%);position:relative;overflow:hidden}
 .hero::after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border:2px solid rgba(46,126,130,.18);border-radius:30px;transform:rotate(12deg)}
 .hero-inner{padding:84px 0 88px;position:relative;z-index:2;max-width:760px}
@@ -50,117 +41,53 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdro
 .hero h1 .accent{color:var(--petrol)}
 .hero .lead{font-size:1.18rem;color:var(--muted);margin:20px 0 32px;max-width:620px}
 .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
-
-/* Sections */
-section{padding:72px 0}
+section{padding:74px 0}
+.alt{background:var(--tint2)}
 .section-head{max-width:720px;margin-bottom:42px}
+.section-head.center{margin:0 auto 44px;text-align:center}
 .section-head h2{font-size:clamp(1.7rem,3.4vw,2.3rem);margin:10px 0 14px}
 .section-head p{color:var(--muted);font-size:1.05rem}
-.alt{background:var(--tint-2)}
-
-/* Stat strip */
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-.stat{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)}
-.stat .num{font-family:'Poppins';font-weight:700;font-size:2rem;color:var(--petrol);line-height:1}
-.stat .lbl{color:var(--muted);font-size:.92rem;margin-top:8px}
-
-/* Cards grid */
 .grid{display:grid;gap:22px}
 .g3{grid-template-columns:repeat(3,1fr)}
-.g2{grid-template-columns:repeat(2,1fr)}
 .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);transition:.2s}
 .card:hover{box-shadow:var(--shadow-lg);transform:translateY(-3px)}
 .card .ic{width:46px;height:46px;border-radius:12px;background:var(--tint);display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:1.4rem}
-.card h3{font-size:1.15rem;margin-bottom:8px}
+.card h3{font-size:1.12rem;margin-bottom:8px}
 .card p{color:var(--muted);font-size:.96rem}
-.check-list{list-style:none;display:grid;gap:12px}
-.check-list li{display:flex;gap:12px;align-items:flex-start;color:var(--ink)}
-.check-list li::before{content:"✓";flex:0 0 24px;height:24px;width:24px;background:var(--petrol);color:#fff;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700;margin-top:2px}
-
-/* Process phases */
-.phases{display:grid;grid-template-columns:repeat(7,1fr);gap:10px;counter-reset:none}
-.phase{background:#fff;border:1px solid var(--line);border-top:4px solid var(--petrol);border-radius:12px;padding:16px 14px;text-align:center}
-.phase .code{font-family:'Poppins';font-weight:700;color:var(--petrol);font-size:.9rem}
-.phase .pn{font-size:.82rem;color:var(--muted);margin-top:6px;line-height:1.4}
-.steps{counter-reset:step;display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:34px}
-.step{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 18px}
-.step::before{counter-increment:step;content:counter(step);flex:0 0 34px;height:34px;width:34px;background:var(--navy);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Poppins';font-weight:600;font-size:.95rem}
-.step span{font-size:.95rem}
-
-/* Tables */
-.tbl{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
-.tbl th,.tbl td{text-align:left;padding:14px 18px;border-bottom:1px solid var(--line);font-size:.95rem;vertical-align:top}
-.tbl th{background:var(--navy);color:#fff;font-family:'Poppins';font-weight:600;font-size:.9rem}
-.tbl tr:last-child td{border-bottom:none}
-.tbl td:first-child{font-weight:600;color:var(--navy)}
-
-/* MVP columns */
-.mvp{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.mvp .col{border-radius:var(--radius);padding:24px;border:1px solid var(--line)}
-.mvp .yes{background:#EAF5F0;border-color:#Bfe3d2}
-.mvp .no{background:#FBECEC;border-color:#F2CFCF}
-.mvp .open{background:#FDF6E8;border-color:#F0E2BD}
-.mvp h4{margin-bottom:14px;font-size:1.05rem}
-.mvp ul{list-style:none;display:grid;gap:9px;font-size:.92rem}
-.mvp li{padding-left:22px;position:relative}
-.mvp .yes li::before{content:"✓";position:absolute;left:0;color:#1F9D6B;font-weight:700}
-.mvp .no li::before{content:"✕";position:absolute;left:0;color:#C0494A;font-weight:700}
-.mvp .open li::before{content:"?";position:absolute;left:0;color:#C79A22;font-weight:700}
-
-/* SWOT */
-.swot{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-.swot .q{border-radius:var(--radius);padding:26px;color:#fff}
-.swot .s{background:linear-gradient(135deg,#2E7E82,#246B6E)}
-.swot .w{background:linear-gradient(135deg,#1E4A6E,#163A5A)}
-.swot .o{background:linear-gradient(135deg,#3A9094,#2E7E82)}
-.swot .t{background:linear-gradient(135deg,#274C66,#1B2F44)}
-.swot h4{color:#fff;margin-bottom:14px;font-size:1.15rem;display:flex;align-items:center;gap:10px}
-.swot ul{list-style:none;display:grid;gap:10px}
-.swot li{font-size:.92rem;opacity:.95;padding-left:18px;position:relative}
-.swot li::before{content:"›";position:absolute;left:0;font-weight:700}
-
-/* Roadmap */
-.road{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.road .stage{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px;box-shadow:var(--shadow);position:relative}
-.road .stage .tag{display:inline-block;background:var(--tint);color:var(--petrol);font-weight:600;font-family:'Poppins';font-size:.78rem;padding:5px 12px;border-radius:999px;margin-bottom:14px}
-.road .stage h3{font-size:1.25rem;margin-bottom:10px}
-.road .stage p{color:var(--muted);font-size:.96rem}
-
-/* Family */
-.family{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
-.fam{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 16px;text-align:center}
-.fam .pill{font-size:.7rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--petrol);background:var(--tint);border-radius:999px;padding:3px 10px;display:inline-block;margin-bottom:10px}
-.fam.first .pill{background:var(--petrol);color:#fff}
-.fam h4{font-size:1.02rem;margin-bottom:6px}
-.fam p{font-size:.84rem;color:var(--muted)}
-
-/* CTA band */
-.cta-band{background:linear-gradient(135deg,var(--navy),#13507a);border-radius:24px;padding:56px;text-align:center;color:#fff;box-shadow:var(--shadow-lg)}
+.team-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.member{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px 22px 24px;box-shadow:var(--shadow);text-align:left;transition:.2s}
+.member:hover{box-shadow:var(--shadow-lg);transform:translateY(-3px)}
+.avatar{position:relative;width:128px;height:128px;margin:0 auto 20px;border-radius:50%;background:var(--tint);display:flex;align-items:center;justify-content:center;overflow:hidden;border:1px solid var(--line)}
+.avatar .mono{font-family:'Poppins';font-weight:700;font-size:2.6rem;color:var(--petrol)}
+.avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.member h3{font-size:1.4rem;margin-bottom:2px}
+.member .age{color:var(--muted);font-size:.9rem;padding-bottom:14px;border-bottom:1px solid var(--line);margin-bottom:14px}
+.role{display:flex;align-items:flex-start;gap:11px}
+.role .ric{flex:0 0 38px;height:38px;width:38px;border-radius:10px;background:var(--tint);display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+.role .rt{font-size:.92rem;color:var(--ink);font-weight:500;padding-top:7px}
+.together{display:flex;gap:24px;align-items:center;background:var(--tint);border:1px solid var(--line);border-radius:22px;padding:34px 38px;margin-top:36px}
+.together .hic{flex:0 0 84px;height:84px;width:84px;border-radius:50%;background:#fff;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:2.2rem}
+.together h3{font-size:1.3rem;margin-bottom:6px}
+.together p{color:var(--muted);font-size:1rem}
+.cta-band{background:linear-gradient(135deg,var(--navy),#13507a);border-radius:24px;padding:54px;text-align:center;color:#fff;box-shadow:var(--shadow-lg)}
 .cta-band h2{color:#fff;font-size:2rem;margin-bottom:12px}
 .cta-band p{color:#D6E6F2;max-width:560px;margin:0 auto 26px;font-size:1.05rem}
 .cta-band .btn{background:#fff;color:var(--navy)}
 .cta-band .btn:hover{background:#EAF3F3}
-
-/* Disclaimer + footer */
-.note{background:var(--tint);border-left:4px solid var(--petrol);border-radius:10px;padding:18px 22px;font-size:.92rem;color:var(--navy)}
+.cta-band .btn.ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.5)}
 footer{background:var(--navy);color:#C7D6E2;padding:50px 0 34px;font-size:.9rem}
-footer .brand img{height:52px;width:auto;filter:brightness(0) invert(1)}
-.foot-grid{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:flex-start}
+footer .brand img{height:52px;filter:brightness(0) invert(1)}
+.foot-grid{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:center}
 footer a{color:#9FE0E0}
 .foot-small{margin-top:30px;padding-top:20px;border-top:1px solid rgba(255,255,255,.14);font-size:.82rem;color:#8FA6B6;line-height:1.6}
-
+@media(max-width:980px){.team-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:920px){
-  .menu-toggle{display:inline-flex;align-items:center;justify-content:center}
   .nav-links{position:absolute;top:88px;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);flex-direction:column;gap:0;padding:8px 24px 16px;display:none;box-shadow:var(--shadow)}
-  .nav-links.open{display:flex}
-  .nav-links a{padding:12px 0;width:100%}
-  .nav-links a.btn{margin-top:10px;justify-content:center}
-  .g3,.g2,.mvp,.family,.road{grid-template-columns:1fr}
-  .stats{grid-template-columns:repeat(2,1fr)}
-  .phases{grid-template-columns:repeat(2,1fr)}
-  .steps,.swot{grid-template-columns:1fr}
-  .cta-band{padding:38px 24px}
+  .nav-links.open{display:flex}.nav-links a{padding:12px 0;width:100%}.nav-links a.btn{margin-top:10px;justify-content:center}
+  .menu-toggle{display:inline-flex;align-items:center;justify-content:center}
+  .g3{grid-template-columns:1fr}.together{flex-direction:column;text-align:center}.cta-band{padding:38px 24px}
 }
+@media(max-width:560px){.team-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -169,13 +96,11 @@ footer a{color:#9FE0E0}
   <div class="wrap nav">
     <a class="brand" href="#top"><img src="Logo Safe Frames.png" alt="Safe Frames by ilumera"></a>
     <nav class="nav-links" id="navlinks">
-      <a href="#problem">Problem</a>
-      <a href="#loesung">Lösung</a>
-      <a href="#prozess">Prozess</a>
-      <a href="#technologie">Technologie</a>
-      <a href="#markt">Markt</a>
-      <a href="#swot">SWOT</a>
-      <a href="#roadmap">Roadmap</a>
+      <a href="safe-frames-projekt.html#problem">Problem</a>
+      <a href="safe-frames-projekt.html#loesung">Lösung</a>
+      <a href="safe-frames-projekt.html#technologie">Technologie</a>
+      <a href="#team">Team</a>
+      <a href="safe-frames-projekt.html">Projektpräsentation</a>
       <a class="btn" href="safe-frames-kunden.html">Für Schulen &amp; Eltern →</a>
     </nav>
     <button class="menu-toggle" aria-label="Menü öffnen" aria-expanded="false">☰</button>
@@ -185,342 +110,83 @@ footer a{color:#9FE0E0}
 <a id="top"></a>
 <section class="hero">
   <div class="wrap hero-inner">
-    <span class="badge"><span class="dot"></span> Konzept / MVP-Definition · Stand Juni 2026</span>
+    <span class="badge"><span class="dot"></span> Safe Frames by ilumera · Konzept/MVP · Juni 2026</span>
     <h1>Der sichere Rahmen für <span class="accent">Schulfotos</span></h1>
-    <p class="lead">Safe Frames überführt den unstrukturierten, datenschutzrechtlich riskanten Umgang mit Schülerfotos in einen dokumentierten, prüfbaren Arbeitsprozess – speziell für die Erstellung schulischer Printprodukte wie Jahrbücher und Abschlusszeitungen.</p>
+    <p class="lead">Safe Frames macht aus dem unstrukturierten Umgang mit Schülerfotos einen datenschutzbewussten, KI-gestützten und prüfbaren Prozess – speziell für Jahrbücher und schulische Printprodukte. Diese Seite gibt einen Überblick und stellt das Team dahinter vor.</p>
     <div class="hero-cta">
-      <a class="btn" href="safe-frames-kunden.html">Kunden-Landingpage ansehen →</a>
-      <a class="btn ghost" href="#loesung">Wie es funktioniert</a>
+      <a class="btn lg" href="safe-frames-projekt.html">Projektpräsentation ansehen →</a>
+      <a class="btn ghost lg" href="safe-frames-kunden.html">Für Schulen &amp; Eltern</a>
     </div>
   </div>
 </section>
 
-<!-- Context -->
 <section>
   <div class="wrap">
-    <div class="note">
-      <strong>Projektkontext:</strong> Safe Frames ist das erste Produkt der Marke <strong>ilumera</strong> und entstand im Rahmen der TÜV-Weiterbildung „KI-Manager mit Projekt". Das Projekt befindet sich in der Konzept- bzw. MVP-Definition – es liegt noch keine öffentliche Produktfreigabe vor. Präsentiert wird es über die persönliche Domain <strong>bridgetoai.de</strong> (bridge to ai · Julia Pakravan); Produkt- und Markenidentität bleiben „Safe Frames by Ilumera".
+    <div class="section-head center">
+      <span class="eyebrow">Worum es geht</span>
+      <h2>In drei Sätzen</h2>
+    </div>
+    <div class="grid g3">
+      <div class="card"><div class="ic">🛡️</div><h3>Datenschutzbewusst</h3><p>Prozessbasierte Ordnerstruktur, Vier-Augen-Prinzip und klares Löschkonzept – bewusst ohne Biometrie, risikoarm unter DSGVO &amp; EU AI Act.</p></div>
+      <div class="card"><div class="ic">🤖</div><h3>KI-gestützt</h3><p>KI sortiert große Bildmengen nach Qualität, Dubletten und Kontext vor und gleicht den Einwilligungsstand ab – der Mensch entscheidet.</p></div>
+      <div class="card"><div class="ic">🖨️</div><h3>Druckfertig</h3><p>Nur geprüfte Bilder gelangen ins Druckpaket. Weniger Aufwand, weniger Fehldrucke, mehr Vertrauen bei Eltern und Schule.</p></div>
     </div>
   </div>
 </section>
 
-<!-- Problem -->
-<section id="problem" class="alt">
+<section id="team" class="alt">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Ausgangslage</span>
-      <h2>Ein reales Problem im Schulalltag</h2>
-      <p>Schülerfotos sind personenbezogene Daten im Sinne der DSGVO. In der Praxis werden sie häufig unstrukturiert verarbeitet – über Messenger-Gruppen, private Geräte und unkontrollierte Cloud-Dienste. Einwilligungen, Freigabestände und Löschfristen bleiben dabei oft undokumentiert.</p>
+      <span class="eyebrow">Unser Team</span>
+      <h2>Das Team hinter Safe Frames</h2>
+      <p>Fünf Menschen, ein Ziel: Schulfotografie verantwortungsvoll, digital und sicher zu gestalten – mit technischer Kompetenz, rechtlichem Know-how und echter Praxiserfahrung.</p>
     </div>
-    <div class="stats">
-      <div class="stat"><div class="num">~38 %</div><div class="lbl">der Schulen verzichten laut Branchenleitfaden teils ganz auf Klassenfotos – aus Sorge vor Rechtsverletzungen.</div></div>
-      <div class="stat"><div class="num">7 Phasen</div><div class="lbl">prozessbasierte Ordnerstruktur statt unkontrollierter Parallelablage.</div></div>
-      <div class="stat"><div class="num">10 Schritte</div><div class="lbl">klar getrennter Workflow vom Eingang bis zur Löschung.</div></div>
-      <div class="stat"><div class="num">4-Augen</div><div class="lbl">Prinzip als verpflichtende Kontrolle vor jeder Druckfreigabe.</div></div>
+    <div class="team-grid">
+      <div class="member">
+        <div class="avatar"><span class="mono">N</span><img src="team/nina.jpg" alt="Nina" onerror="this.remove()"></div>
+        <h3>Nina</h3><div class="age">38 Jahre</div>
+        <div class="role"><span class="ric">🗂️</span><span class="rt">Konzept &amp; Struktur</span></div>
+      </div>
+      <div class="member">
+        <div class="avatar"><span class="mono">K</span><img src="team/karolina.jpg" alt="Karolina" onerror="this.remove()"></div>
+        <h3>Karolina</h3><div class="age">28 Jahre</div>
+        <div class="role"><span class="ric">🔍</span><span class="rt">Recherche</span></div>
+      </div>
+      <div class="member">
+        <div class="avatar"><span class="mono">J</span><img src="team/julia.jpg" alt="Julia" onerror="this.remove()"></div>
+        <h3>Julia</h3><div class="age">37 Jahre</div>
+        <div class="role"><span class="ric">📖</span><span class="rt">Produkt &amp; Inhalte</span></div>
+      </div>
+      <div class="member">
+        <div class="avatar"><span class="mono">A</span><img src="team/arne.jpg" alt="Arne" onerror="this.remove()"></div>
+        <h3>Arne</h3><div class="age">43 Jahre</div>
+        <div class="role"><span class="ric">⚖️</span><span class="rt">Recht &amp; Prüfung</span></div>
+      </div>
+      <div class="member">
+        <div class="avatar"><span class="mono">C</span><img src="team/claus.jpg" alt="Claus" onerror="this.remove()"></div>
+        <h3>Claus</h3><div class="age">46 Jahre</div>
+        <div class="role"><span class="ric">💬</span><span class="rt">Kommunikation &amp; Produktbeschreibung</span></div>
+      </div>
     </div>
-    <div class="grid g3" style="margin-top:34px">
-      <div class="card"><div class="ic">⚠️</div><h3>Unkontrollierte Wege</h3><p>Fotos landen auf privaten Geräten, in Messenger-Gruppen oder unkontrollierten Cloud-Diensten – ohne klaren Sortier- und Prüfprozess.</p></div>
-      <div class="card"><div class="ic">📄</div><h3>Fehlende Dokumentation</h3><p>Einwilligungen müssen individuell geprüft werden; Freigabestände und Löschfristen werden selten systematisch festgehalten.</p></div>
-      <div class="card"><div class="ic">🖨️</div><h3>Druck ist endgültig</h3><p>Printprodukte lassen sich nicht zurückholen – ein Fehler bei der Freigabe wirkt dauerhaft und erzeugt Haftungs- und Reputationsrisiko.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- Lösung -->
-<section id="loesung">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">Lösungsbeschreibung</span>
-      <h2>Aus Chaos wird ein prüfbarer Prozess</h2>
-      <p>Originale werden geschützt, Freigaben sichtbar gemacht, nicht nutzbare Bilder sauber getrennt und Druckpakete kontrolliert vorbereitet. Bewusst verzichtet das MVP auf Gesichtserkennung und biometrische Verfahren.</p>
-    </div>
-    <div class="grid g2">
-      <ul class="check-list">
-        <li>Sichere, zentrale Fotoablage auf einem von der Schule kontrollierten System</li>
-        <li>Geordnete Ordnerstruktur mit klaren Phasen und Zuständigkeiten</li>
-        <li>Klare Trennung von Originalen, bearbeiteten und ausgesonderten Bildern</li>
-        <li>Freigabe- und Prüfprozesse nach dem Vier-Augen-Prinzip</li>
-      </ul>
-      <ul class="check-list">
-        <li>Vorbereitung strukturierter Druckpakete mit ausschließlich geprüften Bildern</li>
-        <li>Vermeidung von Messenger-Gruppen, privaten Geräten und unkontrollierten Clouds</li>
-        <li>Unterstützung bei der Dokumentation von Einwilligungen und Freigabeständen</li>
-        <li>Grundlage für ein strukturiertes Lösch- und Archivierungskonzept</li>
-      </ul>
-    </div>
-    <div class="note" style="margin-top:30px">
-      <strong>Wichtig:</strong> Safe Frames ersetzt keine rechtliche Prüfung und trifft keine juristische Bewertung. Es schafft die <strong>technische und organisatorische Grundlage</strong> für einen datenschutzbewussten Umgang mit Schülerfotos.
+    <div class="together">
+      <div class="hic">🤝</div>
+      <div>
+        <h3>Gemeinsam für mehr Vertrauen in Schulfotos</h3>
+        <p>Gemeinsam entwickeln wir Safe Frames als verantwortungsvolle Lösung für den sensiblen Umgang mit Schulfotos.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- Prozess -->
-<section id="prozess" class="alt">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">Prozess- &amp; Ordnerlogik</span>
-      <h2>Sieben Phasen, zehn Schritte</h2>
-      <p>Eine nummerierte, prozessbasierte Ordnerstruktur macht für alle Beteiligten jederzeit erkennbar, in welcher Phase sich ein Bild befindet.</p>
-    </div>
-    <div class="phases">
-      <div class="phase"><div class="code">00</div><div class="pn">ALLE&nbsp;Originale<br><em>nur lesend</em></div></div>
-      <div class="phase"><div class="code">10</div><div class="pn">In&nbsp;Prüfung<br><em>Einwilligung &amp; Qualität</em></div></div>
-      <div class="phase"><div class="code">20</div><div class="pn">Freigegeben&nbsp;Print</div></div>
-      <div class="phase"><div class="code">30</div><div class="pn">Bearbeitete&nbsp;Fotos</div></div>
-      <div class="phase"><div class="code">40</div><div class="pn">Aussortierte&nbsp;Fotos<br><em>als Nachweis</em></div></div>
-      <div class="phase"><div class="code">50</div><div class="pn">Druckpaket<br><em>4-Augen-Prinzip</em></div></div>
-      <div class="phase"><div class="code">90</div><div class="pn">Archiv&nbsp;/&nbsp;Löschung</div></div>
-    </div>
-    <div class="steps">
-      <div class="step"><span>Fotos ausschließlich über den zentralen Speicherort sammeln (keine Parallelablage).</span></div>
-      <div class="step"><span>Originale unverändert in <strong>00_ALLE_Originale</strong> ablegen.</span></div>
-      <div class="step"><span>Einwilligung und Verwendungszweck je Bild prüfen.</span></div>
-      <div class="step"><span>Noch zu bewertende Bilder in <strong>10_In_Pruefung</strong> verschieben.</span></div>
-      <div class="step"><span>Geprüfte Bilder in <strong>20_Freigegeben_Print</strong> kennzeichnen.</span></div>
-      <div class="step"><span>Bearbeitungen getrennt in <strong>30_BearbeiteteFotos</strong> speichern.</span></div>
-      <div class="step"><span>Nicht nutzbare Bilder in <strong>40_AussortierteFotos</strong> aussortieren (nicht löschen).</span></div>
-      <div class="step"><span>Druckpaket in <strong>50_Druckpaket</strong> gezielt zusammenstellen.</span></div>
-      <div class="step"><span>Druckpaket vor Übergabe nach dem Vier-Augen-Prinzip prüfen.</span></div>
-      <div class="step"><span>Projekt abschließen, nach Fristen archivieren oder löschen (<strong>90_Archiv_Loeschung</strong>).</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- MVP -->
 <section>
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">MVP-Abgrenzung</span>
-      <h2>Bewusst eng gefasst – risikoarm nach DSGVO &amp; EU AI Act</h2>
-      <p>Der Produktumfang ist für die erste Phase bewusst eng gefasst, um Datenschutz- und Regulierungsrisiken zu reduzieren.</p>
-    </div>
-    <div class="mvp">
-      <div class="col yes">
-        <h4>Im MVP enthalten</h4>
-        <ul>
-          <li>Strukturierte Fotoablage</li>
-          <li>Sortierung nach Projekt / Klasse / Druckprodukt</li>
-          <li>Phasentrennung &amp; Freigabelogik</li>
-          <li>Dokumentation von Freigabe / Ausschluss</li>
-          <li>Geprüftes Druckpaket</li>
-          <li>Lösch- / Archivierungsprozess</li>
-        </ul>
-      </div>
-      <div class="col no">
-        <h4>Nicht im MVP</h4>
-        <ul>
-          <li>Automatische Gesichtserkennung</li>
-          <li>Biometrische Identifikation</li>
-          <li>Emotionserkennung</li>
-          <li>Automatische Veröffentlichung</li>
-          <li>Social-Media- / Messenger-Posting</li>
-          <li>Archivierung ohne Zweckbindung</li>
-        </ul>
-      </div>
-      <div class="col open">
-        <h4>Offen / Teamentscheidung</h4>
-        <ul>
-          <li>Einwilligungsverwaltung in Safe Frames?</li>
-          <li>Reines Konzept oder echte Software?</li>
-          <li>Wer lädt hoch (Schule / Dienstleister)?</li>
-          <li>Speicherdauer nach Projektende?</li>
-          <li>Wer erteilt finale Druckfreigabe?</li>
-          <li>Externer Anbieter als Auftragsverarbeiter?</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Technologie -->
-<section id="technologie" class="alt">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">Technologie &amp; KI</span>
-      <h2>Angewandte KI – Assistenz statt Identifikation</h2>
-      <p>Der eigentliche Engpass ist die Masse: Ein Jahrbuchprojekt erzeugt schnell 1.000–5.000 Rohbilder. Ordnerstruktur und Prozess organisieren diesen Aufwand – senken kann ihn nur eine KI-gestützte Vortriage. Genau hier liefert KI echten Mehrwert: bei Qualität, Dubletten, Kontext und Einwilligungs-Abgleich – nicht beim Erkennen von Personen.</p>
-    </div>
-    <div class="note" style="margin-bottom:26px;border-left-color:#163A5A"><strong>USP:</strong> Safe Frames ist die erste KI-gestützte Triage- und Freigabe-Pipeline speziell für Schulfotos – sie sortiert große Bildmengen nach Qualität, Dubletten und Kontext vor, gleicht sie mit dem Einwilligungsstand ab und führt sie über einen prüfbaren Vier-Augen-Prozess ins Druckpaket. Das leistet keine generische Ablage wie Nextcloud oder SharePoint.</div>
-    <div class="grid g2">
-      <div class="card"><div class="ic">🔍</div><h3>KI-Qualitätsprüfung</h3><p>Automatisches Erkennen und Markieren technisch unbrauchbarer Bilder (Unschärfe, Verwacklung, Über-/Unterbelichtung) – als Vorschlag zur Aussortierung, die Entscheidung bleibt beim Menschen.</p></div>
-      <div class="card"><div class="ic">🧩</div><h3>Dubletten- &amp; Serienerkennung</h3><p>Nahezu identische Aufnahmen werden gruppiert, sodass aus einer Serie schnell das beste Bild gewählt werden kann.</p></div>
-      <div class="card"><div class="ic">🏷️</div><h3>Non-biometrisches Tagging</h3><p>Verschlagwortung nach Bildtyp und Kontext (Einzel-/Gruppenaufnahme, Innen/Außen, Format) sowie EXIF-Daten. Getaggt wird <em>was</em> zu sehen ist – nicht <em>wer</em>.</p></div>
-      <div class="card"><div class="ic">⚡</div><h3>Assistierte Vorsortierung</h3><p>Auf Basis dieser Tags schlägt das System eine Zuordnung in die Phasenstruktur vor und reduziert den manuellen Aufwand erheblich.</p></div>
-      <div class="card"><div class="ic">📋</div><h3>Consent-Reconciliation</h3><p>OCR der Einwilligungsformulare und Abgleich mit der Klassen-/Projektliste – markiert fehlende oder widerrufene Einwilligungen auf Listen-/Dokumentebene. Geprüft werden Dokumente, nicht Gesichter.</p></div>
-    </div>
-    <div class="note" style="margin-top:26px"><strong>Wichtig:</strong> Alle KI-Funktionen sind als Assistenz konzipiert – sie bereiten Entscheidungen vor, treffen aber keine automatisierten Freigaben. Die inhaltliche und rechtliche Freigabe verbleibt beim Menschen (Vier-Augen-Prinzip). So bleibt Safe Frames auch mit KI risikoarm unter DSGVO und EU AI Act. Keine Rechtsberatung.</div>
-    <div class="note" style="margin-top:18px;border-left-color:#163A5A"><strong>Technologie-Stack (MVP):</strong> Im Pilot setzen wir auf <strong>digiKam</strong> (Open-Source, lokal): ML-/CV-gestützte Bildqualitäts- und Ähnlichkeitserkennung (Image Quality Sorter, Dublettensuche) sowie strukturiertes Tagging und Metadaten. Die enthaltene Gesichtserkennung bleibt bewusst deaktiviert – lokale Verarbeitung statt Cloud stärkt zusätzlich die Datenminimierung.</div>
-    <div style="margin-top:24px"><a class="btn" href="demo/">▶ KI-Triage-Demo ansehen</a></div>
-
-    <div class="section-head" style="margin-top:54px">
-      <span class="eyebrow">Workflow-Automatisierung</span>
-      <h2>Datenflüsse im Hintergrund orchestrieren</h2>
-      <p>In der Software-Ausbaustufe lässt sich die 7-Phasen-Logik durch eine Automatisierungsplattform (z. B. Make) orchestrieren – als „Dirigent" der Dateibewegungen, nicht als zusätzlicher Speicherort.</p>
-    </div>
-    <ul class="check-list">
-      <li><strong>Statusgetriggerte Übergänge:</strong> Jede Phase entspricht einem Status; ein Statuswechsel (z. B. „geprüft &amp; freigegeben") verschiebt die Datei regelbasiert in den korrekten Zielordner.</li>
-      <li><strong>Zentrale Ablage als einzige Quelle:</strong> Die Orchestrierung operiert ausschließlich auf dem schulisch kontrollierten Speicher (Cloud/NAS) über authentifizierte Konnektoren – keine Parallelablage.</li>
-      <li><strong>Datensparsamkeit by Design:</strong> Über die Plattform laufen nur Steuer- und Metadaten (Datei-ID, Status, Zielpfad), nicht die Bildinhalte. Bei EU-Hosting und Verschlüsselung bleibt das Datenschutzniveau gewahrt.</li>
-      <li><strong>Protokollierung &amp; Fristen:</strong> Jeder Schritt wird mitgeschrieben; Lösch-/Archivierungsfristen (Phase 90) lassen sich als Zeit-Trigger hinterlegen.</li>
-    </ul>
-    <div class="note" style="margin-top:24px">Wird eine externe Automatisierungsplattform eingebunden, ist zu prüfen, ob ein Auftragsverarbeitungsvertrag (AVV) erforderlich ist. Safe Frames schafft die technische und organisatorische Grundlage und ersetzt keine rechtliche Prüfung.</div>
-  </div>
-</section>
-
-<!-- Markt -->
-<section id="markt">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">Markt &amp; Wettbewerb</span>
-      <h2>Eine klar umrissene Marktlücke</h2>
-      <p>Bestehende Anbieter fokussieren auf Verkauf, Eltern-Sharing oder allgemeine Bildverwaltung. Der datenschutzorientierte Sortier- und Freigabeprozess für die schulische Print-Eigenproduktion ist als eigenständiger Prozess kaum abgedeckt.</p>
-    </div>
-    <div class="grid g2" style="align-items:start">
-      <table class="tbl">
-        <tr><th>Ebene</th><th>Beschreibung</th><th>Größenordnung</th></tr>
-        <tr><td>TAM</td><td>Alle Schulen in Deutschland (rund 40.000), ~11,5 Mio. Schüler:innen.</td><td>≈ 40.000</td></tr>
-        <tr><td>SAM</td><td>Schulen mit regelmäßigen Print-/Jahrbuchprojekten und Datenschutz-Sensibilität.</td><td>≈ 12–18 Tsd.</td></tr>
-        <tr><td>SOM</td><td>In 3 Jahren über Direktansprache und Partnerkanäle erreichbar.</td><td>≈ 300–1.500</td></tr>
-      </table>
-      <table class="tbl">
-        <tr><th>Anbietertyp</th><th>Lücke gegenüber Safe Frames</th></tr>
-        <tr><td>Schulfotografie</td><td>Kein schulinterner Sortier-/Freigabeprozess für Print</td></tr>
-        <tr><td>DSGVO-Fotoplattformen</td><td>Primär Elternkommunikation, nicht Druckproduktion</td></tr>
-        <tr><td>Fotografen-Plattformen</td><td>Nicht auf schulische Eigenproduktion ausgerichtet</td></tr>
-        <tr><td>Fotoverwaltung</td><td>Datenschutz-Sortierung für Minderjährige kaum abgebildet</td></tr>
-      </table>
-    </div>
-    <p style="margin-top:16px;color:var(--muted);font-size:.86rem">Hinweis: Marktdimensionierung auf Basis der amtlichen Schulstatistik (Statistisches Bundesamt, Schuljahr 2024/25 ff.). SAM/SOM sind Annahmen dieses Business Case und im Pilot zu validieren.</p>
-  </div>
-</section>
-
-<!-- Geschäftsmodell -->
-<section class="alt">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">Geschäfts- &amp; Erlösmodell</span>
-      <h2>Kombinierbare Erlöslogiken</h2>
-      <p>Alle Beträge sind illustrative Modellannahmen zur Veranschaulichung – keine kalkulierten oder testierten Preise.</p>
-    </div>
-    <div class="grid g2" style="align-items:start">
-      <table class="tbl">
-        <tr><th>Erlösmodell</th><th>Annahme (Modell)</th></tr>
-        <tr><td>Prozess-/Schullizenz pro Jahr</td><td>290–890 €/Jahr</td></tr>
-        <tr><td>Projekt- / Jahrbuchpaket</td><td>150–400 €/Projekt</td></tr>
-        <tr><td>B2B2C-Partnerlizenz</td><td>Volumen-/Umsatzanteil</td></tr>
-        <tr><td>Setup &amp; Beratung (einmalig)</td><td>500–2.000 €</td></tr>
-      </table>
-      <table class="tbl">
-        <tr><th>Szenario (Jahr 3)</th><th>Kundenbasis</th><th>Jahresumsatz</th></tr>
-        <tr><td>Konservativ</td><td>150 Schulen</td><td>≈ 60.000 €</td></tr>
-        <tr><td>Basis</td><td>600 Schulen</td><td>≈ 270.000 €</td></tr>
-        <tr><td>Optimistisch</td><td>1.500 + Partner</td><td>≈ 850.000 €+</td></tr>
-      </table>
-    </div>
-    <div class="note" style="margin-top:26px"><strong>ROI durch Zeitersparnis:</strong> Die Lizenz ist als Effizienzinvestition zu verstehen. Illustratives Beispiel (Modellannahme): Spart eine Lehrkraft durch den klaren Prozess und (teil-)automatisierte Workflows rund <strong>10 Stunden</strong> Sortieraufwand pro Printprojekt, entspricht das bei ~30 €/Std. etwa <strong>300 € pro Projekt</strong>. Schon <strong>ein</strong> Jahrbuch- oder Abschlussprojekt deckt damit die Schullizenz (290–890 €/Jahr) – hinzu kommen vermiedenes Haftungsrisiko und weniger Fehldrucke.</div>
-  </div>
-</section>
-
-<!-- SWOT -->
-<section id="swot">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">SWOT-Analyse</span>
-      <h2>Stärken, Schwächen, Chancen, Risiken</h2>
-    </div>
-    <div class="swot">
-      <div class="q s">
-        <h4>Stärken</h4>
-        <ul>
-          <li>Klare Prozess- &amp; Ordnerlogik – sofort einsetzbar, auch ohne Software</li>
-          <li>Privacy-by-Design: bewusster Verzicht auf Biometrie → niedriges AI-Act-Risiko</li>
-          <li>Adressiert eine konkrete, schwach abgedeckte Marktlücke</li>
-          <li>Niedrige Einstiegshürde als Organisationskonzept</li>
-          <li>Skalierbare Markenarchitektur (ilumera)</li>
-        </ul>
-      </div>
-      <div class="q w">
-        <h4>Schwächen</h4>
-        <ul>
-          <li>Noch kein lauffähiges Produkt – zentrale Entscheidungen offen</li>
-          <li>Abhängig von schulischer IT-Infrastruktur und -Disziplin</li>
-          <li>Manuelle Prüf-/Sortierprozesse sind arbeitsintensiv</li>
-          <li>Erlösmodell ungeklärt; lange Beschaffungszyklen im Bildungssektor</li>
-          <li>Keine Rechtsberatung – schafft Grundlage, nicht Rechtssicherheit</li>
-        </ul>
-      </div>
-      <div class="q o">
-        <h4>Chancen</h4>
-        <ul>
-          <li>Steigender Datenschutz- und Compliance-Druck → latenter Bedarf</li>
-          <li>EU AI Act erhöht Nachfrage nach risikoarmen Verfahren</li>
-          <li>B2B2C-Hebel über Fotografen, Druckereien, Jahrbuch-Dienstleister</li>
-          <li>Erweiterung auf Kitas, Vereine, Hochschulen, Veranstalter</li>
-          <li>Wiederkehrende Erlöse über die Produktfamilie</li>
-        </ul>
-      </div>
-      <div class="q t">
-        <h4>Risiken</h4>
-        <ul>
-          <li>Etablierte Plattformen könnten Sortier-/Druckfunktion nachrüsten</li>
-          <li>Lange Beschaffung und knappe Budgets im Bildungssektor</li>
-          <li>Heterogene Vorgaben über 16 Bundesländer erschweren Standardisierung</li>
-          <li>Generische „gut genug"-Tools und kostenlose Behelfslösungen</li>
-          <li>Reputationsrisiko bei einem Datenschutzvorfall trotz Safe Frames</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Roadmap -->
-<section id="roadmap" class="alt">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">Umsetzungs-Roadmap</span>
-      <h2>Der empfohlene zweistufige Weg</h2>
-      <p>Risikoarm und validierungsgetrieben: zuerst der Wertbeweis als Prozesskonzept, dann die optionale Produktisierung.</p>
-    </div>
-    <div class="road">
-      <div class="stage">
-        <span class="tag">Stufe 1 · Pilot</span>
-        <h3>Prozesskonzept validieren</h3>
-        <p>Begrenzter Pilotbetrieb an 2–3 Schulen als Referenz. Das standardisierte Prozess-/Organisationskonzept wird im Echteinsatz erprobt – geringe Investition, schnelle Lernkurve.</p>
-      </div>
-      <div class="stage">
-        <span class="tag">Stufe 2 · optional</span>
-        <h3>Schlanke Produktisierung</h3>
-        <p>Nach erbrachtem Wertbeweis: optionale Umsetzung als schlanke Software. Erst wenn der Nutzen als Prozesskit belegt ist, wird in Entwicklung investiert.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Produktfamilie -->
-<section>
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">Produktarchitektur</span>
-      <h2>Die ilumera-Produktfamilie</h2>
-      <p>Safe Frames ist das erste konkrete Produkt. Perspektivisch ist eine ganze Produktfamilie angelegt.</p>
-    </div>
-    <div class="family">
-      <div class="fam first"><span class="pill">Heute</span><h4>Safe Frames</h4><p>Datenschutzbewusste Sortierung &amp; Druckvorbereitung</p></div>
-      <div class="fam"><span class="pill">Ausbau</span><h4>Safe Share</h4><p>Kontrollierte Weitergabe freigegebener Bilder</p></div>
-      <div class="fam"><span class="pill">Ausbau</span><h4>Safe Print</h4><p>Übergabe geprüfter Druckpakete an Layout/Druck</p></div>
-      <div class="fam"><span class="pill">Ausbau</span><h4>Safe Archive</h4><p>Regelkonforme Archivierung &amp; Löschung</p></div>
-      <div class="fam"><span class="pill">Ausbau</span><h4>Safe Consent</h4><p>Verwaltung &amp; Dokumentation von Einwilligungen</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="alt">
   <div class="wrap">
     <div class="cta-band">
-      <h2>Safe Frames für Schulen &amp; Eltern erleben</h2>
-      <p>Die Kunden-Landingpage zeigt das Produkt aus Sicht von Schulleitung und Eltern – mit Erklärvideo und einem Assistenten, der alle Fragen beantwortet.</p>
-      <a class="btn" href="safe-frames-kunden.html">Zur Kunden-Landingpage →</a>
+      <h2>Mehr erfahren</h2>
+      <p>Tauchen Sie tiefer ein – in den vollständigen Business Case oder in die Sicht von Schulleitung und Eltern.</p>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+        <a class="btn lg" href="safe-frames-projekt.html">Projektpräsentation →</a>
+        <a class="btn ghost lg" href="safe-frames-kunden.html">Für Schulen &amp; Eltern</a>
+      </div>
     </div>
   </div>
 </section>
@@ -530,15 +196,14 @@ footer a{color:#9FE0E0}
     <div class="foot-grid">
       <div class="brand"><img src="Logo Safe Frames.png" alt="Safe Frames by ilumera"></div>
       <div>
-        <a href="#problem">Problem</a> · <a href="#loesung">Lösung</a> · <a href="#prozess">Prozess</a> · <a href="#swot">SWOT</a> · <a href="safe-frames-kunden.html">Für Schulen &amp; Eltern</a>
+        <a href="safe-frames-projekt.html">Projektpräsentation</a> · <a href="#team">Team</a> · <a href="safe-frames-kunden.html">Für Schulen &amp; Eltern</a>
       </div>
     </div>
     <p class="foot-small">
       <strong>Marken-Einordnung:</strong> „Safe Frames" ist ein Produkt der Dachmarke <strong>Ilumera</strong>. Präsentiert im Rahmen der TÜV-Weiterbildung „KI-Manager mit Projekt" über die persönliche Domain bridgetoai.de (bridge to ai · Julia Pakravan).
     </p>
     <p class="foot-small">
-      ilumera · Safe Frames — Interner Business Case im Rahmen der TÜV-Weiterbildung „KI-Manager mit Projekt". Marktdimensionierung auf Basis der amtlichen Schulstatistik; SAM/SOM und Erlöszahlen sind Modellannahmen dieses Dokuments.
-      <strong>Keine Rechtsberatung, keine öffentliche Produktfreigabe.</strong> Stand: Juni 2026.
+      Safe Frames ersetzt keine Rechtsberatung und trifft keine juristische Bewertung. Konzept-/MVP-Phase, keine öffentliche Produktfreigabe. Stand: Juni 2026.
     </p>
   </div>
 </footer>
@@ -548,6 +213,5 @@ footer a{color:#9FE0E0}
   if(mt&&nl){mt.addEventListener('click',()=>{const o=nl.classList.toggle('open');mt.setAttribute('aria-expanded',o);});
   nl.addEventListener('click',e=>{if(e.target.closest('a'))nl.classList.remove('open');});}
 </script>
-
 </body>
 </html>
