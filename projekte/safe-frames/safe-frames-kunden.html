@@ -3,25 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#163A5A">
+<meta name="theme-color" content="#0C2340">
 <title>Safe Frames – Schulfotos sicher gerahmt | für Schulen &amp; Eltern</title>
 <meta name="description" content="Safe Frames by ilumera gibt Schulen und Eltern einen klaren, datenschutzbewussten Weg für den Umgang mit Schülerfotos in Jahrbüchern und Printprodukten – mit Erklärvideo und persönlichem Assistenten.">
 <link rel="icon" href="Logo Safe Frames.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Montserrat:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --petrol:#2E7E82; --petrol-dark:#246B6E; --navy:#163A5A; --navy-soft:#1E4A6E;
-  --tint:#EAF3F3; --tint-2:#F4F9F9; --line:#DCE8E8;
+  --petrol:#005F73; --petrol-dark:#004B5C; --navy:#0C2340; --navy-soft:#15406B;
+  --tint:#E5EFF0; --tint-2:#F3F8F9; --line:#D6E2E4;
   --ink:#1E333F; --muted:#5C6E76; --white:#fff;
-  --shadow:0 10px 30px rgba(22,58,90,.08); --shadow-lg:0 20px 50px rgba(22,58,90,.14);
+  --shadow:0 10px 30px rgba(12,35,64,.08); --shadow-lg:0 20px 50px rgba(12,35,64,.14);
   --radius:18px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--white);line-height:1.65;-webkit-font-smoothing:antialiased}
-h1,h2,h3,h4{font-family:'Poppins',sans-serif;color:var(--navy);line-height:1.2;font-weight:600}
+h1,h2,h3,h4{font-family:'Montserrat',sans-serif;color:var(--navy);line-height:1.2;font-weight:600}
 a{color:var(--petrol);text-decoration:none}
 .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
 .eyebrow{font-family:'Poppins';font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:.74rem;color:var(--petrol)}
@@ -34,7 +34,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdro
 .nav-links a{color:var(--navy);font-weight:500;font-size:.95rem}
 .nav-links a:hover{color:var(--petrol)}
 .menu-toggle{display:none;background:none;border:1.5px solid var(--line);border-radius:10px;width:46px;height:42px;font-size:1.3rem;color:var(--navy);cursor:pointer;line-height:1}
-.btn{display:inline-flex;align-items:center;gap:8px;background:var(--petrol);color:#fff;font-family:'Poppins';font-weight:600;font-size:.95rem;padding:13px 24px;border-radius:999px;transition:.2s;border:none;cursor:pointer}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--petrol);color:#fff;font-family:'Montserrat';font-weight:600;font-size:.95rem;padding:13px 24px;border-radius:999px;transition:.2s;border:none;cursor:pointer}
 .btn:hover{background:var(--petrol-dark);color:#fff;transform:translateY(-1px)}
 .btn.ghost{background:#fff;color:var(--navy);border:1.5px solid var(--line)}
 .btn.ghost:hover{border-color:var(--petrol);color:var(--petrol)}
@@ -42,7 +42,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdro
 
 /* Hero */
 .hero{background:linear-gradient(165deg,#F4F9F9,#E2EFEF);position:relative;overflow:hidden}
-.hero::before{content:"";position:absolute;left:-90px;bottom:-110px;width:340px;height:340px;border:2px solid rgba(46,126,130,.16);border-radius:28px;transform:rotate(-10deg)}
+.hero::before{content:"";position:absolute;left:-90px;bottom:-110px;width:340px;height:340px;border:2px solid rgba(0,95,115,.16);border-radius:28px;transform:rotate(-10deg)}
 .hero-inner{padding:88px 0 92px;position:relative;z-index:2;max-width:740px}
 .badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);color:var(--navy);font-weight:500;font-size:.82rem;padding:7px 14px;border-radius:999px;margin-bottom:22px}
 .badge .dot{width:8px;height:8px;border-radius:50%;background:var(--petrol)}
@@ -62,7 +62,7 @@ section{padding:74px 0}
 .video-wrap video{width:100%;display:block;aspect-ratio:16/9;background:#0d2438}
 .video-placeholder{position:relative}
 .video-placeholder img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover}
-.video-flag{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);background:rgba(22,58,90,.85);color:#fff;font-family:'Poppins';font-weight:600;font-size:.9rem;padding:9px 18px;border-radius:999px;backdrop-filter:blur(4px)}
+.video-flag{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);background:rgba(12,35,64,.85);color:#fff;font-family:'Poppins';font-weight:600;font-size:.9rem;padding:9px 18px;border-radius:999px;backdrop-filter:blur(4px)}
 .video-note{text-align:center;color:var(--muted);font-size:.9rem;margin-top:16px}
 
 /* Steps */
@@ -101,7 +101,7 @@ section{padding:74px 0}
 .bot-card h2{font-size:1.9rem;margin-bottom:14px}
 .bot-card p{color:var(--muted);font-size:1.04rem;margin-bottom:20px}
 .bot-visual{background:linear-gradient(160deg,#EAF3F3,#D7ebeb);border-radius:18px;padding:26px;border:1px solid var(--line)}
-.chat-bubble{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px;font-size:.92rem;margin-bottom:12px;box-shadow:0 3px 10px rgba(22,58,90,.05)}
+.chat-bubble{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px;font-size:.92rem;margin-bottom:12px;box-shadow:0 3px 10px rgba(12,35,64,.05)}
 .chat-bubble.me{background:var(--petrol);color:#fff;border-color:var(--petrol);margin-left:40px}
 .chat-bubble.bot{margin-right:40px}
 .chat-bubble small{display:block;font-weight:600;font-size:.72rem;opacity:.7;margin-bottom:4px;font-family:'Poppins'}
@@ -116,7 +116,7 @@ details[open] summary::after{transform:rotate(45deg)}
 details p{padding:0 24px 22px;color:var(--muted);font-size:.97rem}
 
 /* CTA */
-.cta-band{background:linear-gradient(135deg,var(--petrol),#246B6E);border-radius:24px;padding:58px;text-align:center;color:#fff;box-shadow:var(--shadow-lg)}
+.cta-band{background:linear-gradient(135deg,var(--petrol),#004B5C);border-radius:24px;padding:58px;text-align:center;color:#fff;box-shadow:var(--shadow-lg)}
 .cta-band h2{color:#fff;font-size:2.1rem;margin-bottom:12px}
 .cta-band p{color:#E0F2F2;max-width:560px;margin:0 auto 28px;font-size:1.08rem}
 .cta-band .btn{background:#fff;color:var(--petrol-dark)}
@@ -240,9 +240,14 @@ footer a{color:#9FE0E0}
       <div class="trust-item"><div class="tic">👁️</div><div><h3>Vier-Augen-Prinzip</h3><p>Vor jeder Druckfreigabe prüfen zwei Personen das Druckpaket gemeinsam. So werden Fehler vor dem Druck abgefangen.</p></div></div>
       <div class="trust-item"><div class="tic">🗂️</div><div><h3>Dokumentierte Freigaben</h3><p>Freigaben, Ausschlüsse und Zwecke werden nachvollziehbar festgehalten – eine solide Grundlage für Ihren Datenschutzkontakt.</p></div></div>
       <div class="trust-item"><div class="tic">🗑️</div><div><h3>Klares Löschkonzept</h3><p>Speicherfristen, Archivierung und Löschung sind Teil des Prozesses – statt vergessener Bilder auf verstreuten Geräten.</p></div></div>
+      <div class="trust-item"><div class="tic">📋</div><div><h3>An der DSGVO ausgerichtet</h3><p>Einwilligung und Zweck werden je Bild geprüft, Daten sparsam und nur für das Printprodukt verarbeitet – Speicherfristen und Betroffenenrechte sind Teil des Ablaufs.</p></div></div>
+      <div class="trust-item"><div class="tic">⚖️</div><div><h3>EU AI Act: geringes Risiko</h3><p>Ohne Biometrie, ohne Personenbewertung und mit menschlicher Letztentscheidung – Safe Frames fällt bewusst nicht unter Hochrisiko- oder verbotene KI-Praktiken.</p></div></div>
     </div>
     <div style="text-align:center;margin-top:30px;color:#CFE0EC;font-size:.92rem;max-width:680px;margin-left:auto;margin-right:auto">
       <strong style="color:#fff">Hinweis:</strong> Safe Frames ersetzt keine rechtliche Prüfung und trifft keine juristische Bewertung. Es schafft die technische und organisatorische Grundlage für einen datenschutzbewussten Umgang mit Schülerfotos.
+    </div>
+    <div style="text-align:center;margin-top:18px">
+      <a class="btn ghost" href="safe-frames-projekt.html#recht">Rechtliche Einordnung im Detail →</a>
     </div>
   </div>
 </section>

@@ -3,25 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#163A5A">
+<meta name="theme-color" content="#0C2340">
 <title>Safe Frames – Projektpräsentation | ilumera</title>
 <meta name="description" content="Safe Frames by ilumera – der sichere Rahmen für Schulfotos. Datenschutzkonforme Foto-Sortierung für schulische Printprodukte. Projektpräsentation im Rahmen der TÜV-Weiterbildung „KI-Manager mit Projekt".">
 <link rel="icon" href="Logo Safe Frames.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Montserrat:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --petrol:#2E7E82; --petrol-dark:#246B6E; --navy:#163A5A; --navy-soft:#1E4A6E;
-  --tint:#EAF3F3; --tint-2:#F4F9F9; --line:#DCE8E8;
+  --petrol:#005F73; --petrol-dark:#004B5C; --navy:#0C2340; --navy-soft:#15406B;
+  --tint:#E5EFF0; --tint-2:#F3F8F9; --line:#D6E2E4;
   --ink:#1E333F; --muted:#5C6E76; --white:#fff;
-  --shadow:0 10px 30px rgba(22,58,90,.08); --shadow-lg:0 20px 50px rgba(22,58,90,.14);
+  --shadow:0 10px 30px rgba(12,35,64,.08); --shadow-lg:0 20px 50px rgba(12,35,64,.14);
   --radius:18px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--white);line-height:1.65;-webkit-font-smoothing:antialiased}
-h1,h2,h3,h4{font-family:'Poppins',sans-serif;color:var(--navy);line-height:1.2;font-weight:600}
+h1,h2,h3,h4{font-family:'Montserrat',sans-serif;color:var(--navy);line-height:1.2;font-weight:600}
 a{color:var(--petrol);text-decoration:none}
 .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
 .eyebrow{font-family:'Poppins';font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:.74rem;color:var(--petrol)}
@@ -34,7 +34,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdro
 .nav-links{display:flex;gap:28px;align-items:center}
 .nav-links a{color:var(--navy);font-weight:500;font-size:.95rem}
 .nav-links a:hover{color:var(--petrol)}
-.btn{display:inline-flex;align-items:center;gap:8px;background:var(--petrol);color:#fff;font-family:'Poppins';font-weight:600;font-size:.95rem;padding:12px 22px;border-radius:999px;transition:.2s;border:none;cursor:pointer}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--petrol);color:#fff;font-family:'Montserrat';font-weight:600;font-size:.95rem;padding:12px 22px;border-radius:999px;transition:.2s;border:none;cursor:pointer}
 .btn:hover{background:var(--petrol-dark);color:#fff;transform:translateY(-1px)}
 .btn.ghost{background:transparent;color:var(--navy);border:1.5px solid var(--line)}
 .btn.ghost:hover{border-color:var(--petrol);color:var(--petrol);background:#fff}
@@ -42,7 +42,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdro
 
 /* Hero */
 .hero{background:linear-gradient(160deg,#F4F9F9 0%,#E5F1F1 100%);position:relative;overflow:hidden}
-.hero::after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border:2px solid rgba(46,126,130,.18);border-radius:30px;transform:rotate(12deg)}
+.hero::after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border:2px solid rgba(0,95,115,.18);border-radius:30px;transform:rotate(12deg)}
 .hero-inner{padding:84px 0 88px;position:relative;z-index:2;max-width:760px}
 .badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);color:var(--navy);font-weight:500;font-size:.82rem;padding:7px 14px;border-radius:999px;margin-bottom:22px}
 .badge .dot{width:8px;height:8px;border-radius:50%;background:var(--petrol)}
@@ -110,9 +110,9 @@ section{padding:72px 0}
 /* SWOT */
 .swot{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
 .swot .q{border-radius:var(--radius);padding:26px;color:#fff}
-.swot .s{background:linear-gradient(135deg,#2E7E82,#246B6E)}
-.swot .w{background:linear-gradient(135deg,#1E4A6E,#163A5A)}
-.swot .o{background:linear-gradient(135deg,#3A9094,#2E7E82)}
+.swot .s{background:linear-gradient(135deg,#005F73,#004B5C)}
+.swot .w{background:linear-gradient(135deg,#15406B,#0C2340)}
+.swot .o{background:linear-gradient(135deg,#2A8A9C,#005F73)}
 .swot .t{background:linear-gradient(135deg,#274C66,#1B2F44)}
 .swot h4{color:#fff;margin-bottom:14px;font-size:1.15rem;display:flex;align-items:center;gap:10px}
 .swot ul{list-style:none;display:grid;gap:10px}
@@ -173,6 +173,7 @@ footer a{color:#9FE0E0}
       <a href="#loesung">Lösung</a>
       <a href="#prozess">Prozess</a>
       <a href="#technologie">Technologie</a>
+      <a href="#recht">Recht</a>
       <a href="#markt">Markt</a>
       <a href="#swot">SWOT</a>
       <a href="#roadmap">Roadmap</a>
@@ -340,7 +341,7 @@ footer a{color:#9FE0E0}
       <h2>Angewandte KI – Assistenz statt Identifikation</h2>
       <p><strong>Safe Frames kombiniert erstmals Consent-Verwaltung, KI-gestützte Bildprüfung und druckfertige Freigabeprozesse in einem speziell für Schulen entwickelten Workflow.</strong> Der eigentliche Engpass ist die Masse: Ein Jahrbuchprojekt erzeugt schnell 1.000–5.000 Rohbilder. Ordnerstruktur und Prozess organisieren diesen Aufwand – senken kann ihn nur eine KI-gestützte Vortriage. Genau hier liefert KI echten Mehrwert: bei Qualität, Dubletten, Kontext und Einwilligungs-Abgleich – nicht beim Erkennen von Personen.</p>
     </div>
-    <div class="note" style="margin-bottom:26px;border-left-color:#163A5A"><strong>USP:</strong> Safe Frames ist die erste KI-gestützte Triage- und Freigabe-Pipeline speziell für Schulfotos – sie sortiert große Bildmengen nach Qualität, Dubletten und Kontext vor, gleicht sie mit dem Einwilligungsstand ab und führt sie über einen prüfbaren Vier-Augen-Prozess ins Druckpaket. Das leistet keine generische Ablage wie Nextcloud oder SharePoint.</div>
+    <div class="note" style="margin-bottom:26px;border-left-color:#0C2340"><strong>USP:</strong> Safe Frames ist die erste KI-gestützte Triage- und Freigabe-Pipeline speziell für Schulfotos – sie sortiert große Bildmengen nach Qualität, Dubletten und Kontext vor, gleicht sie mit dem Einwilligungsstand ab und führt sie über einen prüfbaren Vier-Augen-Prozess ins Druckpaket. Das leistet keine generische Ablage wie Nextcloud oder SharePoint.</div>
     <div class="grid g2">
       <div class="card"><div class="ic">🔍</div><h3>KI-Qualitätsprüfung</h3><p>Automatisches Erkennen und Markieren technisch unbrauchbarer Bilder (Unschärfe, Verwacklung, Über-/Unterbelichtung) – als Vorschlag zur Aussortierung, die Entscheidung bleibt beim Menschen.</p></div>
       <div class="card"><div class="ic">🧩</div><h3>Dubletten- &amp; Serienerkennung</h3><p>Nahezu identische Aufnahmen werden gruppiert, sodass aus einer Serie schnell das beste Bild gewählt werden kann.</p></div>
@@ -349,7 +350,7 @@ footer a{color:#9FE0E0}
       <div class="card"><div class="ic">📋</div><h3>Consent-Reconciliation</h3><p>OCR der Einwilligungsformulare und Abgleich mit der Klassen-/Projektliste – markiert fehlende oder widerrufene Einwilligungen auf Listen-/Dokumentebene. Geprüft werden Dokumente, nicht Gesichter.</p></div>
     </div>
     <div class="note" style="margin-top:26px"><strong>Wichtig:</strong> Alle KI-Funktionen sind als Assistenz konzipiert – sie bereiten Entscheidungen vor, treffen aber keine automatisierten Freigaben. Die inhaltliche und rechtliche Freigabe verbleibt beim Menschen (Vier-Augen-Prinzip). Die KI gleicht Metadaten und Freigabestatus ab, trifft aber keine rechtliche Entscheidung. So bleibt Safe Frames auch mit KI risikoarm unter DSGVO und EU AI Act. Keine Rechtsberatung.</div>
-    <div class="note" style="margin-top:18px;border-left-color:#163A5A"><strong>Technologie-Stack (MVP):</strong> Im Pilot setzen wir auf <strong>digiKam</strong> (Open-Source, lokal): ML-/CV-gestützte Bildqualitäts- und Ähnlichkeitserkennung (Image Quality Sorter, Dublettensuche) sowie strukturiertes Tagging und Metadaten. Die enthaltene Gesichtserkennung bleibt bewusst deaktiviert – lokale Verarbeitung statt Cloud stärkt zusätzlich die Datenminimierung.</div>
+    <div class="note" style="margin-top:18px;border-left-color:#0C2340"><strong>Technologie-Stack (MVP):</strong> Im Pilot setzen wir auf <strong>digiKam</strong> (Open-Source, lokal): ML-/CV-gestützte Bildqualitäts- und Ähnlichkeitserkennung (Image Quality Sorter, Dublettensuche) sowie strukturiertes Tagging und Metadaten. Die enthaltene Gesichtserkennung bleibt bewusst deaktiviert – lokale Verarbeitung statt Cloud stärkt zusätzlich die Datenminimierung.</div>
     <div style="margin-top:24px"><a class="btn" href="demo/">▶ KI-Triage-Demo ansehen</a></div>
     <figure style="max-width:480px;margin:46px auto 0;text-align:center">
       <img src="safe-frames-ki-workflow.png" alt="Workflow: von 1.000 Fotos über KI-Qualitätsprüfung, Dubletten- und Freigabestatus-Abgleich zur menschlichen Prüfung bis zur Druckfreigabe" style="width:100%;height:auto;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow)">
@@ -368,6 +369,73 @@ footer a{color:#9FE0E0}
       <li><strong>Protokollierung &amp; Fristen:</strong> Jeder Schritt wird mitgeschrieben; Lösch-/Archivierungsfristen (Phase 90) lassen sich als Zeit-Trigger hinterlegen.</li>
     </ul>
     <div class="note" style="margin-top:24px">Wird eine externe Automatisierungsplattform eingebunden, ist zu prüfen, ob ein Auftragsverarbeitungsvertrag (AVV) erforderlich ist. Safe Frames schafft die technische und organisatorische Grundlage und ersetzt keine rechtliche Prüfung.</div>
+  </div>
+</section>
+
+<!-- Recht / Regulatorik -->
+<section id="recht">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Datenschutz &amp; Regulatorik</span>
+      <h2>DSGVO und EU AI Act – die rechtliche Einordnung</h2>
+      <p>Schülerfotos sind personenbezogene Daten besonders schutzwürdiger Personen. Safe Frames schafft die technische und organisatorische Grundlage, um den Umgang damit nachvollziehbar an den Anforderungen von DSGVO und EU AI Act auszurichten – als prüfbarer Prozess, nicht als juristische Bewertung.</p>
+    </div>
+
+    <h3 style="font-size:1.3rem;margin-bottom:18px">DSGVO: zentrale Grundsätze und ihre Umsetzung</h3>
+    <table class="tbl">
+      <tr><th>DSGVO-Grundsatz</th><th>Anforderung</th><th>Umsetzung in Safe Frames</th></tr>
+      <tr><td>Rechtsgrundlage &amp; Einwilligung (Art. 6–8)</td><td>Jede Verarbeitung braucht eine gültige Rechtsgrundlage; bei Kindern gelten erhöhte Anforderungen an die Einwilligung.</td><td>Phase 10 „In Prüfung" erfasst Einwilligung und Zweck je Bild; die Consent-Reconciliation gleicht Einwilligungsformulare mit der Klassen-/Projektliste ab.</td></tr>
+      <tr><td>Zweckbindung &amp; Datenminimierung (Art. 5)</td><td>Daten nur für den festgelegten Zweck und so sparsam wie möglich verarbeiten.</td><td>Verarbeitung allein für das konkrete Printprodukt; non-biometrisches Tagging („was, nicht wer"), lokale Verarbeitung statt Cloud, keine Gesichtserkennung.</td></tr>
+      <tr><td>Speicherbegrenzung &amp; Löschung (Art. 5, 17)</td><td>Daten nicht länger als nötig speichern; Löschpflichten erfüllen.</td><td>Phase 90 „Archiv/Löschung" mit definierten Fristen; Lösch- und Archivierungsfristen als Zeit-Trigger hinterlegbar.</td></tr>
+      <tr><td>Integrität &amp; Vertraulichkeit / TOMs (Art. 32)</td><td>Angemessene technische und organisatorische Schutzmaßnahmen.</td><td>Zentrale, schulisch kontrollierte Ablage; Verschlüsselung und EU-Hosting; keine Messenger-Gruppen oder privaten Geräte.</td></tr>
+      <tr><td>Rechenschaft &amp; Verzeichnis (Art. 30)</td><td>Verarbeitungstätigkeiten dokumentieren und nachweisen können.</td><td>Dokumentierte Freigaben und Ausschlüsse, Protokollierung jedes Phasenübergangs – Grundlage für den VVT-Eintrag.</td></tr>
+      <tr><td>Datenschutz-Folgenabschätzung (Art. 35)</td><td>Bei voraussichtlich hohem Risiko (Kinderdaten, neue Technik) ist eine DSFA zu prüfen.</td><td>DSFA-Vorprüfung empfohlen, da Kinderkontext und KI-gestützte Verarbeitung zusammentreffen.</td></tr>
+      <tr><td>Betroffenenrechte (Art. 15–17)</td><td>Auskunft, Berichtigung, Löschung und Widerruf ermöglichen.</td><td>Dokumentierte Freigabestände machen Auskunft und Löschung handhabbar; Widerrufe werden im Abgleich markiert und führen zum Ausschluss.</td></tr>
+    </table>
+
+    <div class="section-head" style="margin-top:52px">
+      <span class="eyebrow">EU AI Act</span>
+      <h2>Risikobasiert eingeordnet – bewusst außerhalb von Hochrisiko</h2>
+      <p>Der EU AI Act reguliert KI nach Risikoklassen. Safe Frames ist so gestaltet, dass es weder in die verbotenen noch in die Hochrisiko-Praktiken fällt.</p>
+    </div>
+    <div class="grid g2">
+      <div class="card"><div class="ic">🎯</div><h3>Risikobasierte Einordnung</h3><p>Das MVP verzichtet auf Biometrie, Emotionserkennung und Personenbewertung – damit keine verbotene Praxis (Art. 5) und keine Hochrisiko-Funktion (Anhang III). Einordnung: geringes bis minimales Risiko.</p></div>
+      <div class="card"><div class="ic">👁️</div><h3>Transparenz (Art. 50)</h3><p>Nutzer erkennen klar, dass sie mit einer KI interagieren – der Pre-Chat-Hinweis des Assistenten setzt dies um. Diese Transparenzpflicht gilt ab dem 2. August 2026.</p></div>
+      <div class="card"><div class="ic">🤝</div><h3>Menschliche Aufsicht</h3><p>Die KI arbeitet ausschließlich assistierend; jede Freigabe erfolgt im Vier-Augen-Prinzip durch Menschen. Keine automatisierten Entscheidungen über Kinder, Schulen oder Einwilligungen.</p></div>
+      <div class="card"><div class="ic">🎓</div><h3>KI-Kompetenz (Art. 4)</h3><p>Das Team kennt Betrieb, Grenzen, Eskalationswege und Fehlerrisiken des Assistenten – Voraussetzung für einen verantwortungsvollen Einsatz.</p></div>
+    </div>
+    <div class="note" style="margin-top:26px"><strong>Regulatorischer Stand (Juni 2026):</strong> Verbotene KI-Praktiken nach Art. 5 EU AI Act gelten seit dem 2. Februar 2025; die Transparenzpflichten (Art. 50) sowie die Anforderungen an Hochrisiko-Systeme (Anhang III) gelten ab dem 2. August 2026. Safe Frames ist bewusst so eng gefasst, dass es nicht in diese Kategorien fällt.</div>
+
+    <div class="section-head" style="margin-top:52px">
+      <span class="eyebrow">Vor dem Launch</span>
+      <h2>Dokumentation &amp; Verantwortlichkeiten</h2>
+      <p>Aus Datenschutzsicht gilt: zuerst konzipieren und dokumentieren, dann Tools auswählen und integrieren.</p>
+    </div>
+    <div class="grid g2">
+      <div class="card">
+        <h3>DSGVO-Dokumentationspaket</h3>
+        <ul class="check-list" style="margin-top:16px">
+          <li><strong>VVT-Eintrag:</strong> Zweck, Datenarten, Empfänger und Fristen festhalten.</li>
+          <li><strong>Rechtsgrundlage:</strong> Interessenabwägung bzw. vorvertragliche Anfrage dokumentieren.</li>
+          <li><strong>DSFA-Vorprüfung:</strong> Kinderkontext und KI-Freitext bewerten.</li>
+          <li><strong>Datenschutzerklärung:</strong> eigener Abschnitt „KI-Assistent".</li>
+          <li><strong>Lösch- &amp; Archivierungskonzept:</strong> Chats, Logs, Bilder und Backups.</li>
+          <li><strong>Incident-Prozess:</strong> Umgang mit sensiblen Fehleingaben.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Rollen &amp; Datenfluss</h3>
+        <ul class="check-list" style="margin-top:16px">
+          <li><strong>Verantwortlicher:</strong> Website-/Projektbetreiber legt Zweck und Rechtsgrundlage fest.</li>
+          <li><strong>Auftragsverarbeiter:</strong> Hosting-, Bot- und KI-Dienstleister – AVV nach Art. 28 erforderlich.</li>
+          <li><strong>KI-Anbieter:</strong> EU-/EWR-Hosting bevorzugt; keine Trainingsnutzung der Eingaben.</li>
+          <li><strong>Datensparsamkeit:</strong> kurze Log-Fristen, keine echten Schülerdaten im Assistenten.</li>
+          <li><strong>Schulen:</strong> als eigene Verantwortliche später separat zu bewerten.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="note" style="margin-top:30px"><strong>Keine Rechtsberatung:</strong> Diese Übersicht ordnet den Business Case in den datenschutz- und KI-rechtlichen Rahmen ein und ersetzt keine rechtliche Prüfung oder juristische Bewertung. Verbindliche Aussagen treffen die oder der Datenschutzbeauftragte sowie ggf. eine anwaltliche Prüfung im Einzelfall. Quellen der regulatorischen Einordnung: EU AI Act (Art. 5, 50, Anhang III) und Umsetzungszeitplan der EU-Kommission sowie die DSGVO.</div>
   </div>
 </section>
 
@@ -534,7 +602,7 @@ footer a{color:#9FE0E0}
     <div class="foot-grid">
       <div class="brand"><img src="Logo Safe Frames.png" alt="Safe Frames by ilumera"></div>
       <div>
-        <a href="#problem">Problem</a> · <a href="#loesung">Lösung</a> · <a href="#prozess">Prozess</a> · <a href="#swot">SWOT</a> · <a href="safe-frames-kunden.html">Für Schulen &amp; Eltern</a>
+        <a href="#problem">Problem</a> · <a href="#loesung">Lösung</a> · <a href="#prozess">Prozess</a> · <a href="#recht">Datenschutz &amp; EU AI Act</a> · <a href="#swot">SWOT</a> · <a href="safe-frames-kunden.html">Für Schulen &amp; Eltern</a>
       </div>
     </div>
     <p class="foot-small">

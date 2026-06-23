@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#163A5A">
+<meta name="theme-color" content="#0C2340">
 <title>Safe Frames – der sichere Rahmen für Schulfotos | ilumera</title>
 <meta name="description" content="Safe Frames by ilumera – datenschutzkonforme, KI-gestützte Sortierung von Schulfotos für Printprodukte. Einleitung, Team und Überblick zum Projekt.">
 <link rel="icon" href="Logo Safe Frames.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Montserrat:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--petrol:#2E7E82;--petrol-dark:#246B6E;--navy:#163A5A;--tint:#EAF3F3;--tint2:#F4F9F9;--line:#DCE8E8;--ink:#1E333F;--muted:#5C6E76;--shadow:0 10px 30px rgba(22,58,90,.08);--shadow-lg:0 20px 50px rgba(22,58,90,.14);--radius:18px;}
+:root{--petrol:#005F73;--petrol-dark:#004B5C;--navy:#0C2340;--tint:#E5EFF0;--tint2:#F3F8F9;--line:#D6E2E4;--ink:#1E333F;--muted:#5C6E76;--shadow:0 10px 30px rgba(12,35,64,.08);--shadow-lg:0 20px 50px rgba(12,35,64,.14);--radius:18px;}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:#fff;line-height:1.65;-webkit-font-smoothing:antialiased}
-h1,h2,h3,h4{font-family:'Poppins',sans-serif;color:var(--navy);line-height:1.2;font-weight:600}
+h1,h2,h3,h4{font-family:'Montserrat',sans-serif;color:var(--navy);line-height:1.2;font-weight:600}
 a{color:var(--petrol);text-decoration:none}
 .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
 .eyebrow{font-family:'Poppins';font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:.74rem;color:var(--petrol)}
@@ -27,13 +27,13 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdro
 .nav-links a{color:var(--navy);font-weight:500;font-size:.95rem}
 .nav-links a:hover{color:var(--petrol)}
 .menu-toggle{display:none;background:none;border:1.5px solid var(--line);border-radius:10px;width:46px;height:42px;font-size:1.3rem;color:var(--navy);cursor:pointer;line-height:1}
-.btn{display:inline-flex;align-items:center;gap:8px;background:var(--petrol);color:#fff;font-family:'Poppins';font-weight:600;font-size:.95rem;padding:13px 24px;border-radius:999px;transition:.2s;border:none;cursor:pointer}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--petrol);color:#fff;font-family:'Montserrat';font-weight:600;font-size:.95rem;padding:13px 24px;border-radius:999px;transition:.2s;border:none;cursor:pointer}
 .btn:hover{background:var(--petrol-dark);color:#fff;transform:translateY(-1px)}
 .btn.ghost{background:#fff;color:var(--navy);border:1.5px solid var(--line)}
 .btn.ghost:hover{border-color:var(--petrol);color:var(--petrol)}
 .btn.lg{padding:16px 30px;font-size:1.02rem}
 .hero{background:linear-gradient(160deg,#F4F9F9 0%,#E5F1F1 100%);position:relative;overflow:hidden}
-.hero::after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border:2px solid rgba(46,126,130,.18);border-radius:30px;transform:rotate(12deg)}
+.hero::after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border:2px solid rgba(0,95,115,.18);border-radius:30px;transform:rotate(12deg)}
 .hero-inner{padding:84px 0 88px;position:relative;z-index:2;max-width:760px}
 .badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);color:var(--navy);font-weight:500;font-size:.82rem;padding:7px 14px;border-radius:999px;margin-bottom:22px}
 .badge .dot{width:8px;height:8px;border-radius:50%;background:var(--petrol)}
@@ -81,6 +81,44 @@ footer .brand img{height:52px;filter:brightness(0) invert(1)}
 .foot-grid{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:center}
 footer a{color:#9FE0E0}
 .foot-small{margin-top:30px;padding-top:20px;border-top:1px solid rgba(255,255,255,.14);font-size:.82rem;color:#8FA6B6;line-height:1.6}
+/* Marketing-Claim */
+.claim{background:linear-gradient(135deg,var(--navy),#13507a);color:#fff}
+.claim .section-head h2{color:#fff}
+.claim .q{font-family:'Poppins';font-weight:600;font-size:clamp(1.35rem,2.8vw,1.95rem);line-height:1.45;max-width:900px;margin:0 auto;text-align:center;color:#fff}
+.claim .q .hl{color:#9FE0E0}
+.claim .meaning{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:36px auto 0;max-width:880px}
+.claim .meaning div{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:20px}
+.claim .meaning b{display:block;font-family:'Poppins';color:#fff;margin-bottom:5px;font-size:1rem}
+.claim .meaning p{color:#D6E6F2;font-size:.92rem;margin:0}
+/* Marktrelevanz-Stat */
+.stat{display:flex;gap:26px;align-items:center;background:#fff;border:1px solid var(--line);border-left:5px solid var(--petrol);border-radius:var(--radius);padding:26px 30px;box-shadow:var(--shadow);max-width:760px;margin:46px auto 0}
+.stat .big{font-family:'Poppins';font-weight:700;font-size:clamp(2.4rem,5vw,3rem);color:var(--petrol);line-height:1;flex:0 0 auto}
+.stat p{color:var(--muted);font-size:1rem;margin:0}
+/* Logo-Story */
+.story-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;align-items:center}
+.story-visual{background:var(--tint);border:1px solid var(--line);border-radius:22px;padding:34px;text-align:center}
+.story-visual img{max-width:230px;width:100%;height:auto}
+.story-visual .tag{display:block;margin-top:18px;font-family:'Poppins';font-weight:600;color:var(--navy);font-size:1.02rem}
+.steps{display:grid;gap:14px}
+.step{display:flex;gap:15px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;box-shadow:var(--shadow)}
+.step .sic{flex:0 0 40px;height:40px;width:40px;border-radius:10px;background:var(--tint);display:flex;align-items:center;justify-content:center;font-size:1.2rem}
+.step h4{font-size:1.02rem;margin-bottom:3px}
+.step p{color:var(--muted);font-size:.93rem;margin:0}
+.incl{background:var(--tint2);border:1px dashed var(--line);border-radius:14px;padding:18px 22px;margin-top:18px;color:var(--muted);font-size:.94rem}
+.incl b{color:var(--navy);font-family:'Poppins'}
+/* Markenarchitektur */
+.arch{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:8px}
+.arch .lvl{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow)}
+.arch .lvl .kicker{font-family:'Poppins';font-weight:600;letter-spacing:.1em;text-transform:uppercase;font-size:.72rem;color:var(--petrol)}
+.arch .lvl h3{font-size:1.3rem;margin:8px 0 8px}
+.arch .lvl p{color:var(--muted);font-size:.96rem}
+/* Assistent-Hinweis */
+.assist{display:flex;gap:20px;align-items:flex-start;background:var(--tint2);border:1px solid var(--line);border-left:5px solid var(--petrol);border-radius:var(--radius);padding:26px 30px;box-shadow:var(--shadow)}
+.assist .aic{flex:0 0 48px;height:48px;width:48px;border-radius:12px;background:var(--tint);display:flex;align-items:center;justify-content:center;font-size:1.5rem}
+.assist h3{font-size:1.12rem;margin-bottom:8px}
+.assist ul{margin:0;padding-left:18px;color:var(--muted);font-size:.95rem}
+.assist ul li{margin-bottom:5px}
+@media(max-width:880px){.story-grid{grid-template-columns:1fr}.arch{grid-template-columns:1fr}.claim .meaning{grid-template-columns:1fr}.stat{flex-direction:column;text-align:center}}
 @media(max-width:980px){.team-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:920px){
   .nav-links{position:absolute;top:88px;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);flex-direction:column;gap:0;padding:8px 24px 16px;display:none;box-shadow:var(--shadow)}
@@ -121,6 +159,20 @@ footer a{color:#9FE0E0}
   </div>
 </section>
 
+<section class="claim">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow" style="color:#9FE0E0">Unser Leitgedanke</span>
+    </div>
+    <p class="q">„Bürokratie nimmt die <span class="hl">Sicht</span>. ilumera bringt das <span class="hl">Licht</span>. Safe Frames schafft den <span class="hl">sicheren Rahmen</span> für Erinnerungen."</p>
+    <div class="meaning">
+      <div><b>Sicht &amp; Licht</b><p>Transparenz statt Intransparenz – nicht die Bürokratie ist das Problem, sondern fehlende Klarheit.</p></div>
+      <div><b>Rahmen</b><p>Rechtssicherheit und Struktur für einen prüfbaren, dokumentierten Prozess.</p></div>
+      <div><b>Erinnerungen</b><p>Emotionaler Mehrwert statt reiner Funktion – Klassenfotos bleiben erhalten.</p></div>
+    </div>
+  </div>
+</section>
+
 <section>
   <div class="wrap">
     <div class="section-head center">
@@ -136,6 +188,10 @@ footer a{color:#9FE0E0}
       <img src="safe-frames-ki-workflow.png" alt="Workflow: von 1.000 Fotos über KI-Qualitätsprüfung, Dubletten- und Freigabestatus-Abgleich zur menschlichen Prüfung bis zur Druckfreigabe" style="width:100%;height:auto;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow)">
       <figcaption style="color:var(--muted);font-size:.86rem;margin-top:12px">Vom Foto zur Druckfreigabe – KI assistiert, der Mensch entscheidet.</figcaption>
     </figure>
+    <div class="stat">
+      <span class="big">~40%</span>
+      <p>der Schulen verzichten aus Unsicherheit rund um die DSGVO inzwischen ganz auf Klassenfotos – wertvolle Erinnerungen gehen verloren, obwohl der Wunsch danach unverändert besteht. Genau hier setzt Safe Frames an.</p>
+    </div>
   </div>
 </section>
 
@@ -185,6 +241,52 @@ footer a{color:#9FE0E0}
 
 <section>
   <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Marke &amp; Idee</span>
+      <h2>Ein Produkt mit System</h2>
+      <p>Safe Frames ist die erste Anwendung der Dachmarke ilumera – bewusst modular angelegt, damit weitere Lösungen ohne Rebranding folgen können.</p>
+    </div>
+    <div class="arch">
+      <div class="lvl">
+        <span class="kicker">Dachmarke</span>
+        <h3>ilumera</h3>
+        <p>Steht für die systematische Vereinfachung komplexer administrativer Prozesse. Die Kernidee: Bürokratie ist nicht das Problem – Intransparenz ist es.</p>
+      </div>
+      <div class="lvl">
+        <span class="kicker">Erstes Produkt</span>
+        <h3>Safe Frames</h3>
+        <p>Die spezialisierte Anwendung für ein klar abgegrenztes Problem im Bildungsbereich: die rechtssichere Organisation und Erstellung von Klassenfotos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Design-Idee</span>
+      <h2>Die Geschichte hinter dem Logo</h2>
+      <p>Das Logo ist nicht dekorativ, sondern eine visuelle Problemlösung: vom Chaos zur Klarheit – durch Bewegung im System.</p>
+    </div>
+    <div class="story-grid">
+      <div class="story-visual">
+        <img src="Logo Safe Frames.png" alt="Logo Safe Frames">
+        <span class="tag">Vom Chaos zur Klarheit – durch Bewegung im System.</span>
+      </div>
+      <div>
+        <div class="steps">
+          <div class="step"><span class="sic">📐</span><div><h4>Der schiefe Rahmen</h4><p>Symbolisiert die Unsicherheit und rechtliche Instabilität im Schulalltag – das Bild für eine ungeklärte Situation.</p></div></div>
+          <div class="step"><span class="sic">🚶</span><div><h4>Die Figur</h4><p>Bewegt sich aktiv durch den Raum und richtet den Rahmen gerade. Sie steht für die Nutzer, die konkrete Handlung und den Fortschritt.</p></div></div>
+          <div class="step"><span class="sic">🖼️</span><div><h4>Der stabile Rahmen</h4><p>Der Endzustand: klar, rechtssicher und strukturiert – als direktes Ergebnis der Nutzung von Safe Frames.</p></div></div>
+        </div>
+        <div class="incl"><b>Inklusiv durch Weglassen:</b> Die Figur ist bewusst reduziert – ohne Gesichtszüge, neutrale Form, einfache Linien. So ist das Design genderneutral, kulturell offen und bietet allen Kindern eine universelle Identifikationsfläche.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
     <div class="cta-band">
       <h2>Mehr erfahren</h2>
       <p>Tauchen Sie tiefer ein – in den vollständigen Business Case oder in die Sicht von Schulleitung und Eltern.</p>
@@ -196,12 +298,35 @@ footer a{color:#9FE0E0}
   </div>
 </section>
 
+<section class="alt">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">KI-Assistent</span>
+      <h2>Hinweis zum Safe-Frames-Assistenten</h2>
+      <p>Unten rechts hilft Ihnen ein KI-gestützter Assistent bei allgemeinen Fragen zu Safe Frames. Er ist bewusst begrenzt – er informiert, entscheidet aber nicht.</p>
+    </div>
+    <div class="assist">
+      <span class="aic">🤖</span>
+      <div>
+        <h3>So nutzen Sie den Assistenten sicher</h3>
+        <ul>
+          <li><strong>Allgemeine Fragen</strong> zu Safe Frames, Ablauf und Pilotbetrieb – gern jederzeit.</li>
+          <li><strong>Keine Namen von Kindern, Fotos oder Klassenlisten</strong> eingeben. Bitte keine personenbezogenen Daten in den Chat schreiben.</li>
+          <li><strong>Keine Rechtsberatung:</strong> Der Assistent ersetzt keine juristische Prüfung und trifft keine Einzelfallbewertung.</li>
+          <li><strong>Kein Upload, keine Foto- oder Gesichtsanalyse</strong> – der Bot verarbeitet keine echten Schülerdaten.</li>
+          <li>Bei konkreten Anliegen <strong>verweist er an einen Menschen</strong> aus dem Projektteam.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="wrap">
     <div class="foot-grid">
       <div class="brand"><img src="Logo Safe Frames.png" alt="Safe Frames by ilumera"></div>
       <div>
-        <a href="safe-frames-projekt.html">Projektpräsentation</a> · <a href="#team">Team</a> · <a href="safe-frames-kunden.html">Für Schulen &amp; Eltern</a>
+        <a href="safe-frames-projekt.html">Projektpräsentation</a> · <a href="#team">Team</a> · <a href="safe-frames-projekt.html#recht">Datenschutz &amp; EU AI Act</a> · <a href="safe-frames-kunden.html">Für Schulen &amp; Eltern</a>
       </div>
     </div>
     <p class="foot-small">
