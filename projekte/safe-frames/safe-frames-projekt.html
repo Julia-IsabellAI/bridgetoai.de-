@@ -170,12 +170,14 @@ footer a{color:#9FE0E0}
     <a class="brand" href="./"><img src="Logo Safe Frames.png" alt="Safe Frames by ilumera"></a>
     <nav class="nav-links" id="navlinks">
       <a href="#problem">Problem</a>
+      <a href="#stakeholder">Stakeholder</a>
       <a href="#loesung">Lösung</a>
       <a href="#prozess">Prozess</a>
       <a href="#technologie">Technologie</a>
       <a href="#recht">Recht</a>
       <a href="#markt">Markt</a>
       <a href="#swot">SWOT</a>
+      <a href="#risiken">Risiken</a>
       <a href="#roadmap">Roadmap</a>
       <a class="btn" href="safe-frames-kunden.html">Für Schulen &amp; Eltern →</a>
     </nav>
@@ -224,6 +226,26 @@ footer a{color:#9FE0E0}
       <div class="card"><div class="ic">📄</div><h3>Fehlende Dokumentation</h3><p>Einwilligungen müssen individuell geprüft werden; Freigabestände und Löschfristen werden selten systematisch festgehalten.</p></div>
       <div class="card"><div class="ic">🖨️</div><h3>Druck ist endgültig</h3><p>Printprodukte lassen sich nicht zurückholen – ein Fehler bei der Freigabe wirkt dauerhaft und erzeugt Haftungs- und Reputationsrisiko.</p></div>
     </div>
+  </div>
+</section>
+
+<!-- Stakeholder -->
+<section id="stakeholder">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Stakeholderanalyse</span>
+      <h2>Wer betroffen ist – und wer mitentscheidet</h2>
+      <p>Safe Frames berührt mehrere Gruppen mit unterschiedlichen Interessen. Entscheidend für die Einführung ist, mögliche Vorbehalte früh zu erkennen und gezielt zu adressieren.</p>
+    </div>
+    <table class="tbl">
+      <tr><th>Akteur</th><th>Rolle</th><th>Möglicher Widerstand</th><th>Umgang damit</th></tr>
+      <tr><td>Schulleitung</td><td>Entscheider, Budget &amp; Verantwortung</td><td>Sorge vor Haftung, Kosten und Mehraufwand</td><td>Prüfbarer Prozess senkt Haftungs- und Reputationsrisiko; geringe Einstiegshürde als reines Organisationskonzept.</td></tr>
+      <tr><td>Lehrkräfte / Jahrbuch-Team</td><td>Anwender, betroffen</td><td>Zusätzlicher Aufwand, neue Tools, Unsicherheit</td><td>Spürbare Zeitersparnis durch KI-Vortriage (~10 Std./Projekt), klare Schritt-für-Schritt-Struktur, im Konzept kein Tool-Zwang.</td></tr>
+      <tr><td>Datenschutzbeauftragte:r</td><td>Mitentscheider, Prüfinstanz</td><td>Skepsis gegenüber KI und Cloud-Verarbeitung</td><td>Non-biometrisch, lokale Verarbeitung, Dokumentation (VVT, DSFA-Vorprüfung), Vier-Augen-Prinzip vor Freigabe.</td></tr>
+      <tr><td>Eltern &amp; Schüler:innen</td><td>Betroffene</td><td>Misstrauen gegenüber Fotonutzung und KI</td><td>Transparenz, Einwilligungs-/Widerrufsabgleich, keine Gesichtserkennung, klare Zweckbindung.</td></tr>
+      <tr><td>Schulträger / IT</td><td>Infrastruktur &amp; Freigabe</td><td>Integrations- und Sicherheitsbedenken</td><td>Betrieb auf schulisch kontrolliertem Speicher, EU-Hosting, Verzicht auf Schatten-IT.</td></tr>
+      <tr><td>Foto- / Druckdienstleister</td><td>Partner, ggf. Auftragsverarbeiter</td><td>Wettbewerbsgefühl oder Zusatzaufwand</td><td>B2B2C-Partnermodell macht sie zum Vertriebskanal; klare Auftragsverarbeitung (AVV) regelt die Zusammenarbeit.</td></tr>
+    </table>
   </div>
 </section>
 
@@ -351,6 +373,22 @@ footer a{color:#9FE0E0}
     </div>
     <div class="note" style="margin-top:26px"><strong>Wichtig:</strong> Alle KI-Funktionen sind als Assistenz konzipiert – sie bereiten Entscheidungen vor, treffen aber keine automatisierten Freigaben. Die inhaltliche und rechtliche Freigabe verbleibt beim Menschen (Vier-Augen-Prinzip). Die KI gleicht Metadaten und Freigabestatus ab, trifft aber keine rechtliche Entscheidung. So bleibt Safe Frames auch mit KI risikoarm unter DSGVO und EU AI Act. Keine Rechtsberatung.</div>
     <div class="note" style="margin-top:18px;border-left-color:#0C2340"><strong>Technologie-Stack (MVP):</strong> Im Pilot setzen wir auf <strong>digiKam</strong> (Open-Source, lokal): ML-/CV-gestützte Bildqualitäts- und Ähnlichkeitserkennung (Image Quality Sorter, Dublettensuche) sowie strukturiertes Tagging und Metadaten. Die enthaltene Gesichtserkennung bleibt bewusst deaktiviert – lokale Verarbeitung statt Cloud stärkt zusätzlich die Datenminimierung.</div>
+    <div class="grid g2" style="margin-top:26px">
+      <div class="card">
+        <h3>Make-or-Buy: bewusst „Buy &amp; Assemble"</h3>
+        <p>Statt Eigenentwicklung kombiniert das MVP bewährte Bausteine: <strong>digiKam on-premise</strong> für Bildqualität/Dubletten/Tagging, schulische Cloud/NAS als Speicher, optional eine Automatisierungsplattform für die Orchestrierung. Begründung: schneller Wertbeweis, geringe Kosten, volle Datenkontrolle. <strong>On-premise/lokal</strong> für die Bildverarbeitung (Datenminimierung, keine Cloud-Übertragung von Inhalten); <strong>Cloud nur</strong> für den kontrollierten Speicher und Metadaten-Orchestrierung – bei EU-Hosting und Verschlüsselung.</p>
+      </div>
+      <div class="card">
+        <h3>Benötigte Daten &amp; Voraussetzungen</h3>
+        <ul class="check-list" style="margin-top:14px">
+          <li>Rohbilder des Print-/Jahrbuchprojekts</li>
+          <li>Einwilligungsformulare sowie Klassen-/Projektlisten für den Abgleich</li>
+          <li>Schulisch kontrollierter Speicher (Cloud/NAS), möglichst EU-Hosting</li>
+          <li>Definierte Zuständigkeiten &amp; Freigeberrollen (Vier-Augen-Prinzip)</li>
+          <li>Festgelegte Zwecke und Lösch-/Archivierungsfristen</li>
+        </ul>
+      </div>
+    </div>
     <div style="margin-top:24px"><a class="btn" href="demo/">▶ KI-Triage-Demo ansehen</a></div>
     <figure style="max-width:480px;margin:46px auto 0;text-align:center">
       <img src="safe-frames-ki-workflow.png" alt="Workflow: von 1.000 Fotos über KI-Qualitätsprüfung, Dubletten- und Freigabestatus-Abgleich zur menschlichen Prüfung bis zur Druckfreigabe" style="width:100%;height:auto;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow)">
@@ -545,6 +583,27 @@ footer a{color:#9FE0E0}
   </div>
 </section>
 
+<!-- Risiken & Gegenmaßnahmen -->
+<section id="risiken">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Risiken &amp; Herausforderungen</span>
+      <h2>Realistische Risiken – mit konkreten Gegenmaßnahmen</h2>
+      <p>Über die SWOT-Sicht hinaus die zentralen technischen und organisatorischen Risiken und wie ihnen begegnet wird.</p>
+    </div>
+    <table class="tbl">
+      <tr><th>Risiko</th><th>Art</th><th>Gegenmaßnahme</th></tr>
+      <tr><td>Fehlerhafte KI-Vorsortierung (falsch aussortiert oder zugeordnet)</td><td>technisch</td><td>KI nur als Vorschlag; finale Entscheidung im Vier-Augen-Prinzip durch Menschen; Phase 40 bewahrt Aussortiertes als Nachweis.</td></tr>
+      <tr><td>Unbefugter Zugriff oder Datenabfluss</td><td>technisch</td><td>EU-Hosting, Verschlüsselung, Zugriffskontrolle, Betrieb auf schulisch kontrolliertem Speicher.</td></tr>
+      <tr><td>Schatten-IT / Parallelablage (Messenger, private Geräte)</td><td>organisatorisch</td><td>Zentrale Ablage als einzige Quelle, klare Zuständigkeiten, kurze Einweisung der Beteiligten.</td></tr>
+      <tr><td>Unvollständige oder widerrufene Einwilligungen</td><td>organisatorisch</td><td>Consent-Reconciliation, Ausschluss bei fehlender Einwilligung, dokumentierter Freigabestand.</td></tr>
+      <tr><td>Abhängigkeit externer Dienste (Automatisierung, KI-Anbieter)</td><td>technisch / organisatorisch</td><td>AVV nach Art. 28, EU-Hosting bevorzugt, keine Trainingsnutzung der Daten, nur Metadaten in der Orchestrierung.</td></tr>
+      <tr><td>Geringe Akzeptanz oder Prozessdisziplin im Kollegium</td><td>organisatorisch</td><td>Einfache Struktur, belegbare Zeitersparnis, Pilot mit Multiplikatoren und klaren Rollen.</td></tr>
+      <tr><td>Regulatorische Änderungen (EU AI Act / DSGVO)</td><td>organisatorisch</td><td>Bewusst risikoarmer Zuschnitt (keine Biometrie), regelmäßige Prozess- und DSFA-Reviews.</td></tr>
+    </table>
+  </div>
+</section>
+
 <!-- Roadmap -->
 <section id="roadmap" class="alt">
   <div class="wrap">
@@ -565,6 +624,18 @@ footer a{color:#9FE0E0}
         <p>Nach erbrachtem Wertbeweis: optionale Umsetzung als schlanke Software. Erst wenn der Nutzen als Prozesskit belegt ist, wird in Entwicklung investiert.</p>
       </div>
     </div>
+
+    <div class="section-head" style="margin-top:46px">
+      <span class="eyebrow">Nächste Schritte</span>
+      <h2>Konkrete Meilensteine &amp; grober Zeitrahmen</h2>
+    </div>
+    <ul class="check-list">
+      <li><strong>Monat 0–1:</strong> 2–3 Pilotschulen gewinnen, Prozesskonzept und Ordnerstruktur finalisieren, DSGVO-Dokumentation (VVT, DSFA-Vorprüfung) erstellen.</li>
+      <li><strong>Monat 1–3:</strong> Pilotbetrieb an einem realen Print-/Jahrbuchprojekt; KI-Vortriage mit digiKam erproben, Vier-Augen-Freigabe testen.</li>
+      <li><strong>Monat 4:</strong> Auswertung von Zeitersparnis, Fehlerquote und Akzeptanz; Erfahrungsbericht und Referenz erstellen.</li>
+      <li><strong>Monat 5–6:</strong> Go-/No-Go-Entscheidung zur schlanken Produktisierung; bei „Go" Tool-Shortlist (AVV/TOMs, EU-Hosting) und MVP-Konfiguration festlegen.</li>
+    </ul>
+    <div class="note" style="margin-top:24px">Der Zeitrahmen ist eine Planungsannahme für den Pilotweg und hängt von Schuljahres- und Projektzyklen (z. B. Jahrbuchtermin) ab.</div>
   </div>
 </section>
 
