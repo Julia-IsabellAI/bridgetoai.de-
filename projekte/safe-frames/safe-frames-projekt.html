@@ -217,8 +217,8 @@ footer a{color:#9FE0E0}
     </div>
     <div class="stats">
       <div class="stat"><div class="num">~40 %</div><div class="lbl">der Schulen verzichten laut Branchenleitfaden teils ganz auf Klassenfotos – aus Sorge vor Rechtsverletzungen.</div></div>
-      <div class="stat"><div class="num">7 Phasen</div><div class="lbl">prozessbasierte Ordnerstruktur statt unkontrollierter Parallelablage.</div></div>
-      <div class="stat"><div class="num">10 Schritte</div><div class="lbl">klar getrennter Workflow vom Eingang bis zur Löschung.</div></div>
+      <div class="stat"><div class="num">3 Ordner</div><div class="lbl">schlanke Ablagestruktur im MVP statt unkontrollierter Parallelablage.</div></div>
+      <div class="stat"><div class="num">7 Phasen</div><div class="lbl">vollständige Struktur – als spätere Ausbaustufe vorgesehen.</div></div>
       <div class="stat"><div class="num">4-Augen</div><div class="lbl">Prinzip als verpflichtende Kontrolle vor jeder Druckfreigabe.</div></div>
     </div>
     <div class="grid g3" style="margin-top:34px">
@@ -260,7 +260,7 @@ footer a{color:#9FE0E0}
     <div class="grid g2">
       <ul class="check-list">
         <li>Sichere, zentrale Fotoablage auf einem von der Schule kontrollierten System</li>
-        <li>Geordnete Ordnerstruktur mit klaren Phasen und Zuständigkeiten</li>
+        <li>Schlanke Ordnerstruktur (drei Ordner) mit klaren Zuständigkeiten</li>
         <li>Klare Trennung von Originalen, bearbeiteten und ausgesonderten Bildern</li>
         <li>Freigabe- und Prüfprozesse nach dem Vier-Augen-Prinzip</li>
       </ul>
@@ -282,10 +282,24 @@ footer a{color:#9FE0E0}
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">Prozess- &amp; Ordnerlogik</span>
-      <h2>Sieben Phasen, zehn Schritte</h2>
-      <p>Eine nummerierte, prozessbasierte Ordnerstruktur macht für alle Beteiligten jederzeit erkennbar, in welcher Phase sich ein Bild befindet.</p>
+      <h2>Drei Ordner im MVP – schlank und nachvollziehbar</h2>
+      <p>Für den Pilot bewusst reduziert: drei klar getrennte Ordner machen jederzeit erkennbar, wo ein Bild steht – ohne unkontrollierte Parallelablage.</p>
     </div>
-    <div class="phases">
+    <div class="phases" style="grid-template-columns:repeat(3,1fr)">
+      <div class="phase"><div class="code">01</div><div class="pn">Alle&nbsp;Bilder<br><em>Eingang, alle Originale</em></div></div>
+      <div class="phase"><div class="code">02</div><div class="pn">Bearbeitete&nbsp;Bilder<br><em>geprüft &amp; freigegeben</em></div></div>
+      <div class="phase"><div class="code">03</div><div class="pn">Aussortierte&nbsp;Bilder<br><em>nicht nutzbar, als Nachweis</em></div></div>
+    </div>
+    <div class="steps">
+      <div class="step"><span>Alle Fotos zentral im Ordner <strong>„Alle Bilder"</strong> sammeln – keine Parallelablage, keine privaten Geräte.</span></div>
+      <div class="step"><span>Einwilligung und Verwendungszweck je Bild prüfen.</span></div>
+      <div class="step"><span>Geprüfte und aufbereitete Bilder nach <strong>„Bearbeitete Bilder"</strong> überführen.</span></div>
+      <div class="step"><span>Nicht nutzbare oder nicht freigegebene Bilder nach <strong>„Aussortierte Bilder"</strong> verschieben (als Nachweis, nicht löschen).</span></div>
+      <div class="step"><span>Druckauswahl aus „Bearbeitete Bilder" nach dem <strong>Vier-Augen-Prinzip</strong> prüfen.</span></div>
+      <div class="step"><span>Nach Projektende nach Fristen archivieren oder löschen – die Schule legt die Fristen fest.</span></div>
+    </div>
+    <div class="note" style="margin-top:30px"><strong>Ausbaustufe:</strong> Für größere Projekte ist eine vollständige, nummerierte <strong>7-Phasen-Struktur</strong> vorgesehen – mit feinerer Trennung von Originalen, Prüfung, Freigabe, Druckpaket und Archiv/Löschung. Sie ist die Perspektive für die spätere Software-Ausbaustufe und nicht Teil des MVP.</div>
+    <div class="phases" style="margin-top:22px;opacity:.8">
       <div class="phase"><div class="code">00</div><div class="pn">ALLE&nbsp;Originale<br><em>nur lesend</em></div></div>
       <div class="phase"><div class="code">10</div><div class="pn">In&nbsp;Prüfung<br><em>Einwilligung &amp; Qualität</em></div></div>
       <div class="phase"><div class="code">20</div><div class="pn">Freigegeben&nbsp;Print</div></div>
@@ -293,18 +307,6 @@ footer a{color:#9FE0E0}
       <div class="phase"><div class="code">40</div><div class="pn">Aussortierte&nbsp;Fotos<br><em>als Nachweis</em></div></div>
       <div class="phase"><div class="code">50</div><div class="pn">Druckpaket<br><em>4-Augen-Prinzip</em></div></div>
       <div class="phase"><div class="code">90</div><div class="pn">Archiv&nbsp;/&nbsp;Löschung</div></div>
-    </div>
-    <div class="steps">
-      <div class="step"><span>Fotos ausschließlich über den zentralen Speicherort sammeln (keine Parallelablage).</span></div>
-      <div class="step"><span>Originale unverändert in <strong>00_ALLE_Originale</strong> ablegen.</span></div>
-      <div class="step"><span>Einwilligung und Verwendungszweck je Bild prüfen.</span></div>
-      <div class="step"><span>Noch zu bewertende Bilder in <strong>10_In_Pruefung</strong> verschieben.</span></div>
-      <div class="step"><span>Geprüfte Bilder in <strong>20_Freigegeben_Print</strong> kennzeichnen.</span></div>
-      <div class="step"><span>Bearbeitungen getrennt in <strong>30_BearbeiteteFotos</strong> speichern.</span></div>
-      <div class="step"><span>Nicht nutzbare Bilder in <strong>40_AussortierteFotos</strong> aussortieren (nicht löschen).</span></div>
-      <div class="step"><span>Druckpaket in <strong>50_Druckpaket</strong> gezielt zusammenstellen.</span></div>
-      <div class="step"><span>Druckpaket vor Übergabe nach dem Vier-Augen-Prinzip prüfen.</span></div>
-      <div class="step"><span>Projekt abschließen, nach Fristen archivieren oder löschen (<strong>90_Archiv_Loeschung</strong>).</span></div>
     </div>
   </div>
 </section>
@@ -323,7 +325,7 @@ footer a{color:#9FE0E0}
         <ul>
           <li>Strukturierte Fotoablage</li>
           <li>Sortierung nach Projekt / Klasse / Druckprodukt</li>
-          <li>Phasentrennung &amp; Freigabelogik</li>
+          <li>Drei-Ordner-Struktur &amp; Freigabelogik</li>
           <li>Dokumentation von Freigabe / Ausschluss</li>
           <li>Geprüftes Druckpaket</li>
           <li>Lösch- / Archivierungsprozess</li>
@@ -404,7 +406,7 @@ footer a{color:#9FE0E0}
       <li><strong>Statusgetriggerte Übergänge:</strong> Jede Phase entspricht einem Status; ein Statuswechsel (z. B. „geprüft &amp; freigegeben") verschiebt die Datei regelbasiert in den korrekten Zielordner.</li>
       <li><strong>Zentrale Ablage als einzige Quelle:</strong> Die Orchestrierung operiert ausschließlich auf dem schulisch kontrollierten Speicher (Cloud/NAS) über authentifizierte Konnektoren – keine Parallelablage.</li>
       <li><strong>Datensparsamkeit by Design:</strong> Über die Plattform laufen nur Steuer- und Metadaten (Datei-ID, Status, Zielpfad), nicht die Bildinhalte. Bei EU-Hosting und Verschlüsselung bleibt das Datenschutzniveau gewahrt.</li>
-      <li><strong>Protokollierung &amp; Fristen:</strong> Jeder Schritt wird mitgeschrieben; Lösch-/Archivierungsfristen (Phase 90) lassen sich als Zeit-Trigger hinterlegen.</li>
+      <li><strong>Protokollierung &amp; Fristen:</strong> Jeder Schritt wird mitgeschrieben; Lösch-/Archivierungsfristen lassen sich als Zeit-Trigger hinterlegen.</li>
     </ul>
     <div class="note" style="margin-top:24px">Wird eine externe Automatisierungsplattform eingebunden, ist zu prüfen, ob ein Auftragsverarbeitungsvertrag (AVV) erforderlich ist. Safe Frames schafft die technische und organisatorische Grundlage und ersetzt keine rechtliche Prüfung.</div>
   </div>
@@ -422,9 +424,9 @@ footer a{color:#9FE0E0}
     <h3 style="font-size:1.3rem;margin-bottom:18px">DSGVO: zentrale Grundsätze und ihre Umsetzung</h3>
     <table class="tbl">
       <tr><th>DSGVO-Grundsatz</th><th>Anforderung</th><th>Umsetzung in Safe Frames</th></tr>
-      <tr><td>Rechtsgrundlage &amp; Einwilligung (Art. 6–8)</td><td>Jede Verarbeitung braucht eine gültige Rechtsgrundlage; bei Kindern gelten erhöhte Anforderungen an die Einwilligung.</td><td>Phase 10 „In Prüfung" erfasst Einwilligung und Zweck je Bild; die Consent-Reconciliation gleicht Einwilligungsformulare mit der Klassen-/Projektliste ab.</td></tr>
+      <tr><td>Rechtsgrundlage &amp; Einwilligung (Art. 6–8)</td><td>Jede Verarbeitung braucht eine gültige Rechtsgrundlage; bei Kindern gelten erhöhte Anforderungen an die Einwilligung.</td><td>Einwilligung und Zweck werden je Bild geprüft, bevor Bilder nach „Bearbeitete Bilder" gelangen; die Consent-Reconciliation gleicht Einwilligungsformulare mit der Klassen-/Projektliste ab.</td></tr>
       <tr><td>Zweckbindung &amp; Datenminimierung (Art. 5)</td><td>Daten nur für den festgelegten Zweck und so sparsam wie möglich verarbeiten.</td><td>Verarbeitung allein für das konkrete Printprodukt; non-biometrisches Tagging („was, nicht wer"), lokale Verarbeitung statt Cloud, keine Gesichtserkennung.</td></tr>
-      <tr><td>Speicherbegrenzung &amp; Löschung (Art. 5, 17)</td><td>Daten nicht länger als nötig speichern; Löschpflichten erfüllen.</td><td>Phase 90 „Archiv/Löschung" mit definierten Fristen; Lösch- und Archivierungsfristen als Zeit-Trigger hinterlegbar.</td></tr>
+      <tr><td>Speicherbegrenzung &amp; Löschung (Art. 5, 17)</td><td>Daten nicht länger als nötig speichern; Löschpflichten erfüllen.</td><td>Löschung/Archivierung nach Projektende mit definierten Fristen (von der Schule festgelegt); als Zeit-Trigger hinterlegbar.</td></tr>
       <tr><td>Integrität &amp; Vertraulichkeit / TOMs (Art. 32)</td><td>Angemessene technische und organisatorische Schutzmaßnahmen.</td><td>Zentrale, schulisch kontrollierte Ablage; Verschlüsselung und EU-Hosting; keine Messenger-Gruppen oder privaten Geräte.</td></tr>
       <tr><td>Rechenschaft &amp; Verzeichnis (Art. 30)</td><td>Verarbeitungstätigkeiten dokumentieren und nachweisen können.</td><td>Dokumentierte Freigaben und Ausschlüsse, Protokollierung jedes Phasenübergangs – Grundlage für den VVT-Eintrag.</td></tr>
       <tr><td>Datenschutz-Folgenabschätzung (Art. 35)</td><td>Bei voraussichtlich hohem Risiko (Kinderdaten, neue Technik) ist eine DSFA zu prüfen.</td><td>DSFA-Vorprüfung empfohlen, da Kinderkontext und KI-gestützte Verarbeitung zusammentreffen.</td></tr>
@@ -593,7 +595,7 @@ footer a{color:#9FE0E0}
     </div>
     <table class="tbl">
       <tr><th>Risiko</th><th>Art</th><th>Gegenmaßnahme</th></tr>
-      <tr><td>Fehlerhafte KI-Vorsortierung (falsch aussortiert oder zugeordnet)</td><td>technisch</td><td>KI nur als Vorschlag; finale Entscheidung im Vier-Augen-Prinzip durch Menschen; Phase 40 bewahrt Aussortiertes als Nachweis.</td></tr>
+      <tr><td>Fehlerhafte KI-Vorsortierung (falsch aussortiert oder zugeordnet)</td><td>technisch</td><td>KI nur als Vorschlag; finale Entscheidung im Vier-Augen-Prinzip durch Menschen; der Ordner „Aussortierte Bilder" bewahrt Aussortiertes als Nachweis.</td></tr>
       <tr><td>Unbefugter Zugriff oder Datenabfluss</td><td>technisch</td><td>EU-Hosting, Verschlüsselung, Zugriffskontrolle, Betrieb auf schulisch kontrolliertem Speicher.</td></tr>
       <tr><td>Schatten-IT / Parallelablage (Messenger, private Geräte)</td><td>organisatorisch</td><td>Zentrale Ablage als einzige Quelle, klare Zuständigkeiten, kurze Einweisung der Beteiligten.</td></tr>
       <tr><td>Unvollständige oder widerrufene Einwilligungen</td><td>organisatorisch</td><td>Consent-Reconciliation, Ausschluss bei fehlender Einwilligung, dokumentierter Freigabestand.</td></tr>
