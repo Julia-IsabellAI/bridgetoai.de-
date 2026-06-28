@@ -174,6 +174,32 @@ nav.scrolled{background:rgba(4,12,22,0.8);backdrop-filter:blur(20px);border-bott
 
 .share-row{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.6rem;}
 
+/* ── MODUS-UMSCHALTER (Übersetzen ⇄ Nachschlagen) ── */
+.mode-switch{max-width:820px;margin:0 auto 1.4rem;display:grid;grid-template-columns:1fr 1fr;gap:.7rem;}
+.mode-btn{display:flex;align-items:center;gap:.85rem;text-align:left;cursor:pointer;font-family:inherit;
+  background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:.9rem 1.1rem;
+  color:rgba(255,255,255,0.7);transition:border-color .25s,background .25s,transform .25s,color .25s,box-shadow .25s;}
+.mode-btn:hover{border-color:rgba(0,217,192,0.4);transform:translateY(-1px);color:#fff;}
+.mode-btn.is-active{border-color:var(--primary);background:rgba(0,217,192,0.1);color:#fff;box-shadow:0 6px 22px rgba(0,217,192,0.16);}
+.mode-emoji{font-size:1.5rem;flex:none;line-height:1;}
+.mode-txt{display:flex;flex-direction:column;line-height:1.25;}
+.mode-txt b{font-size:.98rem;font-weight:700;}
+.mode-txt small{font-size:.78rem;color:rgba(255,255,255,0.5);margin-top:.12rem;}
+.mode-btn.is-active .mode-txt small{color:rgba(255,255,255,0.72);}
+.mode-pane{display:none;}
+.mode-pane.is-active{display:block;animation:up .45s ease both;}
+@media(max-width:680px){.mode-switch{grid-template-columns:1fr;}}
+
+/* ── GLOSSAR-LOOKUP ── */
+.lookup-input{min-height:auto;}
+.lookup-meta{font-size:.82rem;color:rgba(255,255,255,0.48);margin:.9rem 0 1.1rem;}
+.lookup-meta b{color:var(--primary);font-weight:700;}
+.lookup-results{display:grid;gap:.7rem;max-height:560px;overflow-y:auto;padding-right:.35rem;}
+.lookup-results::-webkit-scrollbar{width:8px;}
+.lookup-results::-webkit-scrollbar-thumb{background:rgba(0,217,192,0.25);border-radius:100px;}
+.lk-twist b{color:var(--primary);font-weight:600;}
+.detect-term mark,.detect-twist mark{background:rgba(0,217,192,0.28);color:#fff;border-radius:4px;padding:0 .15em;}
+
 /* ── BRIDGE TEASER ── */
 .teaser{padding:1rem 5% 5rem;}
 .teaser-card{max-width:820px;margin:0 auto;text-align:center;
@@ -311,6 +337,7 @@ footer{padding:3rem 5%;border-top:1px solid rgba(255,255,255,0.06);display:flex;
     <li><a href="index.html#leistungen">Leistungen</a></li>
     <li><a href="handwerk.html">Für Handwerker</a></li>
     <li><a href="projekte.html">Projekte</a></li>
+    <li><a href="ueber-mich.html">Über mich</a></li>
     <li><a href="kaffeepause.html" class="nav-now" aria-current="page">KI & Kaffeepause</a></li>
     <li><a href="index.html#kontakt">Kontakt</a></li>
   </ul>
@@ -323,6 +350,7 @@ footer{padding:3rem 5%;border-top:1px solid rgba(255,255,255,0.06);display:flex;
   <a href="index.html#leistungen">Leistungen</a>
   <a href="handwerk.html">Für Handwerker</a>
   <a href="projekte.html">Projekte</a>
+  <a href="ueber-mich.html">Über mich</a>
   <a href="kaffeepause.html" class="mm-now" aria-current="page">KI &amp; Kaffeepause</a>
   <a href="index.html#kontakt">Kontakt</a>
   <a href="index.html#kontakt" class="mm-cta">Erstgespräch →</a>
@@ -352,10 +380,24 @@ footer{padding:3rem 5%;border-top:1px solid rgba(255,255,255,0.06);display:flex;
 <section class="panel is-active" id="panel-translator" role="tabpanel">
   <div class="panel-head reveal">
     <h2 class="panel-title">Die <span class="it">KI-Sprachbrücke</span></h2>
-    <p class="panel-intro">Füg deinen liebsten KI-Buzzword-Satz ein – aus dem Meeting, dem LinkedIn-Feed oder der Strategie-Folie. Ich baue die Brücke zum Klartext, so wie ich ihn am Küchentisch erklären würde. Fachlich fundiert, mit Augenzwinkern.</p>
+    <p class="panel-intro" id="bridgeIntro">Ganzer Satz aus dem Meeting? Oder nur ein Wort, das im Raum stand und keiner erklärt hat? Wähl unten, was du brauchst – ich baue die Brücke zum Klartext, fachlich fundiert und mit Augenzwinkern.</p>
   </div>
+
+  <!-- Modus-Umschalter: ganzen Satz übersetzen vs. einzelnen Begriff nachschlagen -->
+  <div class="mode-switch reveal" role="tablist" aria-label="Modus der KI-Sprachbrücke wählen">
+    <button class="mode-btn is-active" id="modeTranslate" type="button" role="tab" aria-selected="true" data-mode="translate" aria-controls="pane-translate">
+      <span class="mode-emoji">☕</span>
+      <span class="mode-txt"><b>Buzzword übersetzen</b><small>Ganzer Satz → Klartext mit Augenzwinkern</small></span>
+    </button>
+    <button class="mode-btn" id="modeLookup" type="button" role="tab" aria-selected="false" data-mode="lookup" aria-controls="pane-lookup">
+      <span class="mode-emoji">📖</span>
+      <span class="mode-txt"><b>Begriff nachschlagen</b><small>Ein Wort → Bedeutung aus dem Glossar</small></span>
+    </button>
+  </div>
+
   <div class="tool-wrap reveal">
-    <div class="tool-card">
+    <!-- MODUS A: ganzen Satz übersetzen -->
+    <div class="tool-card mode-pane is-active" id="pane-translate" role="tabpanel" aria-labelledby="modeTranslate">
       <label class="tool-label" for="jargon">Ihr Corporate-/KI-Jargon</label>
       <textarea id="jargon" class="tool-input" placeholder="z. B. „Wir leveragen eine KI-First-Strategie, um durch disruptive Synergien end-to-end Mehrwert zu generieren.“"></textarea>
 
@@ -373,6 +415,14 @@ footer{padding:3rem 5%;border-top:1px solid rgba(255,255,255,0.06);display:flex;
       </div>
 
       <div id="result" class="result" aria-live="polite"></div>
+    </div>
+
+    <!-- MODUS B: einzelnen Begriff nachschlagen (Glossar-Lookup) -->
+    <div class="tool-card mode-pane" id="pane-lookup" role="tabpanel" aria-labelledby="modeLookup">
+      <label class="tool-label" for="lookup">Begriff oder Stichwort</label>
+      <input id="lookup" class="tool-input lookup-input" type="text" autocomplete="off" placeholder="z. B. „Synergie“, „agil“, „LLM“, „Token“ …" />
+      <div class="lookup-meta" id="lookupMeta"></div>
+      <div id="lookupResults" class="lookup-results" aria-live="polite"></div>
     </div>
   </div>
 </section>
@@ -489,6 +539,7 @@ footer{padding:3rem 5%;border-top:1px solid rgba(255,255,255,0.06);display:flex;
     <a href="index.html">Start</a>
     <a href="handwerk.html">Für Handwerker</a>
     <a href="projekte.html">Projekte</a>
+    <a href="ueber-mich.html">Über mich</a>
     <a href="kaffeepause.html">KI &amp; Kaffeepause</a>
     <a href="index.html#kontakt">Kontakt</a>
     <a href="impressum.html">Impressum</a>
@@ -1231,6 +1282,83 @@ input.addEventListener('keydown', e => {
 });
 
 /* =====================================================================
+   MODUS-UMSCHALTER  +  GLOSSAR-LOOKUP („Begriff nachschlagen“)
+   Zwei getrennte Nutzungsarten statt alles über ein Textfeld:
+   A) ganzen Satz übersetzen   B) einen Begriff im Glossar nachschlagen
+   ===================================================================== */
+const bridgeIntro  = document.getElementById('bridgeIntro');
+const lookupInput   = document.getElementById('lookup');
+const lookupResults = document.getElementById('lookupResults');
+const lookupMeta    = document.getElementById('lookupMeta');
+const modeBtns      = document.querySelectorAll('.mode-btn');
+const modePanes     = document.querySelectorAll('.mode-pane');
+
+const INTRO_TRANSLATE = 'Füg deinen liebsten KI-Buzzword-Satz ein – aus dem Meeting, dem LinkedIn-Feed oder der Strategie-Folie. Ich baue die Brücke zum Klartext, so wie ich ihn am Küchentisch erklären würde. Fachlich fundiert, mit Augenzwinkern.';
+const INTRO_LOOKUP    = 'Ein Wort gehört, das alle nickend hinnahmen, aber keiner erklärte? Tipp es ein – ich zeige dir die nüchterne Bedeutung und den ehrlichen Kommentar dazu. Mein Glossar wächst stetig mit.';
+
+function setMode(mode){
+  modeBtns.forEach(b => {
+    const on = b.dataset.mode === mode;
+    b.classList.toggle('is-active', on);
+    b.setAttribute('aria-selected', on ? 'true' : 'false');
+  });
+  modePanes.forEach(p => p.classList.toggle('is-active', p.id === 'pane-' + mode));
+  bridgeIntro.textContent = (mode === 'lookup') ? INTRO_LOOKUP : INTRO_TRANSLATE;
+  if(mode === 'lookup'){
+    if(!lookupResults.dataset.ready){ renderLookup(''); lookupResults.dataset.ready = '1'; }
+    setTimeout(() => lookupInput.focus(), 60);
+  }
+}
+
+modeBtns.forEach(b => b.addEventListener('click', () => setMode(b.dataset.mode)));
+
+/* Hebt den Suchbegriff im Treffer hervor (nur erstes Vorkommen je Feld). */
+function highlight(html, q){
+  if(!q) return html;
+  const re = new RegExp('(' + q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'i');
+  // nur außerhalb bestehender Tags ersetzen
+  return html.replace(/(>|^)([^<]+)/g, (m, pre, txt) => pre + txt.replace(re, '<mark>$1</mark>'));
+}
+
+function renderLookup(rawQuery){
+  const q = rawQuery.trim().toLowerCase();
+  // Treffer: Begriff oder eine seiner Schreibvarianten enthält den Suchtext
+  let hits = DICTIONARY.filter(e =>
+    !q ||
+    e.term.toLowerCase().includes(q) ||
+    e.match.some(v => v.toLowerCase().includes(q)) ||
+    e.plain.toLowerCase().includes(q)
+  );
+  // alphabetisch nach Anzeigename
+  hits = hits.slice().sort((a, b) => a.term.localeCompare(b.term, 'de'));
+
+  if(!q){
+    lookupMeta.innerHTML = '<b>' + DICTIONARY.length + '</b> Begriffe im Glossar · alphabetisch · einfach lostippen zum Filtern';
+  } else if(hits.length){
+    lookupMeta.innerHTML = '<b>' + hits.length + '</b> Treffer für „' + escapeHtml(rawQuery.trim()) + '“';
+  } else {
+    lookupMeta.innerHTML = 'Kein Treffer für „' + escapeHtml(rawQuery.trim()) + '“';
+  }
+
+  if(!hits.length){
+    lookupResults.innerHTML = '<div class="empty-note">Dieser Begriff steht noch nicht in meinem Glossar. Wenn er reingehört, schreiben Sie mir kurz – dann nehme ich ihn auf. ☕</div>';
+    return;
+  }
+
+  lookupResults.innerHTML = hits.map(h =>
+    '<div class="detect">'
+    + '<div class="detect-term">' + highlight(escapeHtml(h.term), q)
+    + '<span class="arrow">→</span><span class="plain">' + escapeHtml(h.plain) + '</span></div>'
+    + '<div class="detect-twist lk-twist">' + h.twist + '</div>'
+    + '</div>'
+  ).join('');
+}
+
+if(lookupInput){
+  lookupInput.addEventListener('input', () => renderLookup(lookupInput.value));
+}
+
+/* =====================================================================
    VIRTUAL OFFICE PET — lebendiger Status der KI-Werkstatt + Tiere
    Frontend-only: Tageszeit bestimmt die Begrüßung, Stati wechseln von selbst.
    ===================================================================== */
@@ -1345,10 +1473,16 @@ rtabs.forEach(t => t.addEventListener('click', () => {
   if(wrap){ const y = wrap.getBoundingClientRect().top + window.scrollY - 70; window.scrollTo({top:y, behavior:'smooth'}); }
 }));
 // Deep-Link: direkt ein Modul öffnen (#panel-pet, #panel-fortune …)
+// Sonderfall: #nachschlagen öffnet die Sprachbrücke direkt im Glossar-Modus.
 if(location.hash){
   const id = location.hash.slice(1);
-  const target = document.getElementById(id);
-  if(target && target.classList.contains('panel')) showPanel(id);
+  if(id === 'nachschlagen'){
+    showPanel('panel-translator');
+    setMode('lookup');
+  } else {
+    const target = document.getElementById(id);
+    if(target && target.classList.contains('panel')) showPanel(id);
+  }
 }
 
 /* Mobiles Menü (Hamburger) – steuert das eigenständige Overlay */
