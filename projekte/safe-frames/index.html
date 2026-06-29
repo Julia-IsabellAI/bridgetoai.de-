@@ -443,17 +443,47 @@ footer a{color:#9FE0E0}
     <div class="section-head">
       <span class="eyebrow">Agenda 5 · Stakeholderanalyse</span>
       <h2><span class="agenda">5.</span>Stakeholderanalyse</h2>
-      <p>Safe Frames berührt mehrere Gruppen mit unterschiedlichen Interessen. Entscheidend ist, Vorbehalte früh zu erkennen und gezielt zu adressieren.</p>
     </div>
+
+    <h3 style="font-size:1.3rem;margin-bottom:6px">Stakeholder im Überblick</h3>
+    <p style="color:var(--muted);margin-bottom:18px">Interesse, Einfluss, Betroffenheit und Umgang je Gruppe.</p>
     <table class="tbl">
-      <tr><th>Akteur</th><th>Rolle</th><th>Möglicher Widerstand</th><th>Umgang damit</th></tr>
-      <tr><td>Schulleitung</td><td>Entscheider, Budget</td><td>Sorge vor Haftung, Kosten, Mehraufwand</td><td>Prüfbarer Prozess senkt Haftungs-/Reputationsrisiko; geringe Einstiegshürde als Konzept.</td></tr>
-      <tr><td>Lehrkräfte / Jahrbuch-Team</td><td>Anwender, betroffen</td><td>Zusätzlicher Aufwand, neue Tools</td><td>Zeitersparnis durch KI-Vortriage (~10 Std./Projekt), klare Struktur, kein Tool-Zwang.</td></tr>
-      <tr><td>Datenschutzbeauftragte:r</td><td>Mitentscheider, Prüfinstanz</td><td>Skepsis gegenüber KI und Cloud</td><td>Non-biometrisch, lokale Verarbeitung, Dokumentation (VVT, DSFA-Vorprüfung), Vier-Augen.</td></tr>
-      <tr><td>Eltern &amp; Schüler:innen</td><td>Betroffene</td><td>Misstrauen gegenüber Fotonutzung/KI</td><td>Transparenz, Einwilligungs-/Widerrufsabgleich, keine Gesichtserkennung, Zweckbindung.</td></tr>
-      <tr><td>Schulträger / IT</td><td>Infrastruktur &amp; Freigabe</td><td>Integrations-/Sicherheitsbedenken</td><td>Schulisch kontrollierter Speicher, EU-Hosting, kein Schatten-IT.</td></tr>
-      <tr><td>Foto- / Druckdienstleister</td><td>Partner, ggf. Auftragsverarbeiter</td><td>Wettbewerbsgefühl, Zusatzaufwand</td><td>B2B2C-Partnermodell als Vertriebskanal; klare AVV.</td></tr>
+      <tr><th>Stakeholder</th><th>Interesse / Erwartung</th><th>Einfluss</th><th>Betroffenheit</th><th>Umgang</th></tr>
+      <tr><td>Kinder</td><td>Schutz, Privatsphäre, keine ungewollte Veröffentlichung</td><td>niedrig</td><td>sehr hoch</td><td>Besonders schützen, nicht belasten</td></tr>
+      <tr><td>Eltern</td><td>Kontrolle, Transparenz, Vertrauen</td><td>hoch</td><td>sehr hoch</td><td>Infos, Einwilligung, FAQ</td></tr>
+      <tr><td>Lehrkräfte</td><td>Einfache sichere Nutzung im Alltag</td><td>hoch</td><td>hoch</td><td>Schulung, Checklisten, klare Regeln</td></tr>
+      <tr><td>Leitung</td><td>Rechtssicherheit, Prozesssicherheit</td><td>sehr hoch</td><td>hoch</td><td>Briefing, Verantwortlichkeiten</td></tr>
+      <tr><td>Datenschutz</td><td>DSGVO, Löschung, Nachweisbarkeit</td><td>sehr hoch</td><td>hoch</td><td>Früh einbinden, dokumentieren</td></tr>
+      <tr><td>Verwaltung</td><td>Ablage, Zugriff, Organisation</td><td>mittel</td><td>hoch</td><td>Ordnerstruktur, Leitfaden</td></tr>
+      <tr><td>Dienstleister</td><td>Übergabe, Rechte, Anforderungen</td><td>mittel</td><td>mittel</td><td>Schnittstellen, Verträge, AVV-Klärung</td></tr>
     </table>
+    <div class="note" style="margin-top:18px">Safe Frames schützt nicht nur Bilder, sondern Vertrauen.</div>
+
+    <h3 style="font-size:1.3rem;margin:48px 0 6px">Stakeholder-Matrix: Einfluss × Betroffenheit</h3>
+    <p style="color:var(--muted);margin-bottom:18px">Die Matrix zeigt, wer eng geführt, informiert oder besonders geschützt werden muss. <span style="font-size:.9rem">(senkrecht: Betroffenheit · waagerecht: Einfluss)</span></p>
+    <div class="grid g2">
+      <div class="card"><div style="font-size:.74rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px">Betroffenheit hoch · niedriger Einfluss</div><h3>Besonders schützen</h3><p>Kinder / Schüler:innen</p></div>
+      <div class="card"><div style="font-size:.74rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px">Betroffenheit hoch · hoher Einfluss</div><h3>Eng einbinden</h3><p>Eltern · Lehrkräfte · Leitung · Datenschutz</p></div>
+      <div class="card"><div style="font-size:.74rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px">Betroffenheit niedriger · niedriger Einfluss</div><h3>Beobachten</h3><p>Öffentlichkeit · Social Media Umfeld</p></div>
+      <div class="card"><div style="font-size:.74rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px">Betroffenheit niedriger · hoher Einfluss</div><h3>Gezielt informieren</h3><p>Pilotkunden · externe Beratung · Datenschutz-Aufsicht</p></div>
+    </div>
+    <div class="grid g3" style="margin-top:22px">
+      <div class="card"><h3>Strategie 1</h3><p>Eng einbinden: Anforderungen aktiv aufnehmen.</p></div>
+      <div class="card"><h3>Strategie 2</h3><p>Schützen: Interessen berücksichtigen, ohne Kinder zu belasten.</p></div>
+      <div class="card"><h3>Strategie 3</h3><p>Dokumentieren: Datenschutz und MVP-Grenzen sauber erklären.</p></div>
+    </div>
+
+    <h3 style="font-size:1.3rem;margin:48px 0 6px">Kommunikationsstrategie</h3>
+    <p style="color:var(--muted);margin-bottom:18px">Jede Zielgruppe braucht die richtige Flughöhe und das passende Format.</p>
+    <table class="tbl">
+      <tr><th>Zielgruppe</th><th>Format</th><th>Inhalt</th></tr>
+      <tr><td>Schulleitung / Kitaleitung</td><td>Kurzpräsentation · Entscheidungsvorlage</td><td>Nutzen, Risiken, Verantwortlichkeiten</td></tr>
+      <tr><td>Lehrkräfte / Erzieher:innen</td><td>Schulung · Checkliste · Beispiele</td><td>Was ist erlaubt? Was ist kritisch?</td></tr>
+      <tr><td>Eltern</td><td>Elterninformation · FAQ · Einwilligung</td><td>Transparenz, Rechte, Verwendungszwecke</td></tr>
+      <tr><td>Datenschutzbeauftragte</td><td>Dokumentation · Prozessbeschreibung</td><td>DSGVO, Löschung, Zugriff, Zweckbindung</td></tr>
+      <tr><td>Ilumera / Projektteam</td><td>Produkt-Roadmap · MVP-Dokumentation</td><td>MVP, Risiken, Nutzenversprechen, Markteintritt</td></tr>
+    </table>
+    <div class="note" style="margin-top:18px">Kommunikationsprinzip: einfach genug für den Alltag, präzise genug für Datenschutz und Leitung.</div>
   </div>
 </section>
 
