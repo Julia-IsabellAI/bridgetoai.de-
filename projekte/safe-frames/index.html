@@ -248,6 +248,21 @@ footer a{color:#9FE0E0}
 .sf-strat .s .n{flex:0 0 30px;height:30px;width:30px;border-radius:50%;background:var(--petrol);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Montserrat';font-weight:700;font-size:.82rem}
 .sf-strat .s h4{font-size:.98rem;margin-bottom:2px;color:var(--navy)}
 .sf-strat .s p{color:var(--muted);font-size:.9rem}
+/* Scrum-Folie */
+.g4{grid-template-columns:repeat(4,1fr)}
+.sc-tag{font-size:.74rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:6px 0 14px}
+.sc-lead{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+.sc-lead .role{flex:1 1 320px;border-radius:var(--radius);padding:22px 26px;box-shadow:var(--shadow)}
+.sc-lead .role.po{background:var(--navy)}
+.sc-lead .role.sm{background:var(--petrol)}
+.sc-lead .role h3{color:#fff;margin-bottom:2px}
+.sc-lead .role .r{color:#9FE0E0;font-weight:600;font-family:'Montserrat';font-size:.95rem}
+.sc-lead .role .op{color:#D6E6F2;font-size:.88rem;margin-top:6px}
+.sc-box ul{list-style:none;display:grid;gap:6px;font-size:.93rem;color:var(--muted);margin-top:6px}
+.sc-box ul li::before{content:"›  ";color:var(--petrol);font-weight:700}
+.sc-box .muted{color:var(--muted);font-size:.85rem;margin-top:8px}
+@media(max-width:980px){.g4{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.g4{grid-template-columns:1fr}}
 @media(max-width:720px){
   .sf-matrix{grid-template-columns:1fr;grid-template-rows:auto auto}
   .sf-x,.sf-y{display:none}
@@ -272,8 +287,9 @@ footer a{color:#9FE0E0}
       <a href="#stakeholder"><span class="n">5</span>Stakeholder</a>
       <a href="#corporate-design"><span class="n">6</span>Corporate Design</a>
       <a href="#loesung"><span class="n">7</span>Lösung</a>
-      <a href="#roadmap"><span class="n">8</span>Roadmap</a>
-      <a href="#kunden"><span class="n">9</span>Kunden</a>
+      <a href="#scrum"><span class="n">8</span>Scrum</a>
+      <a href="#roadmap"><span class="n">9</span>Roadmap</a>
+      <a href="#kunden"><span class="n">10</span>Kunden</a>
     </nav>
     <button class="menu-toggle" aria-label="Menü öffnen" aria-expanded="false">☰</button>
   </div>
@@ -301,8 +317,8 @@ footer a{color:#9FE0E0}
       <p>Safe Frames ist das erste Produkt der Marke <strong>ilumera</strong>, entstanden im Rahmen der TÜV-Weiterbildung „KI-Manager mit Projekt". Stand: Konzept-/MVP-Definition, keine öffentliche Produktfreigabe.</p>
     </div>
     <div class="grid g3">
-      <div class="card"><div class="ic">🛡️</div><h3>Datenschutzbewusst</h3><p>Prozessbasierte Ordnerstruktur, Vier-Augen-Prinzip und klares Löschkonzept – bewusst ohne Biometrie, risikoarm unter DSGVO &amp; EU AI Act.</p></div>
-      <div class="card"><div class="ic">🤖</div><h3>KI-gestützt</h3><p>KI sortiert große Bildmengen nach Qualität, Dubletten und Kontext vor und gleicht den Einwilligungsstand ab – der Mensch entscheidet.</p></div>
+      <div class="card"><div class="ic">🛡️</div><h3>Datenschutzbewusst</h3><p>Prozessbasierte Ordnerstruktur, Vier-Augen-Prinzip und klares Löschkonzept – bewusst mit Biometrie für gute Ergebnisse im Bilderabgleich.</p></div>
+      <div class="card"><div class="ic">🤖</div><h3>KI-gestützt</h3><p>KI sortiert große Bildmengen nach Qualität, Dubletten und Kontext vor und gleicht den Einwilligungsstand ab – der Mensch entscheidet final, welches Bild er nimmt.</p></div>
       <div class="card"><div class="ic">🖨️</div><h3>Druckfertig</h3><p>Nur geprüfte Bilder gelangen ins Druckpaket. Weniger Aufwand, weniger Fehldrucke, mehr Vertrauen bei Eltern und Schule.</p></div>
     </div>
     <figure style="max-width:520px;margin:48px auto 0;text-align:center">
@@ -432,7 +448,7 @@ footer a{color:#9FE0E0}
     <div class="swot">
       <div class="q s"><h4>Stärken</h4><ul>
         <li>Klare Prozess- &amp; Ordnerlogik – sofort einsetzbar, auch ohne Software</li>
-        <li>Privacy-by-Design: bewusster Verzicht auf Biometrie → niedriges AI-Act-Risiko</li>
+        <li>Bewusste Nutzung von Biometrie und Bewusstsein für die hohe EU-AI-Act-Risikokategorie</li>
         <li>Adressiert eine konkrete, schwach abgedeckte Marktlücke</li>
         <li>Skalierbare Markenarchitektur (ilumera)</li>
       </ul></div>
@@ -444,7 +460,7 @@ footer a{color:#9FE0E0}
       </ul></div>
       <div class="q o"><h4>Chancen</h4><ul>
         <li>Steigender Datenschutz- und Compliance-Druck → latenter Bedarf</li>
-        <li>EU AI Act erhöht Nachfrage nach risikoarmen Verfahren</li>
+        <li>EU AI Act ermöglicht die Nutzung von Biometrie</li>
         <li>B2B2C-Hebel über Fotografen, Druckereien, Jahrbuch-Dienstleister</li>
         <li>Erweiterung auf Kitas, Vereine, Hochschulen, Veranstalter</li>
       </ul></div>
@@ -672,7 +688,7 @@ footer a{color:#9FE0E0}
     <div class="section-head">
       <span class="eyebrow">Agenda 7 · Lösungskonzept &amp; KI-Setup</span>
       <h2><span class="agenda">7.</span>Lösung</h2>
-      <p>Originale werden geschützt, Freigaben sichtbar gemacht, nicht nutzbare Bilder sauber getrennt und Druckpakete kontrolliert vorbereitet – bewusst ohne Gesichtserkennung und Biometrie.</p>
+      <p>Originale werden geschützt, Freigaben sichtbar gemacht, nicht nutzbare Bilder sauber getrennt und Druckpakete kontrolliert vorbereitet – der biometrische Abgleich läuft dabei bewusst nur lokal und sitzungsbasiert, ohne dauerhaftes Profil.</p>
     </div>
     <h3 style="font-size:1.25rem;margin-bottom:14px">Drei Ordner im MVP – schlank und nachvollziehbar</h3>
     <div class="phases">
@@ -690,12 +706,12 @@ footer a{color:#9FE0E0}
     </div>
 
     <h3 style="font-size:1.25rem;margin:46px 0 16px">KI-Setup – Assistenz statt Identifikation</h3>
-    <div class="note" style="margin-bottom:22px;border-left-color:#0C2340"><strong>USP:</strong> Safe Frames ist die erste KI-gestützte Triage- und Freigabe-Pipeline speziell für Schulfotos – sie sortiert große Bildmengen vor, gleicht sie mit dem Einwilligungsstand ab und führt sie über einen prüfbaren Vier-Augen-Prozess ins Druckpaket. Das leistet keine generische Ablage wie Nextcloud oder SharePoint.</div>
+    <div class="note" style="margin-bottom:22px;border-left-color:#0C2340"><strong>USP:</strong> Safe Frames ist eine KI-gestützte Triage- und Freigabe-Pipeline, die Schulfotos durch den Einsatz von digiKam (On-Premise) vollständig lokal verarbeitet. Das System ermöglicht eine automatisierte Vorsortierung sowie einen präzisen biometrischen Abgleich auf dem Edge-Device. Durch den transparenten Vier-Augen-Prozess stellen wir sicher, dass Bilder rechtssicher und datenschutzkonform in das Druckpaket gelangen – ohne Cloud-Risiken.</div>
     <div class="grid g2">
       <div class="card"><div class="ic">🔍</div><h3>KI-Qualitätsprüfung</h3><p>Erkennt unscharfe, verwackelte, über-/unterbelichtete Bilder – als Vorschlag, die Entscheidung bleibt beim Menschen.</p></div>
       <div class="card"><div class="ic">🧩</div><h3>Dubletten-Erkennung</h3><p>Nahezu identische Aufnahmen werden gruppiert – das beste Bild ist schnell gewählt.</p></div>
-      <div class="card"><div class="ic">🏷️</div><h3>Non-biometrisches Tagging</h3><p>Verschlagwortung nach Bildtyp/Kontext. Getaggt wird <em>was</em> zu sehen ist – nicht <em>wer</em>.</p></div>
-      <div class="card"><div class="ic">📋</div><h3>Consent-Reconciliation</h3><p>OCR der Einwilligungsformulare und Abgleich mit der Klassen-/Projektliste. Geprüft werden Dokumente, nicht Gesichter.</p></div>
+      <div class="card"><div class="ic">🧬</div><h3>Biometrischer Abgleich</h3><p>Positivabgleich unter Nutzung von Biometrie – lokal und Session-basiert.</p></div>
+      <div class="card"><div class="ic">📋</div><h3>Consent-Reconciliation</h3><p>OCR der Einwilligungsformulare und Abgleich mit der Klassen-/Projektliste – so gelangen nur eingewilligte Kinder in den biometrischen Positivabgleich.</p></div>
     </div>
     <div class="grid g2" style="margin-top:22px">
       <div class="card"><h3>Make-or-Buy: „Buy &amp; Assemble"</h3><p>Statt Eigenentwicklung kombiniert das MVP bewährte Bausteine: <strong>digiKam on-premise</strong> (Qualität/Dubletten/Tagging), schulische Cloud/NAS als Speicher, optional eine Automatisierungsplattform. On-premise für die Bildverarbeitung (Datenminimierung), Cloud nur für kontrollierten Speicher – EU-Hosting &amp; Verschlüsselung.</p></div>
@@ -719,13 +735,44 @@ footer a{color:#9FE0E0}
   </div>
 </section>
 
-<!-- 8 ROADMAP -->
+<!-- 8 SCRUM -->
+<section id="scrum">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Agenda 8 · Teamstruktur &amp; Sprint-Rahmen</span>
+      <h2><span class="agenda">8.</span>Interdisziplinäres Scrum-Team</h2>
+      <p>So arbeiten wir: klare Rollen, kurze Sprints, feste Datenschutz-Checks. <strong>Sprint = 1 Woche.</strong></p>
+    </div>
+    <div class="sc-tag">Scrum Team · 5 Personen</div>
+    <div class="sc-lead">
+      <div class="role po"><h3>Julia</h3><div class="r">Product Ownerin</div><div class="op">operativ: Produkt &amp; Inhalte</div></div>
+      <div class="role sm"><h3>Arne</h3><div class="r">Scrum Master</div><div class="op">operativ: Recht &amp; Prüfung</div></div>
+    </div>
+    <div class="sc-tag">Dev-Team (interdisziplinär, inkl. operative Doppelrollen)</div>
+    <div class="family">
+      <div class="fam"><h4>Julia</h4><p>Produkt &amp; Inhalte<br><em>(auch Product Ownerin)</em></p></div>
+      <div class="fam"><h4>Nina</h4><p>Konzept &amp; Struktur<br><em>Redepart: KI-Setup / Lösung</em></p></div>
+      <div class="fam"><h4>Karolina</h4><p>Recherche<br><em>Redepart: Umsetzung / Roadmap</em></p></div>
+      <div class="fam"><h4>Claus</h4><p>Kommunikation<br><em>Redepart: Stakeholder / CD</em></p></div>
+      <div class="fam"><h4>Arne</h4><p>Recht &amp; Prüfung<br><em>(auch Scrum Master)</em></p></div>
+    </div>
+    <h3 style="font-size:1.25rem;margin:44px 0 16px">Unser Scrum-Rahmen &amp; Projektspezifika</h3>
+    <div class="grid g4">
+      <div class="card sc-box"><div class="ic">⏱️</div><h3>1 Woche</h3><p>Sprintlänge – kurze Feedbackschleifen für schnelle Validierung im Pilotbetrieb (2–3 Schulen).</p></div>
+      <div class="card sc-box"><div class="ic">🔄</div><h3>Scrum-Events</h3><ul><li>Daily Standup (15 Min)</li><li>Sprint Planning</li><li>Sprint Review</li><li>Retrospektive</li></ul></div>
+      <div class="card sc-box"><div class="ic">📦</div><h3>Artefakte</h3><ul><li>Product Backlog</li><li>Sprint Backlog</li><li>Increment</li></ul><p class="muted">(geprüftes Druckpaket / Prozessstand)</p></div>
+      <div class="card sc-box"><div class="ic">🛡️</div><h3>Safe-Frames-Spezifika</h3><ul><li>Vier-Augen-Prinzip als Teil der Definition of Done</li><li>DSGVO-/EU-AI-Act-Checks fest im Backlog verankert</li><li>Sprintziele entlang der Roadmap-Meilensteine</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- 9 ROADMAP -->
 <section id="roadmap" class="alt">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Agenda 8 · Umsetzung: Roadmap &amp; nächste Schritte</span>
-      <h2><span class="agenda">8.</span>Roadmap</h2>
-      <p>Risikoarm und validierungsgetrieben: zuerst der Wertbeweis als Prozesskonzept, dann die optionale Produktisierung.</p>
+      <span class="eyebrow">Agenda 9 · Umsetzung: Roadmap &amp; nächste Schritte</span>
+      <h2><span class="agenda">9.</span>Roadmap</h2>
+      <p>Schrittweise und validierungsgetrieben: zuerst der Wertbeweis als Prozesskonzept, dann die optionale Produktisierung.</p>
     </div>
     <div class="road">
       <div class="stage"><span class="tag">Stufe 1 · Pilot</span><h3>Prozesskonzept validieren</h3><p>Begrenzter Pilotbetrieb an 2–3 Schulen als Referenz. Das Prozess-/Organisationskonzept wird im Echteinsatz erprobt – geringe Investition, schnelle Lernkurve.</p></div>
@@ -754,8 +801,8 @@ footer a{color:#9FE0E0}
 <section id="kunden">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Agenda 9 · Kunden</span>
-      <h2><span class="agenda">9.</span>Für Schulen &amp; Eltern</h2>
+      <span class="eyebrow">Agenda 10 · Kunden</span>
+      <h2><span class="agenda">10.</span>Für Schulen &amp; Eltern</h2>
       <p>Die Kunden-Landingpage zeigt Safe Frames aus Sicht von Schulleitung und Eltern – verständlich und vertrauensbildend, mit Erklärvideo und persönlichem Assistenten.</p>
     </div>
     <div class="grid g2">
