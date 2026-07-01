@@ -192,6 +192,71 @@ footer a{color:#9FE0E0}
   .bigstat{flex-direction:column;text-align:center}
 }
 @media(max-width:620px){.team-grid{grid-template-columns:repeat(2,1fr)}.family{grid-template-columns:repeat(2,1fr)}}
+/* Recht (Executive Summary) */
+.rk-cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.rk-num{font-family:'Montserrat';font-weight:700;font-size:1.9rem;line-height:1;display:block;margin-bottom:8px}
+.rk-art{display:inline-block;background:var(--tint);color:var(--petrol);font-family:'Montserrat';font-weight:600;font-size:.72rem;padding:3px 10px;border-radius:999px;white-space:nowrap}
+.rk-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:8px}
+.rk-head h3{font-size:1.08rem}
+.rk-status{display:inline-flex;align-items:center;gap:8px;margin-top:12px;font-weight:600;font-size:.85rem;font-family:'Montserrat'}
+.rk-status .d{width:11px;height:11px;border-radius:50%}
+.rk-banner{display:grid;grid-template-columns:290px 1fr;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow)}
+.rk-banner .l{background:linear-gradient(135deg,#B07C0B,#8f6408);color:#fff;padding:28px;display:flex;align-items:center;justify-content:center;text-align:center;font-family:'Montserrat';font-weight:700;font-size:1.15rem;line-height:1.3}
+.rk-banner .r{background:#FBF3E0;padding:24px 28px;color:var(--ink);font-size:.98rem;display:flex;align-items:center}
+.rk-two{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}
+.rk-box{border-radius:var(--radius);padding:22px}
+.rk-box.no{background:#FBECEC;border:1px solid #F2CFCF}
+.rk-box.yes{background:#EAF5F0;border:1px solid #Bfe3d2}
+.rk-box h4{margin-bottom:12px}
+.rk-box ul{list-style:none;display:grid;gap:9px;font-size:.94rem}
+.rk-box.no li::before{content:"✗  ";color:#C0494A;font-weight:700}
+.rk-box.yes li::before{content:"✓  ";color:#1F9D6B;font-weight:700}
+.rk-note-dark{background:var(--navy);color:#D6E6F2;border-radius:12px;padding:18px 22px;font-size:.92rem}
+.rk-note-dark strong{color:#fff}
+.rk-list{list-style:none;display:grid;gap:16px}
+.rk-list li{display:flex;gap:14px;align-items:flex-start}
+.rk-list li .oc{flex:0 0 34px;height:34px;width:34px;border-radius:50%;background:var(--petrol);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Montserrat';font-weight:700;font-size:.9rem}
+.rk-list li h4{font-size:1.05rem;margin-bottom:2px}
+.rk-list li p{color:var(--muted);font-size:.95rem}
+.rk-laws p.law{font-family:'Montserrat';font-weight:700;color:var(--petrol);margin:16px 0 2px}
+.rk-laws p.law.first{margin-top:0}
+.rk-laws p.desc{color:var(--muted);font-size:.94rem}
+@media(max-width:920px){.rk-cards3,.rk-two{grid-template-columns:1fr}.rk-banner{grid-template-columns:1fr}}
+/* Stakeholder-Matrix (Einfluss × Betroffenheit) */
+.sf-matrix{display:grid;grid-template-columns:56px 1fr;grid-template-rows:auto 1fr;gap:14px;margin-top:8px}
+.sf-x{grid-column:2;grid-row:1;display:flex;align-items:center;gap:12px}
+.sf-x .end{font-size:.8rem;color:var(--muted);white-space:nowrap}
+.sf-x .line{flex:1;height:2px;background:var(--line);position:relative}
+.sf-x .lbl{font-family:'Montserrat';font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.09em;font-size:.82rem;white-space:nowrap}
+.sf-x .line.arrow::after{content:"";position:absolute;right:-1px;top:-4px;border-left:9px solid var(--petrol);border-top:5px solid transparent;border-bottom:5px solid transparent}
+.sf-y{grid-column:1;grid-row:2;display:flex;flex-direction:column;align-items:center;gap:12px;padding:2px 0}
+.sf-y .end{font-size:.8rem;color:var(--muted)}
+.sf-y .line{flex:1;width:2px;background:var(--line);position:relative}
+.sf-y .line.arrow::after{content:"";position:absolute;top:-1px;left:-4px;border-bottom:9px solid var(--petrol);border-left:5px solid transparent;border-right:5px solid transparent}
+.sf-y .lbl{writing-mode:vertical-rl;transform:rotate(180deg);font-family:'Montserrat';font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.09em;font-size:.82rem;white-space:nowrap}
+.sf-grid{grid-column:2;grid-row:2;position:relative;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:20px}
+.sf-grid::before{content:"";position:absolute;left:50%;top:4px;bottom:4px;width:2px;background:var(--line);transform:translateX(-50%);z-index:0}
+.sf-grid::after{content:"";position:absolute;top:50%;left:4px;right:4px;height:2px;background:var(--line);transform:translateY(-50%);z-index:0}
+.sf-card{position:relative;z-index:1;background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px;box-shadow:var(--shadow)}
+.sf-card .q{font-size:.68rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.sf-card h4{font-size:1.18rem;margin-bottom:6px;color:var(--navy)}
+.sf-card p{color:var(--muted);font-size:.95rem}
+.sf-legend{display:none}
+.sf-strat-lead{font-family:'Montserrat';font-weight:600;color:var(--navy);font-size:.98rem;margin:30px 0 12px}
+.sf-strat{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.sf-strat .s{display:flex;gap:12px;align-items:flex-start;background:var(--tint-2);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.sf-strat .s .n{flex:0 0 30px;height:30px;width:30px;border-radius:50%;background:var(--petrol);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Montserrat';font-weight:700;font-size:.82rem}
+.sf-strat .s h4{font-size:.98rem;margin-bottom:2px;color:var(--navy)}
+.sf-strat .s p{color:var(--muted);font-size:.9rem}
+@media(max-width:720px){
+  .sf-matrix{grid-template-columns:1fr;grid-template-rows:auto auto}
+  .sf-x,.sf-y{display:none}
+  .sf-legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:.8rem;color:var(--muted);margin-bottom:2px;grid-column:1;grid-row:1}
+  .sf-legend b{color:var(--navy);font-family:'Montserrat'}
+  .sf-grid{grid-column:1;grid-row:2;grid-template-columns:1fr;grid-template-rows:none;gap:14px}
+  .sf-grid::before,.sf-grid::after{display:none}
+  .sf-strat{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
@@ -397,43 +462,100 @@ footer a{color:#9FE0E0}
 <section id="recht" class="alt">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Agenda 4 · Herausforderungen: rechtliche Einordnung &amp; MVP-Setup</span>
-      <h2><span class="agenda">4.</span>Recht: DSGVO &amp; EU AI Act</h2>
-      <p>Schülerfotos sind personenbezogene Daten besonders schutzwürdiger Personen. Safe Frames schafft die technische und organisatorische Grundlage – als prüfbarer Prozess, nicht als juristische Bewertung.</p>
+      <span class="eyebrow">Recht · Executive Summary</span>
+      <h2><span class="agenda">4.</span>Vom Risiko zum sicheren Rahmen</h2>
+      <p>Safe Frames macht aus einer rechtlichen Grauzone einen prüfbaren Prozess – durch bewusste Architekturentscheidungen auf einer soliden, ermöglichenden juristischen Basis.</p>
     </div>
-    <h3 style="font-size:1.25rem;margin-bottom:16px">DSGVO: zentrale Grundsätze und ihre Umsetzung</h3>
-    <table class="tbl">
-      <tr><th>DSGVO-Grundsatz</th><th>Anforderung</th><th>Umsetzung in Safe Frames</th></tr>
-      <tr><td>Rechtsgrundlage &amp; Einwilligung (Art. 6–8)</td><td>Gültige Rechtsgrundlage; bei Kindern erhöhte Anforderungen.</td><td>Einwilligung und Zweck je Bild geprüft; Consent-Reconciliation gleicht Formulare mit der Klassen-/Projektliste ab.</td></tr>
-      <tr><td>Zweckbindung &amp; Datenminimierung (Art. 5)</td><td>Nur für den festgelegten Zweck, so sparsam wie möglich.</td><td>Verarbeitung nur fürs konkrete Printprodukt; non-biometrisches Tagging, lokale Verarbeitung, keine Gesichtserkennung.</td></tr>
-      <tr><td>Speicherbegrenzung &amp; Löschung (Art. 5, 17)</td><td>Nicht länger als nötig speichern; Löschpflichten erfüllen.</td><td>Löschung/Archivierung nach Projektende mit Fristen (von der Schule festgelegt), als Zeit-Trigger hinterlegbar.</td></tr>
-      <tr><td>Integrität &amp; TOMs (Art. 32)</td><td>Angemessene technische/organisatorische Schutzmaßnahmen.</td><td>Zentrale, schulisch kontrollierte Ablage; Verschlüsselung &amp; EU-Hosting; keine Messenger/Privatgeräte.</td></tr>
-      <tr><td>Rechenschaft &amp; Verzeichnis (Art. 30)</td><td>Verarbeitungen dokumentieren und nachweisen.</td><td>Dokumentierte Freigaben/Ausschlüsse, Protokollierung – Grundlage für den VVT-Eintrag.</td></tr>
-      <tr><td>Betroffenenrechte (Art. 15–17)</td><td>Auskunft, Berichtigung, Löschung, Widerruf.</td><td>Dokumentierte Freigabestände; Widerrufe werden markiert und führen zum Ausschluss.</td></tr>
-    </table>
-    <div class="section-head" style="margin:48px 0 24px">
-      <h3 style="font-size:1.3rem">EU AI Act – bewusst außerhalb von Hochrisiko</h3>
+    <div class="rk-cards3">
+      <div class="card"><span class="rk-num" style="color:#9B2D2D">01</span><h3>Probleme identifiziert</h3><p>Schülerfotos = sensible Daten Minderjähriger. Unstrukturierte Verarbeitung, undokumentierte Einwilligungen, irreversibler Druck.</p></div>
+      <div class="card"><span class="rk-num" style="color:#C79A22">02</span><h3>Rahmen hergestellt</h3><p>Biometrie ohne Profil: Session-only-Abgleich, Vier-Augen-Prinzip, lokale Verarbeitung, klares Löschkonzept – kein dauerhaftes Gesichtsprofil.</p></div>
+      <div class="card"><span class="rk-num" style="color:#1F9D6B">03</span><h3>Projekt wird möglich</h3><p>AI-Act-Risiko ehrlich als hoch eingeordnet und konform getragen. DSGVO durch Session-only ohne Profilbildung beherrscht. Pilotreif.</p></div>
     </div>
-    <div class="grid g2">
-      <div class="card"><div class="ic">🎯</div><h3>Risikobasierte Einordnung</h3><p>Ohne Biometrie, Emotionserkennung und Personenbewertung – keine verbotene Praxis (Art. 5) und keine Hochrisiko-Funktion (Anhang III). Einordnung: geringes Risiko.</p></div>
-      <div class="card"><div class="ic">👁️</div><h3>Transparenz (Art. 50)</h3><p>Nutzer erkennen klar, dass sie mit einer KI interagieren – Pflicht ab 2. August 2026.</p></div>
-      <div class="card"><div class="ic">🤝</div><h3>Menschliche Aufsicht</h3><p>KI nur assistierend; jede Freigabe im Vier-Augen-Prinzip durch Menschen.</p></div>
-      <div class="card"><div class="ic">🎓</div><h3>KI-Kompetenz (Art. 4)</h3><p>Das Team kennt Betrieb, Grenzen und Eskalationswege – Voraussetzung für verantwortungsvollen Einsatz.</p></div>
-    </div>
-    <div class="note" style="margin-top:24px"><strong>Stand (Juni 2026):</strong> Verbotene Praktiken (Art. 5) gelten seit 2. Februar 2025; Transparenz (Art. 50) und Hochrisiko-Anforderungen (Anhang III) ab 2. August 2026. <strong>Keine Rechtsberatung.</strong></div>
 
-    <h3 style="font-size:1.3rem;margin:48px 0 16px">MVP-Setup – bewusst eng gefasst</h3>
-    <div class="mvp">
-      <div class="col yes"><h4>Im MVP enthalten</h4><ul>
-        <li>Strukturierte Fotoablage</li><li>Drei-Ordner-Struktur &amp; Freigabelogik</li><li>Dokumentation von Freigabe/Ausschluss</li><li>Geprüftes Druckpaket</li><li>Lösch-/Archivierungsprozess</li>
+    <h3 style="font-size:1.3rem;margin:52px 0 6px">Herausforderungen – und wie wir sie lösen</h3>
+    <p style="color:var(--muted);margin-bottom:18px">Jede Challenge ist adressiert: kein offenes Risiko, sondern ein gestalteter Prozess.</p>
+    <table class="tbl">
+      <tr><th>⚠ Herausforderung</th><th>✓ Lösung in Safe Frames</th><th>Norm</th></tr>
+      <tr><td>Sensible Daten Minderjähriger<br><span style="font-weight:400;color:var(--muted)">Besonders schutzwürdig (Art. 9 DSGVO)</span></td><td>Biometr. Abgleich nur in der Session (RAM) · kein dauerhaftes Profil · keine Personenzuordnung</td><td><span class="rk-art">Art. 9</span></td></tr>
+      <tr><td>Einwilligung &amp; Rechtsgrundlage<br><span style="font-weight:400;color:var(--muted)">Gültige Basis je Kind erforderlich</span></td><td>Consent-Reconciliation: OCR-Abgleich Formulare ↔ Klassenliste</td><td><span class="rk-art">Art. 6–8</span></td></tr>
+      <tr><td>Zweckbindung &amp; Minimierung<br><span style="font-weight:400;color:var(--muted)">Nur fürs konkrete Printprodukt</span></td><td>Verarbeitung projektgebunden · lokal · Embeddings nach Session verworfen</td><td><span class="rk-art">Art. 5</span></td></tr>
+      <tr><td>Speicherbegrenzung &amp; Löschung<br><span style="font-weight:400;color:var(--muted)">Nicht länger als nötig</span></td><td>Lösch-/Archivierungsprozess mit Fristen · Zeit-Trigger hinterlegbar</td><td><span class="rk-art">Art. 5, 17</span></td></tr>
+      <tr><td>Irreversibler Druck<br><span style="font-weight:400;color:var(--muted)">Fehler im Print sind dauerhaft</span></td><td>Vier-Augen-Prinzip verpflichtend vor jeder Druckfreigabe</td><td><span class="rk-art">TOM</span></td></tr>
+      <tr><td>Nachweis &amp; Rechenschaft<br><span style="font-weight:400;color:var(--muted)">Verarbeitungen dokumentieren</span></td><td>Dokumentierte Freigaben/Ausschlüsse · Grundlage für VVT-Eintrag</td><td><span class="rk-art">Art. 30</span></td></tr>
+    </table>
+
+    <h3 style="font-size:1.3rem;margin:52px 0 6px">DSGVO: Verarbeitung ja – Profilbildung nein</h3>
+    <p style="color:var(--muted);margin-bottom:18px">Der biometrische Abgleich findet statt – aber er hinterlässt kein Profil und keine Zuordnung.</p>
+    <div class="rk-two">
+      <div class="rk-box no"><h4>Was Art. 9 im Kern verbietet</h4><ul>
+        <li>Eindeutige Identifizierung einer Person</li>
+        <li>Dauerhafte Speicherung biometrischer Daten</li>
+        <li>Zuordnung Gesicht ↔ Identität (Profil)</li>
       </ul></div>
-      <div class="col no"><h4>Nicht im MVP</h4><ul>
-        <li>Automatische Gesichtserkennung</li><li>Biometrische Identifikation</li><li>Emotionserkennung</li><li>Automatische Veröffentlichung</li><li>Social-Media-/Messenger-Posting</li>
-      </ul></div>
-      <div class="col open"><h4>Festgelegt (Team)</h4><ul>
-        <li>Keine Einwilligungsverwaltung im MVP</li><li>Reines Prozess-/Organisationskonzept</li><li>Upload durch die Schule</li><li>Speicherdauer: legt die Schule fest</li><li>Kein externer Auftragsverarbeiter</li>
+      <div class="rk-box yes"><h4>Was Safe Frames stattdessen tut</h4><ul>
+        <li>Vergleich nur innerhalb der Session (RAM)</li>
+        <li>Embeddings nach Session verworfen</li>
+        <li>Ergebnis = sortierter Ordner, keine Vektoren</li>
       </ul></div>
     </div>
+    <h4 style="margin:28px 0 14px;font-size:1.1rem">Der Verarbeitungsweg – transient, zweckgebunden, profilfrei</h4>
+    <div class="rk-cards3">
+      <div class="card"><h4 style="font-size:1.05rem;margin-bottom:8px">1 · Biometr. Vergleich</h4><p style="color:var(--muted)">Embeddings werden flüchtig im Arbeitsspeicher berechnet – Positivabgleich gegen eingewilligte Referenz.</p></div>
+      <div class="card"><h4 style="font-size:1.05rem;margin-bottom:8px">2 · Mensch bestätigt</h4><p style="color:var(--muted)">Vier-Augen-Prinzip: jede Zuordnung wird gesichtet, bevor ein Bild übernommen wird.</p></div>
+      <div class="card"><h4 style="font-size:1.05rem;margin-bottom:8px">3 · Session endet</h4><p style="color:var(--muted)">Alle biometrischen Vergleichswerte werden verworfen. Kein Profil, keine Identitätszuordnung bleibt.</p></div>
+    </div>
+    <div class="rk-note-dark" style="margin-top:22px"><strong>Rechtsgrundlage:</strong> ausdrückliche Einwilligung (Art. 9 Abs. 2 lit. a). <strong>Schutzwirkung:</strong> keine dauerhafte Speicherung, keine Personenzuordnung – kein biometrisches Profil entsteht.</div>
+
+    <h3 style="font-size:1.3rem;margin:52px 0 6px">EU AI Act: hohes Risiko – bewusst getragen</h3>
+    <p style="color:var(--muted);margin-bottom:18px">Wir beanspruchen kein geringes Risiko – wir ordnen ehrlich ein und erfüllen die Pflichten.</p>
+    <div class="rk-banner">
+      <div class="l">Anhang III<br>Hohes Risiko</div>
+      <div class="r">Biometrischer Identifizierungsabgleich fällt unter Anhang III – auch ohne Namenszuordnung, auch lokal, auch als reiner Positivabgleich. Wir ordnen das System daher klar als hochriskant ein und erfüllen die zugehörigen Pflichten.</div>
+    </div>
+    <h4 style="margin:28px 0 14px;font-size:1.1rem">Pflichten bei hohem Risiko – und unser Umgang damit</h4>
+    <div class="rk-cards3">
+      <div class="card"><div class="rk-head"><h3>Risikomanagement</h3><span class="rk-art">Art. 9</span></div><p style="color:var(--muted)">Dokumentiertes System je Projektsaison – Risiken benannt und gemindert.</p><span class="rk-status" style="color:#1F9D6B"><span class="d" style="background:#1F9D6B"></span>Erfüllt</span></div>
+      <div class="card"><div class="rk-head"><h3>Technische Doku</h3><span class="rk-art">Art. 11</span></div><p style="color:var(--muted)">DigiKam-Version, Modell, Genauigkeit, Grenzen schriftlich festgehalten.</p><span class="rk-status" style="color:#C79A22"><span class="d" style="background:#C79A22"></span>In Arbeit</span></div>
+      <div class="card"><div class="rk-head"><h3>Menschliche Aufsicht</h3><span class="rk-art">Art. 14</span></div><p style="color:var(--muted)">Vier-Augen-Prinzip – KI assistiert, der Mensch entscheidet jede Freigabe.</p><span class="rk-status" style="color:#1F9D6B"><span class="d" style="background:#1F9D6B"></span>Erfüllt</span></div>
+      <div class="card"><div class="rk-head"><h3>Transparenz</h3><span class="rk-art">Art. 50</span></div><p style="color:var(--muted)">Eltern &amp; Schule wissen, dass KI eingesetzt wird – Infoblatt deckt es ab.</p><span class="rk-status" style="color:#1F9D6B"><span class="d" style="background:#1F9D6B"></span>Erfüllt</span></div>
+      <div class="card"><div class="rk-head"><h3>Genauigkeit</h3><span class="rk-art">Art. 15</span></div><p style="color:var(--muted)">Niedriger Confidence-Schwellenwert dokumentiert.</p><span class="rk-status" style="color:#C79A22"><span class="d" style="background:#C79A22"></span>In Arbeit</span></div>
+      <div class="card"><div class="rk-head"><h3>EU-Registrierung</h3><span class="rk-art">Art. 49</span></div><p style="color:var(--muted)">Eintrag in EU-Datenbank vor Produktivbetrieb – Frist August 2026.</p><span class="rk-status" style="color:#005F73"><span class="d" style="background:#005F73"></span>Geplant</span></div>
+    </div>
+    <div class="rk-note-dark" style="margin-top:22px">Die ehrliche Einordnung eines Juristen, nicht das Kleinreden eines Marketers: hohes Risiko korrekt benannt, Pflichten aktiv erfüllt.</div>
+
+    <h3 style="font-size:1.3rem;margin:52px 0 16px">Recht als Enabler, nicht als Hürde</h3>
+    <ul class="rk-list">
+      <li><span class="oc">1</span><div><h4>Problem präzise erfasst</h4><p>Sensible Kinderdaten, unstrukturierte Prozesse, irreversibler Druck – alle Risiken benannt.</p></div></li>
+      <li><span class="oc">2</span><div><h4>Rahmen technisch-organisatorisch gebaut</h4><p>DSGVO-Grundsätze in Prozess übersetzt: Consent-Reconciliation, Vier-Augen, Löschkonzept.</p></div></li>
+      <li><span class="oc">3</span><div><h4>AI-Act-Risiko ehrlich eingeordnet</h4><p>Hohes Risiko nach Anhang III korrekt benannt und konform getragen – keine Schönfärberei.</p></div></li>
+      <li><span class="oc">4</span><div><h4>DSGVO-Kern beherrscht</h4><p>Biometrischer Abgleich nur in der Session – keine dauerhafte Speicherung, keine Personenzuordnung, kein Profil.</p></div></li>
+    </ul>
+    <p style="text-align:center;font-family:'Poppins';font-weight:600;font-size:1.2rem;color:var(--navy);margin-top:26px">„Safe Frames schafft den sicheren Rahmen für Erinnerungen."</p>
+
+    <h3 style="font-size:1.3rem;margin:52px 0 6px">Verankerung in Sachsen – Pilot in Leipzig</h3>
+    <p style="color:var(--muted);margin-bottom:18px">Jede Prüfung endet beim Landesrecht: Welche Normen &amp; Gremien das Projekt tragen müssen.</p>
+    <div class="rk-two">
+      <div class="card rk-laws">
+        <h4 style="margin-bottom:6px">Was das Projekt ermöglicht</h4>
+        <p class="law first">§ 63a SächsSchulG</p><p class="desc">Datenschutz-Sonderregelungen für Schulen – Ermächtigungsgrundlage des Kultusministeriums.</p>
+        <p class="law">VwV Schuldatenschutz</p><p class="desc">Maßgebliche Verwaltungsvorschrift (Stand 12/2025) inkl. verpflichtendem Einwilligungsmuster (Anlage 2).</p>
+        <p class="law">§ 43 SächsSchulG</p><p class="desc">Schulkonferenz als Gremium – kann den Rahmen für Foto-/KI-Einsatz beschließen und legitimieren.</p>
+        <p class="law">§ 23 + § 22 KUG</p><p class="desc">Veranstaltungs-/Festfotos mit Beiwerk → § 23 (ohne Einwilligung). Erkennbares Kind als Motiv → § 22 (Einwilligung).</p>
+      </div>
+      <div class="card">
+        <h4 style="margin-bottom:14px">Was Safe Frames einhalten muss</h4>
+        <ul class="rk-list">
+          <li><span class="oc">1</span><div><p style="color:var(--ink)">Einwilligung nach VwV-Muster (Anlage 2) für erkennbare Einzelabbildungen</p></div></li>
+          <li><span class="oc">2</span><div><p style="color:var(--ink)">Beiwerk (§ 23) vs. Motiv (§ 22) je Bild bewerten – menschliche Wertung</p></div></li>
+          <li><span class="oc">3</span><div><p style="color:var(--ink)">Schulkonferenz-Beschluss zum KI-/Foto-Einsatz herbeiführen (§ 43)</p></div></li>
+          <li><span class="oc">4</span><div><p style="color:var(--ink)">Schulischen Datenschutzbeauftragten einbinden – VVT-Eintrag (Art. 30)</p></div></li>
+          <li><span class="oc">5</span><div><p style="color:var(--ink)">Löschung nach Aufbewahrungsfrist – VwV Aufbewahrung schulischer Unterlagen</p></div></li>
+          <li><span class="oc">6</span><div><p style="color:var(--ink)">Schulleitung verantwortlich – Pilot über Schulträger Stadt Leipzig</p></div></li>
+        </ul>
+      </div>
+    </div>
+    <div class="rk-note-dark" style="margin-top:22px">16 Bundesländer = 16 Regelwerke. Der Pilot ist auf Sachsen zugeschnitten – die Methodik ist auf jedes Landesrecht übertragbar (Skalierungspfad des Geschäftsmodells).</div>
+    <div class="note" style="margin-top:22px">Safe Frames by ilumera · Konzept / MVP · <strong>Keine Rechtsberatung.</strong></div>
   </div>
 </section>
 
@@ -460,17 +582,35 @@ footer a{color:#9FE0E0}
     <div class="note" style="margin-top:18px">Safe Frames schützt nicht nur Bilder, sondern Vertrauen.</div>
 
     <h3 style="font-size:1.3rem;margin:48px 0 6px">Stakeholder-Matrix: Einfluss × Betroffenheit</h3>
-    <p style="color:var(--muted);margin-bottom:18px">Die Matrix zeigt, wer eng geführt, informiert oder besonders geschützt werden muss. <span style="font-size:.9rem">(senkrecht: Betroffenheit · waagerecht: Einfluss)</span></p>
-    <div class="grid g2">
-      <div class="card"><div style="font-size:.74rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px">Betroffenheit hoch · niedriger Einfluss</div><h3>Besonders schützen</h3><p>Kinder / Schüler:innen</p></div>
-      <div class="card"><div style="font-size:.74rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px">Betroffenheit hoch · hoher Einfluss</div><h3>Eng einbinden</h3><p>Eltern · Lehrkräfte · Leitung · Datenschutz</p></div>
-      <div class="card"><div style="font-size:.74rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px">Betroffenheit niedriger · niedriger Einfluss</div><h3>Beobachten</h3><p>Öffentlichkeit · Social Media Umfeld</p></div>
-      <div class="card"><div style="font-size:.74rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px">Betroffenheit niedriger · hoher Einfluss</div><h3>Gezielt informieren</h3><p>Pilotkunden · externe Beratung · Datenschutz-Aufsicht</p></div>
+    <p style="color:var(--muted);margin-bottom:20px">Die Matrix ordnet Stakeholder danach, wie stark sie betroffen sind und wie viel Einfluss sie auf Akzeptanz, Umsetzung und Sicherheit haben.</p>
+    <div class="sf-matrix">
+      <div class="sf-legend"><span><b>Waagerecht:</b> Einfluss (links niedrig → rechts hoch)</span><span><b>Senkrecht:</b> Betroffenheit (unten niedrig → oben hoch)</span></div>
+      <div class="sf-x">
+        <span class="end">niedrig</span>
+        <span class="line"></span>
+        <span class="lbl">Einfluss</span>
+        <span class="line arrow"></span>
+        <span class="end">hoch</span>
+      </div>
+      <div class="sf-y">
+        <span class="end">hoch</span>
+        <span class="line arrow"></span>
+        <span class="lbl">Betroffenheit</span>
+        <span class="line"></span>
+        <span class="end">niedrig</span>
+      </div>
+      <div class="sf-grid">
+        <article class="sf-card"><div class="q">Hohe Betroffenheit · niedriger Einfluss</div><h4>Besonders schützen</h4><p>Kinder / Schüler:innen</p></article>
+        <article class="sf-card"><div class="q">Hohe Betroffenheit · hoher Einfluss</div><h4>Eng einbinden</h4><p>Eltern · Lehrkräfte · Leitung · Datenschutz</p></article>
+        <article class="sf-card"><div class="q">Niedrigere Betroffenheit · niedriger Einfluss</div><h4>Beobachten</h4><p>Öffentlichkeit · Social Media Umfeld</p></article>
+        <article class="sf-card"><div class="q">Niedrigere Betroffenheit · hoher Einfluss</div><h4>Gezielt informieren</h4><p>Pilotkunden · externe Beratung · Datenschutz-Aufsicht</p></article>
+      </div>
     </div>
-    <div class="grid g3" style="margin-top:22px">
-      <div class="card"><h3>Strategie 1</h3><p>Eng einbinden: Anforderungen aktiv aufnehmen.</p></div>
-      <div class="card"><h3>Strategie 2</h3><p>Schützen: Interessen berücksichtigen, ohne Kinder zu belasten.</p></div>
-      <div class="card"><h3>Strategie 3</h3><p>Dokumentieren: Datenschutz und MVP-Grenzen sauber erklären.</p></div>
+    <p class="sf-strat-lead">Daraus abgeleitete Strategien</p>
+    <div class="sf-strat">
+      <div class="s"><span class="n">1</span><div><h4>Eng einbinden</h4><p>Anforderungen aktiv aufnehmen.</p></div></div>
+      <div class="s"><span class="n">2</span><div><h4>Schützen</h4><p>Interessen berücksichtigen, ohne Kinder zu belasten.</p></div></div>
+      <div class="s"><span class="n">3</span><div><h4>Dokumentieren</h4><p>Datenschutz und MVP-Grenzen sauber erklären.</p></div></div>
     </div>
 
     <h3 style="font-size:1.3rem;margin:48px 0 6px">Kommunikationsstrategie</h3>
@@ -591,6 +731,7 @@ footer a{color:#9FE0E0}
       <div class="stage"><span class="tag">Stufe 1 · Pilot</span><h3>Prozesskonzept validieren</h3><p>Begrenzter Pilotbetrieb an 2–3 Schulen als Referenz. Das Prozess-/Organisationskonzept wird im Echteinsatz erprobt – geringe Investition, schnelle Lernkurve.</p></div>
       <div class="stage"><span class="tag">Stufe 2 · optional</span><h3>Schlanke Produktisierung</h3><p>Nach erbrachtem Wertbeweis: optionale Umsetzung als schlanke Software. Erst wenn der Nutzen belegt ist, wird in Entwicklung investiert.</p></div>
     </div>
+    <div class="note" style="margin-top:24px;border-left-color:#1F9D6B">✅ <strong>Erste Traction:</strong> Ein erstes Gespräch mit dem Schulleiter haben wir bereits geführt – er steht dem Projekt sehr offen gegenüber. Nach den Ferien folgt ein weiteres Follow-up (FUP).</div>
     <h3 style="font-size:1.25rem;margin:40px 0 16px">Konkrete Meilensteine &amp; grober Zeitrahmen</h3>
     <ul class="check-list">
       <li><strong>Monat 0–1:</strong> 2–3 Pilotschulen gewinnen, Prozesskonzept &amp; Ordnerstruktur finalisieren, DSGVO-Dokumentation (VVT, DSFA-Vorprüfung) erstellen.</li>
