@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Safe Frames – Erklärvideo</title>
+<style>
+  :root{
+    --petrol:#005F73; --petrol-2:#0A7C93; --navy:#0C2340; --cream:#FAF6EF;
+    --coral:#E8846B; --sun:#F2B441; --sky:#DCEFF2; --leaf:#5FA88C;
+    --ink:#0C2340; --muted:#5B6B7B;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%;background:transparent;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  #sfv{position:relative;width:100%;max-width:960px;margin:0 auto;aspect-ratio:16/9;
+    border-radius:20px;overflow:hidden;background:var(--cream);
+    box-shadow:0 20px 60px rgba(12,35,64,.28);user-select:none}
+  #sfv svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+  .scene{opacity:0;transition:opacity .65s ease}
+  .scene.active{opacity:1}
+
+  /* Poster / play overlay */
+  #poster{position:absolute;inset:0;z-index:30;cursor:pointer;
+    background:linear-gradient(135deg,var(--navy),var(--petrol));
+    display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;text-align:center}
+  #poster h1{font-family:"Poppins",sans-serif;font-weight:800;font-size:clamp(22px,4.4vw,44px);margin:0 0 6px;letter-spacing:.5px}
+  #poster p{margin:0;opacity:.82;font-size:clamp(12px,1.8vw,18px)}
+  #poster .kicker{letter-spacing:3px;text-transform:uppercase;font-size:clamp(10px,1.4vw,13px);opacity:.7;margin-bottom:14px}
+  #playbtn{width:76px;height:76px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;
+    margin-top:22px;box-shadow:0 10px 30px rgba(0,0,0,.28);transition:transform .2s}
+  #poster:hover #playbtn{transform:scale(1.07)}
+  #playbtn:after{content:"";display:block;width:0;height:0;border-left:22px solid var(--petrol);
+    border-top:14px solid transparent;border-bottom:14px solid transparent;margin-left:6px}
+  #poster .frame-deco{position:absolute;inset:26px;border:1px solid rgba(255,255,255,.28);border-radius:16px;pointer-events:none}
+
+  /* Captions */
+  #cap{position:absolute;left:0;right:0;bottom:6.5%;z-index:20;text-align:center;padding:0 8%;
+    pointer-events:none;transition:opacity .25s}
+  #cap span{display:inline;background:rgba(12,35,64,.82);color:#fff;font-size:clamp(12px,2.1vw,19px);
+    line-height:1.5;padding:.28em .6em;border-radius:8px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+  /* Flag chip (Bauchbinde) */
+  #flag{position:absolute;left:50%;transform:translateX(-50%);bottom:20%;z-index:20;
+    background:rgba(255,255,255,.94);color:var(--petrol);font-family:"Poppins",sans-serif;font-weight:700;
+    font-size:clamp(11px,1.8vw,16px);padding:.5em 1em;border-radius:999px;box-shadow:0 6px 18px rgba(12,35,64,.18);
+    opacity:0;transition:opacity .4s, transform .4s;white-space:nowrap}
+  #flag.show{opacity:1}
+
+  /* Controls */
+  #bar{position:absolute;left:0;right:0;bottom:0;z-index:25;height:34px;display:flex;align-items:center;gap:10px;
+    padding:0 12px;background:linear-gradient(to top,rgba(12,35,64,.5),rgba(12,35,64,0));opacity:0;transition:opacity .3s}
+  #sfv.playing:hover #bar, #sfv.ended #bar{opacity:1}
+  #bar button{background:none;border:0;color:#fff;cursor:pointer;font-size:15px;line-height:1;padding:4px}
+  #prog{flex:1;height:5px;background:rgba(255,255,255,.3);border-radius:3px;overflow:hidden;cursor:pointer}
+  #progfill{height:100%;width:0;background:var(--sun)}
+  #time{color:#fff;font-size:11px;font-variant-numeric:tabular-nums;min-width:78px;text-align:right;opacity:.9}
+
+  /* Replay end overlay */
+  #endcta{position:absolute;inset:0;z-index:28;display:none;align-items:flex-end;justify-content:center;
+    padding-bottom:12%;pointer-events:none}
+  #sfv.ended #endcta{display:flex}
+  #endcta button{pointer-events:auto;background:#fff;color:var(--petrol);border:0;border-radius:999px;
+    font-family:"Poppins",sans-serif;font-weight:700;font-size:14px;padding:10px 20px;cursor:pointer;box-shadow:0 8px 24px rgba(12,35,64,.25)}
+
+  /* keyframes */
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+  @keyframes bobS{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+  @keyframes sway{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}
+  @keyframes blink{0%,92%,100%{transform:scaleY(1)}96%{transform:scaleY(.1)}}
+  @keyframes twinkle{0%,100%{opacity:.2;transform:scale(.7)}50%{opacity:1;transform:scale(1)}}
+  @keyframes floatUp{0%{opacity:0;transform:translateY(10px)}20%{opacity:1}100%{opacity:0;transform:translateY(-46px)}}
+  @keyframes drift{0%{transform:translate(0,0) rotate(-4deg)}100%{transform:translate(70px,-26px) rotate(6deg)}}
+  @keyframes cloudMove{0%{transform:translateX(0)}100%{transform:translateX(24px)}}
+  @keyframes sunRay{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
+  @keyframes heartUp{0%{opacity:0;transform:translateY(0) scale(.6)}20%{opacity:1}100%{opacity:0;transform:translateY(-70px) scale(1)}}
+  @keyframes dash{to{stroke-dashoffset:0}}
+  @keyframes pop{0%{transform:scale(0)}70%{transform:scale(1.15)}100%{transform:scale(1)}}
+  .bob{animation:bob 2.6s ease-in-out infinite;transform-origin:center}
+  .bob2{animation:bob 2.6s ease-in-out .5s infinite}
+  .bob3{animation:bob 2.6s ease-in-out 1s infinite}
+  .bobS{animation:bobS 3s ease-in-out infinite}
+  .sway{animation:sway 3.4s ease-in-out infinite;transform-origin:bottom center}
+  .blink{animation:blink 4.2s infinite;transform-origin:center}
+  .tw{animation:twinkle 2.2s ease-in-out infinite}
+  .tw2{animation:twinkle 2.2s ease-in-out .7s infinite}
+  .tw3{animation:twinkle 2.2s ease-in-out 1.3s infinite}
+
+  @media (max-width:520px){ #time{min-width:64px} }
+</style>
+</head>
+<body>
+<div id="sfv" aria-label="Safe Frames Erklärvideo">
+  <!-- ================= SVG STAGE ================= -->
+  <svg viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid slice" role="img">
+    <defs>
+      <!-- soft warm/cool grade overlays -->
+      <linearGradient id="skyWarm" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#EAF6F2"/><stop offset="1" stop-color="#FAF6EF"/>
+      </linearGradient>
+      <linearGradient id="skyCool" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#D6E2EC"/><stop offset="1" stop-color="#E7EDF2"/>
+      </linearGradient>
+      <linearGradient id="navyGrad" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#0C2340"/><stop offset="1" stop-color="#005F73"/>
+      </linearGradient>
+      <radialGradient id="glow" cx="50%" cy="45%" r="60%">
+        <stop offset="0" stop-color="#F2B441" stop-opacity=".33"/><stop offset="1" stop-color="#F2B441" stop-opacity="0"/>
+      </radialGradient>
+
+      <!-- ===== Mia (logo figure): teal cap, teal shirt, navy backpack ===== -->
+      <g id="mia">
+        <!-- backpack -->
+        <rect x="-4" y="30" width="20" height="26" rx="6" fill="#0C2340"/>
+        <!-- legs -->
+        <g class="legs">
+          <rect x="6" y="66" width="9" height="20" rx="4" fill="#0C2340"/>
+          <rect x="19" y="66" width="9" height="20" rx="4" fill="#0C2340"/>
+          <rect x="5" y="84" width="12" height="6" rx="3" fill="#123a5e"/>
+          <rect x="18" y="84" width="12" height="6" rx="3" fill="#123a5e"/>
+        </g>
+        <!-- body / shirt -->
+        <rect x="4" y="40" width="28" height="30" rx="10" fill="#0A7C93"/>
+        <rect x="4" y="40" width="28" height="14" rx="10" fill="#009CB0"/>
+        <!-- arms -->
+        <rect x="0" y="44" width="8" height="20" rx="4" fill="#009CB0"/>
+        <rect x="28" y="44" width="8" height="20" rx="4" fill="#0A7C93"/>
+        <!-- head -->
+        <circle cx="18" cy="24" r="15" fill="#F1C9A5"/>
+        <!-- hair hint -->
+        <path d="M5 22 q2 -14 13 -14 q11 0 13 14 q-6 -6 -13 -6 q-7 0 -13 6z" fill="#33261c"/>
+        <!-- cap -->
+        <path d="M3 18 q15 -16 30 0 z" fill="#005F73"/>
+        <path d="M18 8 q16 0 15 10 l-30 0 q-1 -10 15 -10z" fill="#007A90"/>
+        <rect x="30" y="16" width="16" height="5" rx="2.5" fill="#005F73"/>
+        <!-- face -->
+        <g class="blink"><circle cx="13" cy="25" r="1.9" fill="#0C2340"/><circle cx="23" cy="25" r="1.9" fill="#0C2340"/></g>
+        <path d="M14 30 q4 3 8 0" stroke="#b9765a" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+      </g>
+
+      <!-- ===== generic kid (varied colors via <use> parts) ===== -->
+      <g id="kid">
+        <rect x="7" y="64" width="8" height="18" rx="4" fill="#123a5e"/>
+        <rect x="17" y="64" width="8" height="18" rx="4" fill="#123a5e"/>
+        <rect x="4" y="40" width="24" height="28" rx="9" class="kidshirt" fill="#E8846B"/>
+        <circle cx="16" cy="26" r="13" fill="#EFC3A0"/>
+        <path d="M4 24 q3 -13 12 -13 q9 0 12 13 q-6 -6 -12 -6 q-6 0 -12 6z" class="kidhair" fill="#2b2b2b"/>
+        <g class="blink"><circle cx="12" cy="27" r="1.7" fill="#0C2340"/><circle cx="20" cy="27" r="1.7" fill="#0C2340"/></g>
+        <path d="M12 31 q4 3 8 0" stroke="#b9765a" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      </g>
+
+      <!-- ===== adult (teacher/mother/colleague) ===== -->
+      <g id="adult">
+        <rect x="9" y="74" width="10" height="24" rx="5" fill="#123a5e"/>
+        <rect x="22" y="74" width="10" height="24" rx="5" fill="#123a5e"/>
+        <rect x="4" y="44" width="34" height="36" rx="12" class="adshirt" fill="#5FA88C"/>
+        <rect x="0" y="48" width="9" height="26" rx="4.5" class="adshirt2" fill="#5FA88C"/>
+        <rect x="33" y="48" width="9" height="26" rx="4.5" class="adshirt2" fill="#5FA88C"/>
+        <circle cx="21" cy="26" r="15" fill="#EFC3A0"/>
+        <path d="M6 26 q3 -16 15 -16 q12 0 15 16 q-2 -3 -6 -4 l0 8 q-9 5 -18 0 l0 -8 q-4 1 -6 4z" class="adhair" fill="#3a2b22"/>
+        <g class="blink"><circle cx="16" cy="27" r="1.9" fill="#0C2340"/><circle cx="26" cy="27" r="1.9" fill="#0C2340"/></g>
+        <path d="M17 32 q4 3 8 0" stroke="#b9765a" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+      </g>
+
+      <!-- photo card -->
+      <g id="photo">
+        <rect x="0" y="0" width="46" height="38" rx="4" fill="#fff" stroke="#0C2340" stroke-opacity=".15"/>
+        <rect x="4" y="4" width="38" height="24" rx="2" fill="#DCEFF2"/>
+        <circle cx="14" cy="16" r="5" fill="#F2B441"/>
+        <path d="M6 26 l9 -9 6 6 7 -8 8 11 z" fill="#5FA88C"/>
+      </g>
+
+      <!-- small shield -->
+      <g id="shield">
+        <path d="M20 2 L38 9 V22 C38 33 30 40 20 44 C10 40 2 33 2 22 V9 Z" fill="#005F73"/>
+        <path d="M12 22 l6 6 11 -13" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+    </defs>
+
+    <!-- ============ SCENE 1 · Freude ============ -->
+    <g class="scene" data-scene="1">
+      <g class="cam">
+        <rect x="0" y="0" width="1280" height="720" fill="url(#skyWarm)"/>
+        <circle cx="1120" cy="120" r="52" fill="#F2B441"/>
+        <g style="transform-origin:1120px 120px" class="tw"><g><rect x="1116" y="40" width="8" height="26" rx="4" fill="#F2B441"/></g></g>
+        <!-- clouds -->
+        <g opacity=".8"><ellipse cx="300" cy="130" rx="60" ry="26" fill="#fff"/><ellipse cx="350" cy="120" rx="44" ry="22" fill="#fff"/></g>
+        <!-- school building -->
+        <g>
+          <rect x="120" y="330" width="360" height="230" rx="8" fill="#0C2340"/>
+          <polygon points="120,330 300,250 480,330" fill="#005F73"/>
+          <rect x="270" y="450" width="60" height="110" rx="4" fill="#F2B441"/>
+          <rect x="160" y="380" width="46" height="46" rx="4" fill="#DCEFF2"/>
+          <rect x="392" y="380" width="46" height="46" rx="4" fill="#DCEFF2"/>
+          <rect x="284" y="300" width="32" height="52" fill="#0C2340"/>
+          <path d="M300 262 l0 30" stroke="#F2B441" stroke-width="4"/>
+        </g>
+        <!-- ground -->
+        <rect x="0" y="560" width="1280" height="160" fill="#5FA88C"/>
+        <rect x="0" y="560" width="1280" height="14" fill="#6fbd9d"/>
+        <!-- characters -->
+        <g class="bob2" transform="translate(560,470) scale(2.2)"><use href="#kid" class="k1"/></g>
+        <g class="bob" transform="translate(636,452) scale(2.55)"><use href="#mia"/></g>
+        <g class="bob3" transform="translate(742,470) scale(2.2)"><use href="#kid" class="k2"/></g>
+        <!-- teacher with camera -->
+        <g transform="translate(890,470) scale(2.3)">
+          <use href="#adult" class="teacher"/>
+          <rect x="-8" y="52" width="24" height="16" rx="3" fill="#0C2340"/>
+          <circle cx="4" cy="60" r="5" fill="#DCEFF2" stroke="#fff"/>
+        </g>
+        <!-- sparkling photo frames -->
+        <g transform="translate(470,250)"><g class="tw"><use href="#photo" transform="scale(1)"/></g></g>
+        <g transform="translate(820,220)"><g class="tw2"><use href="#photo"/></g></g>
+        <g transform="translate(660,180)"><g class="tw3"><use href="#photo"/></g></g>
+      </g>
+    </g>
+
+    <!-- ============ SCENE 2 · Unsicherheit ============ -->
+    <g class="scene" data-scene="2">
+      <g class="cam">
+        <rect x="0" y="0" width="1280" height="720" fill="url(#skyCool)"/>
+        <!-- teacher worried, left -->
+        <g transform="translate(150,430) scale(2.6)">
+          <use href="#adult" class="teacher"/>
+        </g>
+        <text x="250" y="360" font-size="60" fill="#005F73" opacity=".5" class="bob">?</text>
+        <!-- camera -->
+        <g transform="translate(360,470)"><rect x="0" y="0" width="70" height="46" rx="8" fill="#0C2340"/><circle cx="35" cy="23" r="15" fill="#DCEFF2" stroke="#fff" stroke-width="3"/></g>
+        <!-- photos drifting to devices -->
+        <g class="drifter" transform="translate(430,430)"><use href="#photo" transform="scale(1.5)"/></g>
+        <g class="drifter" style="animation-delay:.8s" transform="translate(500,470)"><use href="#photo" transform="scale(1.3)"/></g>
+        <g class="drifter" style="animation-delay:1.5s" transform="translate(560,410)"><use href="#photo" transform="scale(1.4)"/></g>
+        <!-- phones -->
+        <g transform="translate(900,300)"><rect x="0" y="0" width="70" height="130" rx="12" fill="#0C2340"/><rect x="7" y="14" width="56" height="92" rx="4" fill="#2f6d5a"/><circle cx="35" cy="118" r="5" fill="#5FA88C"/></g>
+        <g transform="translate(1030,420)"><rect x="0" y="0" width="64" height="120" rx="12" fill="#123a5e"/><rect x="6" y="12" width="52" height="84" rx="4" fill="#3b7d99"/></g>
+        <!-- chat bubbles -->
+        <g transform="translate(980,210)"><rect x="0" y="0" width="90" height="46" rx="16" fill="#fff"/><circle cx="22" cy="23" r="4" fill="#005F73"/><circle cx="45" cy="23" r="4" fill="#005F73"/><circle cx="68" cy="23" r="4" fill="#005F73"/></g>
+        <!-- cloud -->
+        <g transform="translate(1080,150)" opacity=".9"><ellipse cx="60" cy="40" rx="66" ry="30" fill="#fff"/><ellipse cx="110" cy="34" rx="40" ry="24" fill="#fff"/><ellipse cx="24" cy="34" rx="34" ry="20" fill="#fff"/></g>
+        <text x="1150" y="300" font-size="54" fill="#005F73" opacity=".45" class="bob2">?</text>
+        <rect x="0" y="0" width="1280" height="720" fill="#0C2340" opacity=".05"/>
+      </g>
+    </g>
+
+    <!-- ============ SCENE 3 · Verlust (leere Seite) ============ -->
+    <g class="scene" data-scene="3">
+      <g class="cam">
+        <rect x="0" y="0" width="1280" height="720" fill="#EDE6DA"/>
+        <!-- yearbook -->
+        <g transform="translate(360,150)">
+          <rect x="-20" y="0" width="580" height="410" rx="10" fill="#c9bda9"/>
+          <rect x="-8" y="12" width="556" height="386" rx="6" fill="#fff"/>
+          <line x1="270" y1="12" x2="270" y2="398" stroke="#e3dccd" stroke-width="4"/>
+          <!-- left page photos -->
+          <use href="#photo" transform="translate(30,60) scale(1.6)"/>
+          <use href="#photo" transform="translate(140,60) scale(1.6)"/>
+          <use href="#photo" transform="translate(30,180) scale(1.6)"/>
+          <use href="#photo" transform="translate(140,180) scale(1.6)"/>
+          <!-- right page: empty dashed frame -->
+          <rect x="300" y="70" width="210" height="150" rx="8" fill="none" stroke="#b9a98f" stroke-width="4" stroke-dasharray="12 12"/>
+          <text x="405" y="150" text-anchor="middle" font-size="34" fill="#c3b092">?</text>
+          <rect x="300" y="250" width="210" height="16" rx="8" fill="#eee5d4"/>
+          <rect x="300" y="280" width="150" height="14" rx="7" fill="#eee5d4"/>
+        </g>
+        <!-- Mia looking, with mother's hand -->
+        <g transform="translate(150,430) scale(2.4)"><use href="#mia"/></g>
+        <g transform="translate(70,470) scale(2.8)"><use href="#adult" class="mother"/></g>
+      </g>
+    </g>
+
+    <!-- ============ SCENE 4 · Erleichterung ============ -->
+    <g class="scene" data-scene="4">
+      <g class="cam">
+        <rect x="0" y="0" width="1280" height="720" fill="url(#skyWarm)"/>
+        <rect x="0" y="0" width="1280" height="720" fill="url(#glow)"/>
+        <!-- protected frame -->
+        <g transform="translate(430,170)">
+          <rect x="0" y="0" width="420" height="330" rx="20" fill="#fff" stroke="#005F73" stroke-width="4"/>
+          <rect x="0" y="0" width="420" height="60" rx="20" fill="#005F73"/>
+          <rect x="0" y="40" width="420" height="20" fill="#005F73"/>
+          <!-- neat grid of photos flying in -->
+          <g class="flyin"><use href="#photo" transform="translate(40,100) scale(1.7)"/></g>
+          <g class="flyin" style="animation-delay:.15s"><use href="#photo" transform="translate(160,100) scale(1.7)"/></g>
+          <g class="flyin" style="animation-delay:.3s"><use href="#photo" transform="translate(280,100) scale(1.7)"/></g>
+          <g class="flyin" style="animation-delay:.45s"><use href="#photo" transform="translate(40,210) scale(1.7)"/></g>
+          <g class="flyin" style="animation-delay:.6s"><use href="#photo" transform="translate(160,210) scale(1.7)"/></g>
+          <g class="flyin" style="animation-delay:.75s"><use href="#photo" transform="translate(280,210) scale(1.7)"/></g>
+          <!-- shield badge -->
+          <g transform="translate(350,-24) scale(1.4)" class="popper"><use href="#shield"/></g>
+        </g>
+      </g>
+    </g>
+
+    <!-- ============ SCENE 5 · Vertrauen (Vier-Augen) ============ -->
+    <g class="scene" data-scene="5">
+      <g class="cam">
+        <rect x="0" y="0" width="1280" height="720" fill="url(#skyWarm)"/>
+        <!-- desk -->
+        <rect x="240" y="470" width="800" height="40" rx="10" fill="#0C2340"/>
+        <rect x="300" y="510" width="24" height="120" fill="#0C2340"/>
+        <rect x="956" y="510" width="24" height="120" fill="#0C2340"/>
+        <!-- two reviewers -->
+        <g transform="translate(360,300) scale(2.7)"><use href="#adult" class="teacher"/></g>
+        <g transform="translate(820,300) scale(2.7)"><use href="#adult" class="colleague"/></g>
+        <!-- photos on desk -->
+        <use href="#photo" transform="translate(560,430) scale(1.7)"/>
+        <use href="#photo" transform="translate(660,432) scale(1.7)"/>
+        <!-- approved photo rising to a small yearbook -->
+        <g class="approve"><use href="#photo" transform="translate(600,380) scale(1.9)"/></g>
+        <!-- green check -->
+        <g transform="translate(760,300)" class="popper">
+          <circle cx="0" cy="0" r="34" fill="#5FA88C"/>
+          <path d="M-16 0 l10 12 20 -24" stroke="#fff" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+        <!-- small yearbook -->
+        <g transform="translate(940,360)"><rect x="0" y="0" width="70" height="90" rx="6" fill="#005F73"/><rect x="8" y="10" width="54" height="70" rx="3" fill="#fff"/></g>
+      </g>
+    </g>
+
+    <!-- ============ SCENE 6 · Sicherheit (keine Gesichtserkennung) ============ -->
+    <g class="scene" data-scene="6">
+      <g class="cam">
+        <rect x="0" y="0" width="1280" height="720" fill="url(#skyWarm)"/>
+        <!-- framed photo of Mia -->
+        <g transform="translate(470,150)">
+          <rect x="0" y="0" width="340" height="360" rx="14" fill="#fff" stroke="#0C2340" stroke-opacity=".15" stroke-width="3"/>
+          <rect x="20" y="20" width="300" height="240" rx="8" fill="#DCEFF2"/>
+          <g transform="translate(120,70) scale(2.6)"><use href="#mia"/></g>
+          <rect x="20" y="284" width="300" height="18" rx="9" fill="#eef2f4"/>
+          <!-- cold scan grid that gets wiped -->
+          <g class="scangrid">
+            <rect x="20" y="20" width="300" height="240" fill="#0A7C93" opacity=".10"/>
+            <path d="M20 70 h300 M20 120 h300 M20 170 h300 M20 220 h300 M90 20 v240 M160 20 v240 M230 20 v240 M300 20 v240"
+                  stroke="#00A6C4" stroke-width="1.4" opacity=".7"/>
+            <rect x="20" y="20" width="300" height="18" fill="#00A6C4" opacity=".5" class="scanline"/>
+          </g>
+          <!-- warm hand + consent check appears -->
+          <g class="humanhand" transform="translate(250,300)">
+            <circle cx="0" cy="0" r="30" fill="#5FA88C"/>
+            <path d="M-14 2 l9 10 18 -22" stroke="#fff" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+        </g>
+      </g>
+    </g>
+
+    <!-- ============ SCENE 7 · Ordnung (löschen / archivieren) ============ -->
+    <g class="scene" data-scene="7">
+      <g class="cam">
+        <rect x="0" y="0" width="1280" height="720" fill="url(#skyWarm)"/>
+        <!-- calendar -->
+        <g transform="translate(150,180)">
+          <rect x="0" y="0" width="230" height="220" rx="14" fill="#fff" stroke="#0C2340" stroke-opacity=".15"/>
+          <rect x="0" y="0" width="230" height="52" rx="14" fill="#E8846B"/>
+          <rect x="0" y="36" width="230" height="18" fill="#E8846B"/>
+          <text x="115" y="150" text-anchor="middle" font-size="72" font-family="Poppins,sans-serif" font-weight="800" fill="#0C2340">30</text>
+          <circle cx="40" cy="8" r="6" fill="#0C2340"/><circle cx="190" cy="8" r="6" fill="#0C2340"/>
+        </g>
+        <!-- photos dissolving (delete) -->
+        <g transform="translate(470,220)">
+          <g class="dissolve"><use href="#photo" transform="scale(1.9)"/></g>
+          <g class="dissolve" style="animation-delay:.6s"><use href="#photo" transform="translate(50,60) scale(1.9)"/></g>
+        </g>
+        <!-- archive box with lock -->
+        <g transform="translate(820,300)">
+          <rect x="0" y="40" width="260" height="150" rx="10" fill="#005F73"/>
+          <rect x="-14" y="14" width="288" height="46" rx="8" fill="#0A7C93"/>
+          <g transform="translate(112,86)"><rect x="0" y="20" width="36" height="30" rx="5" fill="#F2B441"/><path d="M6 20 v-8 a12 12 0 0 1 24 0 v8" fill="none" stroke="#F2B441" stroke-width="5"/></g>
+          <g class="archglide"><use href="#photo" transform="translate(60,-40) scale(1.7)"/></g>
+        </g>
+      </g>
+    </g>
+
+    <!-- ============ SCENE 8 · Wärme (Sofa, Jahrbuch) ============ -->
+    <g class="scene" data-scene="8">
+      <g class="cam">
+        <rect x="0" y="0" width="1280" height="720" fill="#F3E7D6"/>
+        <!-- warm lamp glow -->
+        <circle cx="1060" cy="180" r="180" fill="url(#glow)"/>
+        <!-- window -->
+        <rect x="120" y="120" width="200" height="160" rx="8" fill="#DCEFF2" stroke="#0C2340" stroke-opacity=".2" stroke-width="4"/>
+        <line x1="220" y1="120" x2="220" y2="280" stroke="#0C2340" stroke-opacity=".2" stroke-width="4"/>
+        <line x1="120" y1="200" x2="320" y2="200" stroke="#0C2340" stroke-opacity=".2" stroke-width="4"/>
+        <!-- sofa -->
+        <rect x="330" y="430" width="640" height="170" rx="30" fill="#E8846B"/>
+        <rect x="330" y="390" width="640" height="90" rx="26" fill="#ef9a83"/>
+        <rect x="310" y="440" width="60" height="150" rx="24" fill="#d9765d"/>
+        <rect x="930" y="440" width="60" height="150" rx="24" fill="#d9765d"/>
+        <!-- mother + mia on sofa with yearbook -->
+        <g transform="translate(470,300) scale(2.6)"><use href="#adult" class="mother"/></g>
+        <g transform="translate(700,330) scale(2.3)"><use href="#mia"/></g>
+        <!-- yearbook in hands -->
+        <g transform="translate(600,470)">
+          <rect x="0" y="0" width="120" height="86" rx="6" fill="#005F73"/>
+          <rect x="8" y="8" width="104" height="70" rx="3" fill="#fff"/>
+          <use href="#photo" transform="translate(20,20) scale(0.75)"/>
+          <use href="#photo" transform="translate(64,20) scale(0.75)"/>
+        </g>
+        <!-- heart -->
+        <g transform="translate(760,300)"><path class="heart" d="M0 8 C-10 -6 -30 4 -18 20 C-12 28 0 36 0 40 C0 36 12 28 18 20 C30 4 10 -6 0 8Z" fill="#E8846B"/></g>
+      </g>
+    </g>
+
+    <!-- ============ SCENE 9 · Endcard / Marke ============ -->
+    <g class="scene" data-scene="9">
+      <g class="cam">
+        <rect x="0" y="0" width="1280" height="720" fill="url(#skyWarm)"/>
+        <!-- logo mark: frame + walking figure -->
+        <g transform="translate(360,210)">
+          <rect x="0" y="0" width="150" height="190" rx="16" fill="none" stroke="#0C2340" stroke-width="7" transform="rotate(-8)"/>
+          <g transform="translate(70,70) scale(1.9)"><use href="#mia"/></g>
+        </g>
+        <text x="560" y="300" font-family="Poppins,'Segoe UI',sans-serif" font-weight="800" font-size="86" fill="#005F73">Safe</text>
+        <text x="560" y="390" font-family="Poppins,'Segoe UI',sans-serif" font-weight="800" font-size="86" fill="#0C2340">Frames</text>
+        <text x="565" y="430" font-family="Poppins,'Segoe UI',sans-serif" font-weight="600" font-size="30" fill="#5B6B7B">by ilumera</text>
+        <text x="640" y="520" text-anchor="middle" font-family="'Segoe UI',sans-serif" font-size="30" fill="#0C2340">Der sichere Rahmen für Schulfotos.</text>
+        <text x="640" y="575" text-anchor="middle" font-family="Poppins,'Segoe UI',sans-serif" font-weight="700" font-size="26" fill="#005F73">Safe Frames für Ihre Schule kennenlernen →</text>
+      </g>
+    </g>
+
+    <!-- corner logo (appears from scene 4) -->
+    <g id="cornerlogo" opacity="0">
+      <rect x="1120" y="28" width="34" height="42" rx="5" fill="none" stroke="#0C2340" stroke-width="3" transform="rotate(-8 1137 49)"/>
+      <g transform="translate(1128,40) scale(0.5)"><use href="#mia"/></g>
+      <text x="1170" y="45" font-family="Poppins,sans-serif" font-weight="800" font-size="18" fill="#005F73">Safe</text>
+      <text x="1170" y="63" font-family="Poppins,sans-serif" font-weight="800" font-size="18" fill="#0C2340">Frames</text>
+    </g>
+  </svg>
+
+  <!-- overlays -->
+  <div id="flag"></div>
+  <div id="cap"><span></span></div>
+
+  <div id="bar">
+    <button id="pp" aria-label="Pause/Play">❚❚</button>
+    <div id="prog"><div id="progfill"></div></div>
+    <span id="time">0:00 / 1:06</span>
+    <button id="cc" aria-label="Untertitel" title="Untertitel an/aus">CC</button>
+    <button id="mute" aria-label="Ton" title="Ton an/aus">🔊</button>
+  </div>
+
+  <div id="endcta"><button id="replay">▶ Video erneut ansehen</button></div>
+
+  <div id="poster">
+    <div class="frame-deco"></div>
+    <div class="kicker">Safe Frames · by ilumera</div>
+    <h1>Schulfotos – sicher gerahmt.</h1>
+    <p>In gut einer Minute erklärt.</p>
+    <div id="playbtn" role="button" aria-label="Video abspielen"></div>
+  </div>
+
+  <!-- Voiceover: Datei safe-frames-voiceover.mp3 in denselben Ordner legen -->
+  <audio id="vo" preload="auto" src="safe-frames-voiceover.mp3"></audio>
+</div>
+
+<style>
+  /* scene-specific micro animations */
+  .drifter{animation:drift 3.2s ease-in-out infinite alternate}
+  .flyin{animation:pop .6s ease-out both}
+  .popper{animation:pop .6s .3s ease-out both;transform-box:fill-box;transform-origin:center}
+  .approve{animation:approveRise 3s ease-in-out infinite}
+  @keyframes approveRise{0%{transform:translateY(0);opacity:1}60%{transform:translateY(-70px);opacity:1}100%{transform:translateY(-150px);opacity:0}}
+  .scanline{animation:scan 2s linear infinite}
+  @keyframes scan{0%{transform:translateY(0)}100%{transform:translateY(222px)}}
+  .scangrid{animation:wipe 4s ease-in-out .6s forwards}
+  @keyframes wipe{0%,55%{opacity:1}75%,100%{opacity:0}}
+  .humanhand{opacity:0;animation:handIn 4s ease-out .6s forwards;transform-box:fill-box;transform-origin:center}
+  @keyframes handIn{0%,60%{opacity:0;transform:scale(.4)}80%{opacity:1;transform:scale(1.15)}100%{opacity:1;transform:scale(1)}}
+  .dissolve{animation:diss 3s ease-in-out infinite}
+  @keyframes diss{0%{opacity:1;transform:scale(1)}70%{opacity:1}100%{opacity:0;transform:scale(1.3) translateY(-20px)}}
+  .archglide{animation:arch 3s ease-in-out infinite}
+  @keyframes arch{0%{transform:translate(0,0);opacity:0}20%{opacity:1}100%{transform:translate(0,120px);opacity:0}}
+  .heart{animation:heartUp 3s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+</style>
+
+<script>
+(function(){
+  var stage=document.getElementById('sfv');
+  var vo=document.getElementById('vo');
+  var scenes=[].slice.call(document.querySelectorAll('.scene'));
+  var capBox=document.getElementById('cap'), capSpan=capBox.querySelector('span');
+  var flag=document.getElementById('flag');
+  var corner=document.getElementById('cornerlogo');
+  var progfill=document.getElementById('progfill'), timeEl=document.getElementById('time');
+  var poster=document.getElementById('poster'), ppBtn=document.getElementById('pp');
+  var BASE=63; // seconds the timeline is authored for
+  var DUR=BASE; // will adopt real audio duration if available
+
+  // scene time windows (in BASE seconds)
+  var win=[[0,7],[7,14],[14,21],[21,29],[29,37],[37,45],[45,51],[51,58],[58,63]];
+  // captions
+  var caps=[
+    [0,3.4,"Fototag an Mias Schule."],
+    [3.4,7,"Lachende Kinder, ein Klassenfoto – Erinnerungen, die bleiben sollen."],
+    [7,10.5,"Doch was passiert danach mit den Bildern?"],
+    [10.5,14,"Landen sie in einer WhatsApp‑Gruppe? Auf fremden Handys? In der Cloud?"],
+    [14,17.8,"Aus Sorge lassen viele Schulen das Klassenfoto inzwischen ganz weg."],
+    [17.8,21,"Und im Jahrbuch bleibt eine Seite leer."],
+    [21,25,"Safe Frames gibt Schulfotos einen sicheren Rahmen."],
+    [25,29,"Alle Bilder kommen an einen geschützten Ort, den die Schule selbst kontrolliert."],
+    [29,33,"Jedes Foto wird geprüft – immer von zwei Personen gemeinsam."],
+    [33,37,"Nur was freigegeben ist, kommt ins Jahrbuch."],
+    [37,41,"Keine Gesichtserkennung, keine biometrische Auswertung."],
+    [41,45,"Über Mias Bilder entscheiden Menschen – auf Grundlage der Einwilligung ihrer Eltern."],
+    [45,48.5,"Und nach dem Projekt? Wird zuverlässig gelöscht oder sicher archiviert."],
+    [48.5,51,"Nichts bleibt einfach irgendwo liegen."],
+    [51,54.5,"Für Mia bleibt die Erinnerung."],
+    [54.5,58,"Für die Schule: weniger Risiko, entlastete Lehrkräfte – und Eltern, die vertrauen."],
+    [58,63,"Safe Frames. Der sichere Rahmen für Schulfotos."]
+  ];
+  // flags / Bauchbinden
+  var flags=[
+    [15,21,"≈ 40 % der Schulen lassen das Klassenfoto weg"],
+    [30,37,"Vier‑Augen‑Prinzip"],
+    [38,45,"Keine Gesichtserkennung"]
+  ];
+
+  var playing=false, startT=0, raf=null, ccOn=true;
+  function fmt(s){s=Math.max(0,Math.floor(s));return Math.floor(s/60)+':'+('0'+(s%60)).slice(-2)}
+
+  function scale(x){return x*(DUR/BASE)}
+
+  function setScene(t){
+    var idx=0;
+    for(var i=0;i<win.length;i++){ if(t>=scale(win[i][0])) idx=i; }
+    scenes.forEach(function(s,i){ s.classList.toggle('active', i===idx); });
+    // camera push-in on active scene
+    var w=win[idx], p=(t-scale(w[0]))/(scale(w[1])-scale(w[0])); p=Math.max(0,Math.min(1,p));
+    var cam=scenes[idx].querySelector('.cam');
+    if(cam){ var sc=1+0.05*p, tx=-14*p; cam.setAttribute('transform','translate('+tx+','+(-6*p)+') scale('+sc+')'); cam.style.transformOrigin='640px 360px'; }
+    corner.setAttribute('opacity', idx>=3 && idx<8 ? '1':'0');
+  }
+  function setCap(t){
+    if(!ccOn){capBox.style.opacity=0;return}
+    var txt='';
+    for(var i=0;i<caps.length;i++){ if(t>=scale(caps[i][0])&&t<scale(caps[i][1])){txt=caps[i][2];break} }
+    capSpan.textContent=txt; capBox.style.opacity=txt?1:0;
+  }
+  function setFlag(t){
+    var f=null;
+    for(var i=0;i<flags.length;i++){ if(t>=scale(flags[i][0])&&t<scale(flags[i][1])){f=flags[i][2];break} }
+    if(f){flag.textContent=f;flag.classList.add('show')} else {flag.classList.remove('show')}
+  }
+  function tick(){
+    var t = (vo && !isNaN(vo.duration) && vo.currentTime>0) ? vo.currentTime : (performance.now()/1000 - startT);
+    if(t>=DUR){ finish(); return; }
+    setScene(t); setCap(t); setFlag(t);
+    progfill.style.width=(100*t/DUR)+'%'; timeEl.textContent=fmt(t)+' / '+fmt(DUR);
+    raf=requestAnimationFrame(tick);
+  }
+  function start(){
+    if(playing) return; playing=true;
+    stage.classList.add('playing'); stage.classList.remove('ended');
+    poster.style.display='none'; ppBtn.textContent='❚❚';
+    if(vo){ vo.currentTime=0; var pr=vo.play(); if(pr&&pr.catch)pr.catch(function(){}); }
+    startT=performance.now()/1000;
+    raf=requestAnimationFrame(tick);
+  }
+  function pause(){ if(!playing)return; playing=false; if(vo)vo.pause(); if(raf)cancelAnimationFrame(raf); ppBtn.textContent='▶'; startT=performance.now()/1000 - (vo?vo.currentTime:0); }
+  function resume(){ if(playing)return; playing=true; ppBtn.textContent='❚❚'; if(vo){var pr=vo.play();if(pr&&pr.catch)pr.catch(function(){});} startT=performance.now()/1000 - (vo?vo.currentTime:0); raf=requestAnimationFrame(tick); }
+  function finish(){ playing=false; if(raf)cancelAnimationFrame(raf); if(vo)vo.pause();
+    stage.classList.remove('playing'); stage.classList.add('ended');
+    setScene(DUR-0.01); setCap(9999); flag.classList.remove('show'); progfill.style.width='100%'; timeEl.textContent=fmt(DUR)+' / '+fmt(DUR);
+  }
+
+  if(vo){ vo.addEventListener('loadedmetadata',function(){ if(vo.duration&&isFinite(vo.duration)){DUR=vo.duration;} timeEl.textContent='0:00 / '+fmt(DUR); }); }
+  poster.addEventListener('click',start);
+  document.getElementById('replay').addEventListener('click',start);
+  ppBtn.addEventListener('click',function(){ playing?pause():resume(); });
+  document.getElementById('cc').addEventListener('click',function(){ ccOn=!ccOn; this.style.opacity=ccOn?1:.5; });
+  document.getElementById('mute').addEventListener('click',function(){ if(!vo)return; vo.muted=!vo.muted; this.textContent=vo.muted?'🔇':'🔊'; });
+  document.getElementById('prog').addEventListener('click',function(e){ var r=this.getBoundingClientRect(); var f=(e.clientX-r.left)/r.width; if(vo&&DUR){vo.currentTime=f*DUR;} startT=performance.now()/1000 - f*DUR; if(!playing){resume();} });
+
+  // show first scene as still under the poster
+  setScene(0.01);
+})();
+</script>
+</body>
+</html>
