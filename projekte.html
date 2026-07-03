@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="preload" href="/fonts/Outfit.woff2" as="font" type="font/woff2" crossorigin/>
+<link rel="preload" href="/fonts/Fraunces.woff2" as="font" type="font/woff2" crossorigin/>
 <title>Projekte – bridge to ai</title>
 <meta name="description" content="Ausgewählte KI-Projekte von bridge to ai – Chatbots, Automatisierung, Dashboards und Governance. Erst der Prozess, dann die Technologie."/>
 <link rel="icon" type="image/svg+xml" href="brand/icon-tile.svg"/>
@@ -177,9 +179,9 @@ footer{flex-direction:column;text-align:center;}
 <div class="p-hero-atmos"></div>
 <div class="p-hero-grid"></div>
 <div class="p-hero-inner">
-<span class="p-eyebrow">Referenzen</span>
+<span class="p-eyebrow">Projekte &amp; Praxisbeispiele</span>
 <h1 class="p-title">Projekte, die für sich <span class="it">sprechen</span>.</h1>
-<p class="p-sub">Echte Lösungen aus dem Unternehmensalltag – jedes Projekt beginnt mit dem Prozess und endet mit einem messbaren Ergebnis. Eine Auswahl meiner Arbeit.</p>
+<p class="p-sub">Eigene Projekte, die Sie direkt ausprobieren können – und typische Anwendungsfälle, wie ich sie umsetze: Jedes Projekt beginnt mit dem Prozess und endet mit einem messbaren Ergebnis.</p>
 </div>
 </section>
 
@@ -192,12 +194,12 @@ footer{flex-direction:column;text-align:center;}
 <button class="chip" data-f="data">Daten &amp; Dashboards</button>
 <button class="chip" data-f="copilot">Copilot</button>
 </div>
-<p class="note">💡 Die Platzhalter-Projekte sind als Beispielstruktur (Ausgangslage → Lösung → Ergebnis) gedacht. „Safe Frames" ist ein echtes, eigenständiges Projekt unter der Marke Ilumera.</p>
+<p class="note">💡 Volle Transparenz: Karten mit der Kennzeichnung <strong>„Praxisbeispiel“</strong> zeigen typische Projekte mit realistischen Richtwerten – noch keine Kundenreferenzen. Eigene, live nutzbare Projekte sind als <strong>„Eigenes Projekt“</strong> markiert. Ihr Betrieb kann der nächste echte Case sein.</p>
 
 <div class="grid" id="grid">
 
 <article class="card" data-cat="governance">
-<span class="tag">Datenschutz · Bildung · Eigenes Produkt</span>
+<span class="tag">Eigenes Projekt · Datenschutz · Bildung</span>
 <h3><a href="projekte/safe-frames/">Safe Frames – datenschutzkonforme Schulfotos</a></h3>
 <div class="block"><div class="lbl">Ausgangslage</div><p>Schülerfotos für Jahrbücher landen unstrukturiert in Messengern und Clouds – Einwilligungen und Löschfristen bleiben undokumentiert.</p></div>
 <div class="block"><div class="lbl">Lösung</div><p>Prozesskonzept mit 7-Phasen-Ordnerstruktur, 10-Schritte-Workflow und Vier-Augen-Prinzip – bewusst ohne Biometrie, risikoarm unter DSGVO &amp; EU AI Act.</p></div>
@@ -205,7 +207,23 @@ footer{flex-direction:column;text-align:center;}
 </article>
 
 <article class="card" data-cat="chatbot">
-<span class="tag">Chatbot &amp; KI-Assistent</span>
+<span class="tag">Eigenes Projekt · Chatbot</span>
+<h3>KI-Assistent „Bridge“ – live auf dieser Website</h3>
+<div class="block"><div class="lbl">Ausgangslage</div><p>Besucher haben Fragen zu Angeboten, Preisen und KI-Einstieg – auch abends um 23 Uhr, wenn niemand antwortet.</p></div>
+<div class="block"><div class="lbl">Lösung</div><p>Conversational-AI-Agent mit kuratiertem System-Prompt und gepflegter Wissensdatenbank – DSGVO-bewusst mit Zwei-Klick-Einwilligung eingebunden.</p></div>
+<div class="kpi"><span class="num">24/7</span><span class="desc">erreichbar – unten rechts selbst ausprobieren</span></div>
+</article>
+
+<article class="card" data-cat="chatbot">
+<span class="tag">Eigenes Projekt · Bildung</span>
+<h3><a href="kaffeepause.html">KI-Sprachbrücke – Buzzwords auf Deutsch</a></h3>
+<div class="block"><div class="lbl">Ausgangslage</div><p>KI-Fachchinesisch schreckt genau die Menschen ab, die am meisten von KI profitieren würden.</p></div>
+<div class="block"><div class="lbl">Lösung</div><p>Interaktives Glossar mit ~180 Begriffen plus Übersetzer für ganze Buzzword-Sätze – fachlich fundiert, mit Augenzwinkern.</p></div>
+<div class="kpi"><span class="num">~180</span><span class="desc">Begriffe übersetzt · <a href="kaffeepause.html">Ausprobieren →</a></span></div>
+</article>
+
+<article class="card" data-cat="chatbot">
+<span class="tag">Praxisbeispiel · Chatbot</span>
 <h3>Service-Bot für ein Bildungsunternehmen</h3>
 <div class="block"><div class="lbl">Ausgangslage</div><p>Wiederkehrende Elternfragen banden täglich Stunden im Kundenservice-Team.</p></div>
 <div class="block"><div class="lbl">Lösung</div><p>Prozess der häufigsten Anfragen kartiert, Wissensquellen strukturiert, darauf ein KI-Assistent aufgesetzt.</p></div>
@@ -213,7 +231,7 @@ footer{flex-direction:column;text-align:center;}
 </article>
 
 <article class="card" data-cat="automation">
-<span class="tag">Prozessautomatisierung</span>
+<span class="tag">Praxisbeispiel · Prozessautomatisierung</span>
 <h3>Automatisierter Angebots-Workflow</h3>
 <div class="block"><div class="lbl">Ausgangslage</div><p>Angebotsfreigaben liefen manuell per E-Mail, mit Medienbrüchen und Verzögerungen.</p></div>
 <div class="block"><div class="lbl">Lösung</div><p>Soll-Prozess definiert und mit Power Automate als durchgängiger Freigabe-Flow umgesetzt.</p></div>
@@ -221,7 +239,7 @@ footer{flex-direction:column;text-align:center;}
 </article>
 
 <article class="card" data-cat="data">
-<span class="tag">Daten &amp; Dashboards</span>
+<span class="tag">Praxisbeispiel · Daten &amp; Dashboards</span>
 <h3>Vertriebs-Dashboard mit Power BI</h3>
 <div class="block"><div class="lbl">Ausgangslage</div><p>KPIs lagen verstreut in Excel – das Monatsreporting kostete einen ganzen Arbeitstag.</p></div>
 <div class="block"><div class="lbl">Lösung</div><p>KPI-Logik sauber definiert, Datenquellen verknüpft, automatisiertes Live-Dashboard gebaut.</p></div>
@@ -229,7 +247,7 @@ footer{flex-direction:column;text-align:center;}
 </article>
 
 <article class="card" data-cat="copilot">
-<span class="tag">Microsoft 365 Copilot</span>
+<span class="tag">Praxisbeispiel · Microsoft 365 Copilot</span>
 <h3>Copilot-Einführung im Team</h3>
 <div class="block"><div class="lbl">Ausgangslage</div><p>Lizenzen vorhanden, aber kaum genutzt – Unsicherheit statt Mehrwert.</p></div>
 <div class="block"><div class="lbl">Lösung</div><p>Konkrete Use-Cases identifiziert, Prompt-Bibliothek erstellt, Team praxisnah begleitet.</p></div>
@@ -237,7 +255,7 @@ footer{flex-direction:column;text-align:center;}
 </article>
 
 <article class="card" data-cat="governance">
-<span class="tag">KI-Governance · EU AI Act</span>
+<span class="tag">Praxisbeispiel · KI-Governance · EU AI Act</span>
 <h3>AI-Act-Readiness für ein KMU</h3>
 <div class="block"><div class="lbl">Ausgangslage</div><p>Unklarheit über Pflichten aus dem EU AI Act und den Einsatz vorhandener KI-Tools.</p></div>
 <div class="block"><div class="lbl">Lösung</div><p>Tools risikobasiert eingeordnet, Richtlinie erstellt, Team in KI-Kompetenz nach Art. 4 geschult.</p></div>
@@ -271,7 +289,7 @@ footer{flex-direction:column;text-align:center;}
     <text x="1365" y="475" font-family="Outfit,Arial,sans-serif" font-size="180" font-style="italic" font-weight="700" letter-spacing="-4" fill="#00D9C0">to</text>
     <text x="1570" y="475" font-family="Outfit,Arial,sans-serif" font-size="180" font-weight="700" letter-spacing="-4" fill="white">ai</text>
   </svg>
-  <span class="footer-copy">© 2025 Julia Pakravan · bridgetoai.de</span>
+  <span class="footer-copy">© 2026 Julia Pakravan · bridgetoai.de</span>
   <div class="footer-links">
     <a href="https://www.linkedin.com/in/julia-pakravan/" target="_blank" rel="noopener">LinkedIn</a>
     <a href="index.html#checkliste">Checkliste</a>
@@ -283,8 +301,7 @@ footer{flex-direction:column;text-align:center;}
 </footer>
 
 <!-- ElevenLabs Chatbot Widget -->
-<elevenlabs-convai agent-id="agent_5701kssfe108e2z8n5fqv5qn8yh3"></elevenlabs-convai>
-<script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+<script src="/consent.js" data-agent-id="agent_5701kssfe108e2z8n5fqv5qn8yh3" data-chat-label="Chat mit Bridge" defer></script>
 
 <script>
 // ── Mobile-Navigation ──
@@ -315,5 +332,7 @@ cards.forEach(card=>{card.style.display=(f==='all'||card.dataset.cat===f)?'flex'
 const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');});},{threshold:0.12});
 cards.forEach((c,i)=>{c.style.transitionDelay=(i%3*0.08)+'s';io.observe(c);});
 </script>
+<!-- GoatCounter – cookiefreie Reichweitenmessung (siehe Datenschutzerklärung, „Reichweitenmessung“) -->
+<script data-goatcounter="https://bridgetoai.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>
