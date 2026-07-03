@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="preload" href="/fonts/Outfit.woff2" as="font" type="font/woff2" crossorigin/>
+<link rel="preload" href="/fonts/Fraunces.woff2" as="font" type="font/woff2" crossorigin/>
 <title>bridge to ai – KI-Beratung & Bildung</title>
 <meta name="description" content="bridge to ai begleitet kleine Unternehmen und Einzelpersonen bei der KI-Transformation – persönlich, praxisnah, auf Deutsch."/>
 <link rel="icon" type="image/svg+xml" href="brand/icon-tile.svg"/>
@@ -19,9 +21,12 @@
 <meta name="twitter:title" content="bridge to ai – KI-Beratung & Bildung"/>
 <meta name="twitter:description" content="bridge to ai begleitet kleine Unternehmen und Einzelpersonen bei der KI-Transformation – persönlich, praxisnah, auf Deutsch."/>
 <meta name="twitter:image" content="https://bridgetoai.de/brand/og-image.png"/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+/* Lokal gehostete Schriften (DSGVO-konform, keine Google-Fonts-Server) */
+@font-face{font-family:'Outfit';src:url('/fonts/Outfit.woff2') format('woff2');font-weight:100 900;font-style:normal;font-display:swap;}
+@font-face{font-family:'Fraunces';src:url('/fonts/Fraunces.woff2') format('woff2');font-weight:100 900;font-style:normal;font-display:swap;}
+@font-face{font-family:'Fraunces';src:url('/fonts/Fraunces-Italic.woff2') format('woff2');font-weight:100 900;font-style:italic;font-display:swap;}
+</style>
 <style>
 :root{
   --primary:#00D9C0; --secondary:#1B8B9E; --navy:#0A2540;
@@ -213,6 +218,16 @@ section{padding:7rem 5%;position:relative;}
 .svc p{color:rgba(255,255,255,0.46);font-size:.92rem;line-height:1.65;margin-bottom:1.6rem;}
 .svc-price{font-size:.82rem;font-weight:600;color:var(--primary);padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.07);}
 
+/* Handwerker-Banner */
+.hw-banner{display:flex;justify-content:space-between;align-items:center;gap:2rem;flex-wrap:wrap;margin-top:3.2rem;border:1px solid rgba(0,217,192,0.22);border-radius:20px;padding:2rem 2.4rem;background:linear-gradient(120deg,rgba(0,217,192,0.06),rgba(27,139,158,0.02));}
+.hw-eyebrow{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--primary);margin-bottom:.7rem;}
+.hw-banner h3{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:500;margin-bottom:.5rem;letter-spacing:-.01em;}
+.hw-banner p{color:rgba(255,255,255,0.6);font-size:.98rem;line-height:1.65;max-width:520px;}
+.hw-actions{display:flex;flex-direction:column;align-items:flex-start;gap:.8rem;}
+.hw-sub{font-size:.85rem;color:rgba(255,255,255,0.45);text-decoration:none;}
+.hw-sub:hover{color:var(--primary);}
+@media(max-width:760px){.hw-banner{flex-direction:column;align-items:flex-start;padding:1.6rem;}}
+
 /* about */
 #ueber-mich{background:var(--dark);display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;}
 .about-panel{position:relative;background:linear-gradient(160deg,rgba(27,139,158,0.08),rgba(255,255,255,0.02));border:1px solid rgba(255,255,255,0.08);border-radius:24px;padding:3.5rem;overflow:hidden;}
@@ -268,6 +283,14 @@ textarea.inp{resize:vertical;min-height:130px;}
 .cal-divider span{font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,0.4);white-space:nowrap;}
 .cal-wrap{background:var(--navy);border:1px solid rgba(0,217,192,0.15);border-radius:20px;padding:.5rem;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,0.35);}
 .calendly-inline-widget{border-radius:16px;overflow:hidden;}
+.cal-consent{display:flex;flex-direction:column;align-items:center;text-align:center;gap:1.1rem;padding:3rem 1.5rem;}
+.cal-consent p{color:rgba(255,255,255,0.66);font-size:.92rem;max-width:540px;line-height:1.65;font-weight:300;margin:0;}
+.cal-consent p strong{color:#fff;font-weight:600;}
+.cal-consent a{color:var(--primary);text-decoration:none;}
+.cal-consent a:hover{text-decoration:underline;}
+.btn-cal{display:inline-flex;align-items:center;gap:.4rem;background:var(--primary);color:var(--navy);padding:.85rem 1.9rem;border-radius:100px;font-family:inherit;font-size:.95rem;font-weight:700;border:0;cursor:pointer;transition:transform .25s,box-shadow .25s;}
+.btn-cal:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,217,192,0.35);}
+.cal-alt{font-size:.8rem;color:rgba(255,255,255,0.35);}
 
 /* footer */
 footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.05);padding:2.5rem 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
@@ -451,6 +474,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.05);padding
       <h3>1:1 Beratung</h3>
       <p>Strategische KI-Beratung, Unternehmensaudits und monatliche Retainer – direkt und persönlich auf Ihre Situation zugeschnitten.</p>
       <div class="svc-price">Ab 250 EUR · Erstgespräch kostenlos</div>
+      <p style="margin-top:.9rem;"><a href="audit.html" style="color:var(--primary);text-decoration:none;font-weight:600;font-size:.92rem;">→ Zum KI-Quick-Audit (990 €, Bericht in 5 Tagen)</a></p>
     </div>
     <div class="svc reveal">
       <div class="svc-top"><div class="svc-icon">🧠</div><span class="svc-num">02</span></div>
@@ -463,6 +487,19 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.05);padding
       <h3>Online-Kurse</h3>
       <p>Lernen Sie in Ihrem Tempo – vom KI-Starter-Kurs bis zum 8-Wochen-Mastery-Programm mit exklusiver Community.</p>
       <div class="svc-price">Ab 197 EUR · Community 97 EUR/Mo.</div>
+    </div>
+  </div>
+
+  <!-- Handwerker-Banner -->
+  <div class="hw-banner reveal">
+    <div class="hw-text">
+      <span class="hw-eyebrow">🔧 Für Handwerksbetriebe</span>
+      <h3>Tagsüber Baustelle, abends Büro?</h3>
+      <p>Für Handwerker gibt's eine eigene Seite – in Klartext statt Beraterdeutsch: Angebote, Rechnungen und Kundenmails in einem Bruchteil der Zeit.</p>
+    </div>
+    <div class="hw-actions">
+      <a href="handwerk.html" class="btn-cta" style="padding:.85rem 1.8rem;">KI fürs Handwerk →</a>
+      <a href="playbook.html" class="hw-sub">oder direkt zum Playbook (79 €)</a>
     </div>
   </div>
 </section>
@@ -481,7 +518,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.05);padding
   </div>
   <div class="about-panel reveal">
     <div class="about-avatar">JP</div>
-    <span class="cert-pill">✓ AI Manager Zertifizierung · TÜV Rheinland 2026</span>
+    <span class="cert-pill">AI Manager (TÜV Rheinland) · Abschluss Juli 2026</span>
     <p class="about-quote">„KI entmystifizieren und praxisnah anwendbar machen – <span class="hl">für jeden.</span>"</p>
     <div class="tags">
       <span class="tag">KI-Strategie</span><span class="tag">Salesforce</span><span class="tag">LLM-Workflows</span>
@@ -585,10 +622,38 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.05);padding
   <div class="cal-block reveal">
     <div class="cal-divider"><span>Oder direkt einen Termin buchen</span></div>
     <div class="cal-wrap">
-      <!-- Calendly inline widget begin -->
-      <div class="calendly-inline-widget" data-url="https://calendly.com/julia-pakravan/30min?hide_gdpr_banner=1&background_color=ffffff&text_color=0a2540&primary_color=00d9c0" style="min-width:320px;height:700px;"></div>
-      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-      <!-- Calendly inline widget end -->
+      <!-- Calendly lädt erst nach Einwilligung (Zwei-Klick, DSGVO) -->
+      <div class="cal-consent" id="calConsent">
+        <p><strong>Terminbuchung über Calendly</strong><br/>
+        Der Buchungskalender wird von Calendly LLC (USA) bereitgestellt. Erst wenn Sie ihn laden,
+        werden Verbindungsdaten an Calendly übertragen (Art. 6 Abs. 1 lit. a DSGVO, § 25 TDDDG).
+        Mehr in der <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+        <button type="button" class="btn-cal" id="calLoadBtn">Kalender laden →</button>
+        <span class="cal-alt">Oder schreiben Sie direkt an <a href="mailto:julia@bridgetoai.de">julia@bridgetoai.de</a></span>
+      </div>
+      <script>
+      (function(){
+        var KEY='btai-consent-calendly';
+        function load(remember){
+          var box=document.getElementById('calConsent'); if(!box) return;
+          var w=document.createElement('div');
+          w.className='calendly-inline-widget';
+          w.setAttribute('data-url','https://calendly.com/julia-pakravan/30min?hide_gdpr_banner=1&background_color=ffffff&text_color=0a2540&primary_color=00d9c0');
+          w.style.minWidth='320px'; w.style.height='700px';
+          box.replaceWith(w);
+          var s=document.createElement('script');
+          s.src='https://assets.calendly.com/assets/external/widget.js'; s.async=true;
+          document.body.appendChild(s);
+          if(remember){
+            try{localStorage.setItem(KEY,'1')}catch(e){}
+            if(window.goatcounter&&window.goatcounter.count){window.goatcounter.count({path:'calendly-geladen',title:'Calendly geladen',event:true});}
+          }
+        }
+        var btn=document.getElementById('calLoadBtn');
+        if(btn) btn.addEventListener('click',function(){load(true);});
+        try{ if(localStorage.getItem(KEY)==='1') load(false); }catch(e){}
+      })();
+      </script>
     </div>
   </div>
 </section>
@@ -601,10 +666,12 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.05);padding
     <text x="1365" y="475" font-family="Outfit,Arial,sans-serif" font-size="180" font-style="italic" font-weight="700" letter-spacing="-4" fill="#00D9C0">to</text>
     <text x="1570" y="475" font-family="Outfit,Arial,sans-serif" font-size="180" font-weight="700" letter-spacing="-4" fill="white">ai</text>
   </svg>
-  <span class="footer-copy">© 2025 Julia Pakravan · bridgetoai.de</span>
+  <span class="footer-copy">© 2026 Julia Pakravan · bridgetoai.de</span>
   <div class="footer-links">
     <a href="https://www.linkedin.com/in/julia-pakravan/" target="_blank" rel="noopener">LinkedIn</a>
     <a href="handwerk.html">Für Handwerker</a>
+    <a href="audit.html">KI-Quick-Audit</a>
+    <a href="playbook.html">Playbook</a>
     <a href="#checkliste">Checkliste</a>
     <a href="ueber-mich.html">Über mich</a>
     <a href="kaffeepause.html">KI &amp; Kaffeepause</a>
@@ -615,9 +682,8 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.05);padding
   </div>
 </footer>
 
-<!-- ElevenLabs Chatbot Widget -->
-<elevenlabs-convai agent-id="agent_5701kssfe108e2z8n5fqv5qn8yh3"></elevenlabs-convai>
-<script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+<!-- ElevenLabs Chatbot – lädt erst nach Einwilligung (Zwei-Klick-Consent, siehe consent.js) -->
+<script src="/consent.js" data-agent-id="agent_5701kssfe108e2z8n5fqv5qn8yh3" defer></script>
 
 <script>
   // ── Mobile-Navigation ──
@@ -668,6 +734,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.05);padding
         if(res.ok){
           leadForm.style.display='none';
           leadSuccess.classList.add('show');
+          if(window.goatcounter&&window.goatcounter.count){window.goatcounter.count({path:'checkliste-download',title:'Checkliste heruntergeladen',event:true});}
           // Download automatisch anstoßen
           const a=document.createElement('a');
           a.href='downloads/KI-Starter-Checkliste-DSGVO.pdf';
@@ -706,6 +773,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.05);padding
         status.textContent='Vielen Dank für Ihre Nachricht! Ich melde mich innerhalb von 48 Stunden bei Ihnen.';
         status.classList.add('form-status','success','show');
         btn.textContent='Gesendet ✓';
+        if(window.goatcounter&&window.goatcounter.count){window.goatcounter.count({path:'kontakt-gesendet',title:'Kontaktformular gesendet',event:true});}
       }else{
         const data=await res.json().catch(()=>({}));
         const msg=data.errors?data.errors.map(x=>x.message).join(', '):'Etwas ist schiefgelaufen.';
@@ -722,5 +790,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.05);padding
     }
   });
 </script>
+<!-- GoatCounter – cookiefreie Reichweitenmessung (siehe Datenschutzerklärung, „Reichweitenmessung“) -->
+<script data-goatcounter="https://bridgetoai.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>
