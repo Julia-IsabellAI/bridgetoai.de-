@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#0C2340">
-<title>Safe Frames – der sichere Rahmen für Schulfotos | ilumera</title>
-<meta name="description" content="Safe Frames by ilumera – datenschutzkonforme, KI-gestützte Sortierung von Schulfotos für Printprodukte. Einleitung, Team und Überblick zum Projekt.">
+<title>Safe Frames – Projektpräsentation | ilumera</title>
+<meta name="description" content="Safe Frames by ilumera – datenschutzbewusste, KI-gestützte Sortierung von Schulfotos für Printprodukte. Projektpräsentation: Einleitung, Team, Business Case, Recht, Stakeholder, Corporate Design, Lösung, Roadmap.">
 <link rel="icon" href="Logo Safe Frames.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Montserrat:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--petrol:#005F73;--petrol-dark:#004B5C;--navy:#0C2340;--tint:#E5EFF0;--tint2:#F3F8F9;--line:#D6E2E4;--ink:#1E333F;--muted:#5C6E76;--shadow:0 10px 30px rgba(12,35,64,.08);--shadow-lg:0 20px 50px rgba(12,35,64,.14);--radius:18px;}
+:root{--petrol:#005F73;--petrol-dark:#004B5C;--navy:#0C2340;--navy-soft:#15406B;--tint:#E5EFF0;--tint-2:#F3F8F9;--line:#D6E2E4;--ink:#1E333F;--muted:#5C6E76;--white:#fff;--shadow:0 10px 30px rgba(12,35,64,.08);--shadow-lg:0 20px 50px rgba(12,35,64,.14);--radius:18px;}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:#fff;line-height:1.65;-webkit-font-smoothing:antialiased}
@@ -19,114 +19,259 @@ h1,h2,h3,h4{font-family:'Montserrat',sans-serif;color:var(--navy);line-height:1.
 a{color:var(--petrol);text-decoration:none}
 .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
 .eyebrow{font-family:'Poppins';font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:.74rem;color:var(--petrol)}
-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:88px}
-.brand{display:flex;align-items:center}
-.brand img{height:64px;width:auto;display:block}
-.nav-links{display:flex;gap:24px;align-items:center}
-.nav-links a{color:var(--navy);font-weight:500;font-size:.95rem}
+/* Header / Nav */
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:82px;gap:16px}
+.brand{display:flex;align-items:center;flex:0 0 auto}
+.brand img{height:54px;width:auto;display:block}
+.nav-links{display:flex;gap:18px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+.nav-links a{color:var(--navy);font-weight:500;font-size:.9rem;white-space:nowrap}
 .nav-links a:hover{color:var(--petrol)}
+.nav-links a .n{color:var(--petrol);font-weight:700;font-family:'Montserrat';margin-right:4px}
 .menu-toggle{display:none;background:none;border:1.5px solid var(--line);border-radius:10px;width:46px;height:42px;font-size:1.3rem;color:var(--navy);cursor:pointer;line-height:1}
-.btn{display:inline-flex;align-items:center;gap:8px;background:var(--petrol);color:#fff;font-family:'Montserrat';font-weight:600;font-size:.95rem;padding:13px 24px;border-radius:999px;transition:.2s;border:none;cursor:pointer}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--petrol);color:#fff;font-family:'Montserrat';font-weight:600;font-size:.95rem;padding:12px 22px;border-radius:999px;transition:.2s;border:none;cursor:pointer}
 .btn:hover{background:var(--petrol-dark);color:#fff;transform:translateY(-1px)}
 .btn.ghost{background:#fff;color:var(--navy);border:1.5px solid var(--line)}
 .btn.ghost:hover{border-color:var(--petrol);color:var(--petrol)}
-.btn.lg{padding:16px 30px;font-size:1.02rem}
+/* Hero */
 .hero{background:linear-gradient(160deg,#F4F9F9 0%,#E5F1F1 100%);position:relative;overflow:hidden}
 .hero::after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border:2px solid rgba(0,95,115,.18);border-radius:30px;transform:rotate(12deg)}
-.hero-inner{padding:84px 0 88px;position:relative;z-index:2;max-width:760px}
+.hero-inner{padding:78px 0 82px;position:relative;z-index:2;max-width:780px}
 .badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);color:var(--navy);font-weight:500;font-size:.82rem;padding:7px 14px;border-radius:999px;margin-bottom:22px}
 .badge .dot{width:8px;height:8px;border-radius:50%;background:var(--petrol)}
-.hero h1{font-size:clamp(2.3rem,5vw,3.4rem);font-weight:700}
+.hero h1{font-size:clamp(2.2rem,5vw,3.3rem);font-weight:700}
 .hero h1 .accent{color:var(--petrol)}
-.hero .lead{font-size:1.18rem;color:var(--muted);margin:20px 0 32px;max-width:620px}
+.hero .lead{font-size:1.16rem;color:var(--muted);margin:20px 0 30px;max-width:640px}
 .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
-section{padding:74px 0}
-.alt{background:var(--tint2)}
-.section-head{max-width:720px;margin-bottom:42px}
-.section-head.center{margin:0 auto 44px;text-align:center}
+/* Sections */
+section{padding:70px 0}
+.section-head{max-width:760px;margin-bottom:40px}
 .section-head h2{font-size:clamp(1.7rem,3.4vw,2.3rem);margin:10px 0 14px}
+.section-head .agenda{font-family:'Montserrat';font-weight:700;color:var(--petrol);font-size:1rem;margin-right:6px}
 .section-head p{color:var(--muted);font-size:1.05rem}
+.alt{background:var(--tint-2)}
+/* Cards / grid */
 .grid{display:grid;gap:22px}
 .g3{grid-template-columns:repeat(3,1fr)}
-.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);transition:.2s}
+.g2{grid-template-columns:repeat(2,1fr)}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow);transition:.2s}
 .card:hover{box-shadow:var(--shadow-lg);transform:translateY(-3px)}
-.card .ic{width:46px;height:46px;border-radius:12px;background:var(--tint);display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:1.4rem}
+.card .ic{width:46px;height:46px;border-radius:12px;background:var(--tint);display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:1.4rem}
 .card h3{font-size:1.12rem;margin-bottom:8px}
 .card p{color:var(--muted);font-size:.96rem}
-.team-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
-.member{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px 22px 24px;box-shadow:var(--shadow);text-align:left;transition:.2s}
-.member:hover{box-shadow:var(--shadow-lg);transform:translateY(-3px)}
-.avatar{position:relative;width:128px;height:128px;margin:0 auto 20px;border-radius:50%;background:var(--tint);display:flex;align-items:center;justify-content:center;overflow:hidden;border:1px solid var(--line)}
-.avatar .mono{font-family:'Poppins';font-weight:700;font-size:2.6rem;color:var(--petrol)}
-.avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.member h3{font-size:1.4rem;margin-bottom:2px}
-.member .age{color:var(--muted);font-size:.9rem;padding-bottom:14px;border-bottom:1px solid var(--line);margin-bottom:14px}
-.member .namediv{border-top:1px solid var(--line);margin:14px 0}
-.role{display:flex;align-items:flex-start;gap:11px}
-.role .ric{flex:0 0 38px;height:38px;width:38px;border-radius:10px;background:var(--tint);display:flex;align-items:center;justify-content:center;font-size:1.1rem}
-.role .rt{font-size:.92rem;color:var(--ink);font-weight:500;padding-top:7px}
-.together{display:flex;gap:24px;align-items:center;background:var(--tint);border:1px solid var(--line);border-radius:22px;padding:34px 38px;margin-top:36px}
-.together .hic{flex:0 0 84px;height:84px;width:84px;border-radius:50%;background:#fff;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:2.2rem}
-.together h3{font-size:1.3rem;margin-bottom:6px}
-.together p{color:var(--muted);font-size:1rem}
-.cta-band{background:linear-gradient(135deg,var(--navy),#13507a);border-radius:24px;padding:54px;text-align:center;color:#fff;box-shadow:var(--shadow-lg)}
-.cta-band h2{color:#fff;font-size:2rem;margin-bottom:12px}
-.cta-band p{color:#D6E6F2;max-width:560px;margin:0 auto 26px;font-size:1.05rem}
-.cta-band .btn{background:#fff;color:var(--navy)}
-.cta-band .btn:hover{background:#EAF3F3}
-.cta-band .btn.ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.5)}
-footer{background:var(--navy);color:#C7D6E2;padding:50px 0 34px;font-size:.9rem}
-footer .brand img{height:52px;filter:brightness(0) invert(1)}
-.foot-grid{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:center}
-footer a{color:#9FE0E0}
-.foot-small{margin-top:30px;padding-top:20px;border-top:1px solid rgba(255,255,255,.14);font-size:.82rem;color:#8FA6B6;line-height:1.6}
-/* Marketing-Claim */
+.check-list{list-style:none;display:grid;gap:12px}
+.check-list li{display:flex;gap:12px;align-items:flex-start;color:var(--ink)}
+.check-list li::before{content:"✓";flex:0 0 24px;height:24px;width:24px;background:var(--petrol);color:#fff;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700;margin-top:2px}
+/* Stat strip (market etc.) */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.stat{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+.stat .num{font-family:'Montserrat';font-weight:700;font-size:2rem;color:var(--petrol);line-height:1}
+.stat .lbl{color:var(--muted);font-size:.9rem;margin-top:8px}
+/* Big stat band (40%) */
+.bigstat{display:flex;gap:26px;align-items:center;background:#fff;border:1px solid var(--line);border-left:5px solid var(--petrol);border-radius:var(--radius);padding:26px 30px;box-shadow:var(--shadow);max-width:820px;margin:40px auto 0}
+.bigstat .big{font-family:'Montserrat';font-weight:700;font-size:clamp(2.4rem,5vw,3rem);color:var(--petrol);line-height:1;flex:0 0 auto}
+.bigstat p{color:var(--muted);font-size:1rem;margin:0}
+/* Claim band */
 .claim{background:linear-gradient(135deg,var(--navy),#13507a);color:#fff}
-.claim .section-head h2{color:#fff}
 .claim .q{font-family:'Poppins';font-weight:600;font-size:clamp(1.35rem,2.8vw,1.95rem);line-height:1.45;max-width:900px;margin:0 auto;text-align:center;color:#fff}
 .claim .q .hl{color:#9FE0E0}
-.claim .meaning{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin:36px auto 0;max-width:640px}
+.claim .meaning{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin:34px auto 0;max-width:680px}
 .claim .meaning div{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:20px}
-.claim .meaning b{display:block;font-family:'Poppins';color:#fff;margin-bottom:5px;font-size:1rem}
+.claim .meaning b{display:block;font-family:'Poppins';color:#fff;margin-bottom:5px}
 .claim .meaning p{color:#D6E6F2;font-size:.92rem;margin:0}
-/* Marktrelevanz-Stat */
-.stat{display:flex;gap:26px;align-items:center;background:#fff;border:1px solid var(--line);border-left:5px solid var(--petrol);border-radius:var(--radius);padding:26px 30px;box-shadow:var(--shadow);max-width:760px;margin:46px auto 0}
-.stat .big{font-family:'Poppins';font-weight:700;font-size:clamp(2.4rem,5vw,3rem);color:var(--petrol);line-height:1;flex:0 0 auto}
-.stat p{color:var(--muted);font-size:1rem;margin:0}
-/* Logo-Story */
-.story-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;align-items:center}
-.story-visual{background:var(--tint);border:1px solid var(--line);border-radius:22px;padding:34px;text-align:center}
-.story-visual img{max-width:230px;width:100%;height:auto}
-.story-visual .tag{display:block;margin-top:18px;font-family:'Poppins';font-weight:600;color:var(--navy);font-size:1.02rem}
-.steps{display:grid;gap:14px}
-.step{display:flex;gap:15px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;box-shadow:var(--shadow)}
-.step .sic{flex:0 0 40px;height:40px;width:40px;border-radius:10px;background:var(--tint);display:flex;align-items:center;justify-content:center;font-size:1.2rem}
-.step h4{font-size:1.02rem;margin-bottom:3px}
-.step p{color:var(--muted);font-size:.93rem;margin:0}
-.incl{background:var(--tint2);border:1px dashed var(--line);border-radius:14px;padding:18px 22px;margin-top:18px;color:var(--muted);font-size:.94rem}
-.incl b{color:var(--navy);font-family:'Poppins'}
-/* Markenarchitektur */
-.arch{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:8px}
-.arch .lvl{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow)}
+/* Team */
+.team-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.member{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px 20px;box-shadow:var(--shadow);text-align:left;transition:.2s}
+.member:hover{box-shadow:var(--shadow-lg);transform:translateY(-3px)}
+.avatar{position:relative;width:96px;height:96px;margin:0 auto 16px;border-radius:50%;background:var(--tint);display:flex;align-items:center;justify-content:center;overflow:hidden;border:1px solid var(--line)}
+.avatar .mono{font-family:'Montserrat';font-weight:700;font-size:2rem;color:var(--petrol)}
+.avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.member h3{font-size:1.2rem;margin-bottom:4px;text-align:center}
+.role{display:flex;align-items:flex-start;gap:10px;justify-content:center;margin-top:8px}
+.role .ric{flex:0 0 34px;height:34px;width:34px;border-radius:9px;background:var(--tint);display:flex;align-items:center;justify-content:center;font-size:1rem}
+.role .rt{font-size:.88rem;color:var(--ink);font-weight:500;padding-top:6px}
+.member .speaker{display:block;text-align:center;margin-top:12px;font-size:.78rem;color:var(--petrol);font-weight:600;font-family:'Montserrat'}
+.together{display:flex;gap:24px;align-items:center;background:var(--tint);border:1px solid var(--line);border-radius:22px;padding:30px 34px;margin-top:32px}
+.together .hic{flex:0 0 76px;height:76px;width:76px;border-radius:50%;background:#fff;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:2rem}
+.together h3{font-size:1.25rem;margin-bottom:6px}
+.together p{color:var(--muted)}
+/* Process phases */
+.phases{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.phase{background:#fff;border:1px solid var(--line);border-top:4px solid var(--petrol);border-radius:12px;padding:18px 16px;text-align:center}
+.phase .code{font-family:'Montserrat';font-weight:700;color:var(--petrol);font-size:1rem}
+.phase .pn{font-size:.9rem;color:var(--muted);margin-top:6px;line-height:1.4}
+.phases.full{grid-template-columns:repeat(7,1fr);gap:10px}
+.phases.full .phase{padding:14px 10px}
+.phases.full .pn{font-size:.78rem}
+.steps{counter-reset:step;display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:24px}
+.step{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.step::before{counter-increment:step;content:counter(step);flex:0 0 34px;height:34px;width:34px;background:var(--navy);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Montserrat';font-weight:600;font-size:.95rem}
+.step span{font-size:.95rem}
+/* Tables */
+.tbl{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.tbl th,.tbl td{text-align:left;padding:14px 18px;border-bottom:1px solid var(--line);font-size:.95rem;vertical-align:top}
+.tbl th{background:var(--navy);color:#fff;font-family:'Montserrat';font-weight:600;font-size:.9rem}
+.tbl tr:last-child td{border-bottom:none}
+.tbl td:first-child{font-weight:600;color:var(--navy)}
+/* MVP columns */
+.mvp{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.mvp .col{border-radius:var(--radius);padding:24px;border:1px solid var(--line)}
+.mvp .yes{background:#EAF5F0;border-color:#Bfe3d2}
+.mvp .no{background:#FBECEC;border-color:#F2CFCF}
+.mvp .open{background:#FDF6E8;border-color:#F0E2BD}
+.mvp h4{margin-bottom:14px;font-size:1.05rem}
+.mvp ul{list-style:none;display:grid;gap:9px;font-size:.92rem}
+.mvp li{padding-left:22px;position:relative}
+.mvp .yes li::before{content:"✓";position:absolute;left:0;color:#1F9D6B;font-weight:700}
+.mvp .no li::before{content:"✕";position:absolute;left:0;color:#C0494A;font-weight:700}
+.mvp .open li::before{content:"✓";position:absolute;left:0;color:#C79A22;font-weight:700}
+/* SWOT */
+.swot{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.swot .q{border-radius:var(--radius);padding:24px;color:#fff}
+.swot .s{background:linear-gradient(135deg,#005F73,#004B5C)}
+.swot .w{background:linear-gradient(135deg,#15406B,#0C2340)}
+.swot .o{background:linear-gradient(135deg,#2A8A9C,#005F73)}
+.swot .t{background:linear-gradient(135deg,#274C66,#1B2F44)}
+.swot h4{color:#fff;margin-bottom:12px;font-size:1.12rem}
+.swot ul{list-style:none;display:grid;gap:9px}
+.swot li{font-size:.92rem;opacity:.95;padding-left:18px;position:relative}
+.swot li::before{content:"›";position:absolute;left:0;font-weight:700}
+/* Corporate Design */
+.arch{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.arch .lvl{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)}
 .arch .lvl .kicker{font-family:'Poppins';font-weight:600;letter-spacing:.1em;text-transform:uppercase;font-size:.72rem;color:var(--petrol)}
-.arch .lvl h3{font-size:1.3rem;margin:8px 0 8px}
+.arch .lvl h3{font-size:1.3rem;margin:8px 0}
 .arch .lvl p{color:var(--muted);font-size:.96rem}
-/* Assistent-Hinweis */
-.assist{display:flex;gap:20px;align-items:flex-start;background:var(--tint2);border:1px solid var(--line);border-left:5px solid var(--petrol);border-radius:var(--radius);padding:26px 30px;box-shadow:var(--shadow)}
-.assist .aic{flex:0 0 48px;height:48px;width:48px;border-radius:12px;background:var(--tint);display:flex;align-items:center;justify-content:center;font-size:1.5rem}
-.assist h3{font-size:1.12rem;margin-bottom:8px}
-.assist ul{margin:0;padding-left:18px;color:var(--muted);font-size:.95rem}
-.assist ul li{margin-bottom:5px}
-@media(max-width:880px){.story-grid{grid-template-columns:1fr}.arch{grid-template-columns:1fr}.claim .meaning{grid-template-columns:1fr}.stat{flex-direction:column;text-align:center}}
-@media(max-width:980px){.team-grid{grid-template-columns:repeat(2,1fr)}}
+.story-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:42px;align-items:center;margin-top:28px}
+.story-visual{background:var(--tint);border:1px solid var(--line);border-radius:22px;padding:12px;text-align:center;overflow:hidden}
+.story-visual img{max-width:100%;width:100%;height:auto;display:block;border-radius:12px}
+.story-visual .tag{display:block;margin-top:16px;font-family:'Poppins';font-weight:600;color:var(--navy);font-size:1rem}
+.lsteps{display:grid;gap:14px}
+.lstep{display:flex;gap:15px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow)}
+.lstep .sic{flex:0 0 40px;height:40px;width:40px;border-radius:10px;background:var(--tint);display:flex;align-items:center;justify-content:center;font-size:1.2rem}
+.lstep h4{font-size:1rem;margin-bottom:3px}
+.lstep p{color:var(--muted);font-size:.92rem;margin:0}
+.swatches{display:flex;gap:16px;flex-wrap:wrap;margin-top:24px}
+.swatch{border:1px solid var(--line);border-radius:14px;overflow:hidden;width:200px;box-shadow:var(--shadow)}
+.swatch .col{height:80px}
+.swatch .meta{padding:12px 14px;font-size:.84rem;color:var(--muted)}
+.swatch .meta b{display:block;color:var(--navy);font-family:'Montserrat';font-size:.92rem}
+.fonts{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:22px}
+.fontcard{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px;box-shadow:var(--shadow)}
+.fontcard .big{font-size:1.6rem;color:var(--navy);margin-bottom:6px}
+.fontcard .lbl{color:var(--muted);font-size:.86rem}
+/* Roadmap / Family */
+.road{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.road .stage{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow)}
+.road .stage .tag{display:inline-block;background:var(--tint);color:var(--petrol);font-weight:600;font-family:'Montserrat';font-size:.78rem;padding:5px 12px;border-radius:999px;margin-bottom:12px}
+.road .stage h3{font-size:1.25rem;margin-bottom:10px}
+.road .stage p{color:var(--muted);font-size:.96rem}
+.family{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:30px}
+.fam{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 16px;text-align:center}
+.fam .pill{font-size:.7rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--petrol);background:var(--tint);border-radius:999px;padding:3px 10px;display:inline-block;margin-bottom:10px}
+.fam.first .pill{background:var(--petrol);color:#fff}
+.fam h4{font-size:1.02rem;margin-bottom:6px}
+.fam p{font-size:.84rem;color:var(--muted)}
+/* Notes / footer */
+.note{background:var(--tint);border-left:4px solid var(--petrol);border-radius:10px;padding:18px 22px;font-size:.92rem;color:var(--navy)}
+footer{background:var(--navy);color:#C7D6E2;padding:46px 0 32px;font-size:.9rem}
+footer .brand img{height:50px;width:auto;filter:brightness(0) invert(1)}
+.foot-grid{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:center}
+footer a{color:#9FE0E0}
+.foot-small{margin-top:28px;padding-top:20px;border-top:1px solid rgba(255,255,255,.14);font-size:.82rem;color:#8FA6B6;line-height:1.6}
+@media(max-width:1080px){.team-grid{grid-template-columns:repeat(3,1fr)}.family{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:980px){.phases.full{grid-template-columns:repeat(4,1fr)}}
 @media(max-width:920px){
-  .nav-links{position:absolute;top:88px;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);flex-direction:column;gap:0;padding:8px 24px 16px;display:none;box-shadow:var(--shadow)}
-  .nav-links.open{display:flex}.nav-links a{padding:12px 0;width:100%}.nav-links a.btn{margin-top:10px;justify-content:center}
   .menu-toggle{display:inline-flex;align-items:center;justify-content:center}
-  .g3{grid-template-columns:1fr}.together{flex-direction:column;text-align:center}.cta-band{padding:38px 24px}
+  .nav-links{position:absolute;top:82px;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);flex-direction:column;gap:0;padding:8px 24px 16px;display:none;box-shadow:var(--shadow);align-items:flex-start}
+  .nav-links.open{display:flex}
+  .nav-links a{padding:12px 0;width:100%}
+  .g3,.g2,.mvp,.road,.story-grid,.arch,.claim .meaning,.fonts{grid-template-columns:1fr}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .phases{grid-template-columns:1fr}.steps{grid-template-columns:1fr}.swot{grid-template-columns:1fr}
+  .bigstat{flex-direction:column;text-align:center}
 }
-@media(max-width:560px){.team-grid{grid-template-columns:1fr}}
+@media(max-width:620px){.team-grid{grid-template-columns:repeat(2,1fr)}.family{grid-template-columns:repeat(2,1fr)}}
+/* Recht (Executive Summary) */
+.rk-cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.rk-num{font-family:'Montserrat';font-weight:700;font-size:1.9rem;line-height:1;display:block;margin-bottom:8px}
+.rk-art{display:inline-block;background:var(--tint);color:var(--petrol);font-family:'Montserrat';font-weight:600;font-size:.72rem;padding:3px 10px;border-radius:999px;white-space:nowrap}
+.rk-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:8px}
+.rk-head h3{font-size:1.08rem}
+.rk-status{display:inline-flex;align-items:center;gap:8px;margin-top:12px;font-weight:600;font-size:.85rem;font-family:'Montserrat'}
+.rk-status .d{width:11px;height:11px;border-radius:50%}
+.rk-banner{display:grid;grid-template-columns:290px 1fr;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow)}
+.rk-banner .l{background:linear-gradient(135deg,#B07C0B,#8f6408);color:#fff;padding:28px;display:flex;align-items:center;justify-content:center;text-align:center;font-family:'Montserrat';font-weight:700;font-size:1.15rem;line-height:1.3}
+.rk-banner .r{background:#FBF3E0;padding:24px 28px;color:var(--ink);font-size:.98rem;display:flex;align-items:center}
+.rk-two{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}
+.rk-box{border-radius:var(--radius);padding:22px}
+.rk-box.no{background:#FBECEC;border:1px solid #F2CFCF}
+.rk-box.yes{background:#EAF5F0;border:1px solid #Bfe3d2}
+.rk-box h4{margin-bottom:12px}
+.rk-box ul{list-style:none;display:grid;gap:9px;font-size:.94rem}
+.rk-box.no li::before{content:"✗  ";color:#C0494A;font-weight:700}
+.rk-box.yes li::before{content:"✓  ";color:#1F9D6B;font-weight:700}
+.rk-note-dark{background:var(--navy);color:#D6E6F2;border-radius:12px;padding:18px 22px;font-size:.92rem}
+.rk-note-dark strong{color:#fff}
+.rk-list{list-style:none;display:grid;gap:16px}
+.rk-list li{display:flex;gap:14px;align-items:flex-start}
+.rk-list li .oc{flex:0 0 34px;height:34px;width:34px;border-radius:50%;background:var(--petrol);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Montserrat';font-weight:700;font-size:.9rem}
+.rk-list li h4{font-size:1.05rem;margin-bottom:2px}
+.rk-list li p{color:var(--muted);font-size:.95rem}
+.rk-laws p.law{font-family:'Montserrat';font-weight:700;color:var(--petrol);margin:16px 0 2px}
+.rk-laws p.law.first{margin-top:0}
+.rk-laws p.desc{color:var(--muted);font-size:.94rem}
+@media(max-width:920px){.rk-cards3,.rk-two{grid-template-columns:1fr}.rk-banner{grid-template-columns:1fr}}
+/* Stakeholder-Matrix (Einfluss × Betroffenheit) */
+.sf-matrix{display:grid;grid-template-columns:56px 1fr;grid-template-rows:auto 1fr;gap:14px;margin-top:8px}
+.sf-x{grid-column:2;grid-row:1;display:flex;align-items:center;gap:12px}
+.sf-x .end{font-size:.8rem;color:var(--muted);white-space:nowrap}
+.sf-x .line{flex:1;height:2px;background:var(--line);position:relative}
+.sf-x .lbl{font-family:'Montserrat';font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.09em;font-size:.82rem;white-space:nowrap}
+.sf-x .line.arrow::after{content:"";position:absolute;right:-1px;top:-4px;border-left:9px solid var(--petrol);border-top:5px solid transparent;border-bottom:5px solid transparent}
+.sf-y{grid-column:1;grid-row:2;display:flex;flex-direction:column;align-items:center;gap:12px;padding:2px 0}
+.sf-y .end{font-size:.8rem;color:var(--muted)}
+.sf-y .line{flex:1;width:2px;background:var(--line);position:relative}
+.sf-y .line.arrow::after{content:"";position:absolute;top:-1px;left:-4px;border-bottom:9px solid var(--petrol);border-left:5px solid transparent;border-right:5px solid transparent}
+.sf-y .lbl{writing-mode:vertical-rl;transform:rotate(180deg);font-family:'Montserrat';font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.09em;font-size:.82rem;white-space:nowrap}
+.sf-grid{grid-column:2;grid-row:2;position:relative;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:20px}
+.sf-grid::before{content:"";position:absolute;left:50%;top:4px;bottom:4px;width:2px;background:var(--line);transform:translateX(-50%);z-index:0}
+.sf-grid::after{content:"";position:absolute;top:50%;left:4px;right:4px;height:2px;background:var(--line);transform:translateY(-50%);z-index:0}
+.sf-card{position:relative;z-index:1;background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px;box-shadow:var(--shadow)}
+.sf-card .q{font-size:.68rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.sf-card h4{font-size:1.18rem;margin-bottom:6px;color:var(--navy)}
+.sf-card p{color:var(--muted);font-size:.95rem}
+.sf-legend{display:none}
+.sf-strat-lead{font-family:'Montserrat';font-weight:600;color:var(--navy);font-size:.98rem;margin:30px 0 12px}
+.sf-strat{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.sf-strat .s{display:flex;gap:12px;align-items:flex-start;background:var(--tint-2);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.sf-strat .s .n{flex:0 0 30px;height:30px;width:30px;border-radius:50%;background:var(--petrol);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Montserrat';font-weight:700;font-size:.82rem}
+.sf-strat .s h4{font-size:.98rem;margin-bottom:2px;color:var(--navy)}
+.sf-strat .s p{color:var(--muted);font-size:.9rem}
+/* Scrum-Folie */
+.g4{grid-template-columns:repeat(4,1fr)}
+.sc-tag{font-size:.74rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:6px 0 14px}
+.sc-lead{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+.sc-lead .role{flex:1 1 320px;border-radius:var(--radius);padding:22px 26px;box-shadow:var(--shadow)}
+.sc-lead .role.po{background:var(--navy)}
+.sc-lead .role.sm{background:var(--petrol)}
+.sc-lead .role h3{color:#fff;margin-bottom:2px}
+.sc-lead .role .r{color:#9FE0E0;font-weight:600;font-family:'Montserrat';font-size:.95rem}
+.sc-lead .role .op{color:#D6E6F2;font-size:.88rem;margin-top:6px}
+.sc-box ul{list-style:none;display:grid;gap:6px;font-size:.93rem;color:var(--muted);margin-top:6px}
+.sc-box ul li::before{content:"›  ";color:var(--petrol);font-weight:700}
+.sc-box .muted{color:var(--muted);font-size:.85rem;margin-top:8px}
+@media(max-width:980px){.g4{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.g4{grid-template-columns:1fr}}
+@media(max-width:720px){
+  .sf-matrix{grid-template-columns:1fr;grid-template-rows:auto auto}
+  .sf-x,.sf-y{display:none}
+  .sf-legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:.8rem;color:var(--muted);margin-bottom:2px;grid-column:1;grid-row:1}
+  .sf-legend b{color:var(--navy);font-family:'Montserrat'}
+  .sf-grid{grid-column:1;grid-row:2;grid-template-columns:1fr;grid-template-rows:none;gap:14px}
+  .sf-grid::before,.sf-grid::after{display:none}
+  .sf-strat{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
@@ -135,35 +280,57 @@ footer a{color:#9FE0E0}
   <div class="wrap nav">
     <a class="brand" href="#top"><img src="Logo Safe Frames.png" alt="Safe Frames by ilumera"></a>
     <nav class="nav-links" id="navlinks">
-      <a href="safe-frames-projekt.html#problem">Problem</a>
-      <a href="safe-frames-projekt.html#loesung">Lösung</a>
-      <a href="safe-frames-projekt.html#technologie">Technologie</a>
-      <a href="#team">Team</a>
-      <a href="safe-frames-projekt.html">Projektpräsentation</a>
-      <a class="btn" href="safe-frames-kunden.html">Für Schulen &amp; Eltern →</a>
+      <a href="#einleitung"><span class="n">1</span>Einleitung</a>
+      <a href="#team"><span class="n">2</span>Team</a>
+      <a href="#business-case"><span class="n">3</span>Business Case</a>
+      <a href="#recht"><span class="n">4</span>Recht</a>
+      <a href="#stakeholder"><span class="n">5</span>Stakeholder</a>
+      <a href="#corporate-design"><span class="n">6</span>Corporate Design</a>
+      <a href="#loesung"><span class="n">7</span>Lösung</a>
+      <a href="#scrum"><span class="n">8</span>Scrum</a>
+      <a href="#roadmap"><span class="n">9</span>Roadmap</a>
+      <a href="#kunden"><span class="n">10</span>Kunden</a>
     </nav>
     <button class="menu-toggle" aria-label="Menü öffnen" aria-expanded="false">☰</button>
   </div>
 </header>
 
 <a id="top"></a>
-<section class="hero">
+<!-- HERO -->
+<section class="hero" style="padding-top:0">
   <div class="wrap hero-inner">
-    <span class="badge"><span class="dot"></span> Safe Frames by ilumera · Konzept/MVP · Juni 2026</span>
+    <span class="badge"><span class="dot"></span> Safe Frames by ilumera · Konzept / MVP · Projektpräsentation</span>
     <h1>Der sichere Rahmen für <span class="accent">Schulfotos</span></h1>
-    <p class="lead">Safe Frames macht aus dem unstrukturierten Umgang mit Schülerfotos einen datenschutzbewussten, KI-gestützten und prüfbaren Prozess – speziell für Jahrbücher und schulische Printprodukte. Diese Seite gibt einen Überblick und stellt das Team dahinter vor.</p>
+    <p class="lead">Safe Frames überführt den unstrukturierten, datenschutzrechtlich riskanten Umgang mit Schülerfotos in einen dokumentierten, prüfbaren Arbeitsprozess – speziell für schulische Printprodukte wie Jahrbücher und Abschlusszeitungen.</p>
     <div class="hero-cta">
-      <a class="btn lg" href="safe-frames-projekt.html">Projektpräsentation ansehen →</a>
-      <a class="btn ghost lg" href="safe-frames-kunden.html">Für Schulen &amp; Eltern</a>
+      <a class="btn" href="#einleitung">Präsentation starten ↓</a>
     </div>
+  </div>
+</section>
+
+<!-- 1 EINLEITUNG -->
+<section id="einleitung">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Agenda 1 · Use Case / Ausgangssituation</span>
+      <h2><span class="agenda">1.</span>Einleitung</h2>
+      <p>Safe Frames ist das erste Produkt der Marke <strong>ilumera</strong>, entstanden im Rahmen der TÜV-Weiterbildung „KI-Manager mit Projekt". Stand: Konzept-/MVP-Definition, keine öffentliche Produktfreigabe.</p>
+    </div>
+    <div class="grid g3">
+      <div class="card"><div class="ic">🛡️</div><h3>Datenschutzbewusst</h3><p>Prozessbasierte Ordnerstruktur, Vier-Augen-Prinzip und klares Löschkonzept – bewusst mit Biometrie für gute Ergebnisse im Bilderabgleich.</p></div>
+      <div class="card"><div class="ic">🤖</div><h3>KI-gestützt</h3><p>KI sortiert große Bildmengen nach Qualität, Dubletten und Kontext vor und gleicht den Einwilligungsstand ab – der Mensch entscheidet final, welches Bild er nimmt.</p></div>
+      <div class="card"><div class="ic">🖨️</div><h3>Druckfertig</h3><p>Nur geprüfte Bilder gelangen ins Druckpaket. Weniger Aufwand, weniger Fehldrucke, mehr Vertrauen bei Eltern und Schule.</p></div>
+    </div>
+    <figure style="max-width:520px;margin:48px auto 0;text-align:center">
+      <img src="safe-frames-ki-workflow.png" alt="Workflow: von 1.000 Fotos über KI-Qualitätsprüfung und Freigabestatus-Abgleich zur menschlichen Prüfung bis zur Druckfreigabe" style="width:100%;height:auto;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow)">
+      <figcaption style="color:var(--muted);font-size:.86rem;margin-top:12px">Vom Foto zur Druckfreigabe – KI assistiert, der Mensch entscheidet.</figcaption>
+    </figure>
   </div>
 </section>
 
 <section class="claim">
   <div class="wrap">
-    <div class="section-head center">
-      <span class="eyebrow" style="color:#9FE0E0">Unser Leitgedanke</span>
-    </div>
+    <div class="section-head" style="text-align:center;margin:0 auto 30px"><span class="eyebrow" style="color:#9FE0E0">Unser Leitgedanke</span></div>
     <p class="q">„Safe Frames schafft den <span class="hl">sicheren Rahmen</span> für <span class="hl">Erinnerungen</span>."</p>
     <div class="meaning">
       <div><b>Rahmen</b><p>Rechtssicherheit und Struktur für einen prüfbaren, dokumentierten Prozess.</p></div>
@@ -172,151 +339,477 @@ footer a{color:#9FE0E0}
   </div>
 </section>
 
-<section>
-  <div class="wrap">
-    <div class="section-head center">
-      <span class="eyebrow">Worum es geht</span>
-      <h2>In drei Sätzen</h2>
-    </div>
-    <div class="grid g3">
-      <div class="card"><div class="ic">🛡️</div><h3>Datenschutzbewusst</h3><p>Prozessbasierte Ordnerstruktur, Vier-Augen-Prinzip und klares Löschkonzept – bewusst ohne Biometrie, risikoarm unter DSGVO &amp; EU AI Act.</p></div>
-      <div class="card"><div class="ic">🤖</div><h3>KI-gestützt</h3><p>KI sortiert große Bildmengen nach Qualität, Dubletten und Kontext vor und gleicht den Einwilligungsstand ab – der Mensch entscheidet.</p></div>
-      <div class="card"><div class="ic">🖨️</div><h3>Druckfertig</h3><p>Nur geprüfte Bilder gelangen ins Druckpaket. Weniger Aufwand, weniger Fehldrucke, mehr Vertrauen bei Eltern und Schule.</p></div>
-    </div>
-    <figure style="max-width:520px;margin:52px auto 0;text-align:center">
-      <img src="safe-frames-ki-workflow.png" alt="Workflow: von 1.000 Fotos über KI-Qualitätsprüfung, Dubletten- und Freigabestatus-Abgleich zur menschlichen Prüfung bis zur Druckfreigabe" style="width:100%;height:auto;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow)">
-      <figcaption style="color:var(--muted);font-size:.86rem;margin-top:12px">Vom Foto zur Druckfreigabe – KI assistiert, der Mensch entscheidet.</figcaption>
-    </figure>
-    <div class="stat">
-      <span class="big">~40 %</span>
-      <p>der Schulen verzichten aus Unsicherheit rund um die DSGVO inzwischen ganz auf Klassenfotos – wertvolle Erinnerungen gehen verloren, obwohl der Wunsch danach unverändert besteht. Genau hier setzt Safe Frames an.</p>
-    </div>
-  </div>
-</section>
-
+<!-- 2 TEAM -->
 <section id="team" class="alt">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Unser Team</span>
-      <h2>Das Team hinter Safe Frames</h2>
-      <p>Fünf Menschen, ein Ziel: Schulfotografie verantwortungsvoll, digital und sicher zu gestalten – mit technischer Kompetenz, rechtlichem Know-how und echter Praxiserfahrung.</p>
+      <span class="eyebrow">Agenda 2 · Projekt-Team</span>
+      <h2><span class="agenda">2.</span>Das Team hinter Safe Frames</h2>
+      <p>Fünf Menschen, ein Ziel: Schulfotografie verantwortungsvoll, digital und sicher zu gestalten – mit technischer Kompetenz, rechtlichem Know-how und Praxiserfahrung. In der Präsentation übernimmt jede:r einen eigenen Redepart.</p>
     </div>
     <div class="team-grid">
       <div class="member">
         <div class="avatar"><span class="mono">N</span><img src="team/nina.jpg" alt="Nina" onerror="this.remove()"></div>
-        <h3>Nina</h3><div class="namediv"></div>
+        <h3>Nina</h3>
         <div class="role"><span class="ric">🗂️</span><span class="rt">Konzept &amp; Struktur</span></div>
+        <span class="speaker">Redepart: KI Setup / Lösung</span>
       </div>
       <div class="member">
         <div class="avatar"><span class="mono">K</span><img src="team/karolina.jpg" alt="Karolina" onerror="this.remove()"></div>
-        <h3>Karolina</h3><div class="namediv"></div>
+        <h3>Karolina</h3>
         <div class="role"><span class="ric">🔍</span><span class="rt">Recherche</span></div>
+        <span class="speaker">Redepart: Umsetzung / Roadmap</span>
       </div>
       <div class="member">
         <div class="avatar"><span class="mono">J</span><img src="team/julia.jpg" alt="Julia" onerror="this.remove()"></div>
-        <h3>Julia</h3><div class="namediv"></div>
+        <h3>Julia</h3>
         <div class="role"><span class="ric">📖</span><span class="rt">Produkt &amp; Inhalte</span></div>
+        <span class="speaker">Redepart: Einleitung / Business Case</span>
       </div>
       <div class="member">
         <div class="avatar"><span class="mono">A</span><img src="team/arne.jpg" alt="Arne" onerror="this.remove()"></div>
-        <h3>Arne</h3><div class="namediv"></div>
+        <h3>Arne</h3>
         <div class="role"><span class="ric">⚖️</span><span class="rt">Recht &amp; Prüfung</span></div>
+        <span class="speaker">Redepart: Herausforderungen / Recht</span>
       </div>
       <div class="member">
         <div class="avatar"><span class="mono">C</span><img src="team/claus.jpg" alt="Claus" onerror="this.remove()"></div>
-        <h3>Claus</h3><div class="namediv"></div>
-        <div class="role"><span class="ric">💬</span><span class="rt">Kommunikation &amp; Produktbeschreibung</span></div>
+        <h3>Claus</h3>
+        <div class="role"><span class="ric">💬</span><span class="rt">Kommunikation</span></div>
+        <span class="speaker">Redepart: Stakeholder / Corporate Design</span>
       </div>
     </div>
     <div class="together">
       <div class="hic">🤝</div>
       <div>
         <h3>Gemeinsam für mehr Vertrauen in Schulfotos</h3>
-        <p>Gemeinsam entwickeln wir Safe Frames als verantwortungsvolle Lösung für den sensiblen Umgang mit Schulfotos.</p>
+        <p>Wir entwickeln Safe Frames als verantwortungsvolle Lösung für den sensiblen Umgang mit Schulfotos.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section>
+<!-- 3 BUSINESS CASE -->
+<section id="business-case">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Marke &amp; Idee</span>
-      <h2>Ein Produkt mit System</h2>
-      <p>Safe Frames ist die erste Anwendung der Dachmarke ilumera – bewusst modular angelegt, damit weitere Lösungen ohne Rebranding folgen können.</p>
+      <span class="eyebrow">Agenda 3 · Use Case &amp; Business Case</span>
+      <h2><span class="agenda">3.</span>Business Case</h2>
+      <p>Schülerfotos sind personenbezogene Daten im Sinne der DSGVO. In der Praxis werden sie häufig unstrukturiert verarbeitet – über Messenger-Gruppen, private Geräte und unkontrollierte Cloud-Dienste. Einwilligungen, Freigabestände und Löschfristen bleiben oft undokumentiert.</p>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="num">~40 %</div><div class="lbl">der Schulen verzichten laut Branchenleitfaden teils ganz auf Klassenfotos – aus Sorge vor Rechtsverletzungen.</div></div>
+      <div class="stat"><div class="num">3 Ordner</div><div class="lbl">schlanke Ablagestruktur im MVP statt unkontrollierter Parallelablage.</div></div>
+      <div class="stat"><div class="num">4-Augen</div><div class="lbl">Prinzip als verpflichtende Kontrolle vor jeder Druckfreigabe.</div></div>
+      <div class="stat"><div class="num">2–3</div><div class="lbl">Pilotschulen für den ersten begrenzten Echteinsatz geplant.</div></div>
+    </div>
+    <div class="grid g3" style="margin-top:32px">
+      <div class="card"><div class="ic">⚠️</div><h3>Unkontrollierte Wege</h3><p>Fotos landen auf privaten Geräten, in Messenger-Gruppen oder unkontrollierten Clouds – ohne klaren Sortier- und Prüfprozess.</p></div>
+      <div class="card"><div class="ic">📄</div><h3>Fehlende Dokumentation</h3><p>Einwilligungen müssen individuell geprüft werden; Freigabestände und Löschfristen werden selten systematisch festgehalten.</p></div>
+      <div class="card"><div class="ic">🖨️</div><h3>Druck ist endgültig</h3><p>Printprodukte lassen sich nicht zurückholen – ein Fehler bei der Freigabe wirkt dauerhaft und erzeugt Haftungs- und Reputationsrisiko.</p></div>
+    </div>
+
+    <h3 style="font-size:1.3rem;margin:48px 0 16px">Markt &amp; Wettbewerb – eine klar umrissene Lücke</h3>
+    <div class="grid g2" style="align-items:start">
+      <table class="tbl">
+        <tr><th>Ebene</th><th>Beschreibung</th><th>Größe</th></tr>
+        <tr><td>TAM</td><td>Alle Schulen in Deutschland (~40.000), ~11,5 Mio. Schüler:innen.</td><td>≈ 40.000</td></tr>
+        <tr><td>SAM</td><td>Schulen mit regelmäßigen Print-/Jahrbuchprojekten &amp; Datenschutz-Sensibilität.</td><td>≈ 12–18 Tsd.</td></tr>
+        <tr><td>SOM</td><td>In 3 Jahren über Direktansprache &amp; Partnerkanäle erreichbar.</td><td>≈ 300–1.500</td></tr>
+      </table>
+      <table class="tbl">
+        <tr><th>Anbietertyp</th><th>Lücke gegenüber Safe Frames</th></tr>
+        <tr><td>Schulfotografie</td><td>Kein schulinterner Sortier-/Freigabeprozess für Print</td></tr>
+        <tr><td>DSGVO-Fotoplattformen</td><td>Primär Elternkommunikation, nicht Druckproduktion</td></tr>
+        <tr><td>Fotografen-Plattformen</td><td>Nicht auf schulische Eigenproduktion ausgerichtet</td></tr>
+        <tr><td>Fotoverwaltung</td><td>Datenschutz-Sortierung für Minderjährige kaum abgebildet</td></tr>
+      </table>
+    </div>
+
+    <h3 style="font-size:1.3rem;margin:48px 0 16px">Geschäfts- &amp; Erlösmodell</h3>
+    <div class="grid g2" style="align-items:start">
+      <table class="tbl">
+        <tr><th>Erlösmodell</th><th>Annahme (Modell)</th></tr>
+        <tr><td>Prozess-/Schullizenz pro Jahr</td><td>290–890 €/Jahr</td></tr>
+        <tr><td>Projekt- / Jahrbuchpaket</td><td>150–400 €/Projekt</td></tr>
+        <tr><td>B2B2C-Partnerlizenz</td><td>Volumen-/Umsatzanteil</td></tr>
+        <tr><td>Setup &amp; Beratung (einmalig)</td><td>500–2.000 €</td></tr>
+      </table>
+      <table class="tbl">
+        <tr><th>Szenario (Jahr 3)</th><th>Kundenbasis</th><th>Jahresumsatz</th></tr>
+        <tr><td>Konservativ</td><td>150 Schulen</td><td>≈ 60.000 €</td></tr>
+        <tr><td>Basis</td><td>600 Schulen</td><td>≈ 270.000 €</td></tr>
+        <tr><td>Optimistisch</td><td>1.500 + Partner</td><td>≈ 850.000 €+</td></tr>
+      </table>
+    </div>
+    <div class="note" style="margin-top:24px">Alle Beträge sind illustrative Modellannahmen – keine kalkulierten oder testierten Preise. Marktdimensionierung auf Basis der amtlichen Schulstatistik (Statistisches Bundesamt).</div>
+
+    <h3 style="font-size:1.3rem;margin:48px 0 16px">SWOT-Analyse</h3>
+    <div class="swot">
+      <div class="q s"><h4>Stärken</h4><ul>
+        <li>Klare Prozess- &amp; Ordnerlogik – sofort einsetzbar, auch ohne Software</li>
+        <li>Bewusste Nutzung von Biometrie und Bewusstsein für die hohe EU-AI-Act-Risikokategorie</li>
+        <li>Adressiert eine konkrete, schwach abgedeckte Marktlücke</li>
+        <li>Skalierbare Markenarchitektur (ilumera)</li>
+      </ul></div>
+      <div class="q w"><h4>Schwächen</h4><ul>
+        <li>Noch kein lauffähiges Produkt – bewusst als Prozesskonzept gestartet</li>
+        <li>Abhängig von schulischer IT-Infrastruktur und -Disziplin</li>
+        <li>Manuelle Prüf-/Sortierprozesse sind arbeitsintensiv</li>
+        <li>Keine Rechtsberatung – schafft Grundlage, nicht Rechtssicherheit</li>
+      </ul></div>
+      <div class="q o"><h4>Chancen</h4><ul>
+        <li>Steigender Datenschutz- und Compliance-Druck → latenter Bedarf</li>
+        <li>EU AI Act ermöglicht die Nutzung von Biometrie</li>
+        <li>B2B2C-Hebel über Fotografen, Druckereien, Jahrbuch-Dienstleister</li>
+        <li>Erweiterung auf Kitas, Vereine, Hochschulen, Veranstalter</li>
+      </ul></div>
+      <div class="q t"><h4>Risiken</h4><ul>
+        <li>Etablierte Plattformen könnten Sortier-/Druckfunktion nachrüsten</li>
+        <li>Lange Beschaffung und knappe Budgets im Bildungssektor</li>
+        <li>Heterogene Vorgaben über 16 Bundesländer</li>
+        <li>Reputationsrisiko bei einem Datenschutzvorfall trotz Safe Frames</li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 RECHT -->
+<section id="recht" class="alt">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Recht · Executive Summary</span>
+      <h2><span class="agenda">4.</span>Vom Risiko zum sicheren Rahmen</h2>
+      <p>Safe Frames macht aus einer rechtlichen Grauzone einen prüfbaren Prozess – durch bewusste Architekturentscheidungen auf einer soliden, ermöglichenden juristischen Basis.</p>
+    </div>
+    <div class="rk-cards3">
+      <div class="card"><span class="rk-num" style="color:#9B2D2D">01</span><h3>Probleme identifiziert</h3><p>Schülerfotos = sensible Daten Minderjähriger. Unstrukturierte Verarbeitung, undokumentierte Einwilligungen, irreversibler Druck.</p></div>
+      <div class="card"><span class="rk-num" style="color:#C79A22">02</span><h3>Rahmen hergestellt</h3><p>Biometrie ohne Profil: Session-only-Abgleich, Vier-Augen-Prinzip, lokale Verarbeitung, klares Löschkonzept – kein dauerhaftes Gesichtsprofil.</p></div>
+      <div class="card"><span class="rk-num" style="color:#1F9D6B">03</span><h3>Projekt wird möglich</h3><p>AI-Act-Risiko ehrlich als hoch eingeordnet und konform getragen. DSGVO durch Session-only ohne Profilbildung beherrscht. Pilotreif.</p></div>
+    </div>
+
+    <h3 style="font-size:1.3rem;margin:52px 0 6px">Herausforderungen – und wie wir sie lösen</h3>
+    <p style="color:var(--muted);margin-bottom:18px">Jede Challenge ist adressiert: kein offenes Risiko, sondern ein gestalteter Prozess.</p>
+    <table class="tbl">
+      <tr><th>⚠ Herausforderung</th><th>✓ Lösung in Safe Frames</th><th>Norm</th></tr>
+      <tr><td>Sensible Daten Minderjähriger<br><span style="font-weight:400;color:var(--muted)">Besonders schutzwürdig (Art. 9 DSGVO)</span></td><td>Biometr. Abgleich nur in der Session (RAM) · kein dauerhaftes Profil · keine Personenzuordnung</td><td><span class="rk-art">Art. 9</span></td></tr>
+      <tr><td>Einwilligung &amp; Rechtsgrundlage<br><span style="font-weight:400;color:var(--muted)">Gültige Basis je Kind erforderlich</span></td><td>Consent-Reconciliation: OCR-Abgleich Formulare ↔ Klassenliste</td><td><span class="rk-art">Art. 6–8</span></td></tr>
+      <tr><td>Zweckbindung &amp; Minimierung<br><span style="font-weight:400;color:var(--muted)">Nur fürs konkrete Printprodukt</span></td><td>Verarbeitung projektgebunden · lokal · Embeddings nach Session verworfen</td><td><span class="rk-art">Art. 5</span></td></tr>
+      <tr><td>Speicherbegrenzung &amp; Löschung<br><span style="font-weight:400;color:var(--muted)">Nicht länger als nötig</span></td><td>Lösch-/Archivierungsprozess mit Fristen · Zeit-Trigger hinterlegbar</td><td><span class="rk-art">Art. 5, 17</span></td></tr>
+      <tr><td>Irreversibler Druck<br><span style="font-weight:400;color:var(--muted)">Fehler im Print sind dauerhaft</span></td><td>Vier-Augen-Prinzip verpflichtend vor jeder Druckfreigabe</td><td><span class="rk-art">TOM</span></td></tr>
+      <tr><td>Nachweis &amp; Rechenschaft<br><span style="font-weight:400;color:var(--muted)">Verarbeitungen dokumentieren</span></td><td>Dokumentierte Freigaben/Ausschlüsse · Grundlage für VVT-Eintrag</td><td><span class="rk-art">Art. 30</span></td></tr>
+    </table>
+
+    <h3 style="font-size:1.3rem;margin:52px 0 6px">DSGVO: Verarbeitung ja – Profilbildung nein</h3>
+    <p style="color:var(--muted);margin-bottom:18px">Der biometrische Abgleich findet statt – aber er hinterlässt kein Profil und keine Zuordnung.</p>
+    <div class="rk-two">
+      <div class="rk-box no"><h4>Was Art. 9 im Kern verbietet</h4><ul>
+        <li>Eindeutige Identifizierung einer Person</li>
+        <li>Dauerhafte Speicherung biometrischer Daten</li>
+        <li>Zuordnung Gesicht ↔ Identität (Profil)</li>
+      </ul></div>
+      <div class="rk-box yes"><h4>Was Safe Frames stattdessen tut</h4><ul>
+        <li>Vergleich nur innerhalb der Session (RAM)</li>
+        <li>Embeddings nach Session verworfen</li>
+        <li>Ergebnis = sortierter Ordner, keine Vektoren</li>
+      </ul></div>
+    </div>
+    <h4 style="margin:28px 0 14px;font-size:1.1rem">Der Verarbeitungsweg – transient, zweckgebunden, profilfrei</h4>
+    <div class="rk-cards3">
+      <div class="card"><h4 style="font-size:1.05rem;margin-bottom:8px">1 · Biometr. Vergleich</h4><p style="color:var(--muted)">Embeddings werden flüchtig im Arbeitsspeicher berechnet – Positivabgleich gegen eingewilligte Referenz.</p></div>
+      <div class="card"><h4 style="font-size:1.05rem;margin-bottom:8px">2 · Mensch bestätigt</h4><p style="color:var(--muted)">Vier-Augen-Prinzip: jede Zuordnung wird gesichtet, bevor ein Bild übernommen wird.</p></div>
+      <div class="card"><h4 style="font-size:1.05rem;margin-bottom:8px">3 · Session endet</h4><p style="color:var(--muted)">Alle biometrischen Vergleichswerte werden verworfen. Kein Profil, keine Identitätszuordnung bleibt.</p></div>
+    </div>
+    <div class="rk-note-dark" style="margin-top:22px"><strong>Rechtsgrundlage:</strong> ausdrückliche Einwilligung (Art. 9 Abs. 2 lit. a). <strong>Schutzwirkung:</strong> keine dauerhafte Speicherung, keine Personenzuordnung – kein biometrisches Profil entsteht.</div>
+
+    <h3 style="font-size:1.3rem;margin:52px 0 6px">EU AI Act: hohes Risiko – bewusst getragen</h3>
+    <p style="color:var(--muted);margin-bottom:18px">Wir beanspruchen kein geringes Risiko – wir ordnen ehrlich ein und erfüllen die Pflichten.</p>
+    <div class="rk-banner">
+      <div class="l">Anhang III<br>Hohes Risiko</div>
+      <div class="r">Biometrischer Identifizierungsabgleich fällt unter Anhang III – auch ohne Namenszuordnung, auch lokal, auch als reiner Positivabgleich. Wir ordnen das System daher klar als hochriskant ein und erfüllen die zugehörigen Pflichten.</div>
+    </div>
+    <h4 style="margin:28px 0 14px;font-size:1.1rem">Pflichten bei hohem Risiko – und unser Umgang damit</h4>
+    <div class="rk-cards3">
+      <div class="card"><div class="rk-head"><h3>Risikomanagement</h3><span class="rk-art">Art. 9</span></div><p style="color:var(--muted)">Dokumentiertes System je Projektsaison – Risiken benannt und gemindert.</p><span class="rk-status" style="color:#1F9D6B"><span class="d" style="background:#1F9D6B"></span>Erfüllt</span></div>
+      <div class="card"><div class="rk-head"><h3>Technische Doku</h3><span class="rk-art">Art. 11</span></div><p style="color:var(--muted)">DigiKam-Version, Modell, Genauigkeit, Grenzen schriftlich festgehalten.</p><span class="rk-status" style="color:#C79A22"><span class="d" style="background:#C79A22"></span>In Arbeit</span></div>
+      <div class="card"><div class="rk-head"><h3>Menschliche Aufsicht</h3><span class="rk-art">Art. 14</span></div><p style="color:var(--muted)">Vier-Augen-Prinzip – KI assistiert, der Mensch entscheidet jede Freigabe.</p><span class="rk-status" style="color:#1F9D6B"><span class="d" style="background:#1F9D6B"></span>Erfüllt</span></div>
+      <div class="card"><div class="rk-head"><h3>Transparenz</h3><span class="rk-art">Art. 50</span></div><p style="color:var(--muted)">Eltern &amp; Schule wissen, dass KI eingesetzt wird – Infoblatt deckt es ab.</p><span class="rk-status" style="color:#1F9D6B"><span class="d" style="background:#1F9D6B"></span>Erfüllt</span></div>
+      <div class="card"><div class="rk-head"><h3>Genauigkeit</h3><span class="rk-art">Art. 15</span></div><p style="color:var(--muted)">Niedriger Confidence-Schwellenwert dokumentiert.</p><span class="rk-status" style="color:#C79A22"><span class="d" style="background:#C79A22"></span>In Arbeit</span></div>
+      <div class="card"><div class="rk-head"><h3>EU-Registrierung</h3><span class="rk-art">Art. 49</span></div><p style="color:var(--muted)">Eintrag in EU-Datenbank vor Produktivbetrieb – Frist August 2026.</p><span class="rk-status" style="color:#005F73"><span class="d" style="background:#005F73"></span>Geplant</span></div>
+    </div>
+    <div class="rk-note-dark" style="margin-top:22px">Die ehrliche Einordnung eines Juristen, nicht das Kleinreden eines Marketers: hohes Risiko korrekt benannt, Pflichten aktiv erfüllt.</div>
+
+    <h3 style="font-size:1.3rem;margin:52px 0 16px">Recht als Enabler, nicht als Hürde</h3>
+    <ul class="rk-list">
+      <li><span class="oc">1</span><div><h4>Problem präzise erfasst</h4><p>Sensible Kinderdaten, unstrukturierte Prozesse, irreversibler Druck – alle Risiken benannt.</p></div></li>
+      <li><span class="oc">2</span><div><h4>Rahmen technisch-organisatorisch gebaut</h4><p>DSGVO-Grundsätze in Prozess übersetzt: Consent-Reconciliation, Vier-Augen, Löschkonzept.</p></div></li>
+      <li><span class="oc">3</span><div><h4>AI-Act-Risiko ehrlich eingeordnet</h4><p>Hohes Risiko nach Anhang III korrekt benannt und konform getragen – keine Schönfärberei.</p></div></li>
+      <li><span class="oc">4</span><div><h4>DSGVO-Kern beherrscht</h4><p>Biometrischer Abgleich nur in der Session – keine dauerhafte Speicherung, keine Personenzuordnung, kein Profil.</p></div></li>
+    </ul>
+    <p style="text-align:center;font-family:'Poppins';font-weight:600;font-size:1.2rem;color:var(--navy);margin-top:26px">„Safe Frames schafft den sicheren Rahmen für Erinnerungen."</p>
+
+    <h3 style="font-size:1.3rem;margin:52px 0 6px">Verankerung in Sachsen – Pilot in Leipzig</h3>
+    <p style="color:var(--muted);margin-bottom:18px">Jede Prüfung endet beim Landesrecht: Welche Normen &amp; Gremien das Projekt tragen müssen.</p>
+    <div class="rk-two">
+      <div class="card rk-laws">
+        <h4 style="margin-bottom:6px">Was das Projekt ermöglicht</h4>
+        <p class="law first">§ 63a SächsSchulG</p><p class="desc">Datenschutz-Sonderregelungen für Schulen – Ermächtigungsgrundlage des Kultusministeriums.</p>
+        <p class="law">VwV Schuldatenschutz</p><p class="desc">Maßgebliche Verwaltungsvorschrift (Stand 12/2025) inkl. verpflichtendem Einwilligungsmuster (Anlage 2).</p>
+        <p class="law">§ 43 SächsSchulG</p><p class="desc">Schulkonferenz als Gremium – kann den Rahmen für Foto-/KI-Einsatz beschließen und legitimieren.</p>
+        <p class="law">§ 23 + § 22 KUG</p><p class="desc">Veranstaltungs-/Festfotos mit Beiwerk → § 23 (ohne Einwilligung). Erkennbares Kind als Motiv → § 22 (Einwilligung).</p>
+      </div>
+      <div class="card">
+        <h4 style="margin-bottom:14px">Was Safe Frames einhalten muss</h4>
+        <ul class="rk-list">
+          <li><span class="oc">1</span><div><p style="color:var(--ink)">Einwilligung nach VwV-Muster (Anlage 2) für erkennbare Einzelabbildungen</p></div></li>
+          <li><span class="oc">2</span><div><p style="color:var(--ink)">Beiwerk (§ 23) vs. Motiv (§ 22) je Bild bewerten – menschliche Wertung</p></div></li>
+          <li><span class="oc">3</span><div><p style="color:var(--ink)">Schulkonferenz-Beschluss zum KI-/Foto-Einsatz herbeiführen (§ 43)</p></div></li>
+          <li><span class="oc">4</span><div><p style="color:var(--ink)">Schulischen Datenschutzbeauftragten einbinden – VVT-Eintrag (Art. 30)</p></div></li>
+          <li><span class="oc">5</span><div><p style="color:var(--ink)">Löschung nach Aufbewahrungsfrist – VwV Aufbewahrung schulischer Unterlagen</p></div></li>
+          <li><span class="oc">6</span><div><p style="color:var(--ink)">Schulleitung verantwortlich – Pilot über Schulträger Stadt Leipzig</p></div></li>
+        </ul>
+      </div>
+    </div>
+    <div class="rk-note-dark" style="margin-top:22px">16 Bundesländer = 16 Regelwerke. Der Pilot ist auf Sachsen zugeschnitten – die Methodik ist auf jedes Landesrecht übertragbar (Skalierungspfad des Geschäftsmodells).</div>
+    <div class="note" style="margin-top:22px">Safe Frames by ilumera · Konzept / MVP · <strong>Keine Rechtsberatung.</strong></div>
+  </div>
+</section>
+
+<!-- 5 STAKEHOLDER -->
+<section id="stakeholder">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Agenda 5 · Stakeholderanalyse</span>
+      <h2><span class="agenda">5.</span>Stakeholderanalyse</h2>
+    </div>
+
+    <h3 style="font-size:1.3rem;margin-bottom:6px">Stakeholder im Überblick</h3>
+    <p style="color:var(--muted);margin-bottom:18px">Interesse, Einfluss, Betroffenheit und Umgang je Gruppe.</p>
+    <table class="tbl">
+      <tr><th>Stakeholder</th><th>Interesse / Erwartung</th><th>Einfluss</th><th>Betroffenheit</th><th>Umgang</th></tr>
+      <tr><td>Kinder</td><td>Schutz, Privatsphäre, keine ungewollte Veröffentlichung</td><td>niedrig</td><td>sehr hoch</td><td>Besonders schützen, nicht belasten</td></tr>
+      <tr><td>Eltern</td><td>Kontrolle, Transparenz, Vertrauen</td><td>hoch</td><td>sehr hoch</td><td>Infos, Einwilligung, FAQ</td></tr>
+      <tr><td>Lehrkräfte</td><td>Einfache sichere Nutzung im Alltag</td><td>hoch</td><td>hoch</td><td>Schulung, Checklisten, klare Regeln</td></tr>
+      <tr><td>Leitung</td><td>Rechtssicherheit, Prozesssicherheit</td><td>sehr hoch</td><td>hoch</td><td>Briefing, Verantwortlichkeiten</td></tr>
+      <tr><td>Datenschutz</td><td>DSGVO, Löschung, Nachweisbarkeit</td><td>sehr hoch</td><td>hoch</td><td>Früh einbinden, dokumentieren</td></tr>
+      <tr><td>Verwaltung</td><td>Ablage, Zugriff, Organisation</td><td>mittel</td><td>hoch</td><td>Ordnerstruktur, Leitfaden</td></tr>
+      <tr><td>Dienstleister</td><td>Übergabe, Rechte, Anforderungen</td><td>mittel</td><td>mittel</td><td>Schnittstellen, Verträge, AVV-Klärung</td></tr>
+    </table>
+    <div class="note" style="margin-top:18px">Safe Frames schützt nicht nur Bilder, sondern Vertrauen.</div>
+
+    <h3 style="font-size:1.3rem;margin:48px 0 6px">Stakeholder-Matrix: Einfluss × Betroffenheit</h3>
+    <p style="color:var(--muted);margin-bottom:20px">Die Matrix ordnet Stakeholder danach, wie stark sie betroffen sind und wie viel Einfluss sie auf Akzeptanz, Umsetzung und Sicherheit haben.</p>
+    <div class="sf-matrix">
+      <div class="sf-legend"><span><b>Waagerecht:</b> Einfluss (links niedrig → rechts hoch)</span><span><b>Senkrecht:</b> Betroffenheit (unten niedrig → oben hoch)</span></div>
+      <div class="sf-x">
+        <span class="end">niedrig</span>
+        <span class="line"></span>
+        <span class="lbl">Einfluss</span>
+        <span class="line arrow"></span>
+        <span class="end">hoch</span>
+      </div>
+      <div class="sf-y">
+        <span class="end">hoch</span>
+        <span class="line arrow"></span>
+        <span class="lbl">Betroffenheit</span>
+        <span class="line"></span>
+        <span class="end">niedrig</span>
+      </div>
+      <div class="sf-grid">
+        <article class="sf-card"><div class="q">Hohe Betroffenheit · niedriger Einfluss</div><h4>Besonders schützen</h4><p>Kinder / Schüler:innen</p></article>
+        <article class="sf-card"><div class="q">Hohe Betroffenheit · hoher Einfluss</div><h4>Eng einbinden</h4><p>Eltern · Lehrkräfte · Leitung · Datenschutz</p></article>
+        <article class="sf-card"><div class="q">Niedrigere Betroffenheit · niedriger Einfluss</div><h4>Beobachten</h4><p>Öffentlichkeit · Social Media Umfeld</p></article>
+        <article class="sf-card"><div class="q">Niedrigere Betroffenheit · hoher Einfluss</div><h4>Gezielt informieren</h4><p>Pilotkunden · externe Beratung · Datenschutz-Aufsicht</p></article>
+      </div>
+    </div>
+    <p class="sf-strat-lead">Daraus abgeleitete Strategien</p>
+    <div class="sf-strat">
+      <div class="s"><span class="n">1</span><div><h4>Eng einbinden</h4><p>Anforderungen aktiv aufnehmen.</p></div></div>
+      <div class="s"><span class="n">2</span><div><h4>Schützen</h4><p>Interessen berücksichtigen, ohne Kinder zu belasten.</p></div></div>
+      <div class="s"><span class="n">3</span><div><h4>Dokumentieren</h4><p>Datenschutz und MVP-Grenzen sauber erklären.</p></div></div>
+    </div>
+
+    <h3 style="font-size:1.3rem;margin:48px 0 6px">Kommunikationsstrategie</h3>
+    <p style="color:var(--muted);margin-bottom:18px">Jede Zielgruppe braucht die richtige Flughöhe und das passende Format.</p>
+    <table class="tbl">
+      <tr><th>Zielgruppe</th><th>Format</th><th>Inhalt</th></tr>
+      <tr><td>Schulleitung / Kitaleitung</td><td>Kurzpräsentation · Entscheidungsvorlage</td><td>Nutzen, Risiken, Verantwortlichkeiten</td></tr>
+      <tr><td>Lehrkräfte / Erzieher:innen</td><td>Schulung · Checkliste · Beispiele</td><td>Was ist erlaubt? Was ist kritisch?</td></tr>
+      <tr><td>Eltern</td><td>Elterninformation · FAQ · Einwilligung</td><td>Transparenz, Rechte, Verwendungszwecke</td></tr>
+      <tr><td>Datenschutzbeauftragte</td><td>Dokumentation · Prozessbeschreibung</td><td>DSGVO, Löschung, Zugriff, Zweckbindung</td></tr>
+      <tr><td>Ilumera / Projektteam</td><td>Produkt-Roadmap · MVP-Dokumentation</td><td>MVP, Risiken, Nutzenversprechen, Markteintritt</td></tr>
+    </table>
+    <div class="note" style="margin-top:18px">Kommunikationsprinzip: einfach genug für den Alltag, präzise genug für Datenschutz und Leitung.</div>
+  </div>
+</section>
+
+<!-- 6 CORPORATE DESIGN -->
+<section id="corporate-design" class="alt">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Agenda 6 · Corporate Design</span>
+      <h2><span class="agenda">6.</span>Corporate Design &amp; Markenidentität</h2>
+      <p>Safe Frames ist die erste Anwendung der Dachmarke ilumera – modular angelegt, damit weitere Lösungen ohne Rebranding folgen können.</p>
     </div>
     <div class="arch">
-      <div class="lvl">
-        <span class="kicker">Dachmarke</span>
-        <h3>ilumera</h3>
-        <p>Steht für die systematische Vereinfachung komplexer administrativer Prozesse. Die Kernidee: Bürokratie ist nicht das Problem – Intransparenz ist es.</p>
-      </div>
-      <div class="lvl">
-        <span class="kicker">Erstes Produkt</span>
-        <h3>Safe Frames</h3>
-        <p>Die spezialisierte Anwendung für ein klar abgegrenztes Problem im Bildungsbereich: die rechtssichere Organisation und Erstellung von Klassenfotos.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="alt">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">Design-Idee</span>
-      <h2>Die Geschichte hinter dem Logo</h2>
-      <p>Das Logo ist nicht dekorativ, sondern eine visuelle Problemlösung: vom Chaos zur Klarheit – durch Bewegung im System.</p>
+      <div class="lvl"><span class="kicker">Dachmarke</span><h3>ilumera</h3><p>Steht für die systematische Vereinfachung komplexer administrativer Prozesse. Kernidee: Bürokratie ist nicht das Problem – Intransparenz ist es.</p></div>
+      <div class="lvl"><span class="kicker">Erstes Produkt</span><h3>Safe Frames</h3><p>Die spezialisierte Anwendung für ein klar abgegrenztes Problem: die rechtssichere Organisation und Erstellung von Klassenfotos.</p></div>
     </div>
     <div class="story-grid">
       <div class="story-visual">
         <img src="Logo Safe Frames.png" alt="Logo Safe Frames">
-        <span class="tag">Vom Chaos zur Klarheit – durch Bewegung im System.</span>
       </div>
       <div>
-        <div class="steps">
-          <div class="step"><span class="sic">📐</span><div><h4>Der schiefe Rahmen</h4><p>Symbolisiert die Unsicherheit und rechtliche Instabilität im Schulalltag – das Bild für eine ungeklärte Situation.</p></div></div>
-          <div class="step"><span class="sic">🚶</span><div><h4>Die Figur</h4><p>Bewegt sich aktiv durch den Raum und richtet den Rahmen gerade. Sie steht für die Nutzer, die konkrete Handlung und den Fortschritt.</p></div></div>
-          <div class="step"><span class="sic">🖼️</span><div><h4>Der stabile Rahmen</h4><p>Der Endzustand: klar, rechtssicher und strukturiert – als direktes Ergebnis der Nutzung von Safe Frames.</p></div></div>
+        <div class="lsteps">
+          <div class="lstep"><span class="sic">📐</span><div><h4>Der schiefe Rahmen</h4><p>Symbolisiert Unsicherheit und rechtliche Instabilität im Schulalltag.</p></div></div>
+          <div class="lstep"><span class="sic">🚶</span><div><h4>Die Figur</h4><p>Richtet den Rahmen gerade – steht für die Nutzer, die Handlung und den Fortschritt.</p></div></div>
+          <div class="lstep"><span class="sic">🖼️</span><div><h4>Der stabile Rahmen</h4><p>Der Endzustand: klar, rechtssicher und strukturiert – Ergebnis der Nutzung.</p></div></div>
         </div>
-        <div class="incl"><b>Inklusiv durch Weglassen:</b> Die Figur ist bewusst reduziert – ohne Gesichtszüge, neutrale Form, einfache Linien. So ist das Design genderneutral, kulturell offen und bietet allen Kindern eine universelle Identifikationsfläche.</div>
+        <div class="note" style="margin-top:18px"><strong>Inklusiv durch Weglassen:</strong> Die Figur ist bewusst reduziert – ohne Gesichtszüge, neutrale Form. So ist das Design genderneutral und kulturell offen.</div>
       </div>
+    </div>
+    <h3 style="font-size:1.25rem;margin:46px 0 6px">Design-System</h3>
+    <div class="swatches">
+      <div class="swatch"><div class="col" style="background:#0C2340"></div><div class="meta"><b>Dunkelblau</b>HEX #0C2340 · Struktur &amp; Vertrauen</div></div>
+      <div class="swatch"><div class="col" style="background:#005F73"></div><div class="meta"><b>Petrol</b>HEX #005F73 · Innovation &amp; Klarheit</div></div>
+      <div class="swatch"><div class="col" style="background:#fff;border-bottom:1px solid var(--line)"></div><div class="meta"><b>Weiß</b>HEX #FFFFFF · Kontrast &amp; Fokus</div></div>
+    </div>
+    <div class="fonts">
+      <div class="fontcard"><div class="big" style="font-family:'Montserrat'">Montserrat</div><div class="lbl">Safe Frames – Überschriften, robust &amp; klar (SemiBold/Bold)</div></div>
+      <div class="fontcard"><div class="big" style="font-family:'Poppins'">Poppins</div><div class="lbl">ilumera – moderne, freundliche Tech-Anmutung</div></div>
+      <div class="fontcard"><div class="big" style="font-family:'Inter'">Inter</div><div class="lbl">Fließtext – gut lesbar in allen Medien</div></div>
     </div>
   </div>
 </section>
 
-<section>
-  <div class="wrap">
-    <div class="cta-band">
-      <h2>Mehr erfahren</h2>
-      <p>Tauchen Sie tiefer ein – in den vollständigen Business Case oder in die Sicht von Schulleitung und Eltern.</p>
-      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
-        <a class="btn lg" href="safe-frames-projekt.html">Projektpräsentation →</a>
-        <a class="btn ghost lg" href="safe-frames-kunden.html">Für Schulen &amp; Eltern</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="alt">
+<!-- 7 LÖSUNG -->
+<section id="loesung">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">KI-Assistent</span>
-      <h2>Hinweis zum Safe-Frames-Assistenten</h2>
-      <p>Unten rechts hilft Ihnen ein KI-gestützter Assistent bei allgemeinen Fragen zu Safe Frames. Er ist bewusst begrenzt – er informiert, entscheidet aber nicht.</p>
+      <span class="eyebrow">Agenda 7 · Lösungskonzept &amp; KI-Setup</span>
+      <h2><span class="agenda">7.</span>Lösung</h2>
+      <p>Originale werden geschützt, Freigaben sichtbar gemacht, nicht nutzbare Bilder sauber getrennt und Druckpakete kontrolliert vorbereitet – der biometrische Abgleich läuft dabei bewusst nur lokal und sitzungsbasiert, ohne dauerhaftes Profil.</p>
     </div>
-    <div class="assist">
-      <span class="aic">🤖</span>
-      <div>
-        <h3>So nutzen Sie den Assistenten sicher</h3>
-        <ul>
-          <li><strong>Allgemeine Fragen</strong> zu Safe Frames, Ablauf und Pilotbetrieb – gern jederzeit.</li>
-          <li><strong>Keine Namen von Kindern, Fotos oder Klassenlisten</strong> eingeben. Bitte keine personenbezogenen Daten in den Chat schreiben.</li>
-          <li><strong>Keine Rechtsberatung:</strong> Der Assistent ersetzt keine juristische Prüfung und trifft keine Einzelfallbewertung.</li>
-          <li><strong>Kein Upload, keine Foto- oder Gesichtsanalyse</strong> – der Bot verarbeitet keine echten Schülerdaten.</li>
-          <li>Bei konkreten Anliegen <strong>verweist er an einen Menschen</strong> aus dem Projektteam.</li>
-        </ul>
-      </div>
+    <h3 style="font-size:1.25rem;margin-bottom:14px">Drei Ordner im MVP – schlank und nachvollziehbar</h3>
+    <div class="phases">
+      <div class="phase"><div class="code">01</div><div class="pn">Alle Bilder<br><em>Eingang, alle Originale</em></div></div>
+      <div class="phase"><div class="code">02</div><div class="pn">Bearbeitete Bilder<br><em>geprüft &amp; freigegeben</em></div></div>
+      <div class="phase"><div class="code">03</div><div class="pn">Aussortierte Bilder<br><em>nicht nutzbar, als Nachweis</em></div></div>
     </div>
+    <div class="steps">
+      <div class="step"><span>Alle Fotos zentral im Ordner <strong>„Alle Bilder"</strong> sammeln – keine Parallelablage.</span></div>
+      <div class="step"><span>Einwilligung und Verwendungszweck je Bild prüfen.</span></div>
+      <div class="step"><span>Geprüfte/aufbereitete Bilder nach <strong>„Bearbeitete Bilder"</strong> überführen.</span></div>
+      <div class="step"><span>Nicht nutzbare Bilder nach <strong>„Aussortierte Bilder"</strong> (als Nachweis, nicht löschen).</span></div>
+      <div class="step"><span>Druckauswahl nach dem <strong>Vier-Augen-Prinzip</strong> prüfen.</span></div>
+      <div class="step"><span>Nach Projektende archivieren oder löschen – Fristen legt die Schule fest.</span></div>
+    </div>
+
+    <h3 style="font-size:1.25rem;margin:46px 0 16px">KI-Setup – Assistenz statt Identifikation</h3>
+    <div class="note" style="margin-bottom:22px;border-left-color:#0C2340"><strong>USP:</strong> Safe Frames ist eine KI-gestützte Triage- und Freigabe-Pipeline, die Schulfotos durch den Einsatz von digiKam (On-Premise) vollständig lokal verarbeitet. Das System ermöglicht eine automatisierte Vorsortierung sowie einen präzisen biometrischen Abgleich auf dem Edge-Device. Durch den transparenten Vier-Augen-Prozess stellen wir sicher, dass Bilder rechtssicher und datenschutzkonform in das Druckpaket gelangen – ohne Cloud-Risiken.</div>
+    <div class="grid g2">
+      <div class="card"><div class="ic">🔍</div><h3>KI-Qualitätsprüfung</h3><p>Erkennt unscharfe, verwackelte, über-/unterbelichtete Bilder – als Vorschlag, die Entscheidung bleibt beim Menschen.</p></div>
+      <div class="card"><div class="ic">🧩</div><h3>Dubletten-Erkennung</h3><p>Nahezu identische Aufnahmen werden gruppiert – das beste Bild ist schnell gewählt.</p></div>
+      <div class="card"><div class="ic">🧬</div><h3>Biometrischer Abgleich</h3><p>Positivabgleich unter Nutzung von Biometrie – lokal und Session-basiert.</p></div>
+      <div class="card"><div class="ic">📋</div><h3>Consent-Reconciliation</h3><p>OCR der Einwilligungsformulare und Abgleich mit der Klassen-/Projektliste – so gelangen nur eingewilligte Kinder in den biometrischen Positivabgleich.</p></div>
+    </div>
+    <div class="grid g2" style="margin-top:22px">
+      <div class="card"><h3>Make-or-Buy: „Buy &amp; Assemble"</h3><p>Statt Eigenentwicklung kombiniert das MVP bewährte Bausteine: <strong>digiKam on-premise</strong> (Qualität/Dubletten/Tagging), schulische Cloud/NAS als Speicher, optional eine Automatisierungsplattform. On-premise für die Bildverarbeitung (Datenminimierung), Cloud nur für kontrollierten Speicher – EU-Hosting &amp; Verschlüsselung.</p></div>
+      <div class="card"><h3>Benötigte Daten &amp; Voraussetzungen</h3><ul class="check-list" style="margin-top:12px">
+        <li>Rohbilder des Print-/Jahrbuchprojekts</li>
+        <li>Einwilligungsformulare &amp; Klassen-/Projektlisten</li>
+        <li>Schulisch kontrollierter Speicher (Cloud/NAS), EU-Hosting</li>
+        <li>Definierte Zuständigkeiten &amp; Freigeberrollen</li>
+      </ul></div>
+    </div>
+    <div class="note" style="margin-top:22px"><strong>Ausbaustufe:</strong> Für größere Projekte ist eine vollständige, nummerierte 7-Phasen-Struktur vorgesehen – nicht Teil des MVP.</div>
+    <div class="phases full" style="margin-top:16px">
+      <div class="phase"><div class="code">00</div><div class="pn">ALLE Originale</div></div>
+      <div class="phase"><div class="code">10</div><div class="pn">In Prüfung</div></div>
+      <div class="phase"><div class="code">20</div><div class="pn">Freigegeben</div></div>
+      <div class="phase"><div class="code">30</div><div class="pn">Bearbeitet</div></div>
+      <div class="phase"><div class="code">40</div><div class="pn">Aussortiert</div></div>
+      <div class="phase"><div class="code">50</div><div class="pn">Druckpaket</div></div>
+      <div class="phase"><div class="code">90</div><div class="pn">Archiv/Löschung</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 8 SCRUM -->
+<section id="scrum">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Agenda 8 · Teamstruktur &amp; Sprint-Rahmen</span>
+      <h2><span class="agenda">8.</span>Interdisziplinäres Scrum-Team</h2>
+      <p>So arbeiten wir: klare Rollen, kurze Sprints, feste Datenschutz-Checks. <strong>Sprint = 1 Woche.</strong></p>
+    </div>
+    <div class="sc-tag">Scrum Team · 5 Personen</div>
+    <div class="sc-lead">
+      <div class="role po"><h3>Julia</h3><div class="r">Product Ownerin</div><div class="op">operativ: Produkt &amp; Inhalte</div></div>
+      <div class="role sm"><h3>Arne</h3><div class="r">Scrum Master</div><div class="op">operativ: Recht &amp; Prüfung</div></div>
+    </div>
+    <div class="sc-tag">Dev-Team (interdisziplinär, inkl. operative Doppelrollen)</div>
+    <div class="family">
+      <div class="fam"><h4>Julia</h4><p>Produkt &amp; Inhalte<br><em>(auch Product Ownerin)</em></p></div>
+      <div class="fam"><h4>Nina</h4><p>Konzept &amp; Struktur<br><em>Redepart: KI-Setup / Lösung</em></p></div>
+      <div class="fam"><h4>Karolina</h4><p>Recherche<br><em>Redepart: Umsetzung / Roadmap</em></p></div>
+      <div class="fam"><h4>Claus</h4><p>Kommunikation<br><em>Redepart: Stakeholder / CD</em></p></div>
+      <div class="fam"><h4>Arne</h4><p>Recht &amp; Prüfung<br><em>(auch Scrum Master)</em></p></div>
+    </div>
+    <h3 style="font-size:1.25rem;margin:44px 0 16px">Unser Scrum-Rahmen &amp; Projektspezifika</h3>
+    <div class="grid g4">
+      <div class="card sc-box"><div class="ic">⏱️</div><h3>1 Woche</h3><p>Sprintlänge – kurze Feedbackschleifen für schnelle Validierung im Pilotbetrieb (2–3 Schulen).</p></div>
+      <div class="card sc-box"><div class="ic">🔄</div><h3>Scrum-Events</h3><ul><li>Daily Standup (15 Min)</li><li>Sprint Planning</li><li>Sprint Review</li><li>Retrospektive</li></ul></div>
+      <div class="card sc-box"><div class="ic">📦</div><h3>Artefakte</h3><ul><li>Product Backlog</li><li>Sprint Backlog</li><li>Increment</li></ul><p class="muted">(geprüftes Druckpaket / Prozessstand)</p></div>
+      <div class="card sc-box"><div class="ic">🛡️</div><h3>Safe-Frames-Spezifika</h3><ul><li>Vier-Augen-Prinzip als Teil der Definition of Done</li><li>DSGVO-/EU-AI-Act-Checks fest im Backlog verankert</li><li>Sprintziele entlang der Roadmap-Meilensteine</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- 9 ROADMAP -->
+<section id="roadmap" class="alt">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Agenda 9 · Umsetzung: Roadmap &amp; nächste Schritte</span>
+      <h2><span class="agenda">9.</span>Roadmap</h2>
+      <p>Schrittweise und validierungsgetrieben: zuerst der Wertbeweis als Prozesskonzept, dann die optionale Produktisierung.</p>
+    </div>
+    <div class="road">
+      <div class="stage"><span class="tag">Stufe 1 · Pilot</span><h3>Prozesskonzept validieren</h3><p>Begrenzter Pilotbetrieb an 2–3 Schulen als Referenz. Das Prozess-/Organisationskonzept wird im Echteinsatz erprobt – geringe Investition, schnelle Lernkurve.</p></div>
+      <div class="stage"><span class="tag">Stufe 2 · optional</span><h3>Schlanke Produktisierung</h3><p>Nach erbrachtem Wertbeweis: optionale Umsetzung als schlanke Software. Erst wenn der Nutzen belegt ist, wird in Entwicklung investiert.</p></div>
+    </div>
+    <div class="note" style="margin-top:24px;border-left-color:#1F9D6B">✅ <strong>Erste Traction:</strong> Ein erstes Gespräch mit dem Schulleiter haben wir bereits geführt – er steht dem Projekt sehr offen gegenüber. Nach den Ferien folgt ein weiteres Follow-up (FUP).</div>
+    <h3 style="font-size:1.25rem;margin:40px 0 16px">Konkrete Meilensteine &amp; grober Zeitrahmen</h3>
+    <ul class="check-list">
+      <li><strong>Monat 0–1:</strong> 2–3 Pilotschulen gewinnen, Prozesskonzept &amp; Ordnerstruktur finalisieren, DSGVO-Dokumentation (VVT, DSFA-Vorprüfung) erstellen.</li>
+      <li><strong>Monat 1–3:</strong> Pilotbetrieb an einem realen Print-/Jahrbuchprojekt; KI-Vortriage mit digiKam erproben.</li>
+      <li><strong>Monat 4:</strong> Auswertung von Zeitersparnis, Fehlerquote und Akzeptanz; Erfahrungsbericht erstellen.</li>
+      <li><strong>Monat 5–6:</strong> Go-/No-Go zur Produktisierung; bei „Go" Tool-Shortlist &amp; MVP-Konfiguration.</li>
+    </ul>
+    <h3 style="font-size:1.25rem;margin:44px 0 6px">Die ilumera-Produktfamilie</h3>
+    <div class="family">
+      <div class="fam first"><span class="pill">Heute</span><h4>Safe Frames</h4><p>Datenschutzbewusste Sortierung &amp; Druckvorbereitung</p></div>
+      <div class="fam"><span class="pill">Ausbau</span><h4>Safe Share</h4><p>Kontrollierte Weitergabe freigegebener Bilder</p></div>
+      <div class="fam"><span class="pill">Ausbau</span><h4>Safe Print</h4><p>Übergabe geprüfter Druckpakete an Layout/Druck</p></div>
+      <div class="fam"><span class="pill">Ausbau</span><h4>Safe Archive</h4><p>Regelkonforme Archivierung &amp; Löschung</p></div>
+      <div class="fam"><span class="pill">Ausbau</span><h4>Safe Consent</h4><p>Verwaltung &amp; Dokumentation von Einwilligungen</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 9 KUNDEN -->
+<section id="kunden">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Agenda 10 · Kunden</span>
+      <h2><span class="agenda">10.</span>Für Schulen &amp; Eltern</h2>
+      <p>Die Kunden-Landingpage zeigt Safe Frames aus Sicht von Schulleitung und Eltern – verständlich und vertrauensbildend, mit Erklärvideo und persönlichem Assistenten.</p>
+    </div>
+    <div class="grid g2">
+      <div class="card"><div class="ic">🎬</div><h3>Erklärvideo</h3><p>In rund 60 Sekunden erklärt, wie aus unsortierten Fotos ein sicherer, prüfbarer Ablauf wird – verständlich für Schulleitung und Eltern.</p><p style="margin-top:16px"><a class="btn" href="safe-frames-kunden.html#video" target="_blank" rel="noopener">Video ansehen →</a></p></div>
+      <div class="card"><div class="ic">💬</div><h3>Persönlicher Assistent</h3><p>Der KI-Assistent beantwortet Fragen zu Datenschutz, Ablauf und Pilotbetrieb – direkt auf der Kundenseite.</p><p style="margin-top:16px"><a class="btn ghost" href="safe-frames-kunden.html#assistent" target="_blank" rel="noopener">Zum Assistenten →</a></p></div>
+    </div>
+    <div style="text-align:center;margin-top:28px"><a class="btn" href="safe-frames-kunden.html" target="_blank" rel="noopener">Zur Kunden-Landingpage (Schulen &amp; Eltern) →</a></div>
   </div>
 </section>
 
@@ -325,7 +818,7 @@ footer a{color:#9FE0E0}
     <div class="foot-grid">
       <div class="brand"><img src="Logo Safe Frames.png" alt="Safe Frames by ilumera"></div>
       <div>
-        <a href="safe-frames-projekt.html">Projektpräsentation</a> · <a href="#team">Team</a> · <a href="safe-frames-projekt.html#recht">Datenschutz &amp; EU AI Act</a> · <a href="safe-frames-kunden.html">Für Schulen &amp; Eltern</a>
+        <a href="#einleitung">Einleitung</a> · <a href="#business-case">Business Case</a> · <a href="#recht">Recht</a> · <a href="#stakeholder">Stakeholder</a> · <a href="#roadmap">Roadmap</a> · <a href="safe-frames-kunden.html">Für Schulen &amp; Eltern</a>
       </div>
     </div>
     <p class="foot-small">
@@ -342,8 +835,5 @@ footer a{color:#9FE0E0}
   if(mt&&nl){mt.addEventListener('click',()=>{const o=nl.classList.toggle('open');mt.setAttribute('aria-expanded',o);});
   nl.addEventListener('click',e=>{if(e.target.closest('a'))nl.classList.remove('open');});}
 </script>
-<!-- Safe Frames Chatbot (ElevenLabs Conversational AI – Agent „Safe Frames Assistent") -->
-<elevenlabs-convai agent-id="agent_8301kvr3tkepen4bvswg9xenjns0"></elevenlabs-convai>
-<script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
 </body>
 </html>
