@@ -5,21 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <link rel="preload" href="/fonts/Outfit.woff2" as="font" type="font/woff2" crossorigin/>
 <link rel="preload" href="/fonts/Fraunces.woff2" as="font" type="font/woff2" crossorigin/>
-<title>KI & Kaffeepause – KI-Sprachbrücke | bridge to ai</title>
-<meta name="description" content="Die KI-Sprachbrücke von bridge to ai: KI-Buzzwords und Corporate-Jargon in echte, menschliche Sprache übersetzt – fachlich fundiert, mit einem Augenzwinkern."/>
+<title>KI & Kaffeepause – KI-Impulse, Sprachbrücke & Team-Impuls | bridge to ai</title>
+<meta name="description" content="KI & Kaffeepause von bridge to ai: KI-Buzzwords verstehen, Arbeitsalltag vereinfachen und konkrete KI-Impulse für Teams finden – mit Sprachbrücke, Office Pets und Team-Impuls."/>
 <link rel="icon" type="image/svg+xml" href="brand/icon-tile.svg"/>
 <link rel="icon" type="image/png" sizes="256x256" href="brand/favicon-256.png"/>
 <link rel="apple-touch-icon" sizes="512x512" href="brand/icon-tile-512.png"/>
 <meta name="theme-color" content="#040c16"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="bridge to ai"/>
-<meta property="og:title" content="KI & Kaffeepause – KI-Sprachbrücke"/>
-<meta property="og:description" content="KI-Buzzwords in echte, menschliche Sprache übersetzt – mit einem Augenzwinkern."/>
+<meta property="og:title" content="KI & Kaffeepause – KI-Impulse für den Arbeitsalltag"/>
+<meta property="og:description" content="KI-Buzzwords verstehen, praktische Arbeitsimpulse mitnehmen und bridge to ai kennenlernen – mit Sprachbrücke, Office Pets und Team-Impuls."/>
 <meta property="og:url" content="https://bridgetoai.de/kaffeepause.html"/>
 <meta property="og:image" content="https://bridgetoai.de/brand/og-image.png"/>
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="KI & Kaffeepause – KI-Sprachbrücke"/>
-<meta name="twitter:description" content="KI-Buzzwords in echte, menschliche Sprache übersetzt – mit einem Augenzwinkern."/>
+<meta name="twitter:title" content="KI & Kaffeepause – KI-Impulse für den Arbeitsalltag"/>
+<meta name="twitter:description" content="KI-Buzzwords verstehen, praktische Arbeitsimpulse mitnehmen und bridge to ai kennenlernen – mit Sprachbrücke, Office Pets und Team-Impuls."/>
 <meta name="twitter:image" content="https://bridgetoai.de/brand/og-image.png"/>
 <style>
 /* Lokal gehostete Schriften (DSGVO-konform, keine Google-Fonts-Server) */
@@ -99,6 +99,10 @@ nav.scrolled{background:rgba(4,12,22,0.8);backdrop-filter:blur(20px);border-bott
 .page-title{font-family:'Fraunces',serif;font-size:clamp(2.4rem,5vw,4rem);font-weight:500;line-height:1.04;letter-spacing:-0.02em;margin-bottom:1.3rem;}
 .page-title .it{font-style:italic;font-weight:400;background:linear-gradient(100deg,#1B8B9E,#00D9C0);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
 .page-sub{font-size:1.12rem;font-weight:300;color:rgba(255,255,255,0.66);max-width:580px;line-height:1.7;}
+.hero-actions{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.8rem;}
+.hero-actions a{text-decoration:none;}
+.hero-notes{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1.5rem;}
+.hero-note{font-size:.8rem;font-weight:600;color:rgba(255,255,255,0.72);border:1px solid rgba(255,255,255,0.12);border-radius:100px;padding:.42rem .9rem;background:rgba(255,255,255,0.04);}
 
 /* ── TOOL ── */
 .tool{position:relative;padding:1rem 5% 5rem;}
@@ -216,6 +220,24 @@ nav.scrolled{background:rgba(4,12,22,0.8);backdrop-filter:blur(20px);border-bott
 .coming{display:inline-flex;gap:.5rem;flex-wrap:wrap;justify-content:center;margin-top:1.6rem;}
 .coming span{font-size:.78rem;color:rgba(255,255,255,0.45);border:1px solid rgba(255,255,255,0.1);border-radius:100px;padding:.35rem .9rem;}
 
+/* ── ARBEITSALLTAG-IMPULSE ── */
+.work-pauses{padding:1rem 5% 5rem;}
+.work-pauses-inner{max-width:1060px;margin:0 auto;}
+.wp-head{display:grid;grid-template-columns:minmax(0,0.85fr) minmax(280px,1fr);gap:2rem;align-items:end;margin-bottom:1.6rem;}
+.wp-title{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(1.9rem,4vw,2.8rem);line-height:1.08;letter-spacing:-0.02em;margin-bottom:.8rem;}
+.wp-title .it{font-style:italic;font-weight:400;background:linear-gradient(100deg,#1B8B9E,#00D9C0);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.wp-sub{color:rgba(255,255,255,0.64);font-size:1.04rem;font-weight:300;line-height:1.7;max-width:620px;}
+.wp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;}
+.wp-card{background:linear-gradient(160deg,rgba(10,37,64,0.5),rgba(6,21,35,0.5));border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:1.35rem;min-height:215px;display:flex;flex-direction:column;justify-content:space-between;}
+.wp-card h3{font-family:'Fraunces',serif;font-size:1.18rem;font-weight:600;line-height:1.25;margin-bottom:.7rem;}
+.wp-card p{color:rgba(255,255,255,0.63);font-size:.94rem;line-height:1.58;font-weight:300;}
+.wp-card span{display:inline-flex;align-self:flex-start;margin-top:1.2rem;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--primary);border:1px solid rgba(0,217,192,0.25);border-radius:100px;padding:.35rem .72rem;}
+.wp-offer{margin-top:1rem;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:1.2rem;align-items:center;background:linear-gradient(160deg,rgba(0,217,192,0.1),rgba(27,139,158,0.06));border:1px solid rgba(0,217,192,0.2);border-radius:22px;padding:1.45rem 1.5rem;}
+.wp-offer h3{font-family:'Fraunces',serif;font-size:1.35rem;font-weight:600;margin-bottom:.35rem;}
+.wp-offer p{color:rgba(255,255,255,0.66);font-weight:300;line-height:1.6;max-width:640px;}
+.wp-actions{display:flex;gap:.7rem;flex-wrap:wrap;justify-content:flex-end;}
+.wp-actions a{text-decoration:none;white-space:nowrap;}
+
 /* ── VIRTUAL OFFICE PET ── */
 .office{position:relative;padding:1rem 5% 4rem;}
 .office-wrap{max-width:900px;margin:0 auto;}
@@ -269,6 +291,10 @@ nav.scrolled{background:rgba(4,12,22,0.8);backdrop-filter:blur(20px);border-bott
 
 @media(max-width:720px){
   .pets-grid{grid-template-columns:1fr;max-width:340px;margin:0 auto;}
+  .wp-head{grid-template-columns:1fr;gap:.6rem;}
+  .wp-grid{grid-template-columns:1fr;}
+  .wp-offer{grid-template-columns:1fr;}
+  .wp-actions{justify-content:flex-start;}
 }
 
 /* ── RUBRIK-TABS & PANELS ── */
@@ -323,6 +349,7 @@ footer{padding:3rem 5%;border-top:1px solid rgba(255,255,255,0.06);display:flex;
   .btn-cta{display:none;}
   .nav-links{display:none;}
   .tool-card{padding:1.4rem;}
+  .hero-actions{flex-direction:column;align-items:flex-start;}
 }
 </style>
 </head>
@@ -366,7 +393,16 @@ footer{padding:3rem 5%;border-top:1px solid rgba(255,255,255,0.06);display:flex;
   <div class="page-hero-inner reveal">
     <span class="s-eyebrow">KI &amp; Kaffeepause</span>
     <h1 class="page-title">KI &amp; <span class="it">Kaffeepause</span></h1>
-    <p class="page-sub">Eine kleine Spielwiese, auf der komplexe KI menschlich wird – erst schmunzeln, dann verstehen. Drei Mini-Tools, ein Gedanke. Such dir aus, was dich neugierig macht.</p>
+    <p class="page-sub">Kurze KI-Impulse für Menschen, die KI verstehen und im Arbeitsalltag nutzen wollen. Erst Klartext, dann konkrete Anwendung: mit Sprachbrücke, Werkstatt-Einblick und Ideen für produktivere Teams.</p>
+    <div class="hero-actions">
+      <a href="#panel-translator" class="btn-primary">Zur KI-Sprachbrücke →</a>
+      <a href="#arbeitsalltag" class="btn-ghost">Team-Impulse ansehen</a>
+    </div>
+    <div class="hero-notes">
+      <span class="hero-note">Klartext statt Buzzwords</span>
+      <span class="hero-note">Mini-Impulse für Teams</span>
+      <span class="hero-note">Einstieg in Quick-Audit &amp; Workshops</span>
+    </div>
   </div>
 </section>
 
@@ -374,7 +410,7 @@ footer{padding:3rem 5%;border-top:1px solid rgba(255,255,255,0.06);display:flex;
 <div class="rubrik-tabs-wrap">
   <div class="rubrik-tabs" role="tablist" aria-label="Module der Rubrik KI &amp; Kaffeepause">
     <button class="rtab is-active" type="button" role="tab" aria-selected="true" data-panel="panel-translator"><span class="rtab-emoji">🌉</span> KI-Sprachbrücke</button>
-    <button class="rtab" type="button" role="tab" aria-selected="false" data-panel="panel-pet"><span class="rtab-emoji">🐾</span> Office Pet</button>
+    <button class="rtab" type="button" role="tab" aria-selected="false" data-panel="panel-pet"><span class="rtab-emoji">🐾</span> Office Pets</button>
     <button class="rtab" type="button" role="tab" aria-selected="false" data-panel="panel-fortune"><span class="rtab-emoji">🥠</span> Fortune Cookie <span class="rtab-badge">bald</span></button>
   </div>
 </div>
@@ -385,7 +421,7 @@ footer{padding:3rem 5%;border-top:1px solid rgba(255,255,255,0.06);display:flex;
 <section class="panel is-active" id="panel-translator" role="tabpanel">
   <div class="panel-head reveal">
     <h2 class="panel-title">Die <span class="it">KI-Sprachbrücke</span></h2>
-    <p class="panel-intro" id="bridgeIntro">Ganzer Satz aus dem Meeting? Oder nur ein Wort, das im Raum stand und keiner erklärt hat? Wähl unten, was du brauchst – ich baue die Brücke zum Klartext, fachlich fundiert und mit Augenzwinkern.</p>
+    <p class="panel-intro" id="bridgeIntro">Ganzer Satz aus dem Meeting? Oder nur ein Wort, das im Raum stand und keiner erklärt hat? Die Sprachbrücke übersetzt KI- und Corporate-Jargon in Klartext – fachlich fundiert und mit Augenzwinkern.</p>
   </div>
 
   <!-- Modus-Umschalter: ganzen Satz übersetzen vs. einzelnen Begriff nachschlagen -->
@@ -432,10 +468,10 @@ footer{padding:3rem 5%;border-top:1px solid rgba(255,255,255,0.06);display:flex;
   </div>
 </section>
 
-<!-- PANEL 2: Virtual Office Pet -->
+<!-- PANEL 2: Virtual Office Pets -->
 <section class="panel office" id="panel-pet" role="tabpanel">
   <div class="office-wrap reveal">
-    <span class="s-eyebrow">Virtual Office Pet</span>
+    <span class="s-eyebrow">Virtual Office Pets</span>
     <h2 class="office-title">Meine <span class="it">Kolleg:innen</span> auf vier Pfoten</h2>
     <p class="office-sub">KI-Transformation klingt nach Hochglanz und Serverräumen. In Wahrheit läuft hier auch ein Trainingsjob im Hintergrund, während drei Fellnasen den Laden „beaufsichtigen“. Ein ehrlicher Blick in meine KI-Werkstatt – live.</p>
 
@@ -523,10 +559,64 @@ footer{padding:3rem 5%;border-top:1px solid rgba(255,255,255,0.06);display:flex;
 
 </div><!-- /panels -->
 
+<section class="work-pauses" id="arbeitsalltag">
+  <div class="work-pauses-inner reveal">
+    <div class="wp-head">
+      <div>
+        <span class="s-eyebrow">Arbeitsalltag</span>
+        <h2 class="wp-title">Kaffeepausen, die in <span class="it">Arbeit</span> kommen</h2>
+      </div>
+      <p class="wp-sub">Aus einem kleinen Aha-Moment wird ein konkreter Einstieg: ein Problem aus dem Alltag, ein KI-Ansatz, ein prüfbarer Nutzen. Genau so entstehen Quick-Audit, Team-Workshop oder Pilot-Sprint.</p>
+    </div>
+
+    <div class="wp-grid">
+      <article class="wp-card">
+        <div>
+          <h3>Kundenmails schneller beantworten</h3>
+          <p>KI hilft, Ton, Struktur und nächste Schritte vorzubereiten – ohne die persönliche Beziehung aus der Hand zu geben.</p>
+        </div>
+        <span>Vertrieb &amp; Service</span>
+      </article>
+      <article class="wp-card">
+        <div>
+          <h3>Meetingnotizen in Aufgaben verwandeln</h3>
+          <p>Aus Mitschriften werden Entscheidungen, Verantwortlichkeiten und Follow-ups, die im Team wirklich nutzbar sind.</p>
+        </div>
+        <span>Führung &amp; Teams</span>
+      </article>
+      <article class="wp-card">
+        <div>
+          <h3>Angebote und Dokumente vorbereiten</h3>
+          <p>Wiederkehrende Text-, Daten- und Formatierungsarbeit wird standardisiert, damit weniger Zeit im Copy-Paste verschwindet.</p>
+        </div>
+        <span>Backoffice &amp; Operations</span>
+      </article>
+      <article class="wp-card">
+        <div>
+          <h3>KI-Regeln verständlich starten</h3>
+          <p>Teams brauchen einfache Spielregeln: Was darf in KI-Tools, was nicht, und wie prüfen wir Qualität?</p>
+        </div>
+        <span>Governance &amp; Sicherheit</span>
+      </article>
+    </div>
+
+    <div class="wp-offer">
+      <div>
+        <h3>Als Team-Impuls buchbar</h3>
+        <p>60 Minuten für Ihr Team: ein verständlicher KI-Einstieg, eine Live-Demo aus Ihrem Arbeitsalltag und klare nächste Schritte für Quick-Audit, Workshop oder Pilot-Sprint.</p>
+      </div>
+      <div class="wp-actions">
+        <a href="index.html#kontakt" class="btn-primary">Team-Impuls anfragen →</a>
+        <a href="audit.html" class="btn-ghost">Quick-Audit ansehen</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="teaser">
   <div class="teaser-card reveal">
     <h2>Hinter dem Spaß steckt <span class="it">Methode</span></h2>
-    <p>Genau dieses Übersetzen – von „klingt wichtig“ zu „so machen wir das konkret“ – ist meine Arbeit als KI-Managerin. Wenn aus dem Schmunzeln Ernst werden soll: Lassen Sie uns reden.</p>
+    <p>Genau dieses Übersetzen – von „klingt wichtig“ zu „so machen wir das konkret“ – ist meine Arbeit als KI-Managerin: Klarheit schaffen, sinnvolle Use Cases finden und Teams sicher in die Anwendung bringen.</p>
     <a href="index.html#kontakt" class="btn-primary" style="text-decoration:none;">Kostenloses Erstgespräch →</a>
   </div>
 </section>
