@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="preload" href="/fonts/Outfit.woff2" as="font" type="font/woff2" crossorigin/>
+<link rel="preload" href="/fonts/Fraunces.woff2" as="font" type="font/woff2" crossorigin/>
 <title>KI fürs Handwerk – weniger Büro, mehr Feierabend | bridge to ai</title>
 <meta name="description" content="KI fürs Handwerk – ohne Fachchinesisch. Angebote, Rechnungen und Kundenmails in einem Bruchteil der Zeit. Persönlich erklärt, auf Augenhöhe, auf Deutsch."/>
 <link rel="icon" type="image/svg+xml" href="brand/icon-tile.svg"/>
@@ -19,9 +21,12 @@
 <meta name="twitter:title" content="KI fürs Handwerk – weniger Büro, mehr Feierabend"/>
 <meta name="twitter:description" content="Angebote, Rechnungen und Kundenmails in einem Bruchteil der Zeit. Persönlich erklärt, auf Augenhöhe, auf Deutsch."/>
 <meta name="twitter:image" content="https://bridgetoai.de/brand/og-image.png"/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+/* Lokal gehostete Schriften (DSGVO-konform, keine Google-Fonts-Server) */
+@font-face{font-family:'Outfit';src:url('/fonts/Outfit.woff2') format('woff2');font-weight:100 900;font-style:normal;font-display:swap;}
+@font-face{font-family:'Fraunces';src:url('/fonts/Fraunces.woff2') format('woff2');font-weight:100 900;font-style:normal;font-display:swap;}
+@font-face{font-family:'Fraunces';src:url('/fonts/Fraunces-Italic.woff2') format('woff2');font-weight:100 900;font-style:italic;font-display:swap;}
+</style>
 <style>
 :root{
   --primary:#00D9C0; --secondary:#1B8B9E; --navy:#0A2540;
@@ -178,6 +183,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.05);padding
   </a>
   <ul class="nav-links">
     <li><a href="#beispiele">So hilft's dir</a></li>
+    <li><a href="#playbook">Playbook</a></li>
     <li><a href="ueber-mich.html">Über mich</a></li>
     <li><a href="kaffeepause.html">KI &amp; Kaffeepause</a></li>
     <li><a href="index.html">Zur Hauptseite</a></li>
@@ -188,6 +194,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.05);padding
   </button>
   <div class="mobile-menu" id="mobileMenu">
     <a href="#beispiele">So hilft's dir</a>
+    <a href="#playbook">Playbook</a>
     <a href="ueber-mich.html">Über mich</a>
     <a href="kaffeepause.html">KI &amp; Kaffeepause</a>
     <a href="index.html">Zur Hauptseite</a>
@@ -300,6 +307,33 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.05);padding
   </div>
 </section>
 
+<!-- PLAYBOOK -->
+<section id="playbook">
+  <div class="s-head reveal">
+    <span class="s-eyebrow">Zum Selbermachen</span>
+    <h2 class="s-title">Lieber selbst loslegen? <span class="it">Hol dir das Playbook.</span></h2>
+    <p class="s-sub">Das KI-Playbook fürs Handwerk: 7 Kapitel, 36 fertige Prompts für Angebote, Kundenmails, Rechnungen und Baustellen-Doku – zum Kopieren und sofort Anwenden. Inklusive Tabu-Liste, was nie in die KI darf.</p>
+  </div>
+  <div class="pain-grid reveal" style="margin-top:2.6rem;">
+    <div class="pain-card">
+      <div class="pc-ico">📋</div>
+      <h3>36 Prompts, copy-paste-fertig</h3>
+      <p>Keine Theorie: Vorlagen, die du nur noch an deinen Betrieb anpasst – Platzhalter-Prinzip inklusive.</p>
+    </div>
+    <div class="pain-card">
+      <div class="pc-ico">⏱️</div>
+      <h3>Erster Erfolg heute Abend</h3>
+      <p>Kapitel 1 dauert 30 Minuten. Danach steht dein KI-Tool und der erste Prompt hat funktioniert.</p>
+    </div>
+    <div class="pain-card">
+      <div class="pc-ico">🔒</div>
+      <h3>DSGVO gleich mitgedacht</h3>
+      <p>Tabu-Liste und fertige Kurz-Richtlinie für deinen Betrieb – KI nutzen, ohne Ärger zu riskieren.</p>
+    </div>
+  </div>
+  <p class="pain-note reveal" style="margin-top:2rem;">Einmalig 79 € – <span>und der Papierkram wird kleiner.</span>&nbsp;&nbsp;<a href="playbook.html" class="btn-primary" style="vertical-align:middle;">Zum Playbook →</a></p>
+</section>
+
 <!-- CTA -->
 <section id="kontakt">
   <div class="cta-box reveal">
@@ -330,6 +364,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.05);padding
   <div class="footer-links">
     <a href="https://www.linkedin.com/in/julia-pakravan/" target="_blank" rel="noopener">LinkedIn</a>
     <a href="index.html">Hauptseite</a>
+    <a href="playbook.html">Playbook</a>
     <a href="ueber-mich.html">Über mich</a>
     <a href="kaffeepause.html">KI &amp; Kaffeepause</a>
     <a href="index.html#checkliste">Checkliste</a>
@@ -361,5 +396,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.05);padding
   const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.12});
   document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 </script>
+<!-- GoatCounter – cookiefreie Reichweitenmessung (siehe Datenschutzerklärung, „Reichweitenmessung“) -->
+<script data-goatcounter="https://bridgetoai.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>
