@@ -320,13 +320,41 @@ nav.scrolled{background:rgba(4,12,22,0.8);backdrop-filter:blur(20px);border-bott
 /* Office-Pet als Panel: Doppel-Padding vermeiden */
 .panel.office{padding:2.6rem 5% 4rem;}
 
-/* Fortune Cookie – „bald“ */
-.fortune-soon{max-width:560px;margin:0 auto;text-align:center;
+/* ── Fortune Cookie – interaktiv ── */
+.fortune-box{max-width:600px;margin:0 auto;text-align:center;
   background:linear-gradient(160deg,rgba(0,217,192,0.08),rgba(27,139,158,0.05));
-  border:1px solid rgba(0,217,192,0.2);border-radius:22px;padding:2.8rem 2rem;}
-.fortune-cookie{font-size:3.4rem;margin-bottom:1rem;display:inline-block;animation:petBreathe 4s ease-in-out infinite;}
-.fortune-msg{font-family:'Fraunces',serif;font-size:1.25rem;line-height:1.5;color:#fff;margin-bottom:1.4rem;}
-.fortune-tag{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--primary);border:1px solid rgba(0,217,192,0.3);border-radius:100px;padding:.4rem 1rem;}
+  border:1px solid rgba(0,217,192,0.2);border-radius:22px;padding:2.8rem 2rem 2.4rem;}
+.cookie-btn{background:none;border:none;cursor:pointer;font-family:inherit;line-height:1;
+  font-size:4.2rem;display:inline-block;padding:.4rem;margin-bottom:.4rem;
+  transition:transform .25s;animation:cookieWiggle 3.4s ease-in-out infinite;}
+.cookie-btn:hover{transform:scale(1.08) rotate(-4deg);}
+.cookie-btn:focus-visible{outline:2px solid var(--primary);outline-offset:6px;border-radius:16px;}
+.fortune-box.is-open .cookie-btn{animation:none;}
+.cookie-btn.crack{animation:cookieCrack .55s ease;}
+@keyframes cookieWiggle{0%,86%,100%{transform:none;}90%{transform:rotate(-8deg);}95%{transform:rotate(8deg);}}
+@keyframes cookieCrack{0%{transform:scale(1);}28%{transform:scale(1.2) rotate(-7deg);}55%{transform:scale(.88) rotate(6deg);}100%{transform:scale(1);}}
+.cookie-hint{font-size:.8rem;font-weight:700;letter-spacing:.05em;color:var(--primary);
+  text-transform:uppercase;opacity:.85;transition:opacity .3s,max-height .3s,margin .3s;max-height:2rem;}
+.fortune-box.is-open .cookie-hint{opacity:0;max-height:0;margin:0;overflow:hidden;}
+
+.fortune-slip{max-width:520px;margin:0 auto;background:#fff;color:var(--navy);
+  border-radius:14px;border-top:3px solid var(--primary);text-align:left;
+  box-shadow:0 14px 36px rgba(0,0,0,0.38);
+  opacity:0;max-height:0;padding:0 1.7rem;overflow:hidden;transform:translateY(10px);
+  transition:opacity .45s ease,max-height .55s ease,padding .45s ease,transform .45s ease;}
+.fortune-box.is-open .fortune-slip{opacity:1;max-height:280px;padding:1.5rem 1.7rem;transform:none;margin:0 auto 1.5rem;}
+.fortune-slip.swapping{opacity:0;transform:translateY(-8px);}
+.fortune-text{font-family:'Fraunces',serif;font-style:italic;font-size:1.22rem;line-height:1.5;}
+.fortune-num{display:block;margin-top:.9rem;font-family:'Outfit',sans-serif;font-style:normal;
+  font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--secondary);}
+
+.cookie-again{display:none;font-family:inherit;cursor:pointer;
+  background:var(--primary);color:var(--navy);font-weight:700;font-size:.95rem;
+  border:none;border-radius:100px;padding:.75rem 1.6rem;
+  box-shadow:0 6px 20px rgba(0,217,192,0.3);transition:transform .2s,box-shadow .2s;}
+.cookie-again:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(0,217,192,0.42);}
+.fortune-box.is-open .cookie-again{display:inline-block;}
+.fortune-foot{margin-top:1.3rem;font-size:.8rem;color:rgba(255,255,255,0.42);}
 
 @media(max-width:680px){
   .rubrik-tabs-wrap{top:76px;}
@@ -411,7 +439,7 @@ footer{padding:3rem 5%;border-top:1px solid rgba(255,255,255,0.06);display:flex;
   <div class="rubrik-tabs" role="tablist" aria-label="Module der Rubrik KI &amp; Kaffeepause">
     <button class="rtab is-active" type="button" role="tab" aria-selected="true" data-panel="panel-translator"><span class="rtab-emoji">🌉</span> KI-Sprachbrücke</button>
     <button class="rtab" type="button" role="tab" aria-selected="false" data-panel="panel-pet"><span class="rtab-emoji">🐾</span> Office Pets</button>
-    <button class="rtab" type="button" role="tab" aria-selected="false" data-panel="panel-fortune"><span class="rtab-emoji">🥠</span> Fortune Cookie <span class="rtab-badge">bald</span></button>
+    <button class="rtab" type="button" role="tab" aria-selected="false" data-panel="panel-fortune"><span class="rtab-emoji">🥠</span> Fortune Cookie</button>
   </div>
 </div>
 
@@ -544,16 +572,21 @@ footer{padding:3rem 5%;border-top:1px solid rgba(255,255,255,0.06);display:flex;
   </div>
 </section>
 
-<!-- PANEL 3: Fortune Cookie (bald) -->
+<!-- PANEL 3: Fortune Cookie of AI Trends -->
 <section class="panel" id="panel-fortune" role="tabpanel">
   <div class="panel-head reveal">
     <h2 class="panel-title">Fortune Cookie <span class="it">of AI Trends</span></h2>
-    <p class="panel-intro">Bald hier: ein Glückskeks für die Arbeitswelt von morgen – kurze, freche KI-Prognosen zum Schmunzeln und Teilen.</p>
+    <p class="panel-intro">Ein Glückskeks für die Arbeitswelt von morgen: kurze, freche KI-Prognosen zum Schmunzeln – augenzwinkernd, aber fachlich ernst gemeint. Keks antippen, aufbrechen lassen, Weisheit lesen.</p>
   </div>
-  <div class="fortune-soon reveal">
-    <div class="fortune-cookie">🥠</div>
-    <p class="fortune-msg">„Deine nächste Kaffeepause wird dir von einer KI vorgeschlagen – und sie wird richtig liegen.“</p>
-    <span class="fortune-tag">In Arbeit · kommt bald</span>
+  <div class="fortune-box reveal" id="fortuneBox">
+    <button class="cookie-btn" id="cookieBtn" type="button" aria-label="Glückskeks knacken">🥠</button>
+    <p class="cookie-hint" id="cookieHint">Tipp den Keks an ☝️</p>
+    <div class="fortune-slip" id="fortuneSlip" aria-live="polite">
+      <p class="fortune-text" id="fortuneText"></p>
+      <span class="fortune-num" id="fortuneNum"></span>
+    </div>
+    <button class="cookie-again" id="cookieAgain" type="button">Noch einen Keks 🥠</button>
+    <p class="fortune-foot">Bandbreite von frech bis wahr. <span class="it" style="font-style:italic">Der einzige Keks ohne Kalorien – dafür mit Aha.</span></p>
   </div>
 </section>
 
@@ -1544,6 +1577,88 @@ function renderOfficePet(){
 
 renderOfficePet();
 setInterval(renderOfficePet, 6500);
+
+/* =====================================================================
+   FORTUNE COOKIE OF AI TRENDS — frech, ironisch, fachlich ernst gemeint
+   Frontend-only: Keks knacken → zufällige Prognose (keine Wiederholung).
+   ===================================================================== */
+const FORTUNES = [
+  "2027 fasst die KI dein Meeting zusammen. Die eigentliche Kunst bleibt, das Meeting abzusagen.",
+  "Bald schreibt die KI deine E-Mails. Dein Chef antwortet mit seiner. Zwei Bots, die sich siezen.",
+  "Die Zukunft gehört dem, der die richtige Frage stellt – nicht dem, der das teuerste Tool kauft.",
+  "Eines Tages erklärt dir eine KI, was „agentisch“ bedeutet. Sie wird es auch nicht so genau wissen.",
+  "Prognose: Wer heute „Prompt“ sagt, sagt in fünf Jahren einfach wieder „fragen“.",
+  "KI ersetzt keine Handwerker. Aber sie schreibt endlich die Angebote, die sonst sonntags liegen bleiben.",
+  "Bald hat jedes Tool einen KI-Button. Die Hälfte öffnet ein Chatfenster, das „Wie kann ich helfen?“ fragt und dann schweigt.",
+  "Die KI der Zukunft kennt deinen Kalender besser als du. Leider bucht sie trotzdem Termine um 8 Uhr.",
+  "Bald misst niemand mehr, wie schnell du tippst – sondern wie gut du prüfst, was die Maschine tippt.",
+  "Prognose: „Wir machen jetzt was mit KI“ wird der Satz, der Projekte startet und Budgets beendet.",
+  "In der Werkstatt von morgen dokumentiert die KI den Auftrag, während du ihn erledigst. Der Zettel bleibt trotzdem irgendwo liegen.",
+  "Eines Tages hat jeder eine KI-Strategie. Die Guten haben auch einen Plan, was sie damit tun.",
+  "Die Maschine wird kreativer. Der Kaffee bleibt die eigentliche Innovationsquelle.",
+  "Bald prahlt keiner mehr mit KI – so wie heute keiner mehr mit „wir haben eine Website“ prahlt.",
+  "Prognose: Das nächste große KI-Feature heißt „Rückgängig“.",
+  "In Zukunft fragt dich die KI nicht mehr, ob du sicher bist. Sie fragt, ob du dir wirklich, wirklich sicher bist.",
+  "Der Job der Zukunft: jemand, der der KI erklärt, was der Kunde eigentlich gemeint hat.",
+  "Bald ist Datenschutz kein Kleingedrucktes mehr, sondern das Erste, wonach der Kunde fragt.",
+  "Prognose: Wer KI versteht, erklärt sie einfach. Wer sie nicht versteht, macht eine Folie mit Zahnrädern.",
+  "Die KI wird nie müde. Du schon – deshalb macht die Kaffeepause weiterhin den Unterschied.",
+  "Eines Tages generiert die KI das perfekte Logo. Und der Chef sagt trotzdem: „Mach mal blauer.“",
+  "Prognose: Das teuerste KI-Tool ist das, das keiner im Team benutzt.",
+  "Bald schreibt die KI den Businessplan. Die Bank fragt trotzdem, wer für die Zahlen geradesteht.",
+  "In Zukunft heißt es nicht „Hast du das gegoogelt?“, sondern „Hast du das gegengeprüft?“.",
+  "Die KI übersetzt bald jede Sprache. Amtsdeutsch bleibt die Ausnahme.",
+  "Prognose: Der wichtigste Skill 2030 ist immer noch, einem Menschen zuzuhören.",
+  "Bald automatisiert die KI die langweiligen 80 %. Die spannenden 20 % sind der Grund, warum du morgens aufstehst.",
+  "Eines Tages hat jede E-Mail einen „Mit KI verbessern“-Knopf. Der ehrlichste Text bleibt der, den du selbst schreibst.",
+  "Prognose: „halluziniert“ wird Wort des Jahres – und beschreibt danach weiter jedes zweite Meeting.",
+  "In der Zukunft baut jeder Bots. Die Kunst bleibt, zu wissen, wann ein Mensch drangehen sollte.",
+  "Bald erkennt die KI deine Stimmung. Ob sie dann die richtigen Kekse bestellt, ist die eigentliche Frage.",
+  "Prognose: Handwerk plus KI schlägt Konzern ohne Plan. Jedes Mal.",
+  "Eines Tages ist „KI-gestützt“ so besonders wie „mit Strom betrieben“.",
+  "Prognose: Wer klein anfängt und wirklich startet, überholt den, der noch die perfekte Strategie sucht.",
+  "Bald fragt dich niemand mehr, ob du KI nutzt – sondern wofür. Hab eine gute Antwort parat.",
+  "Die KI schlägt dir Termine vor. Ob du sie einhältst, bleibt herrlich menschlich."
+];
+
+(function(){
+  const box = document.getElementById('fortuneBox');
+  if(!box) return;
+  const cookie = document.getElementById('cookieBtn');
+  const slip   = document.getElementById('fortuneSlip');
+  const txt    = document.getElementById('fortuneText');
+  const num    = document.getElementById('fortuneNum');
+  const again  = document.getElementById('cookieAgain');
+  let last = -1, count = 0;
+
+  function pick(){
+    let i;
+    do { i = Math.floor(Math.random() * FORTUNES.length); }
+    while(FORTUNES.length > 1 && i === last);
+    last = i;
+    return FORTUNES[i];
+  }
+  function crackAnim(){
+    cookie.classList.remove('crack');
+    void cookie.offsetWidth; // Reflow erzwingen, damit die Animation neu startet
+    cookie.classList.add('crack');
+  }
+  function setFortune(){
+    count++;
+    txt.textContent = pick();
+    num.textContent = 'Keks Nr. ' + count + ' · frisch aus der KI-Werkstatt';
+  }
+  cookie.addEventListener('click', () => {
+    setFortune();
+    box.classList.add('is-open');
+    crackAnim();
+  });
+  again.addEventListener('click', () => {
+    slip.classList.add('swapping');
+    crackAnim();
+    setTimeout(() => { setFortune(); slip.classList.remove('swapping'); }, 220);
+  });
+})();
 
 /* =====================================================================
    RUBRIK-TABS — immer nur ein Modul sichtbar, statt langem Scrollen
