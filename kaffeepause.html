@@ -354,7 +354,84 @@ nav.scrolled{background:rgba(4,12,22,0.8);backdrop-filter:blur(20px);border-bott
   box-shadow:0 6px 20px rgba(0,217,192,0.3);transition:transform .2s,box-shadow .2s;}
 .cookie-again:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(0,217,192,0.42);}
 .fortune-box.is-open .cookie-again{display:inline-block;}
+
+.fortune-actions{display:none;flex-wrap:wrap;gap:.6rem;justify-content:center;align-items:center;}
+.fortune-box.is-open .fortune-actions{display:flex;}
+.fx-btn{font-family:inherit;cursor:pointer;background:transparent;color:#fff;
+  border:1.5px solid rgba(255,255,255,0.2);border-radius:100px;font-size:.9rem;font-weight:600;
+  padding:.7rem 1.3rem;transition:border-color .2s,color .2s,background .2s;}
+.fx-btn:hover{border-color:var(--primary);color:var(--primary);}
+.fx-btn.copied{border-color:var(--primary);color:var(--primary);background:rgba(0,217,192,0.08);}
+.share-links{display:none;justify-content:center;gap:1.3rem;margin-top:1rem;}
+.share-links.open{display:flex;}
+.share-links a{font-size:.86rem;font-weight:600;color:var(--primary);text-decoration:none;
+  border-bottom:1px solid rgba(0,217,192,0.35);padding-bottom:2px;transition:color .2s,border-color .2s;}
+.share-links a:hover{color:#fff;border-color:#fff;}
 .fortune-foot{margin-top:1.3rem;font-size:.8rem;color:rgba(255,255,255,0.42);}
+
+/* ── KI oder Mensch? + Reifegrad – gemeinsame Quiz-Hülle ── */
+.quiz{max-width:640px;margin:0 auto;}
+.quiz-bar{display:flex;justify-content:space-between;gap:1rem;font-size:.78rem;font-weight:700;letter-spacing:.04em;
+  text-transform:uppercase;color:var(--primary);margin-bottom:1rem;}
+.quiz-card{position:relative;background:#061523;border:1px solid rgba(255,255,255,0.08);border-radius:18px;
+  padding:2.2rem 2rem 2rem;margin-bottom:1.3rem;box-shadow:0 10px 30px rgba(0,0,0,0.25);}
+.quiz-quote-mark{position:absolute;top:.1rem;left:.9rem;font-family:'Fraunces',serif;font-size:3.4rem;
+  color:rgba(0,217,192,0.22);line-height:1;}
+.quiz-text{font-family:'Fraunces',serif;font-size:1.26rem;line-height:1.55;color:#fff;position:relative;}
+.quiz-choices{display:flex;gap:.8rem;flex-wrap:wrap;}
+.quiz-btn{flex:1;min-width:150px;font-family:inherit;cursor:pointer;font-size:1rem;font-weight:600;color:#fff;
+  background:rgba(255,255,255,0.04);border:1.5px solid rgba(255,255,255,0.16);border-radius:100px;padding:.95rem 1rem;
+  transition:border-color .2s,background .2s,transform .15s;}
+.quiz-btn:hover:not(:disabled){border-color:var(--primary);background:rgba(0,217,192,0.06);transform:translateY(-1px);}
+.quiz-btn:disabled{cursor:default;opacity:.8;}
+.quiz-btn.right{border-color:#00D9C0;background:rgba(0,217,192,0.16);color:#fff;}
+.quiz-btn.wrong{border-color:#e0607a;background:rgba(224,96,122,0.15);color:#fff;}
+.quiz-reveal{margin-top:1.3rem;text-align:center;animation:panelIn .4s ease;}
+.quiz-verdict{font-family:'Fraunces',serif;font-size:1.18rem;margin-bottom:.5rem;}
+.quiz-verdict.ok{color:#00D9C0;}
+.quiz-verdict.no{color:#e0607a;}
+.quiz-tell{font-size:.97rem;color:rgba(255,255,255,0.7);line-height:1.6;max-width:520px;margin:0 auto 1.3rem;}
+.quiz-result{text-align:center;padding:1rem 0;animation:panelIn .4s ease;}
+.quiz-result-emoji{font-size:3rem;margin-bottom:.5rem;}
+.quiz-result-score{font-family:'Fraunces',serif;font-size:1.7rem;color:#fff;margin-bottom:.5rem;}
+.quiz-result-text{font-size:1.01rem;color:rgba(255,255,255,0.72);line-height:1.65;max-width:520px;margin:0 auto 1.5rem;}
+
+/* ── Halluzinations-Galerie ── */
+.halu-grid{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.1rem;}
+.halu-card{background:#061523;border:1px solid rgba(255,255,255,0.08);border-radius:18px;padding:1.5rem 1.5rem 1.3rem;
+  cursor:pointer;transition:border-color .2s,transform .2s;display:flex;flex-direction:column;}
+.halu-card:hover{border-color:rgba(0,217,192,0.4);transform:translateY(-2px);}
+.halu-card:focus-visible{outline:2px solid var(--primary);outline-offset:3px;}
+.halu-q{font-size:.8rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:.7rem;}
+.halu-a{font-family:'Fraunces',serif;font-size:1.1rem;line-height:1.5;color:#fff;margin-bottom:.9rem;}
+.halu-badge{align-self:flex-start;font-size:.68rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+  color:#e0a15f;background:rgba(224,161,95,0.1);border:1px solid rgba(224,161,95,0.32);border-radius:100px;padding:.25rem .7rem;margin-bottom:1rem;}
+.halu-hint{font-size:.82rem;font-weight:600;color:var(--primary);margin-top:auto;}
+.halu-truth{max-height:0;opacity:0;overflow:hidden;transition:max-height .4s ease,opacity .35s ease,margin .3s ease;}
+.halu-card.open .halu-truth{max-height:320px;opacity:1;margin-top:1rem;}
+.halu-card.open .halu-hint{display:none;}
+.halu-truth-label{font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#00D9C0;margin-bottom:.35rem;}
+.halu-truth p{font-size:.94rem;line-height:1.55;color:rgba(255,255,255,0.82);margin-bottom:.8rem;}
+.halu-lehre{font-size:.89rem;line-height:1.55;color:rgba(255,255,255,0.6);border-top:1px solid rgba(255,255,255,0.08);padding-top:.75rem;}
+.halu-lehre b{color:var(--primary);font-weight:600;}
+.halu-foot{max-width:820px;margin:1.6rem auto 0;text-align:center;font-size:.85rem;color:rgba(255,255,255,0.42);}
+
+/* ── KI-Reifegrad-Schnelltest ── */
+.rg-progress{height:6px;background:rgba(255,255,255,0.08);border-radius:100px;overflow:hidden;margin-bottom:1.6rem;}
+.rg-progress-fill{height:100%;width:0;background:linear-gradient(100deg,#1B8B9E,#00D9C0);border-radius:100px;transition:width .4s ease;}
+.rg-question{animation:panelIn .35s ease;}
+.rg-q-text{font-family:'Fraunces',serif;font-size:1.28rem;line-height:1.45;color:#fff;margin-bottom:1.3rem;text-align:center;}
+.rg-options{display:flex;flex-direction:column;gap:.7rem;}
+.rg-opt{font-family:inherit;cursor:pointer;text-align:left;font-size:1rem;color:rgba(255,255,255,0.85);
+  background:rgba(255,255,255,0.04);border:1.5px solid rgba(255,255,255,0.14);border-radius:14px;padding:1rem 1.2rem;
+  transition:border-color .2s,background .2s,transform .15s,color .2s;}
+.rg-opt:hover{border-color:var(--primary);background:rgba(0,217,192,0.07);color:#fff;transform:translateX(3px);}
+.rg-badge{display:inline-block;font-family:'Fraunces',serif;font-size:1.55rem;color:var(--navy);background:var(--primary);
+  border-radius:100px;padding:.35rem 1.5rem;margin-bottom:1.1rem;box-shadow:0 8px 24px rgba(0,217,192,0.3);}
+.rg-next{background:rgba(0,217,192,0.06);border:1px solid rgba(0,217,192,0.2);border-radius:14px;padding:1.1rem 1.3rem;
+  font-size:.97rem;line-height:1.6;color:rgba(255,255,255,0.82);max-width:520px;margin:0 auto 1.4rem;text-align:left;}
+.rg-next b{color:var(--primary);font-weight:600;}
+.rg-cta{display:flex;gap:.7rem;flex-wrap:wrap;justify-content:center;margin-bottom:1.3rem;}
 
 @media(max-width:680px){
   .rubrik-tabs-wrap{top:76px;}
@@ -440,6 +517,9 @@ footer{padding:3rem 5%;border-top:1px solid rgba(255,255,255,0.06);display:flex;
     <button class="rtab is-active" type="button" role="tab" aria-selected="true" data-panel="panel-translator"><span class="rtab-emoji">🌉</span> KI-Sprachbrücke</button>
     <button class="rtab" type="button" role="tab" aria-selected="false" data-panel="panel-pet"><span class="rtab-emoji">🐾</span> Office Pets</button>
     <button class="rtab" type="button" role="tab" aria-selected="false" data-panel="panel-fortune"><span class="rtab-emoji">🥠</span> Fortune Cookie</button>
+    <button class="rtab" type="button" role="tab" aria-selected="false" data-panel="panel-quiz"><span class="rtab-emoji">🕵️</span> KI oder Mensch?</button>
+    <button class="rtab" type="button" role="tab" aria-selected="false" data-panel="panel-halu"><span class="rtab-emoji">🎭</span> Halluzinations-Galerie</button>
+    <button class="rtab" type="button" role="tab" aria-selected="false" data-panel="panel-reifegrad"><span class="rtab-emoji">📊</span> KI-Reifegrad-Test</button>
   </div>
 </div>
 
@@ -585,8 +665,79 @@ footer{padding:3rem 5%;border-top:1px solid rgba(255,255,255,0.06);display:flex;
       <p class="fortune-text" id="fortuneText"></p>
       <span class="fortune-num" id="fortuneNum"></span>
     </div>
-    <button class="cookie-again" id="cookieAgain" type="button">Noch einen Keks 🥠</button>
+    <div class="fortune-actions" id="fortuneActions">
+      <button class="cookie-again" id="cookieAgain" type="button">Noch einen Keks 🥠</button>
+      <button class="fx-btn" id="copyBtn" type="button">📋 Kopieren</button>
+      <button class="fx-btn" id="shareBtn" type="button">🔗 Teilen</button>
+    </div>
+    <div class="share-links" id="shareLinks" hidden>
+      <a id="shareWa" href="#" target="_blank" rel="noopener">Per WhatsApp</a>
+      <a id="shareLi" href="#" target="_blank" rel="noopener">Auf LinkedIn</a>
+    </div>
     <p class="fortune-foot">Bandbreite von frech bis wahr. <span class="it" style="font-style:italic">Der einzige Keks ohne Kalorien – dafür mit Aha.</span></p>
+  </div>
+</section>
+
+<!-- PANEL 4: KI oder Mensch? -->
+<section class="panel" id="panel-quiz" role="tabpanel">
+  <div class="panel-head reveal">
+    <h2 class="panel-title">KI oder <span class="it">Mensch?</span></h2>
+    <p class="panel-intro">Ein kurzer Text – aus einer E-Mail, einer Ausrede, einem Meeting. Deine Aufgabe: Kam das von einer KI oder von einem Menschen? Trainiert genau den Blick, den du im Alltag brauchst – erst prüfen, dann glauben.</p>
+  </div>
+  <div class="quiz reveal" id="quizBox">
+    <div class="quiz-bar"><span id="quizProgress">Runde 1 / 12</span><span id="quizScore">Treffer: 0</span></div>
+    <div class="quiz-card" id="quizCard">
+      <span class="quiz-quote-mark">„</span>
+      <p class="quiz-text" id="quizText">…</p>
+    </div>
+    <div class="quiz-choices" id="quizChoices">
+      <button class="quiz-btn" type="button" data-guess="ki">🤖 KI-generiert</button>
+      <button class="quiz-btn" type="button" data-guess="mensch">🧑 Mensch</button>
+    </div>
+    <div class="quiz-reveal" id="quizReveal" hidden>
+      <p class="quiz-verdict" id="quizVerdict"></p>
+      <p class="quiz-tell" id="quizTell"></p>
+      <button class="btn-primary" id="quizNext" type="button">Weiter →</button>
+    </div>
+    <div class="quiz-result" id="quizResult" hidden>
+      <div class="quiz-result-emoji" id="quizResultEmoji">🎯</div>
+      <p class="quiz-result-score" id="quizResultScore"></p>
+      <p class="quiz-result-text" id="quizResultText"></p>
+      <button class="btn-primary" id="quizRestart" type="button">Nochmal spielen</button>
+    </div>
+  </div>
+</section>
+
+<!-- PANEL 5: Halluzinations-Galerie -->
+<section class="panel" id="panel-halu" role="tabpanel">
+  <div class="panel-head reveal">
+    <h2 class="panel-title">Halluzinations-<span class="it">Galerie</span></h2>
+    <p class="panel-intro">KI klingt am überzeugendsten, wenn sie danebenliegt. Eine kleine Sammlung typischer Aussetzer – zum Schmunzeln und als Erinnerung: selbstsicher heißt nicht richtig. Karte antippen und schauen, was wirklich stimmt.</p>
+  </div>
+  <div class="halu-grid reveal" id="haluGrid"></div>
+  <p class="halu-foot reveal">Alle Beispiele sind illustrativ – sie zeigen Muster, keine bestimmte KI. <span class="it" style="font-style:italic">Die Lehre bleibt dieselbe: gegenprüfen.</span></p>
+</section>
+
+<!-- PANEL 6: KI-Reifegrad-Schnelltest -->
+<section class="panel" id="panel-reifegrad" role="tabpanel">
+  <div class="panel-head reveal">
+    <h2 class="panel-title">KI-Reifegrad-<span class="it">Schnelltest</span></h2>
+    <p class="panel-intro">Fünf lockere Fragen, ehrlich beantwortet – und du weißt, wo dein Betrieb beim Thema KI steht: vom KI-Lehrling bis zum KI-Meister. Am Ende ein konkreter nächster Schritt, kein Verkaufsgespräch.</p>
+  </div>
+  <div class="quiz reveal" id="rgBox">
+    <div class="quiz-bar"><span id="rgProgress">Frage 1 / 5</span><span id="rgCount">0 von 5 beantwortet</span></div>
+    <div class="rg-progress"><div class="rg-progress-fill" id="rgFill"></div></div>
+    <div class="rg-question" id="rgQuestion">
+      <p class="rg-q-text" id="rgQText">…</p>
+      <div class="rg-options" id="rgOptions"></div>
+    </div>
+    <div class="quiz-result" id="rgResult" hidden>
+      <span class="rg-badge" id="rgBadge">KI-Lehrling</span>
+      <p class="quiz-result-text" id="rgResultText"></p>
+      <div class="rg-next" id="rgNext"></div>
+      <div class="rg-cta" id="rgCta"></div>
+      <button class="btn-ghost" id="rgRestart" type="button">Test wiederholen</button>
+    </div>
   </div>
 </section>
 
@@ -1629,7 +1780,13 @@ const FORTUNES = [
   const txt    = document.getElementById('fortuneText');
   const num    = document.getElementById('fortuneNum');
   const again  = document.getElementById('cookieAgain');
-  let last = -1, count = 0;
+  const copyBtn    = document.getElementById('copyBtn');
+  const shareBtn   = document.getElementById('shareBtn');
+  const shareLinks = document.getElementById('shareLinks');
+  const shareWa    = document.getElementById('shareWa');
+  const shareLi    = document.getElementById('shareLi');
+  const PAGE_URL   = 'https://bridgetoai.de/kaffeepause.html#panel-fortune';
+  let last = -1, count = 0, current = '';
 
   function pick(){
     let i;
@@ -1643,11 +1800,35 @@ const FORTUNES = [
     void cookie.offsetWidth; // Reflow erzwingen, damit die Animation neu startet
     cookie.classList.add('crack');
   }
+  function resetShare(){
+    shareLinks.classList.remove('open');
+    copyBtn.classList.remove('copied');
+    copyBtn.textContent = '📋 Kopieren';
+  }
   function setFortune(){
     count++;
-    txt.textContent = pick();
+    current = pick();
+    txt.textContent = current;
     num.textContent = 'Keks Nr. ' + count + ' · frisch aus der KI-Werkstatt';
+    resetShare();
   }
+  function shareText(){
+    return '„' + current + '“\n\n— Fortune Cookie of AI Trends · bridge to ai\n' + PAGE_URL;
+  }
+  function copyToClipboard(text){
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      return navigator.clipboard.writeText(text);
+    }
+    return new Promise((res, rej) => {
+      try{
+        const ta = document.createElement('textarea');
+        ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+        document.body.appendChild(ta); ta.focus(); ta.select();
+        document.execCommand('copy'); document.body.removeChild(ta); res();
+      }catch(e){ rej(e); }
+    });
+  }
+
   cookie.addEventListener('click', () => {
     setFortune();
     box.classList.add('is-open');
@@ -1658,6 +1839,187 @@ const FORTUNES = [
     crackAnim();
     setTimeout(() => { setFortune(); slip.classList.remove('swapping'); }, 220);
   });
+
+  copyBtn.addEventListener('click', () => {
+    copyToClipboard(shareText()).then(() => {
+      copyBtn.classList.add('copied');
+      copyBtn.textContent = '✓ Kopiert';
+      setTimeout(() => { copyBtn.classList.remove('copied'); copyBtn.textContent = '📋 Kopieren'; }, 1900);
+    }).catch(() => {
+      copyBtn.textContent = 'Bitte manuell markieren';
+      setTimeout(() => { copyBtn.textContent = '📋 Kopieren'; }, 2200);
+    });
+  });
+
+  shareBtn.addEventListener('click', async () => {
+    const text = shareText();
+    if(navigator.share){
+      try{
+        await navigator.share({ title: 'Fortune Cookie of AI Trends', text: '„' + current + '“ — bridge to ai', url: PAGE_URL });
+        return;
+      }catch(e){ if(e && e.name === 'AbortError') return; /* sonst: Fallback-Links zeigen */ }
+    }
+    shareWa.href = 'https://wa.me/?text=' + encodeURIComponent(text);
+    shareLi.href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(PAGE_URL);
+    shareLinks.classList.toggle('open');
+  });
+})();
+
+/* =====================================================================
+   KI ODER MENSCH? — Ratespiel, schult den „erst prüfen"-Reflex
+   Frontend-only: gemischte Reihenfolge, Auflösung mit Tell, Punktestand.
+   ===================================================================== */
+const QUIZ = [
+  { text: "Vielen Dank für Ihre Nachricht! Gerne unterstütze ich Sie dabei. Hier sind fünf wesentliche Punkte, die Sie beachten sollten:", quelle: "ki", tell: "Übertrieben dienstbeflissen und sofort eine nummerierte Liste – ein klassischer KI-Reflex." },
+  { text: "Sorry, meld mich später nochmal – bin grad beim Kunden, Netz hier unterirdisch.", quelle: "mensch", tell: "Halber Satz, echtes Genöle übers Netz. So tippt ein Mensch in Eile." },
+  { text: "Zusammenfassend lässt sich festhalten, dass die Synergien vielfältig sind und einen echten Mehrwert generieren.", quelle: "ki", tell: "„Zusammenfassend lässt sich festhalten“ plus „Mehrwert generieren“ – Buzzword-Dichte wie aus dem Lehrbuch." },
+  { text: "Komm heut später, Kind hat Kita-Läuse mitgebracht. Frag nicht.", quelle: "mensch", tell: "So spezifisch-chaotisch erfindet keine KI das – das riecht nach echtem Alltag." },
+  { text: "Es ist wichtig zu beachten, dass es hier kein Richtig oder Falsch gibt – jede Perspektive hat ihre Berechtigung.", quelle: "ki", tell: "Diese diplomatische Nicht-Aussage ist ein echter KI-Lieblingssatz." },
+  { text: "Moin, passt Donnerstag 9 Uhr? Sonst Freitag, aber nur vormittags.", quelle: "mensch", tell: "Konkret, knapp, terminlich – menschlicher Alltagston ohne Schnörkel." },
+  { text: "Ich hoffe, diese E-Mail erreicht Sie bei bester Gesundheit.", quelle: "ki", tell: "Diese Floskel eröffnet gefühlt jede zweite KI-Mail. Kaum ein Mensch schreibt das noch." },
+  { text: "Haha ja passt, ich bring die Bohrmaschine mit. Und Kuchen. Vor allem Kuchen.", quelle: "mensch", tell: "Selbstironie und Kuchen-Prioritäten – dafür fehlt der KI (noch) das Timing." },
+  { text: "Selbstverständlich! Lassen Sie uns gemeinsam die nächsten Schritte definieren, um Ihr Ziel effizient zu erreichen.", quelle: "ki", tell: "Glattgebügelte Begeisterung mit „gemeinsam“ und „effizient“ – typisch generiert." },
+  { text: "kannst du mir das nochmal schicken? finds grad nicht. sorry 🙈", quelle: "mensch", tell: "Kleinschreibung, Selbst-Sorry, Emoji – die kleine Unordnung verrät den Menschen." },
+  { text: "Diese Frage berührt einen faszinierenden Aspekt. Betrachten wir das Ganze aus drei Blickwinkeln.", quelle: "ki", tell: "„Faszinierend“ und gleich in Blickwinkel sortiert – die KI liebt Struktur mehr als jede Antwort." },
+  { text: "Bin dann mal weg, Chef weiß Bescheid. Bis Montag!", quelle: "mensch", tell: "Locker, persönlich, mit Insider – kein KI-Standardgruß." }
+];
+(function(){
+  const box = document.getElementById('quizBox'); if(!box) return;
+  const elText=document.getElementById('quizText'), elChoices=document.getElementById('quizChoices'),
+        elReveal=document.getElementById('quizReveal'), elVerdict=document.getElementById('quizVerdict'),
+        elTell=document.getElementById('quizTell'), elNext=document.getElementById('quizNext'),
+        elProg=document.getElementById('quizProgress'), elScore=document.getElementById('quizScore'),
+        elResult=document.getElementById('quizResult'), elResEmoji=document.getElementById('quizResultEmoji'),
+        elResScore=document.getElementById('quizResultScore'), elResText=document.getElementById('quizResultText'),
+        elRestart=document.getElementById('quizRestart'), elCard=document.getElementById('quizCard'),
+        btns=elChoices.querySelectorAll('.quiz-btn');
+  let order=[], idx=0, score=0;
+  function shuffle(n){const a=[...Array(n).keys()];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+  function start(){order=shuffle(QUIZ.length);idx=0;score=0;elResult.hidden=true;elCard.style.display='';elChoices.style.display='';render();}
+  function render(){
+    const q=QUIZ[order[idx]];
+    elText.textContent=q.text;
+    elProg.textContent='Runde '+(idx+1)+' / '+QUIZ.length;
+    elScore.textContent='Treffer: '+score;
+    elReveal.hidden=true;
+    btns.forEach(b=>{b.disabled=false;b.classList.remove('right','wrong');});
+  }
+  function answer(guess){
+    const q=QUIZ[order[idx]], correct=(guess===q.quelle);
+    if(correct)score++;
+    btns.forEach(b=>{b.disabled=true;
+      if(b.dataset.guess===q.quelle)b.classList.add('right');
+      else if(b.dataset.guess===guess)b.classList.add('wrong');});
+    elVerdict.textContent=correct?'Richtig!':'Daneben!';
+    elVerdict.className='quiz-verdict '+(correct?'ok':'no');
+    elTell.textContent=(q.quelle==='ki'?'Das kam von einer KI. ':'Das schrieb ein Mensch. ')+q.tell;
+    elScore.textContent='Treffer: '+score;
+    elReveal.hidden=false;
+    elNext.textContent=(idx+1>=QUIZ.length)?'Ergebnis anzeigen →':'Weiter →';
+  }
+  function next(){ if(idx+1>=QUIZ.length){showResult();return;} idx++;render(); }
+  function showResult(){
+    elCard.style.display='none';elChoices.style.display='none';elReveal.hidden=true;
+    const pct=score/QUIZ.length; let emoji,head;
+    if(pct>=0.85){emoji='🕵️';head='Starker Spürsinn!';}
+    else if(pct>=0.6){emoji='🎯';head='Guter Blick!';}
+    else if(pct>=0.4){emoji='🤔';head='Ausbaufähig!';}
+    else{emoji='🎲';head='Da war viel Rätselraten dabei.';}
+    elResEmoji.textContent=emoji;
+    elResScore.textContent=score+' von '+QUIZ.length+' richtig';
+    elResText.textContent=head+' Genau darum geht es: KI-Texte werden immer besser – der sichere Reflex ist, im Zweifel gegenzuprüfen, statt blind zu vertrauen.';
+    elResult.hidden=false;
+    elProg.textContent='Fertig';
+  }
+  btns.forEach(b=>b.addEventListener('click',()=>answer(b.dataset.guess)));
+  elNext.addEventListener('click',next);
+  elRestart.addEventListener('click',start);
+  start();
+})();
+
+/* =====================================================================
+   HALLUZINATIONS-GALERIE — selbstbewusst falsch, Karte deckt die Wahrheit auf
+   Beispiele sind illustrativ (Muster, keine bestimmte KI).
+   ===================================================================== */
+const HALLUS = [
+  { frage: "Wie viele R sind in „Erdbeere“?", antwort: "Im Wort „Erdbeere“ kommt der Buchstabe R genau ein Mal vor.", wahrheit: "Es sind drei R.", lehre: "Zählen und exakte Buchstaben sind für Sprachmodelle bis heute eine Zumutung. Für harte Fakten lieber selbst nachzählen." },
+  { frage: "Empfiehl mir ein Fachbuch zum Thema.", antwort: "Sehr zu empfehlen ist „Die Kunst des maschinellen Denkens“ von A. Meier, erschienen 2019.", wahrheit: "Dieses Buch existiert nicht – Titel, Autor und Jahr sind frei erfunden.", lehre: "KI erfindet Quellen verblüffend selbstbewusst. Titel, Autor und ISBN immer gegenprüfen." },
+  { frage: "Ist 27 eine Primzahl?", antwort: "Ja, 27 ist eine Primzahl, da sie nur durch 1 und sich selbst teilbar ist.", wahrheit: "27 = 3 × 9, also keine Primzahl.", lehre: "Klingt sauber begründet – ist trotzdem falsch. Eine schöne Begründung ist kein Beweis." },
+  { frage: "Was wiegt mehr: ein Kilo Federn oder ein Kilo Stahl?", antwort: "Ein Kilo Stahl wiegt mehr, weil Stahl deutlich dichter ist.", wahrheit: "Beides wiegt exakt ein Kilo.", lehre: "Bei Fangfragen greift die KI zum „plausibelsten“ Muster statt zur Logik." },
+  { frage: "Zitiere das passende Gesetz dazu.", antwort: "Das regelt eindeutig § 42a Abs. 3 des Handwerksgesetzes.", wahrheit: "Diesen Paragrafen gibt es in der Form nicht.", lehre: "Erfundene Paragrafen sehen täuschend echt aus. Bei Rechtsfragen: Primärquelle oder Fachperson." },
+  { frage: "Rechne 12,5 % von 240.", antwort: "12,5 % von 240 sind 35.", wahrheit: "Es sind 30.", lehre: "Kopfrechnen ist nicht die Kernkompetenz. Zahlen lieber im Rechner oder per Code prüfen." },
+  { frage: "Fasse den beigefügten Vertrag zusammen.", antwort: "Der Vertrag sieht eine Kündigungsfrist von drei Monaten vor.", wahrheit: "Im Text stand nie eine Frist – die KI hat sie „sinnvoll“ ergänzt.", lehre: "Was fehlt, ergänzt die KI gern plausibel klingend. Immer gegen das Original lesen." },
+  { frage: "Wer hat den Termin abgesagt?", antwort: "Herr Müller hat den Termin gestern telefonisch abgesagt.", wahrheit: "In der Mail stand nur „jemand aus dem Team“ – der Name ist erfunden.", lehre: "Details, die selbstsicher klingen, sind nicht automatisch belegt." }
+];
+(function(){
+  const grid=document.getElementById('haluGrid'); if(!grid) return;
+  grid.innerHTML=HALLUS.map((h,i)=>
+    '<div class="halu-card" data-i="'+i+'" role="button" tabindex="0" aria-expanded="false">'
+    +'<div class="halu-q">Gefragt: '+escapeHtml(h.frage)+'</div>'
+    +'<div class="halu-a">'+escapeHtml(h.antwort)+'</div>'
+    +'<span class="halu-badge">🤖 sagt selbstbewusst</span>'
+    +'<span class="halu-hint">Antippen: Was stimmt wirklich?</span>'
+    +'<div class="halu-truth">'
+      +'<div class="halu-truth-label">In Wirklichkeit</div>'
+      +'<p>'+escapeHtml(h.wahrheit)+'</p>'
+      +'<div class="halu-lehre"><b>Lehre:</b> '+escapeHtml(h.lehre)+'</div>'
+    +'</div></div>'
+  ).join('');
+  function toggle(c){const open=c.classList.toggle('open');c.setAttribute('aria-expanded',open?'true':'false');}
+  grid.querySelectorAll('.halu-card').forEach(c=>{
+    c.addEventListener('click',()=>toggle(c));
+    c.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle(c);}});
+  });
+})();
+
+/* =====================================================================
+   KI-REIFEGRAD-SCHNELLTEST — 5 Fragen → Badge Lehrling/Geselle/Meister
+   Frontend-only: Punkte 0–10, Ergebnis mit konkretem nächsten Schritt.
+   ===================================================================== */
+const RG_Q = [
+  { q:"Nutzt du oder dein Team KI-Tools schon im Arbeitsalltag?", opts:[{t:"Noch gar nicht",p:0},{t:"Einzelne probieren mal etwas aus",p:1},{t:"Ja, regelmäßig und mehrere Tools",p:2}] },
+  { q:"Gibt es Regeln, was in KI-Tools darf und was nicht (z. B. Kundendaten)?", opts:[{t:"Nein, darüber haben wir nie gesprochen",p:0},{t:"Eine grobe Absprache im Kopf",p:1},{t:"Ja, schriftlich und allen bekannt",p:2}] },
+  { q:"Weißt du, welche wiederkehrende Aufgabe dir KI am meisten Zeit sparen würde?", opts:[{t:"Keine Ahnung, wo anfangen",p:0},{t:"Eine vage Idee",p:1},{t:"Ja, ganz konkret",p:2}] },
+  { q:"Prüft ihr KI-Ergebnisse, bevor sie rausgehen?", opts:[{t:"Was rauskommt, wird meist übernommen",p:0},{t:"Kommt drauf an",p:1},{t:"Immer, mit klarem Vier-Augen-Prinzip",p:2}] },
+  { q:"Wie sicher fühlst du dich beim Thema Datenschutz & KI?", opts:[{t:"Ehrlich? Gar nicht",p:0},{t:"Halbwegs",p:1},{t:"Sicher, das haben wir im Griff",p:2}] }
+];
+const RG_TIERS = [
+  { max:3, badge:"KI-Lehrling", text:"Du stehst noch am Anfang – und das ist ein guter Startpunkt: keine Altlasten, keine verkorksten Tools, freie Bahn für einen sauberen Einstieg.", next:"Ein 60-minütiges Erstgespräch, in dem wir gemeinsam deinen ersten sinnvollen KI-Einsatz finden – ohne Fachchinesisch.", cta:'<a class="btn-primary" href="index.html#kontakt">Erstgespräch sichern →</a>' },
+  { max:7, badge:"KI-Geselle", text:"Du bist schon dran am Thema – es fehlt aber noch System und Sicherheit. Genau hier holst du am schnellsten spürbar Zeit und Ruhe heraus.", next:"Ein Quick-Audit, das deine größten Zeitfresser und Datenschutz-Lücken sichtbar macht und dir eine klare Prioritätenliste gibt.", cta:'<a class="btn-primary" href="audit.html">Quick-Audit ansehen →</a><a class="btn-ghost" href="index.html#kontakt">Kurz sprechen</a>' },
+  { max:10, badge:"KI-Meister", text:"Respekt – du nutzt KI bewusst, mit Regeln und Kontrolle. Jetzt geht es um Feinschliff und darum, dass das Wissen nicht an einzelnen Köpfen hängt.", next:"Ein Team-Workshop, der euer KI-Können verankert und alle auf denselben, sicheren Stand bringt.", cta:'<a class="btn-primary" href="index.html#leistungen">Workshops ansehen →</a><a class="btn-ghost" href="index.html#kontakt">Idee besprechen</a>' }
+];
+(function(){
+  const box=document.getElementById('rgBox'); if(!box) return;
+  const elProg=document.getElementById('rgProgress'), elCount=document.getElementById('rgCount'),
+        elFill=document.getElementById('rgFill'), elQ=document.getElementById('rgQuestion'),
+        elQText=document.getElementById('rgQText'), elOpts=document.getElementById('rgOptions'),
+        elResult=document.getElementById('rgResult'), elBadge=document.getElementById('rgBadge'),
+        elResText=document.getElementById('rgResultText'), elNext=document.getElementById('rgNext'),
+        elCta=document.getElementById('rgCta'), elRestart=document.getElementById('rgRestart');
+  let idx=0, total=0;
+  function start(){idx=0;total=0;elResult.hidden=true;elQ.style.display='';render();}
+  function render(){
+    const q=RG_Q[idx];
+    elQText.textContent=q.q;
+    elProg.textContent='Frage '+(idx+1)+' / '+RG_Q.length;
+    elCount.textContent=idx+' von '+RG_Q.length+' beantwortet';
+    elFill.style.width=(idx/RG_Q.length*100)+'%';
+    elOpts.innerHTML='';
+    q.opts.forEach(o=>{const b=document.createElement('button');b.className='rg-opt';b.type='button';b.textContent=o.t;b.addEventListener('click',()=>choose(o.p));elOpts.appendChild(b);});
+  }
+  function choose(p){total+=p;idx++;if(idx>=RG_Q.length)showResult();else render();}
+  function showResult(){
+    elFill.style.width='100%';elCount.textContent=RG_Q.length+' von '+RG_Q.length+' beantwortet';elProg.textContent='Ergebnis';
+    elQ.style.display='none';
+    const tier=RG_TIERS.find(t=>total<=t.max)||RG_TIERS[RG_TIERS.length-1];
+    elBadge.textContent=tier.badge;
+    elResText.textContent=tier.text;
+    elNext.innerHTML='<b>Dein nächster Schritt:</b> '+escapeHtml(tier.next);
+    elCta.innerHTML=tier.cta;
+    elResult.hidden=false;
+  }
+  elRestart.addEventListener('click',start);
+  start();
 })();
 
 /* =====================================================================
