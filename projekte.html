@@ -51,6 +51,19 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 .nav-links a::after{content:'';position:absolute;left:0;bottom:-6px;width:0;height:1px;background:var(--primary);transition:width .3s;}
 .nav-links a:hover,.nav-links a.active{color:#fff;}
 .nav-links a.active::after,.nav-links a:hover::after{width:100%;}
+/* Dropdown-Untermenüs */
+.nav-links li{position:relative;}
+.nav-drop-toggle{display:inline-flex;align-items:center;gap:.3rem;}
+.nav-drop-toggle .care{font-size:.65rem;opacity:.6;transition:transform .25s;}
+.nav-drop:hover .nav-drop-toggle .care,.nav-drop:focus-within .nav-drop-toggle .care{transform:rotate(180deg);}
+.nav-dropdown{position:absolute;top:calc(100% + 18px);left:50%;transform:translate(-50%,-8px);min-width:190px;
+  background:rgba(4,12,22,0.97);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.08);border-radius:14px;
+  padding:.5rem;list-style:none;opacity:0;visibility:hidden;transition:opacity .25s,transform .25s,visibility .25s;
+  box-shadow:0 30px 50px -30px rgba(0,0,0,.6);}
+.nav-drop:hover .nav-dropdown,.nav-drop:focus-within .nav-dropdown{opacity:1;visibility:visible;transform:translate(-50%,0);}
+.nav-dropdown a{display:block;padding:.65rem .85rem;border-radius:8px;font-size:.85rem;white-space:nowrap;}
+.nav-dropdown a::after{display:none;}
+.nav-dropdown a:hover{background:rgba(255,255,255,0.06);}
 .btn-cta{display:inline-flex;align-items:center;gap:.4rem;background:var(--primary);color:var(--navy);padding:.6rem 1.5rem;border-radius:100px;font-size:.9rem;font-weight:700;text-decoration:none;transition:transform .25s,box-shadow .25s;}
 .btn-cta:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,217,192,0.35);}
 
@@ -64,6 +77,17 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 .mobile-menu a{color:rgba(255,255,255,0.78);text-decoration:none;font-size:1.15rem;font-weight:500;padding:1.05rem .2rem;border-bottom:1px solid rgba(255,255,255,0.07);transition:color .2s;}
 .mobile-menu a:hover{color:var(--primary);}
 .mobile-menu .btn-cta{align-self:flex-start;margin-top:1.5rem;color:var(--navy);background:var(--primary);padding:.85rem 1.8rem;border-bottom:0;font-weight:700;}
+/* Mobile-Akkordeon */
+.mm-group{border-bottom:1px solid rgba(255,255,255,0.07);}
+.mm-row{display:flex;align-items:center;justify-content:space-between;}
+.mm-row a{flex:1;border-bottom:0!important;}
+.mm-caret{background:none;border:0;width:40px;height:40px;display:flex;align-items:center;justify-content:center;
+  color:rgba(255,255,255,0.5);cursor:pointer;transition:transform .3s;flex-shrink:0;}
+.mm-caret::before{content:'⌄';font-size:1.2rem;}
+.mm-caret.open{transform:rotate(180deg);}
+.mm-sub{display:flex;flex-direction:column;max-height:0;overflow:hidden;transition:max-height .35s ease;}
+.mm-sub.open{max-height:300px;}
+.mm-sub a{border-bottom:0!important;padding:.7rem .2rem .7rem 1.1rem!important;font-size:1rem!important;opacity:.82;}
 
 /* ── HERO ── */
 .p-hero{position:relative;padding:10rem 5% 3rem;overflow:hidden;}
@@ -153,11 +177,21 @@ footer{flex-direction:column;text-align:center;}
     </svg>
   </a>
   <ul class="nav-links">
-    <li><a href="index.html#leistungen">Leistungen</a></li>
-    <li><a href="handwerk.html">Für Handwerker</a></li>
-    <li><a href="projekte.html" class="active">Projekte</a></li>
-    <li><a href="ueber-mich.html">Über mich</a></li>
-    <li><a href="trainerin.html">Dozentin</a></li>
+    <li class="nav-drop">
+      <a href="index.html#leistungen" class="nav-drop-toggle">Leistungen <span class="care">⌄</span></a>
+      <ul class="nav-dropdown">
+        <li><a href="handwerk.html">Für Handwerker</a></li>
+        <li><a href="projekte.html" class="active">Projekte</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+        <li><a href="index.html#checkliste">Checkliste</a></li>
+      </ul>
+    </li>
+    <li class="nav-drop">
+      <a href="ueber-mich.html" class="nav-drop-toggle">Über mich <span class="care">⌄</span></a>
+      <ul class="nav-dropdown">
+        <li><a href="trainerin.html">Dozentin</a></li>
+      </ul>
+    </li>
     <li><a href="kaffeepause.html">KI &amp; Kaffeepause</a></li>
     <li><a href="index.html#kontakt">Kontakt</a></li>
   </ul>
@@ -166,11 +200,27 @@ footer{flex-direction:column;text-align:center;}
     <span></span><span></span><span></span>
   </button>
   <div class="mobile-menu" id="mobileMenu">
-    <a href="index.html#leistungen">Leistungen</a>
-    <a href="handwerk.html">Für Handwerker</a>
-    <a href="projekte.html">Projekte</a>
-    <a href="ueber-mich.html">Über mich</a>
-<a href="trainerin.html">Dozentin</a>
+    <div class="mm-group">
+      <div class="mm-row">
+        <a href="index.html#leistungen">Leistungen</a>
+        <button class="mm-caret" type="button" aria-label="Leistungen Untermenü öffnen" aria-expanded="false"></button>
+      </div>
+      <div class="mm-sub">
+        <a href="handwerk.html">Für Handwerker</a>
+        <a href="projekte.html">Projekte</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="index.html#checkliste">Checkliste</a>
+      </div>
+    </div>
+    <div class="mm-group">
+      <div class="mm-row">
+        <a href="ueber-mich.html">Über mich</a>
+        <button class="mm-caret" type="button" aria-label="Über mich Untermenü öffnen" aria-expanded="false"></button>
+      </div>
+      <div class="mm-sub">
+        <a href="trainerin.html">Dozentin</a>
+      </div>
+    </div>
     <a href="kaffeepause.html">KI &amp; Kaffeepause</a>
     <a href="index.html#kontakt">Kontakt</a>
     <a href="index.html#kontakt" class="btn-cta">Erstgespräch →</a>
@@ -318,6 +368,12 @@ mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
 burger.classList.remove('open');
 mobileMenu.classList.remove('open');
 burger.setAttribute('aria-expanded','false');
+}));
+mobileMenu.querySelectorAll('.mm-caret').forEach(btn=>btn.addEventListener('click',()=>{
+const sub=btn.closest('.mm-group').querySelector('.mm-sub');
+const open=sub.classList.toggle('open');
+btn.classList.toggle('open',open);
+btn.setAttribute('aria-expanded',open);
 }));
 
 // ── Filter ──
