@@ -257,6 +257,7 @@ section{padding:7rem 5%;position:relative;}
 .about-panel{position:relative;background:linear-gradient(160deg,rgba(27,139,158,0.08),rgba(255,255,255,0.02));border:1px solid rgba(255,255,255,0.08);border-radius:24px;padding:3.5rem;overflow:hidden;}
 .about-panel::before{content:'';position:absolute;top:-50px;right:-50px;width:200px;height:200px;background:radial-gradient(circle,rgba(0,217,192,0.15),transparent 70%);}
 .about-avatar{width:68px;height:68px;border-radius:50%;background:linear-gradient(135deg,var(--secondary),var(--primary));display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-size:1.7rem;font-weight:600;color:var(--navy);margin-bottom:1.6rem;box-shadow:0 10px 30px rgba(0,217,192,0.25);}
+.about-role{margin-top:.9rem;color:var(--primary);font-weight:600;font-size:1rem;letter-spacing:.01em;}
 .cert-pill{display:inline-flex;align-items:center;gap:.5rem;background:rgba(0,217,192,0.08);border:1px solid rgba(0,217,192,0.2);color:var(--primary);font-size:.8rem;font-weight:600;padding:.5rem 1rem;border-radius:100px;margin-bottom:1.8rem;}
 .about-quote{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:400;font-style:italic;line-height:1.4;color:#fff;margin-bottom:2rem;position:relative;z-index:1;}
 .about-quote .hl{color:var(--primary);}
@@ -319,7 +320,7 @@ textarea.inp{resize:vertical;min-height:130px;}
 /* footer */
 footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.05);padding:2.5rem 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
 .footer-copy{font-size:.8rem;color:rgba(255,255,255,0.25);}
-.footer-links{display:flex;gap:2rem;}
+.footer-links{display:flex;gap:.8rem 2rem;flex-wrap:wrap;justify-content:center;}
 .footer-links a{font-size:.8rem;color:rgba(255,255,255,0.3);text-decoration:none;transition:color .25s;}
 .footer-links a:hover{color:var(--primary);}
 
@@ -360,8 +361,9 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.05);padding
   </a>
   <ul class="nav-links">
     <li class="nav-drop">
-      <a href="#leistungen" class="nav-drop-toggle">Leistungen <span class="care">⌄</span></a>
+      <a href="#leistungen" class="nav-drop-toggle">Beratung <span class="care">⌄</span></a>
       <ul class="nav-dropdown">
+        <li><a href="audit.html">KI-Quick-Audit</a></li>
         <li><a href="ai-act.html">EU AI Act &amp; Kennzeichnung</a></li>
         <li><a href="handwerk.html">Für Handwerker</a></li>
         <li><a href="projekte.html">Projekte</a></li>
@@ -369,12 +371,8 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.05);padding
         <li><a href="#checkliste">Checkliste</a></li>
       </ul>
     </li>
-    <li class="nav-drop">
-      <a href="ueber-mich.html" class="nav-drop-toggle">Über mich <span class="care">⌄</span></a>
-      <ul class="nav-dropdown">
-        <li><a href="trainerin.html">Dozentin</a></li>
-      </ul>
-    </li>
+    <li><a href="trainerin.html">Dozentin</a></li>
+    <li><a href="ueber-mich.html">Über mich</a></li>
     <li><a href="kaffeepause.html">KI &amp; Kaffeepause</a></li>
     <li><a href="#kontakt">Kontakt</a></li>
   </ul>
@@ -385,10 +383,11 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.05);padding
   <div class="mobile-menu" id="mobileMenu">
     <div class="mm-group">
       <div class="mm-row">
-        <a href="#leistungen">Leistungen</a>
-        <button class="mm-caret" type="button" aria-label="Leistungen Untermenü öffnen" aria-expanded="false"></button>
+        <a href="#leistungen">Beratung</a>
+        <button class="mm-caret" type="button" aria-label="Beratung Untermenü öffnen" aria-expanded="false"></button>
       </div>
       <div class="mm-sub">
+        <a href="audit.html">KI-Quick-Audit</a>
         <a href="ai-act.html">EU AI Act &amp; Kennzeichnung</a>
         <a href="handwerk.html">Für Handwerker</a>
         <a href="projekte.html">Projekte</a>
@@ -396,15 +395,8 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.05);padding
         <a href="#checkliste">Checkliste</a>
       </div>
     </div>
-    <div class="mm-group">
-      <div class="mm-row">
-        <a href="ueber-mich.html">Über mich</a>
-        <button class="mm-caret" type="button" aria-label="Über mich Untermenü öffnen" aria-expanded="false"></button>
-      </div>
-      <div class="mm-sub">
-        <a href="trainerin.html">Dozentin</a>
-      </div>
-    </div>
+    <a href="trainerin.html">Dozentin</a>
+    <a href="ueber-mich.html">Über mich</a>
     <a href="kaffeepause.html">KI &amp; Kaffeepause</a>
     <a href="#kontakt">Kontakt</a>
     <a href="#kontakt" class="btn-cta">Erstgespräch →</a>
@@ -588,7 +580,9 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.05);padding
   <div class="reveal">
     <span class="s-eyebrow">Über mich</span>
     <h2 class="s-title">Warum <span class="it">Julia Pakravan</span>?</h2>
+    <p class="about-role">KI-Beraterin für KMU · Dozentin für KI-Transformation</p>
     <p class="s-sub" style="margin-top:1rem;">Ich komme nicht aus der reinen Tool-Beratung, sondern aus der Unternehmenspraxis: Führung, Vertrieb, CRM, KPIs, Forecasting, Prozessstandardisierung und Change. Genau deshalb beginnt KI bei mir nicht beim Tool, sondern bei der Frage: Wo verliert Ihr Unternehmen heute Zeit, Klarheit oder Wirkung?</p>
+    <p class="s-sub" style="margin-top:1rem;">Als Dozentin bilde ich außerdem angehende KI-Manager:innen aus. Das hält meine Beratung methodisch sauber – und meinen Unterricht nah an echten Unternehmensfällen. <a href="trainerin.html" style="color:var(--primary);text-decoration:none;font-weight:600;">Mehr zu meiner Arbeit als Dozentin →</a></p>
     <div class="exp">
       <div class="exp-item"><span class="d"></span>15+ Jahre Führungs- und Transformationserfahrung</div>
       <div class="exp-item"><span class="d"></span>Salesforce, KPI-Systeme, Reporting & Forecasting</div>
@@ -598,7 +592,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.05);padding
   </div>
   <div class="about-panel reveal">
     <div class="about-avatar">JP</div>
-    <span class="cert-pill">AI Manager (TÜV Rheinland) · Abschluss Juli 2026</span>
+    <span class="cert-pill">Managerin für angewandte KI-Transformation (TÜV)</span>
     <p class="about-quote">„KI wird erst wertvoll, wenn sie im Alltag wirklich <span class="hl">genutzt</span> wird."</p>
     <div class="tags">
       <span class="tag">KI-Roadmap</span><span class="tag">Salesforce</span><span class="tag">LLM-Workflows</span>
@@ -784,6 +778,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.05);padding
     <a href="playbook.html">Playbook</a>
     <a href="#checkliste">Checkliste</a>
     <a href="ueber-mich.html">Über mich</a>
+    <a href="trainerin.html">Dozentin</a>
     <a href="kaffeepause.html">KI &amp; Kaffeepause</a>
     <a href="mailto:julia@bridgetoai.de">Kontakt</a>
     <a href="projekte.html">Projekte</a>
