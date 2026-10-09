@@ -26,6 +26,7 @@
 @font-face{font-family:'Outfit';src:url('/fonts/Outfit.woff2') format('woff2');font-weight:100 900;font-style:normal;font-display:swap;}
 @font-face{font-family:'Fraunces';src:url('/fonts/Fraunces.woff2') format('woff2');font-weight:100 900;font-style:normal;font-display:swap;}
 @font-face{font-family:'Fraunces';src:url('/fonts/Fraunces-Italic.woff2') format('woff2');font-weight:100 900;font-style:italic;font-display:swap;}
+html{font-variation-settings:"WONK" 0,"SOFT" 0;}
 </style>
 <style>
 :root{
@@ -121,7 +122,7 @@ nav.scrolled{background:rgba(4,12,22,0.8);backdrop-filter:blur(20px);border-bott
 .s-eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--primary);margin-bottom:1.2rem;}
 .s-eyebrow::before{content:'';width:30px;height:1px;background:linear-gradient(90deg,transparent,var(--primary));}
 .page-title{font-family:'Fraunces',serif;font-size:clamp(2.4rem,5vw,4rem);font-weight:500;line-height:1.04;letter-spacing:-0.02em;margin-bottom:1.3rem;}
-.page-title .it{font-style:italic;font-weight:400;background:linear-gradient(100deg,#1B8B9E,#00D9C0);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.page-title .it{font-style:normal;background:linear-gradient(100deg,#1B8B9E,#00D9C0);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
 .page-sub{font-size:1.12rem;font-weight:300;color:rgba(255,255,255,0.66);max-width:580px;line-height:1.7;}
 .hero-actions{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.8rem;}
 .hero-actions a{text-decoration:none;}
@@ -179,7 +180,7 @@ nav.scrolled{background:rgba(4,12,22,0.8);backdrop-filter:blur(20px);border-bott
 .meter-track{flex:1;min-width:180px;height:10px;border-radius:100px;background:rgba(255,255,255,0.08);overflow:hidden;}
 .meter-fill{height:100%;width:0;border-radius:100px;background:linear-gradient(90deg,#00D9C0,#1B8B9E);transition:width .8s cubic-bezier(.7,0,.3,1);}
 .meter-score{font-family:'Fraunces',serif;font-size:1.6rem;font-weight:600;white-space:nowrap;}
-.meter-verdict{width:100%;font-size:.95rem;color:rgba(255,255,255,0.72);font-style:italic;}
+.meter-verdict{width:100%;font-size:.95rem;color:rgba(255,255,255,0.72);font-style:normal;}
 
 .block-title{font-size:.76rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--primary);margin:0 0 .7rem;}
 .klartext{
@@ -239,7 +240,7 @@ nav.scrolled{background:rgba(4,12,22,0.8);backdrop-filter:blur(20px);border-bott
   background:linear-gradient(160deg,rgba(0,217,192,0.08),rgba(27,139,158,0.05));
   border:1px solid rgba(0,217,192,0.18);border-radius:22px;padding:2.6rem 2rem;}
 .teaser-card h2{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(1.5rem,3vw,2.1rem);margin-bottom:.9rem;line-height:1.2;}
-.teaser-card .it{font-style:italic;background:linear-gradient(100deg,#1B8B9E,#00D9C0);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.teaser-card .it{font-style:normal;background:linear-gradient(100deg,#1B8B9E,#00D9C0);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
 .teaser-card p{color:rgba(255,255,255,0.66);font-weight:300;max-width:520px;margin:0 auto 1.6rem;line-height:1.7;}
 .coming{display:inline-flex;gap:.5rem;flex-wrap:wrap;justify-content:center;margin-top:1.6rem;}
 .coming span{font-size:.78rem;color:rgba(255,255,255,0.45);border:1px solid rgba(255,255,255,0.1);border-radius:100px;padding:.35rem .9rem;}
@@ -249,7 +250,7 @@ nav.scrolled{background:rgba(4,12,22,0.8);backdrop-filter:blur(20px);border-bott
 .work-pauses-inner{max-width:1060px;margin:0 auto;}
 .wp-head{display:grid;grid-template-columns:minmax(0,0.85fr) minmax(280px,1fr);gap:2rem;align-items:end;margin-bottom:1.6rem;}
 .wp-title{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(1.9rem,4vw,2.8rem);line-height:1.08;letter-spacing:-0.02em;margin-bottom:.8rem;}
-.wp-title .it{font-style:italic;font-weight:400;background:linear-gradient(100deg,#1B8B9E,#00D9C0);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.wp-title .it{font-style:normal;background:linear-gradient(100deg,#1B8B9E,#00D9C0);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
 .wp-sub{color:rgba(255,255,255,0.64);font-size:1.04rem;font-weight:300;line-height:1.7;max-width:620px;}
 .wp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;}
 .wp-card{background:linear-gradient(160deg,rgba(10,37,64,0.5),rgba(6,21,35,0.5));border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:1.35rem;min-height:215px;display:flex;flex-direction:column;justify-content:space-between;}
@@ -266,7 +267,7 @@ nav.scrolled{background:rgba(4,12,22,0.8);backdrop-filter:blur(20px);border-bott
 .office{position:relative;padding:1rem 5% 4rem;}
 .office-wrap{max-width:900px;margin:0 auto;}
 .office-title{font-family:'Fraunces',serif;font-size:clamp(1.8rem,3.6vw,2.6rem);font-weight:500;line-height:1.1;letter-spacing:-0.01em;margin-bottom:1rem;}
-.office-title .it{font-style:italic;font-weight:400;background:linear-gradient(100deg,#1B8B9E,#00D9C0);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.office-title .it{font-style:normal;background:linear-gradient(100deg,#1B8B9E,#00D9C0);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
 .office-sub{font-size:1.05rem;font-weight:300;color:rgba(255,255,255,0.64);max-width:620px;line-height:1.7;margin-bottom:1.8rem;}
 
 .office-now{display:flex;align-items:center;gap:.9rem;
@@ -311,7 +312,7 @@ nav.scrolled{background:rgba(4,12,22,0.8);backdrop-filter:blur(20px);border-bott
 .pet-card.is-sleeping .pet-svg{animation:petBreathe 6.5s ease-in-out infinite;}
 
 .office-foot{margin-top:1.8rem;font-size:.9rem;color:rgba(255,255,255,0.5);line-height:1.6;}
-.office-foot .it{font-style:italic;color:rgba(255,255,255,0.66);}
+.office-foot .it{font-style:normal;color:rgba(255,255,255,0.66);}
 
 @media(max-width:720px){
   .pets-grid{grid-template-columns:1fr;max-width:340px;margin:0 auto;}
@@ -339,7 +340,7 @@ nav.scrolled{background:rgba(4,12,22,0.8);backdrop-filter:blur(20px);border-bott
 @keyframes panelIn{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:none;}}
 .panel-head{max-width:820px;margin:0 auto 1.8rem;}
 .panel-title{font-family:'Fraunces',serif;font-size:clamp(1.9rem,4vw,2.8rem);font-weight:500;line-height:1.06;letter-spacing:-0.02em;margin-bottom:.9rem;}
-.panel-title .it{font-style:italic;font-weight:400;background:linear-gradient(100deg,#1B8B9E,#00D9C0);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.panel-title .it{font-style:normal;background:linear-gradient(100deg,#1B8B9E,#00D9C0);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
 .panel-intro{font-size:1.06rem;font-weight:300;color:rgba(255,255,255,0.66);max-width:620px;line-height:1.7;}
 /* Office-Pet als Panel: Doppel-Padding vermeiden */
 .panel.office{padding:2.6rem 5% 4rem;}
@@ -368,7 +369,7 @@ nav.scrolled{background:rgba(4,12,22,0.8);backdrop-filter:blur(20px);border-bott
   transition:opacity .45s ease,max-height .55s ease,padding .45s ease,transform .45s ease;}
 .fortune-box.is-open .fortune-slip{opacity:1;max-height:280px;padding:1.5rem 1.7rem;transform:none;margin:0 auto 1.5rem;}
 .fortune-slip.swapping{opacity:0;transform:translateY(-8px);}
-.fortune-text{font-family:'Fraunces',serif;font-style:italic;font-size:1.22rem;line-height:1.5;}
+.fortune-text{font-family:'Fraunces',serif;font-style:normal;font-size:1.22rem;line-height:1.5;}
 .fortune-num{display:block;margin-top:.9rem;font-family:'Outfit',sans-serif;font-style:normal;
   font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--secondary);}
 
@@ -719,7 +720,7 @@ footer{padding:3rem 5%;border-top:1px solid rgba(255,255,255,0.06);display:flex;
       <a id="shareWa" href="#" target="_blank" rel="noopener">Per WhatsApp</a>
       <a id="shareLi" href="#" target="_blank" rel="noopener">Auf LinkedIn</a>
     </div>
-    <p class="fortune-foot">Bandbreite von frech bis wahr. <span class="it" style="font-style:italic">Der einzige Keks ohne Kalorien – dafür mit Aha.</span></p>
+    <p class="fortune-foot">Bandbreite von frech bis wahr. <span class="it">Der einzige Keks ohne Kalorien – dafür mit Aha.</span></p>
   </div>
 </section>
 
@@ -760,7 +761,7 @@ footer{padding:3rem 5%;border-top:1px solid rgba(255,255,255,0.06);display:flex;
     <p class="panel-intro">KI klingt am überzeugendsten, wenn sie danebenliegt. Eine kleine Sammlung typischer Aussetzer – zum Schmunzeln und als Erinnerung: selbstsicher heißt nicht richtig. Karte antippen und schauen, was wirklich stimmt.</p>
   </div>
   <div class="halu-grid reveal" id="haluGrid"></div>
-  <p class="halu-foot reveal">Alle Beispiele sind illustrativ – sie zeigen Muster, keine bestimmte KI. <span class="it" style="font-style:italic">Die Lehre bleibt dieselbe: gegenprüfen.</span></p>
+  <p class="halu-foot reveal">Alle Beispiele sind illustrativ – sie zeigen Muster, keine bestimmte KI. <span class="it">Die Lehre bleibt dieselbe: gegenprüfen.</span></p>
 </section>
 
 <!-- PANEL 6: KI-Reifegrad-Schnelltest -->
