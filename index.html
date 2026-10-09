@@ -26,6 +26,7 @@
 @font-face{font-family:'Outfit';src:url('/fonts/Outfit.woff2') format('woff2');font-weight:100 900;font-style:normal;font-display:swap;}
 @font-face{font-family:'Fraunces';src:url('/fonts/Fraunces.woff2') format('woff2');font-weight:100 900;font-style:normal;font-display:swap;}
 @font-face{font-family:'Fraunces';src:url('/fonts/Fraunces-Italic.woff2') format('woff2');font-weight:100 900;font-style:italic;font-display:swap;}
+html{font-variation-settings:"WONK" 0,"SOFT" 0;}
 </style>
 <style>
 :root{
@@ -143,7 +144,7 @@ nav.scrolled{background:rgba(4,12,22,0.8);backdrop-filter:blur(20px);border-bott
 .hero-eyebrow{display:inline-flex;align-items:center;gap:.7rem;font-size:.76rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--primary);margin-bottom:1.8rem;opacity:0;animation:up .9s .2s ease forwards;}
 .hero-eyebrow::before{content:'';width:34px;height:1px;background:linear-gradient(90deg,transparent,var(--primary));}
 .hero-title{font-family:'Fraunces',serif;font-size:clamp(3rem,5.5vw,5rem);font-weight:500;line-height:1.02;letter-spacing:-0.02em;margin-bottom:1.6rem;opacity:0;animation:up .9s .35s ease forwards;}
-.hero-title .it{font-style:italic;font-weight:400;background:linear-gradient(100deg,#1B8B9E,#00D9C0);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.hero-title .it{font-style:normal;background:linear-gradient(100deg,#1B8B9E,#00D9C0);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
 .hero-sub{font-size:1.1rem;font-weight:300;color:rgba(255,255,255,0.62);max-width:440px;margin-bottom:2.6rem;line-height:1.7;opacity:0;animation:up .9s .5s ease forwards;}
 @keyframes up{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:none;}}
 .hero-btns{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3.5rem;opacity:0;animation:up .9s .65s ease forwards;}
@@ -182,7 +183,7 @@ section{padding:7rem 5%;position:relative;}
 .s-eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.74rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--primary);margin-bottom:1.2rem;}
 .s-eyebrow::before{content:'';width:28px;height:1px;background:var(--primary);}
 .s-title{font-family:'Fraunces',serif;font-size:clamp(2.2rem,3.4vw,3.2rem);font-weight:500;letter-spacing:-0.02em;line-height:1.1;margin-bottom:1rem;}
-.s-title .it{font-style:italic;color:var(--primary);}
+.s-title .it{font-style:normal;color:var(--primary);}
 .s-sub{color:rgba(255,255,255,0.5);font-size:1.02rem;max-width:520px;line-height:1.7;}
 
 /* ── FAQ ── */
@@ -208,7 +209,7 @@ section{padding:7rem 5%;position:relative;}
 .lead-cover img{width:100%;max-width:300px;border-radius:10px;box-shadow:0 24px 60px rgba(0,0,0,0.45);border:1px solid rgba(255,255,255,0.08);}
 .lead-badge{display:inline-flex;align-items:center;gap:.5rem;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--primary);margin-bottom:1rem;}
 .lead-h{font-family:'Fraunces',serif;font-size:clamp(1.5rem,2.4vw,2rem);font-weight:500;line-height:1.15;letter-spacing:-.01em;margin-bottom:.9rem;}
-.lead-h .it{font-style:italic;background:linear-gradient(100deg,#1B8B9E,#00D9C0);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.lead-h .it{font-style:normal;background:linear-gradient(100deg,#1B8B9E,#00D9C0);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
 .lead-p{color:rgba(255,255,255,0.55);font-size:.98rem;line-height:1.65;margin-bottom:1.4rem;}
 .lead-form{display:flex;flex-direction:column;gap:.8rem;}
 .lead-form .inp{width:100%;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:.85rem 1rem;color:#fff;font-family:'Outfit',sans-serif;font-size:.95rem;transition:border-color .25s;}
@@ -236,7 +237,7 @@ section{padding:7rem 5%;position:relative;}
 .svc:hover{background:rgba(0,217,192,0.03);}
 .svc:hover::before{opacity:1;}
 .svc-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.8rem;}
-.svc-num{font-family:'Fraunces',serif;font-size:1.1rem;color:var(--primary);font-style:italic;}
+.svc-num{font-family:'Fraunces',serif;font-size:1.1rem;color:var(--primary);font-style:normal;}
 .svc-icon{width:54px;height:54px;border-radius:14px;background:linear-gradient(135deg,var(--secondary),var(--primary));display:flex;align-items:center;justify-content:center;font-size:1.5rem;box-shadow:0 8px 24px rgba(0,217,192,0.2);}
 .svc h3{font-size:1.3rem;font-weight:700;margin-bottom:.8rem;}
 .svc p{color:rgba(255,255,255,0.46);font-size:.92rem;line-height:1.65;margin-bottom:1.6rem;}
@@ -256,10 +257,10 @@ section{padding:7rem 5%;position:relative;}
 #ueber-mich{background:var(--dark);display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;}
 .about-panel{position:relative;background:linear-gradient(160deg,rgba(27,139,158,0.08),rgba(255,255,255,0.02));border:1px solid rgba(255,255,255,0.08);border-radius:24px;padding:3.5rem;overflow:hidden;}
 .about-panel::before{content:'';position:absolute;top:-50px;right:-50px;width:200px;height:200px;background:radial-gradient(circle,rgba(0,217,192,0.15),transparent 70%);}
-.about-avatar{width:68px;height:68px;border-radius:50%;background:linear-gradient(135deg,var(--secondary),var(--primary));display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-size:1.7rem;font-weight:600;color:var(--navy);margin-bottom:1.6rem;box-shadow:0 10px 30px rgba(0,217,192,0.25);}
+.about-avatar{width:68px;height:68px;border-radius:50%;background:linear-gradient(135deg,var(--secondary),var(--primary));display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;font-size:1.45rem;font-weight:600;letter-spacing:.02em;color:var(--navy);margin-bottom:1.6rem;box-shadow:0 10px 30px rgba(0,217,192,0.25);}
 .about-role{margin-top:.9rem;color:var(--primary);font-weight:600;font-size:1rem;letter-spacing:.01em;}
 .cert-pill{display:inline-flex;align-items:center;gap:.5rem;background:rgba(0,217,192,0.08);border:1px solid rgba(0,217,192,0.2);color:var(--primary);font-size:.8rem;font-weight:600;padding:.5rem 1rem;border-radius:100px;margin-bottom:1.8rem;}
-.about-quote{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:400;font-style:italic;line-height:1.4;color:#fff;margin-bottom:2rem;position:relative;z-index:1;}
+.about-quote{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:400;font-style:normal;line-height:1.4;color:#fff;margin-bottom:2rem;position:relative;z-index:1;}
 .about-quote .hl{color:var(--primary);}
 .tags{display:flex;flex-wrap:wrap;gap:.5rem;}
 .tag{font-size:.74rem;background:rgba(27,139,158,0.14);color:rgba(255,255,255,0.55);padding:.35rem .8rem;border-radius:100px;border:1px solid rgba(255,255,255,0.05);}
@@ -274,7 +275,7 @@ section{padding:7rem 5%;position:relative;}
 .manifest-eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.74rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--primary);margin-bottom:2rem;justify-content:center;}
 .manifest-eyebrow::before,.manifest-eyebrow::after{content:'';width:28px;height:1px;background:var(--primary);}
 .manifest-text{font-family:'Fraunces',serif;font-size:clamp(1.6rem,3vw,2.5rem);font-weight:400;line-height:1.4;letter-spacing:-0.01em;color:rgba(255,255,255,0.92);}
-.manifest-text .hl{font-style:italic;background:linear-gradient(100deg,#1B8B9E,#00D9C0);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.manifest-text .hl{font-style:normal;background:linear-gradient(100deg,#1B8B9E,#00D9C0);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
 .manifest-result{margin-top:2.5rem;font-family:'Outfit',sans-serif;font-size:1.05rem;font-weight:300;color:rgba(255,255,255,0.55);max-width:560px;margin-left:auto;margin-right:auto;line-height:1.7;}
 
 /* contact */
@@ -593,7 +594,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.05);padding
   <div class="about-panel reveal">
     <div class="about-avatar">JP</div>
     <span class="cert-pill">Managerin für angewandte KI-Transformation (TÜV)</span>
-    <p class="about-quote">„KI wird erst wertvoll, wenn sie im Alltag wirklich <span class="hl">genutzt</span> wird."</p>
+    <p class="about-quote">„KI wird erst wertvoll, wenn sie im Alltag wirklich <span class="hl">genutzt</span> wird.“</p>
     <div class="tags">
       <span class="tag">KI-Roadmap</span><span class="tag">Salesforce</span><span class="tag">LLM-Workflows</span>
       <span class="tag">Change Management</span><span class="tag">MS Copilot</span><span class="tag">15+ Jahre Führung</span>
